@@ -14,6 +14,8 @@ pydantic = "^1.9.0"
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
 pre-commit = "^2.17"
+tox = "^3.23.0"
+coveralls = "^3.0.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -24,3 +26,21 @@ known_third_party = ["pydantic", "pytest"]
 multi_line_output = 3
 profile = "black"
 combine_as_imports = true
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+isolated_build = True
+envlist = py36,py37,py38,py39,py310,py311
+skip_missing_interpreters = True
+
+[tox:.package]
+basepython = python3
+
+[testenv]
+deps =
+    pytest
+    coveralls
+commands =
+    coverage run --source pyredox -m pytest
+"""
