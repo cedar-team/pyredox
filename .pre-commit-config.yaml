@@ -1,0 +1,37 @@
+exclude: >
+  (?x)(
+    \.egg-info
+  )$
+repos:
+- repo: https://github.com/asottile/seed-isort-config
+  rev: v2.2.0
+  hooks:
+  - id: seed-isort-config
+    name: Finding third party Python imports
+- repo: https://github.com/pre-commit/mirrors-isort
+  rev: v5.8.0
+  hooks:
+  - id: isort
+    name: Reorder Python imports
+    additional_dependencies: ['toml']
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v3.4.0
+  hooks:
+  - id: check-merge-conflict
+  - id: check-symlinks
+  - id: end-of-file-fixer
+  - id: fix-encoding-pragma
+  - id: mixed-line-ending
+  - id: trailing-whitespace
+- repo: https://gitlab.com/pycqa/flake8
+  rev: 3.9.1
+  hooks:
+  - id: flake8
+    exclude: _datetime\.py|docs
+    args: ["--ignore=E501,D105"]
+    additional_dependencies: ['pep8-naming', 'flake8-docstrings', 'pydocstyle<4.0', 'darglint']
+- repo: https://github.com/ambv/black
+  rev: 20.8b1
+  hooks:
+  - id: black
+    language_version: python3.9
