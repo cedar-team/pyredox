@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 from json import load
 from pathlib import Path
-from unittest import TestCase
+from typing import Type
 
-from .. import patientadmin, scheduling
+import pytest
+
+from pyredox import patientadmin, scheduling
+from pyredox.abstract_base import EventTypeAbstractModel
 
 SAMPLES_DIR = (Path(__file__).parent / "sample_data").resolve()
 
@@ -36,17 +39,17 @@ SAMPLE_DATA_TYPE_AND_FILE_PATH = [
 ]
 
 
-class TestPydanticRoundTrip(TestCase):
-    def test_json_pyredox_json(self):
-        for expected_type, json_file_path in SAMPLE_DATA_TYPE_AND_FILE_PATH:
-            with self.subTest(
-                expected_type=expected_type, json_file_path=json_file_path
-            ):
-                current_sample_path = SAMPLES_DIR / json_file_path
-                self.assertTrue(current_sample_path.exists)
-                with open(current_sample_path) as sample_fd:
-                    sample = load(sample_fd)
+@pytest.mark.parametrize(
+    ("expected_type", "json_file_path"), SAMPLE_DATA_TYPE_AND_FILE_PATH
+)
+def test_json_pyredox_json(
+    expected_type: Type[EventTypeAbstractModel], json_file_path: Path
+):
+    current_sample_path = SAMPLES_DIR / json_file_path
+    assert current_sample_path.exists
+    with open(current_sample_path) as sample_fd:
+        sample = load(sample_fd)
 
-                obj = expected_type(**sample)
-                self.assertIsInstance(obj, expected_type)
-                self.assertEqual(sample, obj.dict())
+    obj = expected_type(**sample)
+    assert isinstance(obj, expected_type)
+    assert sample == obj.dict()
