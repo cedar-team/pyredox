@@ -1,0 +1,168 @@
+{
+   "Meta": {
+      "DataModel": "Scheduling",
+      "EventType": "PushSlots",
+      "EventDateTime": "2022-04-26T19:12:29.581Z",
+      "Test": true,
+      "Source": {
+         "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+         "Name": "Redox Dev Tools"
+      },
+      "Destinations": [
+         {
+            "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
+            "Name": "Redox EMR"
+         }
+      ],
+      "Logs": [
+         {
+            "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
+            "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
+         }
+      ],
+      "Message": {
+         "ID": 5565
+      },
+      "Transmission": {
+         "ID": 12414
+      },
+      "FacilityCode": null,
+      "BatchID": null,
+      "CurrentBatch": null,
+      "TotalBatches": null
+   },
+   "Slots": [
+      {
+         "ID": "1",
+         "DateTime": "2016-08-01 14:00:00Z",
+         "Reason": "Office Visit",
+         "Duration": 15,
+         "Provider": {
+            "ID": "4356789876",
+            "IDType": "NPI",
+            "FirstName": "Pat",
+            "LastName": "Granite",
+            "Credentials": [
+               "MD"
+            ],
+            "Address": {
+               "StreetAddress": "123 Main St.",
+               "City": "Madison",
+               "State": "WI",
+               "ZIP": "53703",
+               "County": "Dane",
+               "Country": "USA"
+            },
+            "EmailAddresses": [],
+            "PhoneNumber": {
+               "Office": "+16085551234"
+            }
+         },
+         "Location": {
+            "Type": "Inpatient",
+            "Facility": "RES General Hospital",
+            "Department": "3N",
+            "Room": "136"
+         }
+      },
+      {
+         "ID": "2",
+         "DateTime": "2016-08-01 14:15:00Z",
+         "Reason": "Office Visit",
+         "Duration": 15,
+         "Provider": {
+            "ID": "4356789876",
+            "IDType": "NPI",
+            "FirstName": "Pat",
+            "LastName": "Granite",
+            "Credentials": [
+               "MD"
+            ],
+            "Address": {
+               "StreetAddress": "123 Main St.",
+               "City": "Madison",
+               "State": "WI",
+               "ZIP": "53703",
+               "County": "Dane",
+               "Country": "USA"
+            },
+            "EmailAddresses": [],
+            "PhoneNumber": {
+               "Office": "+16085551234"
+            }
+         },
+         "Location": {
+            "Type": "Inpatient",
+            "Facility": "RES General Hospital",
+            "Department": "3N",
+            "Room": "136"
+         }
+      },
+      {
+         "ID": "3",
+         "DateTime": "2016-08-01 14:30:00Z",
+         "Reason": "Office Visit",
+         "Duration": 15,
+         "Provider": {
+            "ID": "4356789876",
+            "IDType": "NPI",
+            "FirstName": "Pat",
+            "LastName": "Granite",
+            "Credentials": [
+               "MD"
+            ],
+            "Address": {
+               "StreetAddress": "123 Main St.",
+               "City": "Madison",
+               "State": "WI",
+               "ZIP": "53703",
+               "County": "Dane",
+               "Country": "USA"
+            },
+            "EmailAddresses": [],
+            "PhoneNumber": {
+               "Office": "+16085551234"
+            }
+         },
+         "Location": {
+            "Type": "Inpatient",
+            "Facility": "RES General Hospital",
+            "Department": "3N",
+            "Room": "136"
+         }
+      },
+      {
+         "ID": "4",
+         "DateTime": "2016-08-01 14:45:00Z",
+         "Reason": "Office Visit",
+         "Duration": 15,
+         "Provider": {
+            "ID": "4356789876",
+            "IDType": "NPI",
+            "FirstName": "Pat",
+            "LastName": "Granite",
+            "Credentials": [
+               "MD"
+            ],
+            "Address": {
+               "StreetAddress": "123 Main St.",
+               "City": "Madison",
+               "State": "WI",
+               "ZIP": "53703",
+               "County": "Dane",
+               "Country": "USA"
+            },
+            "EmailAddresses": [],
+            "PhoneNumber": {
+               "Office": "+16085551234"
+            }
+         },
+         "Location": {
+            "Type": "Inpatient",
+            "Facility": "RES General Hospital",
+            "Department": "3N",
+            "Room": "136"
+         }
+      }
+   ]
+}
