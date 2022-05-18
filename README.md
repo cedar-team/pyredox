@@ -1,16 +1,21 @@
 # Pyredox - A Pydantic-Based Library for Redox Data
 
-Pyredox is library for producing, ingesting, and validating data from [Redox], a 
+[![PyPI Info](https://img.shields.io/pypi/v/pyredox.svg)](https://pypi.python.org/pypi/pyredox)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/cedar-team/pyredox/main)](https://github.com/cedar-team/pyredox/actions)
+[![Coverage Info](https://coveralls.io/repos/github/cedar-team/pyredox/badge.svg?branch=main)](https://coveralls.io/github/cedar-team/pyredox?branch=main)
+[![Black Code Style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
+Pyredox is library for producing, ingesting, and validating data from [Redox], a
 "data platform designed to connect providers, payers and products."
 
-Pyredox is a set of [Pydantic] models that conforms to the [Redox data model] 
-specification for the purpose of making it easy to convert Redox-formatted JSON to 
-Python objects and vice versa. Because pyredox inherits the functionality of 
-Pydantic, it validates that the JSON data conforms to the spec automatically upon 
+Pyredox is a set of [Pydantic] models that conforms to the [Redox data model]
+specification for the purpose of making it easy to convert Redox-formatted JSON to
+Python objects and vice versa. Because pyredox inherits the functionality of
+Pydantic, it validates that the JSON data conforms to the spec automatically upon
 object creation.
 
 For example, if you tried to create a [`NewPatient`
-model](https://developer.redoxengine.com/data-models/PatientAdmin.html#NewPatient) with  
+model](https://developer.redoxengine.com/data-models/PatientAdmin.html#NewPatient) with
 insufficient data, you would get an error like this:
 
 ```python
@@ -29,7 +34,7 @@ Patient
 
 ## Usage
 
-The simplest way to create a `pyredox` model from a JSON payload is to pass an 
+The simplest way to create a `pyredox` model from a JSON payload is to pass an
 unpacked `dict` as the parameter when initializing the object, like this:
 
 ```python
@@ -48,7 +53,7 @@ payload_str = """
       ]
    }
 }
-""" 
+"""
 data = json.loads(payload_str)
 new_patient = NewPatient(**data)
 ```
@@ -63,14 +68,14 @@ redox_object1 = redox_object_factory(payload_str)  # str input
 redox_object2 = redox_object_factory(data)  # dict input
 ```
 
-To create a JSON payload to send to Redox from an existing `pyredox` object, just 
+To create a JSON payload to send to Redox from an existing `pyredox` object, just
 call the `json()` method of the object:
 
 ```python
 new_patient.json()
 ```
 
-When working with the individual fields of a model object, you can traverse the 
+When working with the individual fields of a model object, you can traverse the
 element properties like so:
 
 ```python
