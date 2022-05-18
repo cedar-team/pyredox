@@ -1,0 +1,7 @@
+**/__pycache__
+.coverage
+.idea
+.pytest_cache
+.tox
+dist
+docs/_build/
