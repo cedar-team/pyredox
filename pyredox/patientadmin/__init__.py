@@ -1,4 +1,5 @@
-# flake8: noqa: F01
+# -*- coding: utf-8 -*-
+# flake8: noqa: F401
 from .arrival import Arrival
 from .cancel import Cancel
 from .censusquery import CensusQuery
