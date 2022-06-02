@@ -780,6 +780,9 @@ class PatientPushHeaderPatientDemographics(RedoxAbstractModel):
     EmailAddresses: List["PatientPushHeaderPatientDemographicsEmailAddress"] = Field(
         None
     )
+    EthnicGroupCodes: List[
+        "PatientPushHeaderPatientDemographicsEthnicGroupCode"
+    ] = Field(None)
     Ethnicity: Union[str, None] = Field(None)
     FirstName: Union[str, None] = Field(None)
     IsDeceased: Union[bool, None] = Field(None)
@@ -789,6 +792,7 @@ class PatientPushHeaderPatientDemographics(RedoxAbstractModel):
     MiddleName: Union[str, None] = Field(None)
     PhoneNumber: "PatientPushHeaderPatientDemographicsPhoneNumber" = Field(None)
     Race: Union[str, None] = Field(None)
+    RaceCodes: List["PatientPushHeaderPatientDemographicsRaceCode"] = Field(None)
     Religion: Union[str, None] = Field(None)
     Sex: Union[str, None] = Field(None)
     SSN: Union[str, None] = Field(None)
@@ -809,10 +813,26 @@ class PatientPushHeaderPatientDemographicsEmailAddress(RedoxAbstractModel):
     Address: Union[str, None] = Field(None)
 
 
+class PatientPushHeaderPatientDemographicsEthnicGroupCode(RedoxAbstractModel):
+
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
 class PatientPushHeaderPatientDemographicsPhoneNumber(RedoxAbstractModel):
 
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
+
+
+class PatientPushHeaderPatientDemographicsRaceCode(RedoxAbstractModel):
+
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
 
 
 class PatientPushHeaderPatientIdentifier(RedoxAbstractModel):

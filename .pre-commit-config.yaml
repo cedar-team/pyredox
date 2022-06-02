@@ -3,17 +3,6 @@ exclude: >
     \.egg-info
   )$
 repos:
-- repo: https://github.com/asottile/seed-isort-config
-  rev: v2.2.0
-  hooks:
-  - id: seed-isort-config
-    name: Finding third party Python imports
-- repo: https://github.com/pre-commit/mirrors-isort
-  rev: v5.10.1
-  hooks:
-  - id: isort
-    name: Reorder Python imports
-    additional_dependencies: ['toml']
 - repo: https://github.com/pre-commit/pre-commit-hooks
   rev: v4.2.0
   hooks:
@@ -28,10 +17,9 @@ repos:
   hooks:
   - id: flake8
     exclude: _datetime\.py|docs
-    args: ["--ignore=E501,D105"]
-    additional_dependencies: ['pep8-naming', 'darglint'] # 'flake8-docstrings', 'pydocstyle<4.0',
-- repo: https://github.com/ambv/black
-  rev: 22.3.0
+    args: ["--ignore=E501,D105,F401"]
+    additional_dependencies: ['pep8-naming'] # 'flake8-docstrings', 'pydocstyle<4.0', 'darglint',
+- repo: https://github.com/omnilib/ufmt
+  rev: v1.3.2
   hooks:
-  - id: black
-    language_version: python3.9
+  - id: ufmt

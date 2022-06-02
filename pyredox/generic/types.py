@@ -5,8 +5,8 @@ from typing import List, Union
 
 from pydantic import Field
 
-from .abstract_base import RedoxAbstractModel
-from .field_types import Number
+from ..abstract_base import RedoxAbstractModel
+from ..field_types import Number
 
 
 class AchievementStatus(RedoxAbstractModel):
@@ -617,6 +617,7 @@ class Demographics(RedoxAbstractModel):
     DeathDateTime: Union[str, None] = Field(None)
     DOB: Union[str, None] = Field(None)
     EmailAddresses: List["EmailAddress"] = Field(None)
+    EthnicGroupCodes: List["EthnicGroupCode"] = Field(None)
     Ethnicity: Union[str, None] = Field(None)
     FirstName: Union[str, None] = Field(None)
     IsDeceased: Union[bool, None] = Field(None)
@@ -628,6 +629,7 @@ class Demographics(RedoxAbstractModel):
     MiddleName: Union[str, None] = Field(None)
     PhoneNumber: "PhoneNumber" = Field(None)
     Race: Union[str, None] = Field(None)
+    RaceCodes: List["RaceCode"] = Field(None)
     Religion: Union[str, None] = Field(None)
     Sex: Union[str, None] = Field(None)
     SSN: Union[str, None] = Field(None)
@@ -849,6 +851,14 @@ class Error(RedoxAbstractModel):
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
+
+
+class EthnicGroupCode(RedoxAbstractModel):
+
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
 
 
 class FamilyHistory(RedoxAbstractModel):
@@ -1742,6 +1752,14 @@ class Question(RedoxAbstractModel):
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
     Question: "Question" = Field(None)
+
+
+class RaceCode(RedoxAbstractModel):
+
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
 
 
 class RadiusSearch(RedoxAbstractModel):

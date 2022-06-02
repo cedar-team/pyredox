@@ -967,6 +967,9 @@ class VisitQueryResponseHeaderPatientDemographics(RedoxAbstractModel):
     EmailAddresses: List[
         "VisitQueryResponseHeaderPatientDemographicsEmailAddress"
     ] = Field(None)
+    EthnicGroupCodes: List[
+        "VisitQueryResponseHeaderPatientDemographicsEthnicGroupCode"
+    ] = Field(None)
     Ethnicity: Union[str, None] = Field(None)
     FirstName: Union[str, None] = Field(None)
     IsDeceased: Union[bool, None] = Field(None)
@@ -976,6 +979,7 @@ class VisitQueryResponseHeaderPatientDemographics(RedoxAbstractModel):
     MiddleName: Union[str, None] = Field(None)
     PhoneNumber: "VisitQueryResponseHeaderPatientDemographicsPhoneNumber" = Field(None)
     Race: Union[str, None] = Field(None)
+    RaceCodes: List["VisitQueryResponseHeaderPatientDemographicsRaceCode"] = Field(None)
     Religion: Union[str, None] = Field(None)
     Sex: Union[str, None] = Field(None)
     SSN: Union[str, None] = Field(None)
@@ -996,10 +1000,26 @@ class VisitQueryResponseHeaderPatientDemographicsEmailAddress(RedoxAbstractModel
     Address: Union[str, None] = Field(None)
 
 
+class VisitQueryResponseHeaderPatientDemographicsEthnicGroupCode(RedoxAbstractModel):
+
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
 class VisitQueryResponseHeaderPatientDemographicsPhoneNumber(RedoxAbstractModel):
 
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseHeaderPatientDemographicsRaceCode(RedoxAbstractModel):
+
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
 
 
 class VisitQueryResponseHeaderPatientIdentifier(RedoxAbstractModel):
