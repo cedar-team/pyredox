@@ -7,16 +7,14 @@ jobs:
         python-version: ['3.6', '3.7', '3.8', '3.9', '3.10']
     steps:
       - uses: actions/checkout@v3
-      - name: Install Poetry
-        run: curl -sSL https://install.python-poetry.org | python3 -
-      - name: Set up Python
-        uses: actions/setup-python@v3
+
+      - name: Install Python and Poetry
+        uses: ITProKyle/action-setup-python@v0.1.0 # it is HIGHLY recommended to pin this to a release
         with:
           python-version: ${{ matrix.python-version }}
-          cache: 'poetry'
-      - name: Install Poetry
-        run: curl -sSL https://install.python-poetry.org | python3 -
+
       - name: Set up poetry virtualenv
         run: poetry install
+
       - name: Run tests
         run: poetry run tox
