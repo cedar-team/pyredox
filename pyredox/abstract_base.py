@@ -7,6 +7,7 @@ from pydantic import BaseModel, Field
 
 __all__ = [
     "EventTypeAbstractModel",
+    "GenericRedoxAbstractModel",
     "RedoxAbstractModel",
 ]
 
@@ -54,3 +55,24 @@ class EventTypeAbstractModel(RedoxAbstractModel, abc.ABC):
     """Event types should inherit from this instead of RedoxAbstractModel."""
 
     Meta: _Meta = Field(...)
+
+
+class GenericRedoxAbstractModel(RedoxAbstractModel):
+    _redox_module = ...  # e.g. patientadmin
+
+    def to_redox(self) -> RedoxAbstractModel:
+        """Figure out the correct pyredox model, instantiate, and return."""
+
+        class_name = type(self).__name__
+
+        event_module = getattr(self._redox_module, class_name.lower())
+        if not event_module:
+            raise AttributeError(
+                f"Couldn't find Redox event module for {class_name.lower()}"
+            )
+
+        event_class = getattr(event_module, class_name)
+        if not event_class:
+            raise AttributeError(f"Couldn't find Redox event class for {class_name}")
+
+        return event_class(**self.dict())
