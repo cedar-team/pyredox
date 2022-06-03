@@ -8,7 +8,7 @@ import pytest
 from pyredox import patientadmin, scheduling
 from pyredox.abstract_base import EventTypeAbstractModel
 
-SAMPLES_DIR = (Path(__file__).parent / "sample_data").resolve()
+SAMPLES_DIR = (Path(__file__).parent / "fixtures").resolve()
 
 SAMPLE_DATA_TYPE_AND_FILE_PATH = [
     (patientadmin.Arrival, Path("patientadmin_arrival.json")),
