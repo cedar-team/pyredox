@@ -108,8 +108,8 @@ class NewPatientDemographics(RedoxAbstractModel):
 
     Address: "NewPatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
-    DeathDateTime: Union[str, None] = Field(None)
     DOB: Union[str, None] = Field(None)
+    DeathDateTime: Union[str, None] = Field(None)
     EmailAddresses: List[str] = Field(None)
     FirstName: Union[str, None] = Field(None)
     IsDeceased: Union[bool, None] = Field(None)
@@ -121,8 +121,8 @@ class NewPatientDemographics(RedoxAbstractModel):
     PhoneNumber: "NewPatientDemographicsPhoneNumber" = Field(None)
     Race: Union[str, None] = Field(None)
     Religion: Union[str, None] = Field(None)
-    Sex: Union[str, None] = Field(None)
     SSN: Union[str, None] = Field(None)
+    Sex: Union[str, None] = Field(None)
 
 
 class NewPatientDemographicsAddress(RedoxAbstractModel):

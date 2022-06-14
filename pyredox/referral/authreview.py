@@ -34,8 +34,8 @@ class AuthReviewAuthorization(RedoxAbstractModel):
     Request: "AuthReviewAuthorizationRequest" = Field(None)
     ServiceLevel: Union[str, None] = Field(None)
     ServiceLocation: Union[str, None] = Field(None)
-    Services: List["AuthReviewAuthorizationService"] = Field(None)
     ServiceType: Union[str, None] = Field(None)
+    Services: List["AuthReviewAuthorizationService"] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
@@ -176,8 +176,8 @@ class AuthReviewPatientDemographics(RedoxAbstractModel):
 
     Address: "AuthReviewPatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
-    DeathDateTime: Union[str, None] = Field(None)
     DOB: Union[str, None] = Field(None)
+    DeathDateTime: Union[str, None] = Field(None)
     EmailAddresses: List[str] = Field(None)
     FirstName: Union[str, None] = Field(None)
     IsDeceased: Union[bool, None] = Field(None)
@@ -189,8 +189,8 @@ class AuthReviewPatientDemographics(RedoxAbstractModel):
     PhoneNumber: "AuthReviewPatientDemographicsPhoneNumber" = Field(None)
     Race: Union[str, None] = Field(None)
     Religion: Union[str, None] = Field(None)
-    Sex: Union[str, None] = Field(None)
     SSN: Union[str, None] = Field(None)
+    Sex: Union[str, None] = Field(None)
 
 
 class AuthReviewPatientDemographicsAddress(RedoxAbstractModel):
@@ -260,8 +260,8 @@ class AuthReviewPatientInsuranceInsured(RedoxAbstractModel):
     LastName: Union[str, None] = Field(None)
     MiddleName: Union[str, None] = Field(None)
     Relationship: Union[str, None] = Field(None)
-    Sex: Union[str, None] = Field(None)
     SSN: Union[str, None] = Field(None)
+    Sex: Union[str, None] = Field(None)
 
 
 class AuthReviewPatientInsuranceInsuredAddress(RedoxAbstractModel):
@@ -303,8 +303,8 @@ class AuthReviewReferral(RedoxAbstractModel):
     Priority: Union[str, None] = Field(None)
     Procedures: List["AuthReviewReferralProcedure"] = Field(None)
     ProcessDateTime: Union[str, None] = Field(None)
-    Providers: List["AuthReviewReferralProvider"] = Field(None)
     ProviderSpecialty: Union[str, None] = Field(None)
+    Providers: List["AuthReviewReferralProvider"] = Field(None)
     Reason: Union[str, None] = Field(None)
     RelatedCause: Union[str, None] = Field(None)
     RequestType: Union[str, None] = Field(None)

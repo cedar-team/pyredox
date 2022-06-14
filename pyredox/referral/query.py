@@ -113,8 +113,8 @@ class QueryPatientInsuranceInsured(RedoxAbstractModel):
     LastName: Union[str, None] = Field(None)
     MiddleName: Union[str, None] = Field(None)
     Relationship: Union[str, None] = Field(None)
-    Sex: Union[str, None] = Field(None)
     SSN: Union[str, None] = Field(None)
+    Sex: Union[str, None] = Field(None)
 
 
 class QueryPatientInsuranceInsuredAddress(RedoxAbstractModel):

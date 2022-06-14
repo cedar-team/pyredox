@@ -66,10 +66,10 @@ class ReplaceNote(RedoxAbstractModel):
     Availability: Union[str, None] = Field(None)
     Components: List["ReplaceNoteComponent"] = Field(None)
     ContentType: str = Field(...)
-    DocumentationDateTime: Union[str, None] = Field(None)
     DocumentDescription: Union[str, None] = Field(None)
     DocumentID: str = Field(...)
     DocumentType: str = Field(...)
+    DocumentationDateTime: Union[str, None] = Field(None)
     FileContents: Union[str, None] = Field(None)
     FileName: Union[str, None] = Field(None)
     FileType: Union[str, None] = Field(None)
@@ -213,8 +213,8 @@ class ReplacePatientDemographics(RedoxAbstractModel):
 
     Address: "ReplacePatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
-    DeathDateTime: Union[str, None] = Field(None)
     DOB: Union[str, None] = Field(None)
+    DeathDateTime: Union[str, None] = Field(None)
     EmailAddresses: List[str] = Field(None)
     FirstName: Union[str, None] = Field(None)
     IsDeceased: Union[bool, None] = Field(None)
@@ -226,8 +226,8 @@ class ReplacePatientDemographics(RedoxAbstractModel):
     PhoneNumber: "ReplacePatientDemographicsPhoneNumber" = Field(None)
     Race: Union[str, None] = Field(None)
     Religion: Union[str, None] = Field(None)
-    Sex: Union[str, None] = Field(None)
     SSN: Union[str, None] = Field(None)
+    Sex: Union[str, None] = Field(None)
 
 
 class ReplacePatientDemographicsAddress(RedoxAbstractModel):

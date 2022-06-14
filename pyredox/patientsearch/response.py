@@ -103,8 +103,8 @@ class ResponsePatientDemographics(RedoxAbstractModel):
 
     Address: "ResponsePatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
-    DeathDateTime: Union[str, None] = Field(None)
     DOB: Union[str, None] = Field(None)
+    DeathDateTime: Union[str, None] = Field(None)
     EmailAddresses: List[str] = Field(None)
     FirstName: Union[str, None] = Field(None)
     IsDeceased: Union[bool, None] = Field(None)
@@ -116,8 +116,8 @@ class ResponsePatientDemographics(RedoxAbstractModel):
     PhoneNumber: "ResponsePatientDemographicsPhoneNumber" = Field(None)
     Race: Union[str, None] = Field(None)
     Religion: Union[str, None] = Field(None)
-    Sex: Union[str, None] = Field(None)
     SSN: Union[str, None] = Field(None)
+    Sex: Union[str, None] = Field(None)
 
 
 class ResponsePatientDemographicsAddress(RedoxAbstractModel):
@@ -149,9 +149,9 @@ class ResponsePatientGuarantor(RedoxAbstractModel):
     Number: Union[str, None] = Field(None)
     PhoneNumber: "ResponsePatientGuarantorPhoneNumber" = Field(None)
     RelationToPatient: Union[str, None] = Field(None)
+    SSN: Union[str, None] = Field(None)
     Sex: Union[str, None] = Field(None)
     Spouse: "ResponsePatientGuarantorSpouse" = Field(None)
-    SSN: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
@@ -245,8 +245,8 @@ class ResponsePatientInsuranceInsured(RedoxAbstractModel):
     LastName: Union[str, None] = Field(None)
     MiddleName: Union[str, None] = Field(None)
     Relationship: Union[str, None] = Field(None)
-    Sex: Union[str, None] = Field(None)
     SSN: Union[str, None] = Field(None)
+    Sex: Union[str, None] = Field(None)
 
 
 class ResponsePatientInsuranceInsuredAddress(RedoxAbstractModel):
@@ -354,8 +354,8 @@ class ResponsePotentialMatchDemographics(RedoxAbstractModel):
 
     Address: "ResponsePotentialMatchDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
-    DeathDateTime: Union[str, None] = Field(None)
     DOB: Union[str, None] = Field(None)
+    DeathDateTime: Union[str, None] = Field(None)
     EmailAddresses: List[str] = Field(None)
     FirstName: Union[str, None] = Field(None)
     IsDeceased: Union[bool, None] = Field(None)
@@ -367,8 +367,8 @@ class ResponsePotentialMatchDemographics(RedoxAbstractModel):
     PhoneNumber: "ResponsePotentialMatchDemographicsPhoneNumber" = Field(None)
     Race: Union[str, None] = Field(None)
     Religion: Union[str, None] = Field(None)
-    Sex: Union[str, None] = Field(None)
     SSN: Union[str, None] = Field(None)
+    Sex: Union[str, None] = Field(None)
 
 
 class ResponsePotentialMatchDemographicsAddress(RedoxAbstractModel):
@@ -400,9 +400,9 @@ class ResponsePotentialMatchGuarantor(RedoxAbstractModel):
     Number: Union[str, None] = Field(None)
     PhoneNumber: "ResponsePotentialMatchGuarantorPhoneNumber" = Field(None)
     RelationToPatient: Union[str, None] = Field(None)
+    SSN: Union[str, None] = Field(None)
     Sex: Union[str, None] = Field(None)
     Spouse: "ResponsePotentialMatchGuarantorSpouse" = Field(None)
-    SSN: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
@@ -496,8 +496,8 @@ class ResponsePotentialMatchInsuranceInsured(RedoxAbstractModel):
     LastName: Union[str, None] = Field(None)
     MiddleName: Union[str, None] = Field(None)
     Relationship: Union[str, None] = Field(None)
-    Sex: Union[str, None] = Field(None)
     SSN: Union[str, None] = Field(None)
+    Sex: Union[str, None] = Field(None)
 
 
 class ResponsePotentialMatchInsuranceInsuredAddress(RedoxAbstractModel):

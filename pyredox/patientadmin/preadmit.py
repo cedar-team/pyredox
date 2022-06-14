@@ -135,8 +135,8 @@ class PreAdmitPatientDemographics(RedoxAbstractModel):
 
     Address: "PreAdmitPatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
-    DeathDateTime: Union[str, None] = Field(None)
     DOB: Union[str, None] = Field(None)
+    DeathDateTime: Union[str, None] = Field(None)
     EmailAddresses: List[str] = Field(None)
     FirstName: Union[str, None] = Field(None)
     IsDeceased: Union[bool, None] = Field(None)
@@ -148,8 +148,8 @@ class PreAdmitPatientDemographics(RedoxAbstractModel):
     PhoneNumber: "PreAdmitPatientDemographicsPhoneNumber" = Field(None)
     Race: Union[str, None] = Field(None)
     Religion: Union[str, None] = Field(None)
-    Sex: Union[str, None] = Field(None)
     SSN: Union[str, None] = Field(None)
+    Sex: Union[str, None] = Field(None)
 
 
 class PreAdmitPatientDemographicsAddress(RedoxAbstractModel):
@@ -407,9 +407,9 @@ class PreAdmitVisitGuarantor(RedoxAbstractModel):
     Number: Union[str, None] = Field(None)
     PhoneNumber: "PreAdmitVisitGuarantorPhoneNumber" = Field(None)
     RelationToPatient: Union[str, None] = Field(None)
+    SSN: Union[str, None] = Field(None)
     Sex: Union[str, None] = Field(None)
     Spouse: "PreAdmitVisitGuarantorSpouse" = Field(None)
-    SSN: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
@@ -497,8 +497,8 @@ class PreAdmitVisitInsuranceInsured(RedoxAbstractModel):
     LastName: Union[str, None] = Field(None)
     MiddleName: Union[str, None] = Field(None)
     Relationship: Union[str, None] = Field(None)
-    Sex: Union[str, None] = Field(None)
     SSN: Union[str, None] = Field(None)
+    Sex: Union[str, None] = Field(None)
 
 
 class PreAdmitVisitInsuranceInsuredAddress(RedoxAbstractModel):
