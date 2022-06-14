@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyredox"
-version = "0.1.0-alpha.1"
+version = "0.1.0-alpha.2"
 description = ""
 authors = ["Mike Mabey <mike.mabey@cedar.com>"]
 homepage = "https://github.com/cedar-team/pyredox"
@@ -21,7 +21,7 @@ classifiers = [
 [tool.poetry.dependencies]
 python = ">=3.6.1,<4.0"
 pydantic = "~1.9.0"
-dataclasses = { version = "^0.8", python = "~3.6" }
+dataclasses = { version = ">=0.7", python = "~3.6" }
 
 [tool.poetry.dev-dependencies]
 pytest = "^7"

@@ -1,9 +1,15 @@
 # -*- coding: utf-8 -*-
 import importlib
 from json import loads
-from typing import Dict, List, Union
+from typing import Dict, List, Optional, Union
+from warnings import warn
 
-from .abstract_base import EventTypeAbstractModel
+from . import generic
+from .abstract_base import (
+    EventTypeAbstractModel,
+    GenericRedoxAbstractModel,
+    RedoxAbstractModel,
+)
 
 # Got inspiration from https://github.com/python/typing/issues/182
 JSONValue = Union[None, bool, int, float, str]
@@ -57,3 +63,25 @@ def redox_object_factory(
         raise AttributeError(f"Couldn't find Redox event class for {event_type}")
 
     return event_class.parse_obj(json_payload)
+
+
+def from_redox_to_generic(
+    redox_instance: RedoxAbstractModel,
+) -> Optional[GenericRedoxAbstractModel]:
+    redox_dict = redox_instance.dict()
+    # We don't have to do as much validation as the pyredox factory because we're
+    # working with a validated Redox obj
+    data_model = redox_dict["Meta"]["DataModel"]  # e.g., PatientAdmin, Scheduling, etc
+    event_type = redox_dict["Meta"]["EventType"]  # e.g., NewPatient, Reschedule, etc
+
+    model_module = getattr(generic, data_model)
+    if not model_module:
+        warn(f"Couldn't find the CedarRedox model module for {data_model}")
+        return None
+
+    event_class = getattr(model_module, event_type)
+    if not event_class:
+        warn(f"Couldn't find CedarRedox event class for {event_type}")
+        return None
+
+    return event_class(**redox_dict)
