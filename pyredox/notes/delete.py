@@ -66,10 +66,10 @@ class DeleteNote(RedoxAbstractModel):
     Availability: Union[str, None] = Field(None)
     Components: List["DeleteNoteComponent"] = Field(None)
     ContentType: str = Field(...)
-    DocumentationDateTime: Union[str, None] = Field(None)
     DocumentDescription: Union[str, None] = Field(None)
     DocumentID: str = Field(...)
     DocumentType: str = Field(...)
+    DocumentationDateTime: Union[str, None] = Field(None)
     FileName: Union[str, None] = Field(None)
     FileType: Union[str, None] = Field(None)
     Notifications: List["DeleteNoteNotification"] = Field(None)
@@ -211,8 +211,8 @@ class DeletePatientDemographics(RedoxAbstractModel):
 
     Address: "DeletePatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
-    DeathDateTime: Union[str, None] = Field(None)
     DOB: Union[str, None] = Field(None)
+    DeathDateTime: Union[str, None] = Field(None)
     EmailAddresses: List[str] = Field(None)
     FirstName: Union[str, None] = Field(None)
     IsDeceased: Union[bool, None] = Field(None)
@@ -224,8 +224,8 @@ class DeletePatientDemographics(RedoxAbstractModel):
     PhoneNumber: "DeletePatientDemographicsPhoneNumber" = Field(None)
     Race: Union[str, None] = Field(None)
     Religion: Union[str, None] = Field(None)
-    Sex: Union[str, None] = Field(None)
     SSN: Union[str, None] = Field(None)
+    Sex: Union[str, None] = Field(None)
 
 
 class DeletePatientDemographicsAddress(RedoxAbstractModel):

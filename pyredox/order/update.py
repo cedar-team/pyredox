@@ -214,8 +214,8 @@ class UpdatePatientDemographics(RedoxAbstractModel):
 
     Address: "UpdatePatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
-    DeathDateTime: Union[str, None] = Field(None)
     DOB: Union[str, None] = Field(None)
+    DeathDateTime: Union[str, None] = Field(None)
     EmailAddresses: List[str] = Field(None)
     FirstName: Union[str, None] = Field(None)
     IsDeceased: Union[bool, None] = Field(None)
@@ -227,8 +227,8 @@ class UpdatePatientDemographics(RedoxAbstractModel):
     PhoneNumber: "UpdatePatientDemographicsPhoneNumber" = Field(None)
     Race: Union[str, None] = Field(None)
     Religion: Union[str, None] = Field(None)
-    Sex: Union[str, None] = Field(None)
     SSN: Union[str, None] = Field(None)
+    Sex: Union[str, None] = Field(None)
 
 
 class UpdatePatientDemographicsAddress(RedoxAbstractModel):
@@ -352,9 +352,9 @@ class UpdateVisitGuarantor(RedoxAbstractModel):
     Number: Union[str, None] = Field(None)
     PhoneNumber: "UpdateVisitGuarantorPhoneNumber" = Field(None)
     RelationToPatient: Union[str, None] = Field(None)
+    SSN: Union[str, None] = Field(None)
     Sex: Union[str, None] = Field(None)
     Spouse: "UpdateVisitGuarantorSpouse" = Field(None)
-    SSN: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
@@ -442,8 +442,8 @@ class UpdateVisitInsuranceInsured(RedoxAbstractModel):
     LastName: Union[str, None] = Field(None)
     MiddleName: Union[str, None] = Field(None)
     Relationship: Union[str, None] = Field(None)
-    Sex: Union[str, None] = Field(None)
     SSN: Union[str, None] = Field(None)
+    Sex: Union[str, None] = Field(None)
 
 
 class UpdateVisitInsuranceInsuredAddress(RedoxAbstractModel):

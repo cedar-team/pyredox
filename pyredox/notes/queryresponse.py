@@ -60,9 +60,9 @@ class QueryResponseMetaTransmission(RedoxAbstractModel):
 class QueryResponseNote(RedoxAbstractModel):
 
     ContentType: Union[str, None] = Field(None)
-    DocumentationDateTime: Union[str, None] = Field(None)
     DocumentID: Union[str, None] = Field(None)
     DocumentType: Union[str, None] = Field(None)
+    DocumentationDateTime: Union[str, None] = Field(None)
     FileContents: Union[str, None] = Field(None)
     FileName: Union[str, None] = Field(None)
     Patient: "QueryResponseNotePatient" = Field(None)

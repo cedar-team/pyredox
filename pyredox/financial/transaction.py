@@ -70,8 +70,8 @@ class TransactionPatientDemographics(RedoxAbstractModel):
 
     Address: "TransactionPatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
-    DeathDateTime: Union[str, None] = Field(None)
     DOB: Union[str, None] = Field(None)
+    DeathDateTime: Union[str, None] = Field(None)
     EmailAddresses: List[str] = Field(None)
     FirstName: Union[str, None] = Field(None)
     IsDeceased: Union[bool, None] = Field(None)
@@ -83,8 +83,8 @@ class TransactionPatientDemographics(RedoxAbstractModel):
     PhoneNumber: "TransactionPatientDemographicsPhoneNumber" = Field(None)
     Race: Union[str, None] = Field(None)
     Religion: Union[str, None] = Field(None)
-    Sex: Union[str, None] = Field(None)
     SSN: Union[str, None] = Field(None)
+    Sex: Union[str, None] = Field(None)
 
 
 class TransactionPatientDemographicsAddress(RedoxAbstractModel):
@@ -259,9 +259,9 @@ class TransactionVisitGuarantor(RedoxAbstractModel):
     Number: Union[str, None] = Field(None)
     PhoneNumber: "TransactionVisitGuarantorPhoneNumber" = Field(None)
     RelationToPatient: Union[str, None] = Field(None)
+    SSN: Union[str, None] = Field(None)
     Sex: Union[str, None] = Field(None)
     Spouse: "TransactionVisitGuarantorSpouse" = Field(None)
-    SSN: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
@@ -349,8 +349,8 @@ class TransactionVisitInsuranceInsured(RedoxAbstractModel):
     LastName: Union[str, None] = Field(None)
     MiddleName: Union[str, None] = Field(None)
     Relationship: Union[str, None] = Field(None)
-    Sex: Union[str, None] = Field(None)
     SSN: Union[str, None] = Field(None)
+    Sex: Union[str, None] = Field(None)
 
 
 class TransactionVisitInsuranceInsuredAddress(RedoxAbstractModel):

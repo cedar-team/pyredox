@@ -36,8 +36,8 @@ class VisitPush(EventTypeAbstractModel):
     HealthConcerns: List["VisitPushHealthConcern"] = Field(None)
     HealthConcernsText: Union[str, None] = Field(None)
     HistoryOfPresentIllnessText: Union[str, None] = Field(None)
-    Immunizations: List["VisitPushImmunization"] = Field(None)
     ImmunizationText: Union[str, None] = Field(None)
+    Immunizations: List["VisitPushImmunization"] = Field(None)
     InstructionsText: Union[str, None] = Field(None)
     Insurances: List["VisitPushInsurance"] = Field(None)
     InsurancesText: Union[str, None] = Field(None)
@@ -64,8 +64,8 @@ class VisitPush(EventTypeAbstractModel):
     ReasonForVisitText: Union[str, None] = Field(None)
     ResolvedProblems: List["VisitPushResolvedProblem"] = Field(None)
     ResolvedProblemsText: Union[str, None] = Field(None)
-    Results: List["VisitPushResult"] = Field(None)
     ResultText: Union[str, None] = Field(None)
+    Results: List["VisitPushResult"] = Field(None)
     ReviewOfSystemsText: Union[str, None] = Field(None)
     SocialHistory: "VisitPushSocialHistory" = Field(None)
     SocialHistoryText: Union[str, None] = Field(None)
@@ -80,6 +80,7 @@ class VisitPushAdmissionDiagnosis(RedoxAbstractModel):
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
+    Comments: List["VisitPushAdmissionDiagnosisComment"] = Field(None)
     EndDate: Union[str, None] = Field(None)
     IsNegativeIndicator: Union[bool, None] = Field(None)
     Name: Union[str, None] = Field(None)
@@ -92,6 +93,11 @@ class VisitPushAdmissionDiagnosisAltCode(RedoxAbstractModel):
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
+
+
+class VisitPushAdmissionDiagnosisComment(RedoxAbstractModel):
+
+    Text: Union[str, None] = Field(None)
 
 
 class VisitPushAdvanceDirective(RedoxAbstractModel):
@@ -162,6 +168,7 @@ class VisitPushAdvanceDirectiveVerifiedBy(RedoxAbstractModel):
 class VisitPushAllergy(RedoxAbstractModel):
 
     Comment: Union[str, None] = Field(None)
+    Comments: List["VisitPushAllergyComment"] = Field(None)
     Criticality: "VisitPushAllergyCriticality" = Field(None)
     EndDate: Union[str, None] = Field(None)
     Reaction: List["VisitPushAllergyReaction"] = Field(None)
@@ -170,6 +177,11 @@ class VisitPushAllergy(RedoxAbstractModel):
     Status: "VisitPushAllergyStatus" = Field(None)
     Substance: "VisitPushAllergySubstance" = Field(None)
     Type: "VisitPushAllergyType" = Field(None)
+
+
+class VisitPushAllergyComment(RedoxAbstractModel):
+
+    Text: Union[str, None] = Field(None)
 
 
 class VisitPushAllergyCriticality(RedoxAbstractModel):
@@ -265,6 +277,7 @@ class VisitPushAssessment(RedoxAbstractModel):
 class VisitPushAssessmentDiagnosis(RedoxAbstractModel):
 
     Codes: List["VisitPushAssessmentDiagnosisCode"] = Field(None)
+    Comments: List["VisitPushAssessmentDiagnosisComment"] = Field(None)
     DateTime: Union[str, None] = Field(None)
     IsNegativeIndicator: Union[bool, None] = Field(None)
     Value: Union[str, None] = Field(None)
@@ -278,12 +291,18 @@ class VisitPushAssessmentDiagnosisCode(RedoxAbstractModel):
     Name: Union[str, None] = Field(None)
 
 
+class VisitPushAssessmentDiagnosisComment(RedoxAbstractModel):
+
+    Text: Union[str, None] = Field(None)
+
+
 class VisitPushDischargeDiagnosis(RedoxAbstractModel):
 
     AltCodes: List["VisitPushDischargeDiagnosisAltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
+    Comments: List["VisitPushDischargeDiagnosisComment"] = Field(None)
     EndDate: Union[str, None] = Field(None)
     IsNegativeIndicator: Union[bool, None] = Field(None)
     Name: Union[str, None] = Field(None)
@@ -296,6 +315,11 @@ class VisitPushDischargeDiagnosisAltCode(RedoxAbstractModel):
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
+
+
+class VisitPushDischargeDiagnosisComment(RedoxAbstractModel):
+
+    Text: Union[str, None] = Field(None)
 
 
 class VisitPushDischargeMedication(RedoxAbstractModel):
@@ -615,9 +639,10 @@ class VisitPushFunctionalStatusObservation(RedoxAbstractModel):
 
     AltCodes: List["VisitPushFunctionalStatusObservationAltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
-    CodedValue: "VisitPushFunctionalStatusObservationCodedValue" = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
+    CodedValue: "VisitPushFunctionalStatusObservationCodedValue" = Field(None)
+    Comments: List["VisitPushFunctionalStatusObservationComment"] = Field(None)
     DateTime: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
     ReferenceRange: "VisitPushFunctionalStatusObservationReferenceRange" = Field(None)
@@ -652,6 +677,11 @@ class VisitPushFunctionalStatusObservationCodedValueAltCode(RedoxAbstractModel):
     Name: Union[str, None] = Field(None)
 
 
+class VisitPushFunctionalStatusObservationComment(RedoxAbstractModel):
+
+    Text: Union[str, None] = Field(None)
+
+
 class VisitPushFunctionalStatusObservationReferenceRange(RedoxAbstractModel):
 
     High: Union[Number, None] = Field(None)
@@ -683,9 +713,10 @@ class VisitPushGoal(RedoxAbstractModel):
     AchievementStatus: "VisitPushGoalAchievementStatus" = Field(None)
     AltCodes: List["VisitPushGoalAltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
-    CodedValue: "VisitPushGoalCodedValue" = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
+    CodedValue: "VisitPushGoalCodedValue" = Field(None)
+    Comments: List["VisitPushGoalComment"] = Field(None)
     DateTime: Union[str, None] = Field(None)
     EndDate: Union[str, None] = Field(None)
     Milestones: List["VisitPushGoalMilestone"] = Field(None)
@@ -729,14 +760,19 @@ class VisitPushGoalCodedValueAltCode(RedoxAbstractModel):
     Name: Union[str, None] = Field(None)
 
 
+class VisitPushGoalComment(RedoxAbstractModel):
+
+    Text: Union[str, None] = Field(None)
+
+
 class VisitPushGoalMilestone(RedoxAbstractModel):
 
     AchievementStatus: "VisitPushGoalMilestoneAchievementStatus" = Field(None)
     AltCodes: List["VisitPushGoalMilestoneAltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
-    CodedValue: "VisitPushGoalMilestoneCodedValue" = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
+    CodedValue: "VisitPushGoalMilestoneCodedValue" = Field(None)
     DateTime: Union[str, None] = Field(None)
     EndDate: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
@@ -800,8 +836,8 @@ class VisitPushHeader(RedoxAbstractModel):
     DirectAddressFrom: Union[None] = Field(None)
     DirectAddressTo: Union[None] = Field(None)
     Document: "VisitPushHeaderDocument" = Field(None)
-    Patient: "VisitPushHeaderPatient" = Field(None)
     PCP: "VisitPushHeaderPCP" = Field(None)
+    Patient: "VisitPushHeaderPatient" = Field(None)
 
 
 class VisitPushHeaderDocument(RedoxAbstractModel):
@@ -946,6 +982,43 @@ class VisitPushHeaderDocumentVisitTypeAltCode(RedoxAbstractModel):
     Name: Union[str, None] = Field(None)
 
 
+class VisitPushHeaderPCP(RedoxAbstractModel):
+
+    Address: "VisitPushHeaderPCPAddress" = Field(None)
+    Credentials: List[str] = Field(None)
+    EmailAddresses: List[str] = Field(None)
+    FirstName: Union[str, None] = Field(None)
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+    LastName: Union[str, None] = Field(None)
+    Location: "VisitPushHeaderPCPLocation" = Field(None)
+    PhoneNumber: "VisitPushHeaderPCPPhoneNumber" = Field(None)
+    Type: Union[str, None] = Field(None)
+
+
+class VisitPushHeaderPCPAddress(RedoxAbstractModel):
+
+    City: Union[str, None] = Field(None)
+    Country: Union[str, None] = Field(None)
+    County: Union[str, None] = Field(None)
+    State: Union[str, None] = Field(None)
+    StreetAddress: Union[str, None] = Field(None)
+    ZIP: Union[str, None] = Field(None)
+
+
+class VisitPushHeaderPCPLocation(RedoxAbstractModel):
+
+    Department: Union[str, None] = Field(None)
+    Facility: Union[str, None] = Field(None)
+    Room: Union[str, None] = Field(None)
+    Type: Union[str, None] = Field(None)
+
+
+class VisitPushHeaderPCPPhoneNumber(RedoxAbstractModel):
+
+    Office: Union[str, None] = Field(None)
+
+
 class VisitPushHeaderPatient(RedoxAbstractModel):
 
     Demographics: "VisitPushHeaderPatientDemographics" = Field(None)
@@ -956,8 +1029,8 @@ class VisitPushHeaderPatient(RedoxAbstractModel):
 class VisitPushHeaderPatientDemographics(RedoxAbstractModel):
 
     Address: "VisitPushHeaderPatientDemographicsAddress" = Field(None)
-    DeathDateTime: Union[str, None] = Field(None)
     DOB: Union[str, None] = Field(None)
+    DeathDateTime: Union[str, None] = Field(None)
     EmailAddresses: List["VisitPushHeaderPatientDemographicsEmailAddress"] = Field(None)
     EthnicGroupCodes: List["VisitPushHeaderPatientDemographicsEthnicGroupCode"] = Field(
         None
@@ -973,8 +1046,8 @@ class VisitPushHeaderPatientDemographics(RedoxAbstractModel):
     Race: Union[str, None] = Field(None)
     RaceCodes: List["VisitPushHeaderPatientDemographicsRaceCode"] = Field(None)
     Religion: Union[str, None] = Field(None)
-    Sex: Union[str, None] = Field(None)
     SSN: Union[str, None] = Field(None)
+    Sex: Union[str, None] = Field(None)
 
 
 class VisitPushHeaderPatientDemographicsAddress(RedoxAbstractModel):
@@ -1070,49 +1143,13 @@ class VisitPushHeaderPatientOrganizationTypeAltCode(RedoxAbstractModel):
     Name: Union[str, None] = Field(None)
 
 
-class VisitPushHeaderPCP(RedoxAbstractModel):
-
-    Address: "VisitPushHeaderPCPAddress" = Field(None)
-    Credentials: List[str] = Field(None)
-    EmailAddresses: List[str] = Field(None)
-    FirstName: Union[str, None] = Field(None)
-    ID: Union[str, None] = Field(None)
-    IDType: Union[str, None] = Field(None)
-    LastName: Union[str, None] = Field(None)
-    Location: "VisitPushHeaderPCPLocation" = Field(None)
-    PhoneNumber: "VisitPushHeaderPCPPhoneNumber" = Field(None)
-    Type: Union[str, None] = Field(None)
-
-
-class VisitPushHeaderPCPAddress(RedoxAbstractModel):
-
-    City: Union[str, None] = Field(None)
-    Country: Union[str, None] = Field(None)
-    County: Union[str, None] = Field(None)
-    State: Union[str, None] = Field(None)
-    StreetAddress: Union[str, None] = Field(None)
-    ZIP: Union[str, None] = Field(None)
-
-
-class VisitPushHeaderPCPLocation(RedoxAbstractModel):
-
-    Department: Union[str, None] = Field(None)
-    Facility: Union[str, None] = Field(None)
-    Room: Union[str, None] = Field(None)
-    Type: Union[str, None] = Field(None)
-
-
-class VisitPushHeaderPCPPhoneNumber(RedoxAbstractModel):
-
-    Office: Union[str, None] = Field(None)
-
-
 class VisitPushHealthConcern(RedoxAbstractModel):
 
     AltCodes: List["VisitPushHealthConcernAltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
+    Comments: List["VisitPushHealthConcernComment"] = Field(None)
     EndDate: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
     StartDate: Union[str, None] = Field(None)
@@ -1125,6 +1162,11 @@ class VisitPushHealthConcernAltCode(RedoxAbstractModel):
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
+
+
+class VisitPushHealthConcernComment(RedoxAbstractModel):
+
+    Text: Union[str, None] = Field(None)
 
 
 class VisitPushImmunization(RedoxAbstractModel):
@@ -1221,8 +1263,8 @@ class VisitPushInsuranceInsured(RedoxAbstractModel):
     LastName: Union[str, None] = Field(None)
     MiddleName: Union[str, None] = Field(None)
     Relationship: Union[str, None] = Field(None)
-    Sex: Union[str, None] = Field(None)
     SSN: Union[str, None] = Field(None)
+    Sex: Union[str, None] = Field(None)
 
 
 class VisitPushInsuranceInsuredAddress(RedoxAbstractModel):
@@ -1364,6 +1406,15 @@ class VisitPushMedicationRouteAltCode(RedoxAbstractModel):
     Name: Union[str, None] = Field(None)
 
 
+class VisitPushMedicationSupplyOrder(RedoxAbstractModel):
+
+    EndDate: Union[str, None] = Field(None)
+    NumberOfRefillsRemaining: Union[Number, None] = Field(None)
+    Quantity: Union[str, None] = Field(None)
+    StartDate: Union[str, None] = Field(None)
+    Units: Union[str, None] = Field(None)
+
+
 class VisitPushMedicationsAdministered(RedoxAbstractModel):
 
     Dose: "VisitPushMedicationsAdministeredDose" = Field(None)
@@ -1426,15 +1477,6 @@ class VisitPushMedicationsAdministeredRouteAltCode(RedoxAbstractModel):
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
-
-
-class VisitPushMedicationSupplyOrder(RedoxAbstractModel):
-
-    EndDate: Union[str, None] = Field(None)
-    NumberOfRefillsRemaining: Union[Number, None] = Field(None)
-    Quantity: Union[str, None] = Field(None)
-    StartDate: Union[str, None] = Field(None)
-    Units: Union[str, None] = Field(None)
 
 
 class VisitPushMeta(RedoxAbstractModel):
@@ -1742,6 +1784,7 @@ class VisitPushProblem(RedoxAbstractModel):
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
     Comment: Union[str, None] = Field(None)
+    Comments: List["VisitPushProblemComment"] = Field(None)
     EndDate: Union[str, None] = Field(None)
     HealthStatus: "VisitPushProblemHealthStatus" = Field(None)
     Name: Union[str, None] = Field(None)
@@ -1772,6 +1815,11 @@ class VisitPushProblemCategoryAltCode(RedoxAbstractModel):
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
+
+
+class VisitPushProblemComment(RedoxAbstractModel):
+
+    Text: Union[str, None] = Field(None)
 
 
 class VisitPushProblemHealthStatus(RedoxAbstractModel):
@@ -1812,6 +1860,7 @@ class VisitPushProceduresObservation(RedoxAbstractModel):
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
+    Comments: List["VisitPushProceduresObservationComment"] = Field(None)
     DateTime: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
     Status: Union[str, None] = Field(None)
@@ -1824,6 +1873,11 @@ class VisitPushProceduresObservationAltCode(RedoxAbstractModel):
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
+
+
+class VisitPushProceduresObservationComment(RedoxAbstractModel):
+
+    Text: Union[str, None] = Field(None)
 
 
 class VisitPushProceduresObservationTargetSite(RedoxAbstractModel):
@@ -1849,6 +1903,7 @@ class VisitPushProceduresProcedure(RedoxAbstractModel):
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
+    Comments: List["VisitPushProceduresProcedureComment"] = Field(None)
     DateTime: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
     Status: Union[str, None] = Field(None)
@@ -1861,6 +1916,11 @@ class VisitPushProceduresProcedureAltCode(RedoxAbstractModel):
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
+
+
+class VisitPushProceduresProcedureComment(RedoxAbstractModel):
+
+    Text: Union[str, None] = Field(None)
 
 
 class VisitPushProceduresProcedureTargetSite(RedoxAbstractModel):
@@ -1886,6 +1946,7 @@ class VisitPushProceduresService(RedoxAbstractModel):
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
+    Comments: List["VisitPushProceduresServiceComment"] = Field(None)
     DateTime: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
     Status: Union[str, None] = Field(None)
@@ -1897,6 +1958,11 @@ class VisitPushProceduresServiceAltCode(RedoxAbstractModel):
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
+
+
+class VisitPushProceduresServiceComment(RedoxAbstractModel):
+
+    Text: Union[str, None] = Field(None)
 
 
 class VisitPushReasonForVisit(RedoxAbstractModel):
@@ -1942,6 +2008,7 @@ class VisitPushResolvedProblem(RedoxAbstractModel):
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
     Comment: Union[str, None] = Field(None)
+    Comments: List["VisitPushResolvedProblemComment"] = Field(None)
     EndDate: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
     StartDate: Union[str, None] = Field(None)
@@ -1973,6 +2040,11 @@ class VisitPushResolvedProblemCategoryAltCode(RedoxAbstractModel):
     Name: Union[str, None] = Field(None)
 
 
+class VisitPushResolvedProblemComment(RedoxAbstractModel):
+
+    Text: Union[str, None] = Field(None)
+
+
 class VisitPushResolvedProblemStatus(RedoxAbstractModel):
 
     Code: Union[str, None] = Field(None)
@@ -1987,9 +2059,11 @@ class VisitPushResult(RedoxAbstractModel):
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
+    Encounter: "VisitPushResultEncounter" = Field(None)
     Name: Union[str, None] = Field(None)
     Observations: List["VisitPushResultObservation"] = Field(None)
     Producer: "VisitPushResultProducer" = Field(None)
+    Specimen: "VisitPushResultSpecimen" = Field(None)
     Status: Union[str, None] = Field(None)
 
 
@@ -2001,13 +2075,45 @@ class VisitPushResultAltCode(RedoxAbstractModel):
     Name: Union[str, None] = Field(None)
 
 
+class VisitPushResultEncounter(RedoxAbstractModel):
+
+    DateTime: Union[str, None] = Field(None)
+    EndDateTime: Union[str, None] = Field(None)
+    Identifiers: List["VisitPushResultEncounterIdentifier"] = Field(None)
+    Type: "VisitPushResultEncounterType" = Field(None)
+
+
+class VisitPushResultEncounterIdentifier(RedoxAbstractModel):
+
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class VisitPushResultEncounterType(RedoxAbstractModel):
+
+    AltCodes: List["VisitPushResultEncounterTypeAltCode"] = Field(None)
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
+class VisitPushResultEncounterTypeAltCode(RedoxAbstractModel):
+
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
 class VisitPushResultObservation(RedoxAbstractModel):
 
     AltCodes: List["VisitPushResultObservationAltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
-    CodedValue: "VisitPushResultObservationCodedValue" = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
+    CodedValue: "VisitPushResultObservationCodedValue" = Field(None)
+    Comments: List["VisitPushResultObservationComment"] = Field(None)
     DateTime: Union[str, None] = Field(None)
     Interpretation: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
@@ -2043,6 +2149,11 @@ class VisitPushResultObservationCodedValueAltCode(RedoxAbstractModel):
     Name: Union[str, None] = Field(None)
 
 
+class VisitPushResultObservationComment(RedoxAbstractModel):
+
+    Text: Union[str, None] = Field(None)
+
+
 class VisitPushResultObservationReferenceRange(RedoxAbstractModel):
 
     High: Union[str, None] = Field(None)
@@ -2068,6 +2179,30 @@ class VisitPushResultProducerAddress(RedoxAbstractModel):
     ZIP: Union[str, None] = Field(None)
 
 
+class VisitPushResultSpecimen(RedoxAbstractModel):
+
+    CollectionDateTime: Union[None] = Field(None)
+    Identifiers: List[str] = Field(None)
+    Source: "VisitPushResultSpecimenSource" = Field(None)
+    TargetSite: "VisitPushResultSpecimenTargetSite" = Field(None)
+
+
+class VisitPushResultSpecimenSource(RedoxAbstractModel):
+
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
+class VisitPushResultSpecimenTargetSite(RedoxAbstractModel):
+
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
 class VisitPushSocialHistory(RedoxAbstractModel):
 
     Observations: List["VisitPushSocialHistoryObservation"] = Field(None)
@@ -2081,6 +2216,7 @@ class VisitPushSocialHistoryObservation(RedoxAbstractModel):
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
+    Comments: List["VisitPushSocialHistoryObservationComment"] = Field(None)
     EndDate: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
     StartDate: Union[str, None] = Field(None)
@@ -2094,6 +2230,11 @@ class VisitPushSocialHistoryObservationAltCode(RedoxAbstractModel):
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
+
+
+class VisitPushSocialHistoryObservationComment(RedoxAbstractModel):
+
+    Text: Union[str, None] = Field(None)
 
 
 class VisitPushSocialHistoryObservationValue(RedoxAbstractModel):
@@ -2115,9 +2256,15 @@ class VisitPushSocialHistoryObservationValueAltCode(RedoxAbstractModel):
 
 class VisitPushSocialHistoryPregnancy(RedoxAbstractModel):
 
+    Comments: List["VisitPushSocialHistoryPregnancyComment"] = Field(None)
     EndDate: Union[str, None] = Field(None)
     EstimatedDelivery: Union[str, None] = Field(None)
     StartDate: Union[str, None] = Field(None)
+
+
+class VisitPushSocialHistoryPregnancyComment(RedoxAbstractModel):
+
+    Text: Union[str, None] = Field(None)
 
 
 class VisitPushSocialHistoryTobaccoUse(RedoxAbstractModel):
@@ -2126,6 +2273,7 @@ class VisitPushSocialHistoryTobaccoUse(RedoxAbstractModel):
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
+    Comments: List["VisitPushSocialHistoryTobaccoUseComment"] = Field(None)
     EndDate: Union[str, None] = Field(None)
     IsSmokingStatus: Union[bool, None] = Field(None)
     Name: Union[str, None] = Field(None)
@@ -2140,6 +2288,11 @@ class VisitPushSocialHistoryTobaccoUseAltCode(RedoxAbstractModel):
     Name: Union[str, None] = Field(None)
 
 
+class VisitPushSocialHistoryTobaccoUseComment(RedoxAbstractModel):
+
+    Text: Union[str, None] = Field(None)
+
+
 class VisitPushVitalSign(RedoxAbstractModel):
 
     DateTime: Union[str, None] = Field(None)
@@ -2152,6 +2305,7 @@ class VisitPushVitalSignObservation(RedoxAbstractModel):
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
+    Comments: List["VisitPushVitalSignObservationComment"] = Field(None)
     DateTime: Union[str, None] = Field(None)
     Interpretation: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
@@ -2166,6 +2320,11 @@ class VisitPushVitalSignObservationAltCode(RedoxAbstractModel):
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
+
+
+class VisitPushVitalSignObservationComment(RedoxAbstractModel):
+
+    Text: Union[str, None] = Field(None)
 
 
 VisitPush.update_forward_refs()
@@ -2259,12 +2418,16 @@ VisitPushReasonForVisitCategory.update_forward_refs()
 VisitPushResolvedProblem.update_forward_refs()
 VisitPushResolvedProblemCategory.update_forward_refs()
 VisitPushResult.update_forward_refs()
+VisitPushResultEncounter.update_forward_refs()
+VisitPushResultEncounterType.update_forward_refs()
 VisitPushResultObservation.update_forward_refs()
 VisitPushResultObservationCodedValue.update_forward_refs()
 VisitPushResultProducer.update_forward_refs()
+VisitPushResultSpecimen.update_forward_refs()
 VisitPushSocialHistory.update_forward_refs()
 VisitPushSocialHistoryObservation.update_forward_refs()
 VisitPushSocialHistoryObservationValue.update_forward_refs()
+VisitPushSocialHistoryPregnancy.update_forward_refs()
 VisitPushSocialHistoryTobaccoUse.update_forward_refs()
 VisitPushVitalSign.update_forward_refs()
 VisitPushVitalSignObservation.update_forward_refs()

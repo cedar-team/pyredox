@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyredox"
-version = "0.1.0-alpha.2"
+version = "1.0.0"
 description = ""
 authors = ["Mike Mabey <mike.mabey@cedar.com>"]
 homepage = "https://github.com/cedar-team/pyredox"

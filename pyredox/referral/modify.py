@@ -102,8 +102,8 @@ class ModifyPatientDemographics(RedoxAbstractModel):
 
     Address: "ModifyPatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
-    DeathDateTime: Union[str, None] = Field(None)
     DOB: Union[str, None] = Field(None)
+    DeathDateTime: Union[str, None] = Field(None)
     EmailAddresses: List[str] = Field(None)
     FirstName: Union[str, None] = Field(None)
     IsDeceased: Union[bool, None] = Field(None)
@@ -115,8 +115,8 @@ class ModifyPatientDemographics(RedoxAbstractModel):
     PhoneNumber: "ModifyPatientDemographicsPhoneNumber" = Field(None)
     Race: Union[str, None] = Field(None)
     Religion: Union[str, None] = Field(None)
-    Sex: Union[str, None] = Field(None)
     SSN: Union[str, None] = Field(None)
+    Sex: Union[str, None] = Field(None)
 
 
 class ModifyPatientDemographicsAddress(RedoxAbstractModel):
@@ -148,9 +148,9 @@ class ModifyPatientGuarantor(RedoxAbstractModel):
     Number: Union[str, None] = Field(None)
     PhoneNumber: "ModifyPatientGuarantorPhoneNumber" = Field(None)
     RelationToPatient: Union[str, None] = Field(None)
+    SSN: Union[str, None] = Field(None)
     Sex: Union[str, None] = Field(None)
     Spouse: "ModifyPatientGuarantorSpouse" = Field(None)
-    SSN: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
@@ -244,8 +244,8 @@ class ModifyPatientInsuranceInsured(RedoxAbstractModel):
     LastName: Union[str, None] = Field(None)
     MiddleName: Union[str, None] = Field(None)
     Relationship: Union[str, None] = Field(None)
-    Sex: Union[str, None] = Field(None)
     SSN: Union[str, None] = Field(None)
+    Sex: Union[str, None] = Field(None)
 
 
 class ModifyPatientInsuranceInsuredAddress(RedoxAbstractModel):
@@ -287,8 +287,8 @@ class ModifyReferral(RedoxAbstractModel):
     Priority: Union[str, None] = Field(None)
     Procedures: List["ModifyReferralProcedure"] = Field(None)
     ProcessDateTime: Union[str, None] = Field(None)
-    Providers: List["ModifyReferralProvider"] = Field(None)
     ProviderSpecialty: Union[str, None] = Field(None)
+    Providers: List["ModifyReferralProvider"] = Field(None)
     Reason: Union[str, None] = Field(None)
     Status: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
