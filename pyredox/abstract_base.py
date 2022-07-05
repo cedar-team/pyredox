@@ -76,3 +76,9 @@ class GenericRedoxAbstractModel(RedoxAbstractModel):
             raise AttributeError(f"Couldn't find Redox event class for {class_name}")
 
         return event_class(**self.dict())
+
+    def dict(self, *args, **kwargs):
+        return self.to_redox().dict(*args, **kwargs)
+
+    def json(self, *args, **kwargs):
+        return self.to_redox().json(*args, **kwargs)
