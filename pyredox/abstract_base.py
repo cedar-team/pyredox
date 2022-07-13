@@ -27,7 +27,7 @@ class RedoxAbstractModel(BaseModel, abc.ABC):
         skip_defaults: bool = None,
         exclude_unset: bool = True,  # Differs from default
         exclude_defaults: bool = False,
-        exclude_none: bool = False,
+        exclude_none: bool = True,  # Differs from default
     ):
         return super().dict(
             include=include,
@@ -75,7 +75,7 @@ class GenericRedoxAbstractModel(RedoxAbstractModel):
         if not event_class:
             raise AttributeError(f"Couldn't find Redox event class for {class_name}")
 
-        return event_class(**self.dict())
+        return event_class(**super().dict())
 
     def dict(self, *args, **kwargs):
         return self.to_redox().dict(*args, **kwargs)
