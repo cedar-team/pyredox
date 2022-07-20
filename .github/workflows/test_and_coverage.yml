@@ -1,4 +1,7 @@
+name: test-and-coverage
+
 on: [pull_request]
+
 jobs:
   run-tests-get-coverage:
     runs-on: ubuntu-latest
