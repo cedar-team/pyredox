@@ -45,9 +45,11 @@ skip_missing_interpreters = True
 basepython = python3
 
 [testenv]
+passenv = GITHUB_*
 deps =
     pytest
     coveralls
 commands =
     coverage run --source pyredox -m pytest
+    coveralls
 """
