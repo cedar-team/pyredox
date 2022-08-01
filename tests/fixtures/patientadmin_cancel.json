@@ -26,8 +26,7 @@
       },
       "Transmission": {
          "ID": 12414
-      },
-      "FacilityCode": null
+      }
    },
    "Patient": {
       "Identifiers": [
@@ -52,15 +51,9 @@
          "SSN": "101-01-0001",
          "Sex": "Male",
          "Race": "White",
-         "IsHispanic": null,
-         "Religion": null,
          "MaritalStatus": "Single",
-         "IsDeceased": null,
-         "DeathDateTime": null,
          "PhoneNumber": {
-            "Home": "+18088675301",
-            "Office": null,
-            "Mobile": null
+            "Home": "+18088675301"
          },
          "EmailAddresses": [],
          "Language": "en",
@@ -78,7 +71,6 @@
       "Contacts": [
          {
             "FirstName": "Barbara",
-            "MiddleName": null,
             "LastName": "Bixby",
             "Address": {
                "StreetAddress": "4762 Hickory Street",
@@ -106,9 +98,7 @@
          {
             "Code": "R07.0",
             "Codeset": "ICD-10",
-            "Name": "Pain in throat",
-            "Type": null,
-            "DocumentedDateTime": null
+            "Name": "Pain in throat"
          }
       ],
       "Allergies": [
@@ -117,11 +107,7 @@
             "Codeset": "RxNorm",
             "Name": "Penicillin",
             "Type": {
-               "Code": null,
-               "Codeset": null,
-               "Name": null
             },
-            "OnsetDateTime": null,
             "Reaction": [
                {
                   "Code": "28926001",
@@ -135,11 +121,7 @@
                }
             ],
             "Severity": {
-               "Code": null,
-               "Codeset": null,
-               "Name": null
-            },
-            "Status": null
+            }
          }
       ],
       "PCP": {
@@ -164,24 +146,16 @@
             "Office": "+16085551234"
          },
          "Location": {
-            "Type": null,
-            "Facility": null,
-            "Department": null,
-            "Room": null
          }
       }
    },
    "Visit": {
       "VisitNumber": "1234",
-      "AccountNumber": null,
       "PatientClass": "Inpatient",
       "VisitDateTime": "2022-03-31T19:07:14.336Z",
       "Duration": 15,
       "Reason": "Check up",
       "Instructions": [],
-      "Balance": null,
-      "DiagnosisRelatedGroup": null,
-      "DiagnosisRelatedGroupType": null,
       "AttendingProvider": {
          "ID": "4356789876",
          "IDType": "NPI",
@@ -203,85 +177,36 @@
             "Office": "+16085551234"
          },
          "Location": {
-            "Type": null,
-            "Facility": null,
-            "Department": null,
-            "Room": null
          }
       },
       "ConsultingProvider": {
-         "ID": null,
-         "IDType": null,
-         "FirstName": null,
-         "LastName": null,
          "Credentials": [],
          "Address": {
-            "StreetAddress": null,
-            "City": null,
-            "State": null,
-            "ZIP": null,
-            "County": null,
-            "Country": null
          },
          "EmailAddresses": [],
          "PhoneNumber": {
-            "Office": null
          },
          "Location": {
-            "Type": null,
-            "Facility": null,
-            "Department": null,
-            "Room": null
          }
       },
       "ReferringProvider": {
-         "ID": null,
-         "IDType": null,
-         "FirstName": null,
-         "LastName": null,
          "Credentials": [],
          "Address": {
-            "StreetAddress": null,
-            "City": null,
-            "State": null,
-            "ZIP": null,
-            "County": null,
-            "Country": null
          },
          "EmailAddresses": [],
          "PhoneNumber": {
-            "Office": null
          },
          "Location": {
-            "Type": null,
-            "Facility": null,
-            "Department": null,
-            "Room": null
          }
       },
       "AdmittingProvider": {
-         "ID": null,
-         "IDType": null,
-         "FirstName": null,
-         "LastName": null,
          "Credentials": [],
          "Address": {
-            "StreetAddress": null,
-            "City": null,
-            "State": null,
-            "ZIP": null,
-            "County": null,
-            "Country": null
          },
          "EmailAddresses": [],
          "PhoneNumber": {
-            "Office": null
          },
          "Location": {
-            "Type": null,
-            "Facility": null,
-            "Department": null,
-            "Room": null
          }
       },
       "AdditionalStaff": [],
@@ -303,11 +228,7 @@
       "Guarantor": {
          "Number": "10001910",
          "FirstName": "Kent",
-         "MiddleName": null,
          "LastName": "Bixby",
-         "SSN": null,
-         "DOB": null,
-         "Sex": null,
          "Spouse": {
             "FirstName": "Barbara",
             "LastName": "Bixby"
@@ -321,12 +242,8 @@
             "Country": "USA"
          },
          "PhoneNumber": {
-            "Home": null,
-            "Business": null,
-            "Mobile": null
          },
          "EmailAddresses": [],
-         "Type": null,
          "RelationToPatient": "Father",
          "Employer": {
             "Name": "Accelerator Labs",
@@ -346,13 +263,10 @@
             "Plan": {
                "ID": "31572",
                "IDType": "Payor ID",
-               "Name": "HMO Deductible Plan",
-               "Type": null
+               "Name": "HMO Deductible Plan"
             },
-            "MemberNumber": null,
             "Company": {
                "ID": "60054",
-               "IDType": null,
                "Name": "aetna (60054 0131)",
                "Address": {
                   "StreetAddress": "PO Box 14080",
@@ -369,25 +283,9 @@
             "EffectiveDate": "2015-01-01",
             "ExpirationDate": "2020-12-31",
             "PolicyNumber": "9140860055",
-            "Priority": null,
-            "AgreementType": null,
-            "CoverageType": null,
             "Insured": {
                "Identifiers": [],
-               "LastName": null,
-               "MiddleName": null,
-               "FirstName": null,
-               "SSN": null,
-               "Relationship": null,
-               "DOB": null,
-               "Sex": null,
                "Address": {
-                  "StreetAddress": null,
-                  "City": null,
-                  "State": null,
-                  "ZIP": null,
-                  "County": null,
-                  "Country": null
                }
             }
          }

@@ -26,23 +26,15 @@
       "Transmission": {
          "ID": 12414
       },
-      "FacilityCode": null,
       "IsIncomplete": false
    },
    "Visits": [
       {
          "VisitNumber": "1234",
-         "AccountNumber": null,
          "VisitDateTime": "2016-08-01T10:00:00Z",
-         "PatientClass": null,
-         "Status": null,
          "Duration": 15,
          "Reason": "Follow Up",
          "CancelReason": "Conflicting appointment",
-         "LastUpdated": null,
-         "ScheduledDateTime": null,
-         "CancelDateTime": null,
-         "Type": null,
          "Instructions": [],
          "AttendingProvider": {
             "ID": "4356789876",
@@ -65,92 +57,40 @@
                "Office": "+16085551234"
             },
             "Location": {
-               "Type": null,
-               "Facility": null,
-               "Department": null,
-               "Room": null
             }
          },
          "ConsultingProvider": {
-            "ID": null,
-            "IDType": null,
-            "FirstName": null,
-            "LastName": null,
             "Credentials": [],
             "Address": {
-               "StreetAddress": null,
-               "City": null,
-               "State": null,
-               "ZIP": null,
-               "County": null,
-               "Country": null
             },
             "EmailAddresses": [],
             "PhoneNumber": {
-               "Office": null
             },
             "Location": {
-               "Type": null,
-               "Facility": null,
-               "Department": null,
-               "Room": null
             }
          },
          "ReferringProvider": {
-            "ID": null,
-            "IDType": null,
-            "FirstName": null,
-            "LastName": null,
             "Credentials": [],
             "Address": {
-               "StreetAddress": null,
-               "City": null,
-               "State": null,
-               "ZIP": null,
-               "County": null,
-               "Country": null
             },
             "EmailAddresses": [],
             "PhoneNumber": {
-               "Office": null
             },
             "Location": {
-               "Type": null,
-               "Facility": null,
-               "Department": null,
-               "Room": null
             }
          },
          "VisitProvider": {
-            "ID": null,
-            "IDType": null,
-            "FirstName": null,
-            "LastName": null,
             "Credentials": [],
             "Address": {
-               "StreetAddress": null,
-               "City": null,
-               "State": null,
-               "ZIP": null,
-               "County": null,
-               "Country": null
             },
             "EmailAddresses": [],
             "PhoneNumber": {
-               "Office": null
             },
             "Location": {
-               "Type": null,
-               "Facility": null,
-               "Department": null,
-               "Room": null
             }
          },
          "Location": {
-            "Type": null,
-            "Facility": null,
-            "Department": "Clinic A",
-            "Room": null
+            "Department": "Clinic A"
          },
          "AdditionalStaff": [],
          "Diagnoses": [],
@@ -178,15 +118,9 @@
                "SSN": "101-01-0001",
                "Sex": "Male",
                "Race": "White",
-               "IsHispanic": null,
-               "Religion": null,
                "MaritalStatus": "Single",
-               "IsDeceased": null,
-               "DeathDateTime": null,
                "PhoneNumber": {
-                  "Home": "+18088675301",
-                  "Office": null,
-                  "Mobile": null
+                  "Home": "+18088675301"
                },
                "EmailAddresses": [],
                "Language": "en",
@@ -206,17 +140,9 @@
       },
       {
          "VisitNumber": "1235",
-         "AccountNumber": null,
          "VisitDateTime": "2016-08-01T11:00:00Z",
-         "PatientClass": null,
-         "Status": null,
          "Duration": 15,
          "Reason": "Follow Up",
-         "CancelReason": null,
-         "LastUpdated": null,
-         "ScheduledDateTime": null,
-         "CancelDateTime": null,
-         "Type": null,
          "Instructions": [],
          "AttendingProvider": {
             "ID": "4236464757",
@@ -239,92 +165,40 @@
                "Office": "+13145554321"
             },
             "Location": {
-               "Type": null,
-               "Facility": null,
-               "Department": null,
-               "Room": null
             }
          },
          "ConsultingProvider": {
-            "ID": null,
-            "IDType": null,
-            "FirstName": null,
-            "LastName": null,
             "Credentials": [],
             "Address": {
-               "StreetAddress": null,
-               "City": null,
-               "State": null,
-               "ZIP": null,
-               "County": null,
-               "Country": null
             },
             "EmailAddresses": [],
             "PhoneNumber": {
-               "Office": null
             },
             "Location": {
-               "Type": null,
-               "Facility": null,
-               "Department": null,
-               "Room": null
             }
          },
          "ReferringProvider": {
-            "ID": null,
-            "IDType": null,
-            "FirstName": null,
-            "LastName": null,
             "Credentials": [],
             "Address": {
-               "StreetAddress": null,
-               "City": null,
-               "State": null,
-               "ZIP": null,
-               "County": null,
-               "Country": null
             },
             "EmailAddresses": [],
             "PhoneNumber": {
-               "Office": null
             },
             "Location": {
-               "Type": null,
-               "Facility": null,
-               "Department": null,
-               "Room": null
             }
          },
          "VisitProvider": {
-            "ID": null,
-            "IDType": null,
-            "FirstName": null,
-            "LastName": null,
             "Credentials": [],
             "Address": {
-               "StreetAddress": null,
-               "City": null,
-               "State": null,
-               "ZIP": null,
-               "County": null,
-               "Country": null
             },
             "EmailAddresses": [],
             "PhoneNumber": {
-               "Office": null
             },
             "Location": {
-               "Type": null,
-               "Facility": null,
-               "Department": null,
-               "Room": null
             }
          },
          "Location": {
-            "Type": null,
-            "Facility": null,
-            "Department": "Clinic A",
-            "Room": null
+            "Department": "Clinic A"
          },
          "AdditionalStaff": [],
          "Diagnoses": [],
@@ -346,17 +220,12 @@
             ],
             "Demographics": {
                "FirstName": "Barbara",
-               "MiddleName": null,
                "LastName": "Bixby",
                "DOB": "1982-07-24",
                "SSN": "202-02-0002",
                "Sex": "Female",
                "Race": "White",
-               "IsHispanic": null,
-               "Religion": null,
                "MaritalStatus": "Married",
-               "IsDeceased": null,
-               "DeathDateTime": null,
                "PhoneNumber": {
                   "Home": "+18088675303",
                   "Office": "+17077543758",
@@ -382,17 +251,9 @@
       },
       {
          "VisitNumber": "1236",
-         "AccountNumber": null,
          "VisitDateTime": "2016-08-01T12:00:00Z",
-         "PatientClass": null,
-         "Status": null,
          "Duration": 15,
          "Reason": "Follow Up",
-         "CancelReason": null,
-         "LastUpdated": null,
-         "ScheduledDateTime": null,
-         "CancelDateTime": null,
-         "Type": null,
          "Instructions": [],
          "AttendingProvider": {
             "ID": "2434534567",
@@ -416,92 +277,40 @@
                "Office": "+16085559999"
             },
             "Location": {
-               "Type": null,
-               "Facility": null,
-               "Department": null,
-               "Room": null
             }
          },
          "ConsultingProvider": {
-            "ID": null,
-            "IDType": null,
-            "FirstName": null,
-            "LastName": null,
             "Credentials": [],
             "Address": {
-               "StreetAddress": null,
-               "City": null,
-               "State": null,
-               "ZIP": null,
-               "County": null,
-               "Country": null
             },
             "EmailAddresses": [],
             "PhoneNumber": {
-               "Office": null
             },
             "Location": {
-               "Type": null,
-               "Facility": null,
-               "Department": null,
-               "Room": null
             }
          },
          "ReferringProvider": {
-            "ID": null,
-            "IDType": null,
-            "FirstName": null,
-            "LastName": null,
             "Credentials": [],
             "Address": {
-               "StreetAddress": null,
-               "City": null,
-               "State": null,
-               "ZIP": null,
-               "County": null,
-               "Country": null
             },
             "EmailAddresses": [],
             "PhoneNumber": {
-               "Office": null
             },
             "Location": {
-               "Type": null,
-               "Facility": null,
-               "Department": null,
-               "Room": null
             }
          },
          "VisitProvider": {
-            "ID": null,
-            "IDType": null,
-            "FirstName": null,
-            "LastName": null,
             "Credentials": [],
             "Address": {
-               "StreetAddress": null,
-               "City": null,
-               "State": null,
-               "ZIP": null,
-               "County": null,
-               "Country": null
             },
             "EmailAddresses": [],
             "PhoneNumber": {
-               "Office": null
             },
             "Location": {
-               "Type": null,
-               "Facility": null,
-               "Department": null,
-               "Room": null
             }
          },
          "Location": {
-            "Type": null,
-            "Facility": null,
-            "Department": "Clinic A",
-            "Room": null
+            "Department": "Clinic A"
          },
          "AdditionalStaff": [],
          "Diagnoses": [],
@@ -523,21 +332,15 @@
             ],
             "Demographics": {
                "FirstName": "Walter",
-               "MiddleName": null,
                "LastName": "Carthwright",
                "DOB": "1945-03-04",
                "SSN": "303-03-0003",
                "Sex": "Male",
                "Race": "Black",
                "IsHispanic": true,
-               "Religion": null,
                "MaritalStatus": "Widowed",
-               "IsDeceased": null,
-               "DeathDateTime": null,
                "PhoneNumber": {
-                  "Home": "+18088675310",
-                  "Office": null,
-                  "Mobile": null
+                  "Home": "+18088675310"
                },
                "EmailAddresses": [
                   "wc1945@test.net"

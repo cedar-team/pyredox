@@ -26,12 +26,10 @@
       "Transmission": {
          "ID": 12414
       },
-      "FacilityCode": null,
       "IsIncomplete": false
    },
    "AvailableSlots": [
       {
-         "ID": null,
          "DateTime": "2016-08-01T10:00:00Z",
          "Reason": "Follow Up",
          "Duration": 15,
@@ -56,22 +54,14 @@
                "Office": "+16085551234"
             },
             "Location": {
-               "Type": null,
-               "Facility": null,
-               "Department": null,
-               "Room": null
             }
          },
          "Location": {
-            "Type": null,
-            "Facility": null,
-            "Department": "Clinic A",
-            "Room": null
+            "Department": "Clinic A"
          },
          "Notes": []
       },
       {
-         "ID": null,
          "DateTime": "2016-08-01T11:00:00Z",
          "Reason": "Follow Up",
          "Duration": 15,
@@ -96,22 +86,14 @@
                "Office": "+16085551234"
             },
             "Location": {
-               "Type": null,
-               "Facility": null,
-               "Department": null,
-               "Room": null
             }
          },
          "Location": {
-            "Type": null,
-            "Facility": null,
-            "Department": "Clinic A",
-            "Room": null
+            "Department": "Clinic A"
          },
          "Notes": []
       },
       {
-         "ID": null,
          "DateTime": "2016-08-01T12:00:00Z",
          "Reason": "Follow Up",
          "Duration": 15,
@@ -136,22 +118,14 @@
                "Office": "+16085551234"
             },
             "Location": {
-               "Type": null,
-               "Facility": null,
-               "Department": null,
-               "Room": null
             }
          },
          "Location": {
-            "Type": null,
-            "Facility": null,
-            "Department": "Clinic A",
-            "Room": null
+            "Department": "Clinic A"
          },
          "Notes": []
       },
       {
-         "ID": null,
          "DateTime": "2016-08-01T13:00:00Z",
          "Reason": "Follow Up",
          "Duration": 15,
@@ -176,17 +150,10 @@
                "Office": "+16085551234"
             },
             "Location": {
-               "Type": null,
-               "Facility": null,
-               "Department": null,
-               "Room": null
             }
          },
          "Location": {
-            "Type": null,
-            "Facility": null,
-            "Department": "Clinic A",
-            "Room": null
+            "Department": "Clinic A"
          },
          "Notes": []
       }

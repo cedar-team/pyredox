@@ -25,8 +25,7 @@
       },
       "Transmission": {
          "ID": 12414
-      },
-      "FacilityCode": null
+      }
    },
    "Patient": {
       "Identifiers": [
@@ -51,15 +50,9 @@
          "SSN": "101-01-0001",
          "Sex": "Male",
          "Race": "White",
-         "IsHispanic": null,
-         "Religion": null,
          "MaritalStatus": "Single",
-         "IsDeceased": null,
-         "DeathDateTime": null,
          "PhoneNumber": {
-            "Home": "+18088675301",
-            "Office": null,
-            "Mobile": null
+            "Home": "+18088675301"
          },
          "EmailAddresses": [],
          "Language": "en",
@@ -91,14 +84,10 @@
    ],
    "Visit": {
       "VisitNumber": "1234",
-      "AccountNumber": null,
       "VisitDateTime": "2022-04-26T19:12:30.461Z",
-      "PatientClass": null,
-      "Status": null,
       "Duration": 15,
       "Reason": "Check up",
       "NoShowReason": "Car broke down.",
-      "Type": null,
       "Instructions": [],
       "AttendingProvider": {
          "ID": "4356789876",
@@ -121,85 +110,36 @@
             "Office": "+16085551234"
          },
          "Location": {
-            "Type": null,
-            "Facility": null,
-            "Department": null,
-            "Room": null
          }
       },
       "ConsultingProvider": {
-         "ID": null,
-         "IDType": null,
-         "FirstName": null,
-         "LastName": null,
          "Credentials": [],
          "Address": {
-            "StreetAddress": null,
-            "City": null,
-            "State": null,
-            "ZIP": null,
-            "County": null,
-            "Country": null
          },
          "EmailAddresses": [],
          "PhoneNumber": {
-            "Office": null
          },
          "Location": {
-            "Type": null,
-            "Facility": null,
-            "Department": null,
-            "Room": null
          }
       },
       "ReferringProvider": {
-         "ID": null,
-         "IDType": null,
-         "FirstName": null,
-         "LastName": null,
          "Credentials": [],
          "Address": {
-            "StreetAddress": null,
-            "City": null,
-            "State": null,
-            "ZIP": null,
-            "County": null,
-            "Country": null
          },
          "EmailAddresses": [],
          "PhoneNumber": {
-            "Office": null
          },
          "Location": {
-            "Type": null,
-            "Facility": null,
-            "Department": null,
-            "Room": null
          }
       },
       "VisitProvider": {
-         "ID": null,
-         "IDType": null,
-         "FirstName": null,
-         "LastName": null,
          "Credentials": [],
          "Address": {
-            "StreetAddress": null,
-            "City": null,
-            "State": null,
-            "ZIP": null,
-            "County": null,
-            "Country": null
          },
          "EmailAddresses": [],
          "PhoneNumber": {
-            "Office": null
          },
          "Location": {
-            "Type": null,
-            "Facility": null,
-            "Department": null,
-            "Room": null
          }
       },
       "Location": {
@@ -213,9 +153,7 @@
          {
             "Code": "R07.0",
             "Codeset": "ICD-10",
-            "Name": "Pain in throat",
-            "Type": null,
-            "DocumentedDateTime": null
+            "Name": "Pain in throat"
          }
       ],
       "Equipment": []
