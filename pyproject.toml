@@ -51,5 +51,4 @@ deps =
     coveralls
 commands =
     coverage run --source pyredox -m pytest -vv
-    coveralls --service=github
 """
