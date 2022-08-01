@@ -1,6 +1,10 @@
 name: test-and-coverage
 
-on: [pull_request]
+on:
+  pull_request:
+  push:
+    branches:
+      - 'main'
 
 jobs:
   run-tests-get-coverage:
@@ -20,4 +24,31 @@ jobs:
         run: poetry install
 
       - name: Run tests
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COVERALLS_FLAG_NAME: ${{ matrix.python-version }}
+          COVERALLS_PARALLEL: true
         run: poetry run tox
+
+  coveralls:
+    name: Indicate completion to coveralls.io
+    needs: run-tests-get-coverage
+    runs-on: ubuntu-latest
+    container: python:3-slim
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Python and Poetry
+        uses: ITProKyle/action-setup-python@v0.1.0 # it is HIGHLY recommended to pin this to a release
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Set up poetry virtualenv
+        run: poetry install
+
+      - name: Signal Finished
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pip3 install --upgrade coveralls
+          poetry run coveralls --service=github --finish
