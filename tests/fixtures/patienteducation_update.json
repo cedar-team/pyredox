@@ -1,0 +1,180 @@
+{
+  "Meta": {
+    "DataModel": "PatientEducation",
+    "EventType": "Update",
+    "EventDateTime": "2022-08-01T18:38:57.072Z",
+    "Test": true,
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
+    },
+    "Destinations": [
+      {
+        "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
+        "Name": "Redox EMR"
+      }
+    ],
+    "Logs": [
+      {
+        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
+        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
+      }
+    ],
+    "Message": {
+      "ID": 5565
+    },
+    "Transmission": {
+      "ID": 12414
+    }
+  },
+  "Patient": {
+    "Identifiers": [
+      {
+        "ID": "994002",
+        "IDType": "MRN"
+      }
+    ],
+    "Demographics": {
+      "FirstName": "Ase",
+      "LastName": "Nzesi",
+      "DOB": "1978-01-25",
+      "SSN": "111-22-3333",
+      "Sex": "Female",
+      "Race": "Black",
+      "IsHispanic": false,
+      "MaritalStatus": "Married",
+      "IsDeceased": false,
+      "PhoneNumber": {
+        "Home": "+18088675310"
+      },
+      "EmailAddresses": [
+        "[email\u00a0protected]"
+      ],
+      "Language": "en",
+      "Citizenship": [
+        "US",
+        "TH",
+        "CR"
+      ],
+      "Address": {
+        "StreetAddress": "Suan Dok Soi 6/3",
+        "City": "Chaing Mai",
+        "State": "Chang Wat Chang Mai",
+        "ZIP": "50200",
+        "County": "Amphoe Mueang Chiang Mai",
+        "Country": "Thailand"
+      }
+    },
+    "Notes": []
+  },
+  "Visit": {
+    "VisitNumber": "3498128348",
+    "AccountNumber": "12945932",
+    "PatientClass": "Inpatient",
+    "VisitDateTime": "2022-08-01T18:38:57.048Z",
+    "AttendingProvider": {
+      "ID": "426986",
+      "IDType": "NCT",
+      "FirstName": "Krittiya",
+      "LastName": "Somaketarin",
+      "Credentials": [
+        "MD"
+      ],
+      "Address": {
+        "StreetAddress": "8 Bunrueang Rit Rd",
+        "City": "Chiang Mai",
+        "State": "Chang Wat Chiang Mai",
+        "ZIP": "50200",
+        "County": "Amphoe Mueang Chiang Mai",
+        "Country": "Thailand"
+      },
+      "EmailAddresses": [],
+      "PhoneNumber": {
+        "Office": "+6653920300"
+      },
+      "Location": {
+        "Type": "Department",
+        "Facility": "Medical Center",
+        "Department": "Obstetrics and Gynaecology",
+        "Room": "446"
+      }
+    },
+    "ConsultingProvider": {
+      "Credentials": [],
+      "Address": {},
+      "EmailAddresses": [],
+      "PhoneNumber": {},
+      "Location": {}
+    },
+    "ReferringProvider": {
+      "ID": "12981294",
+      "IDType": "NCT",
+      "FirstName": "Carol",
+      "LastName": "Fujiyoshi",
+      "Credentials": [
+        "MD"
+      ],
+      "Address": {
+        "StreetAddress": "3-3420 Kuhio Hwy Suite B",
+        "City": "Lihue",
+        "State": "HI",
+        "ZIP": "96766",
+        "County": "Kauai",
+        "Country": "United States"
+      },
+      "EmailAddresses": [],
+      "PhoneNumber": {
+        "Office": "+18082451511"
+      },
+      "Location": {
+        "Type": "Hawaii Pacific Health Hospital",
+        "Facility": "Wilcox Medical Center",
+        "Department": "Obstetrics and Gynecology",
+        "Room": "32"
+      }
+    },
+    "Location": {
+      "Type": "Inpatient",
+      "Facility": "Chiang Mai Ram Hospital",
+      "Department": "MA",
+      "Room": "13",
+      "Bed": "A"
+    }
+  },
+  "Education": [
+    {
+      "Subject": {
+        "Code": "DN-01",
+        "Description": "Diet and Nutrition"
+      },
+      "InstanceID": "20898465",
+      "CreatedDateTime": "2022-08-01T18:38:58.164Z",
+      "Status": "Active",
+      "ActionStatus": "Assign",
+      "Assignments": [
+        {
+          "Code": "DN-PREG-01A",
+          "Codeset": "HCOPATED",
+          "Description": "Diet and Nutrition in Pregnancy - Prenatal Vitamins",
+          "Topic": {
+            "Code": "DN-PREG-01",
+            "Codeset": "HCOPATED",
+            "Description": "Diet and Nutrition in Pregnancy"
+          },
+          "InstanceID": "87300586",
+          "CreatedDateTime": "2022-08-01T18:38:57.048Z",
+          "Status": "Active",
+          "ActionStatus": "Assign",
+          "Assignees": [
+            {
+              "Learner": "Patient",
+              "ContentType": "Video",
+              "Readiness": "Eager",
+              "Notes": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

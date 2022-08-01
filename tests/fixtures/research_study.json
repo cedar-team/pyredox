@@ -1,0 +1,140 @@
+{
+  "Meta": {
+    "DataModel": "Research",
+    "EventType": "Study",
+    "EventDateTime": "2022-08-01T18:38:57.072Z",
+    "Test": true,
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
+    },
+    "Destinations": [
+      {
+        "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
+        "Name": "Redox EMR"
+      }
+    ],
+    "Logs": [
+      {
+        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
+        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
+      }
+    ],
+    "Message": {
+      "ID": 5565
+    },
+    "Transmission": {
+      "ID": 12414
+    }
+  },
+  "Study": {
+    "Identifiers": [
+      {
+        "ID": "2012P000957F",
+        "IDType": "Org ID"
+      },
+      {
+        "ID": "NCT02738255",
+        "IDType": "NCT"
+      }
+    ],
+    "Title": "Effect of Added Varnum Mouthpiece on Pharyngeal Collapsibility and Sleep Apnea Severity in Mouth Breathers.",
+    "Type": "Interventional",
+    "Sponsor": {
+      "Name": "David Andrew Wellman"
+    },
+    "PrincipalInvestigator": {
+      "FirstName": "Andrew",
+      "LastName": "Wellman",
+      "Credentials": [],
+      "Address": {},
+      "EmailAddresses": [],
+      "PhoneNumber": {
+        "Office": "6174078483"
+      },
+      "Location": {
+        "Facility": "Brigham and Women's Hospital"
+      }
+    },
+    "Coordinators": [
+      {
+        "ID": "4356789876",
+        "IDType": "NPI",
+        "FirstName": "Pat",
+        "LastName": "Granite",
+        "Credentials": [
+          "MD"
+        ],
+        "Address": {
+          "StreetAddress": "123 Main St.",
+          "City": "Madison",
+          "State": "WI",
+          "ZIP": "53703",
+          "County": "Dane",
+          "Country": "USA"
+        },
+        "EmailAddresses": [],
+        "PhoneNumber": {
+          "Office": "+16085551234"
+        },
+        "Location": {}
+      }
+    ],
+    "Description": "Test the effect of added a single-use Varnum mouthpiece on pharyngeal collapsibility and\n    obstructive sleep apnea (OSA) severity in patients who identify themselves as mouth\n    breathers. Research indicates that nasal breathing not only may improve sleep apnea but it\n    also increases circulation, blood oxygen, and carbon dioxide levels, slows the breathing\n    rate, and improves overall lung volumes. Thus, the investigators will test whether a\n    single-use Varnum mouthpiece can improve pharyngeal collapsibility and OSA severity in mouth\n    breathers.",
+    "Status": "Completed",
+    "StartDateTime": "2016-06-02T04:00:00.000Z",
+    "Conditions": [
+      {
+        "Name": "Obstructive Sleep Apnea",
+        "AltCodes": []
+      }
+    ],
+    "Design": {
+      "Purpose": "Treatment"
+    },
+    "Eligibility": {
+      "Gender": "All",
+      "MinimumAge": 21,
+      "MaximumAge": 70
+    },
+    "Location": {
+      "Facility": "Brigham and Women's Hospital",
+      "Department": "Sleep Disorders Research Program Brigham and Women's Hospital",
+      "Address": {
+        "City": "Boston",
+        "State": "MA",
+        "ZIP": "02115"
+      }
+    }
+  },
+  "Protocols": [
+    {
+      "ID": "P1",
+      "IDType": "CELL",
+      "Description": "Protocol 1",
+      "Cycles": [
+        {
+          "ID": "P1.C1",
+          "IDType": "CYCLE",
+          "Description": "Cycle 1",
+          "StartDate": "2019-01-01",
+          "EndDate": "2019-01-31",
+          "Days": [
+            {
+              "ID": "P1.C1.D1",
+              "IDType": "VISIT",
+              "Procedures": [
+                {
+                  "Code": "77416",
+                  "CodeSet": "PROC",
+                  "Description": "Chest XRay",
+                  "Modifiers": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

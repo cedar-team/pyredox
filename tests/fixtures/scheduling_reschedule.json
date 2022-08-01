@@ -1,162 +1,152 @@
 {
-   "Meta": {
-      "DataModel": "Scheduling",
-      "EventType": "Reschedule",
-      "EventDateTime": "2022-04-26T19:12:29.581Z",
-      "Test": true,
-      "Source": {
-         "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
-         "Name": "Redox Dev Tools"
-      },
-      "Destinations": [
-         {
-            "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
-            "Name": "Redox EMR"
-         }
-      ],
-      "Logs": [
-         {
-            "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
-            "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
-         }
-      ],
-      "Message": {
-         "ID": 5565
-      },
-      "Transmission": {
-         "ID": 12414
-      }
-   },
-   "Patient": {
-      "Identifiers": [
-         {
-            "ID": "0000000001",
-            "IDType": "MR"
-         },
-         {
-            "ID": "e167267c-16c9-4fe3-96ae-9cff5703e90a",
-            "IDType": "EHRID"
-         },
-         {
-            "ID": "a1d4ee8aba494ca",
-            "IDType": "NIST"
-         }
-      ],
-      "Demographics": {
-         "FirstName": "Timothy",
-         "MiddleName": "Paul",
-         "LastName": "Bixby",
-         "DOB": "2008-01-06",
-         "SSN": "101-01-0001",
-         "Sex": "Male",
-         "Race": "White",
-         "MaritalStatus": "Single",
-         "PhoneNumber": {
-            "Home": "+18088675301"
-         },
-         "EmailAddresses": [],
-         "Language": "en",
-         "Citizenship": [],
-         "Address": {
-            "StreetAddress": "4762 Hickory Street",
-            "City": "Monroe",
-            "State": "WI",
-            "ZIP": "53566",
-            "County": "Green",
-            "Country": "US"
-         }
-      },
-      "Notes": []
-   },
-   "AppointmentInfo": [
+  "Meta": {
+    "DataModel": "Scheduling",
+    "EventType": "Reschedule",
+    "EventDateTime": "2022-08-01T18:38:57.072Z",
+    "Test": true,
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
+    },
+    "Destinations": [
       {
-         "Code": "23457",
-         "Codeset": "Redox EHR Codes",
-         "Description": "Priority",
-         "Value": "Normal"
+        "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
+        "Name": "Redox EMR"
+      }
+    ],
+    "Logs": [
+      {
+        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
+        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
+      }
+    ],
+    "Message": {
+      "ID": 5565
+    },
+    "Transmission": {
+      "ID": 12414
+    }
+  },
+  "Patient": {
+    "Identifiers": [
+      {
+        "ID": "0000000001",
+        "IDType": "MR"
       },
       {
-         "Code": "23457",
-         "Codeset": "Redox EHR Codes",
-         "Description": "Form",
-         "Value": "Lumbar"
+        "ID": "e167267c-16c9-4fe3-96ae-9cff5703e90a",
+        "IDType": "EHRID"
+      },
+      {
+        "ID": "a1d4ee8aba494ca",
+        "IDType": "NIST"
       }
-   ],
-   "Visit": {
-      "VisitNumber": "1234",
-      "OldVisitNumber": "1234",
-      "VisitDateTime": "2022-05-03T19:12:30.436Z",
-      "OldDateTime": "2022-04-26T19:12:30.436Z",
-      "Duration": 15,
-      "Reason": "Check up",
-      "Instructions": [],
-      "AttendingProvider": {
-         "ID": "4356789876",
-         "IDType": "NPI",
-         "FirstName": "Pat",
-         "LastName": "Granite",
-         "Credentials": [
-            "MD"
-         ],
-         "Address": {
-            "StreetAddress": "123 Main St.",
-            "City": "Madison",
-            "State": "WI",
-            "ZIP": "53703",
-            "County": "Dane",
-            "Country": "USA"
-         },
-         "EmailAddresses": [],
-         "PhoneNumber": {
-            "Office": "+16085551234"
-         },
-         "Location": {
-         }
+    ],
+    "Demographics": {
+      "FirstName": "Timothy",
+      "MiddleName": "Paul",
+      "LastName": "Bixby",
+      "DOB": "2008-01-06",
+      "SSN": "101-01-0001",
+      "Sex": "Male",
+      "Race": "White",
+      "MaritalStatus": "Single",
+      "PhoneNumber": {
+        "Home": "+18088675301"
       },
-      "ConsultingProvider": {
-         "Credentials": [],
-         "Address": {
-         },
-         "EmailAddresses": [],
-         "PhoneNumber": {
-         },
-         "Location": {
-         }
-      },
-      "ReferringProvider": {
-         "Credentials": [],
-         "Address": {
-         },
-         "EmailAddresses": [],
-         "PhoneNumber": {
-         },
-         "Location": {
-         }
-      },
-      "VisitProvider": {
-         "Credentials": [],
-         "Address": {
-         },
-         "EmailAddresses": [],
-         "PhoneNumber": {
-         },
-         "Location": {
-         }
-      },
-      "Location": {
-         "Type": "Inpatient",
-         "Facility": "RES General Hospital",
-         "Department": "3N",
-         "Room": "136"
-      },
-      "AdditionalStaff": [],
-      "Diagnoses": [
-         {
-            "Code": "R07.0",
-            "Codeset": "ICD-10",
-            "Name": "Pain in throat"
-         }
+      "EmailAddresses": [],
+      "Language": "en",
+      "Citizenship": [],
+      "Address": {
+        "StreetAddress": "4762 Hickory Street",
+        "City": "Monroe",
+        "State": "WI",
+        "ZIP": "53566",
+        "County": "Green",
+        "Country": "US"
+      }
+    },
+    "Notes": []
+  },
+  "AppointmentInfo": [
+    {
+      "Code": "23457",
+      "Codeset": "Redox EHR Codes",
+      "Description": "Priority",
+      "Value": "Normal"
+    },
+    {
+      "Code": "23457",
+      "Codeset": "Redox EHR Codes",
+      "Description": "Form",
+      "Value": "Lumbar"
+    }
+  ],
+  "Visit": {
+    "VisitNumber": "1234",
+    "OldVisitNumber": "1234",
+    "VisitDateTime": "2022-08-08T18:38:58.319Z",
+    "OldDateTime": "2022-08-01T18:38:58.319Z",
+    "Duration": 15,
+    "Reason": "Check up",
+    "Instructions": [],
+    "AttendingProvider": {
+      "ID": "4356789876",
+      "IDType": "NPI",
+      "FirstName": "Pat",
+      "LastName": "Granite",
+      "Credentials": [
+        "MD"
       ],
-      "Equipment": []
-   }
+      "Address": {
+        "StreetAddress": "123 Main St.",
+        "City": "Madison",
+        "State": "WI",
+        "ZIP": "53703",
+        "County": "Dane",
+        "Country": "USA"
+      },
+      "EmailAddresses": [],
+      "PhoneNumber": {
+        "Office": "+16085551234"
+      },
+      "Location": {}
+    },
+    "ConsultingProvider": {
+      "Credentials": [],
+      "Address": {},
+      "EmailAddresses": [],
+      "PhoneNumber": {},
+      "Location": {}
+    },
+    "ReferringProvider": {
+      "Credentials": [],
+      "Address": {},
+      "EmailAddresses": [],
+      "PhoneNumber": {},
+      "Location": {}
+    },
+    "VisitProvider": {
+      "Credentials": [],
+      "Address": {},
+      "EmailAddresses": [],
+      "PhoneNumber": {},
+      "Location": {}
+    },
+    "Location": {
+      "Type": "Inpatient",
+      "Facility": "RES General Hospital",
+      "Department": "3N",
+      "Room": "136"
+    },
+    "AdditionalStaff": [],
+    "Diagnoses": [
+      {
+        "Code": "R07.0",
+        "Codeset": "ICD-10",
+        "Name": "Pain in throat"
+      }
+    ],
+    "Equipment": []
+  }
 }

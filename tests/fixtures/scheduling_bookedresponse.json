@@ -1,364 +1,334 @@
 {
-   "Meta": {
-      "DataModel": "Scheduling",
-      "EventType": "BookedResponse",
-      "EventDateTime": "2022-04-26T19:12:29.581Z",
-      "Test": true,
-      "Source": {
-         "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
-         "Name": "Redox Dev Tools"
-      },
-      "Destinations": [
-         {
-            "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
-            "Name": "Redox EMR"
-         }
-      ],
-      "Logs": [
-         {
-            "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
-            "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
-         }
-      ],
-      "Message": {
-         "ID": 5565
-      },
-      "Transmission": {
-         "ID": 12414
-      },
-      "IsIncomplete": false
-   },
-   "Visits": [
+  "Meta": {
+    "DataModel": "Scheduling",
+    "EventType": "BookedResponse",
+    "EventDateTime": "2022-08-01T18:38:57.072Z",
+    "Test": true,
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
+    },
+    "Destinations": [
       {
-         "VisitNumber": "1234",
-         "VisitDateTime": "2016-08-01T10:00:00Z",
-         "Duration": 15,
-         "Reason": "Follow Up",
-         "CancelReason": "Conflicting appointment",
-         "Instructions": [],
-         "AttendingProvider": {
-            "ID": "4356789876",
-            "IDType": "NPI",
-            "FirstName": "Pat",
-            "LastName": "Granite",
-            "Credentials": [
-               "MD"
-            ],
-            "Address": {
-               "StreetAddress": "123 Main St.",
-               "City": "Madison",
-               "State": "WI",
-               "ZIP": "53703",
-               "County": "Dane",
-               "Country": "USA"
-            },
-            "EmailAddresses": [],
-            "PhoneNumber": {
-               "Office": "+16085551234"
-            },
-            "Location": {
-            }
-         },
-         "ConsultingProvider": {
-            "Credentials": [],
-            "Address": {
-            },
-            "EmailAddresses": [],
-            "PhoneNumber": {
-            },
-            "Location": {
-            }
-         },
-         "ReferringProvider": {
-            "Credentials": [],
-            "Address": {
-            },
-            "EmailAddresses": [],
-            "PhoneNumber": {
-            },
-            "Location": {
-            }
-         },
-         "VisitProvider": {
-            "Credentials": [],
-            "Address": {
-            },
-            "EmailAddresses": [],
-            "PhoneNumber": {
-            },
-            "Location": {
-            }
-         },
-         "Location": {
-            "Department": "Clinic A"
-         },
-         "AdditionalStaff": [],
-         "Diagnoses": [],
-         "Equipment": [],
-         "Patient": {
-            "Identifiers": [
-               {
-                  "ID": "0000000001",
-                  "IDType": "MR"
-               },
-               {
-                  "ID": "e167267c-16c9-4fe3-96ae-9cff5703e90a",
-                  "IDType": "EHRID"
-               },
-               {
-                  "ID": "a1d4ee8aba494ca",
-                  "IDType": "NIST"
-               }
-            ],
-            "Demographics": {
-               "FirstName": "Timothy",
-               "MiddleName": "Paul",
-               "LastName": "Bixby",
-               "DOB": "2008-01-06",
-               "SSN": "101-01-0001",
-               "Sex": "Male",
-               "Race": "White",
-               "MaritalStatus": "Single",
-               "PhoneNumber": {
-                  "Home": "+18088675301"
-               },
-               "EmailAddresses": [],
-               "Language": "en",
-               "Citizenship": [],
-               "Address": {
-                  "StreetAddress": "4762 Hickory Street",
-                  "City": "Monroe",
-                  "State": "WI",
-                  "ZIP": "53566",
-                  "County": "Green",
-                  "Country": "US"
-               }
-            },
-            "Notes": []
-         },
-         "AppointmentInfo": []
-      },
-      {
-         "VisitNumber": "1235",
-         "VisitDateTime": "2016-08-01T11:00:00Z",
-         "Duration": 15,
-         "Reason": "Follow Up",
-         "Instructions": [],
-         "AttendingProvider": {
-            "ID": "4236464757",
-            "IDType": "NPI",
-            "FirstName": "John",
-            "LastName": "Slate",
-            "Credentials": [
-               "DO"
-            ],
-            "Address": {
-               "StreetAddress": "500 First St.",
-               "City": "Clayton",
-               "State": "MO",
-               "ZIP": "63105",
-               "County": "Saint Louis",
-               "Country": "USA"
-            },
-            "EmailAddresses": [],
-            "PhoneNumber": {
-               "Office": "+13145554321"
-            },
-            "Location": {
-            }
-         },
-         "ConsultingProvider": {
-            "Credentials": [],
-            "Address": {
-            },
-            "EmailAddresses": [],
-            "PhoneNumber": {
-            },
-            "Location": {
-            }
-         },
-         "ReferringProvider": {
-            "Credentials": [],
-            "Address": {
-            },
-            "EmailAddresses": [],
-            "PhoneNumber": {
-            },
-            "Location": {
-            }
-         },
-         "VisitProvider": {
-            "Credentials": [],
-            "Address": {
-            },
-            "EmailAddresses": [],
-            "PhoneNumber": {
-            },
-            "Location": {
-            }
-         },
-         "Location": {
-            "Department": "Clinic A"
-         },
-         "AdditionalStaff": [],
-         "Diagnoses": [],
-         "Equipment": [],
-         "Patient": {
-            "Identifiers": [
-               {
-                  "ID": "0000000002",
-                  "IDType": "MR"
-               },
-               {
-                  "ID": "81ac9647-3a07-46b7-85b4-c5d09099fb3b",
-                  "IDType": "EHRID"
-               },
-               {
-                  "ID": "ffc486eff2b04b8^^^&1.3.6.1.4.1.21367.2005.13.20.1000&ISO",
-                  "IDType": "NIST"
-               }
-            ],
-            "Demographics": {
-               "FirstName": "Barbara",
-               "LastName": "Bixby",
-               "DOB": "1982-07-24",
-               "SSN": "202-02-0002",
-               "Sex": "Female",
-               "Race": "White",
-               "MaritalStatus": "Married",
-               "PhoneNumber": {
-                  "Home": "+18088675303",
-                  "Office": "+17077543758",
-                  "Mobile": "+19189368865"
-               },
-               "EmailAddresses": [
-                  "barb.bixby@test.net"
-               ],
-               "Language": "en",
-               "Citizenship": [],
-               "Address": {
-                  "StreetAddress": "4762 Hickory Street",
-                  "City": "Monroe",
-                  "State": "WI",
-                  "ZIP": "53566",
-                  "County": "Green",
-                  "Country": "US"
-               }
-            },
-            "Notes": []
-         },
-         "AppointmentInfo": []
-      },
-      {
-         "VisitNumber": "1236",
-         "VisitDateTime": "2016-08-01T12:00:00Z",
-         "Duration": 15,
-         "Reason": "Follow Up",
-         "Instructions": [],
-         "AttendingProvider": {
-            "ID": "2434534567",
-            "IDType": "NPI",
-            "FirstName": "Sharon",
-            "LastName": "Chalk",
-            "Credentials": [
-               "MD",
-               "PhD"
-            ],
-            "Address": {
-               "StreetAddress": "312 Maple Dr. Suite 400",
-               "City": "Verona",
-               "State": "WI",
-               "ZIP": "53593",
-               "County": "Dane",
-               "Country": "USA"
-            },
-            "EmailAddresses": [],
-            "PhoneNumber": {
-               "Office": "+16085559999"
-            },
-            "Location": {
-            }
-         },
-         "ConsultingProvider": {
-            "Credentials": [],
-            "Address": {
-            },
-            "EmailAddresses": [],
-            "PhoneNumber": {
-            },
-            "Location": {
-            }
-         },
-         "ReferringProvider": {
-            "Credentials": [],
-            "Address": {
-            },
-            "EmailAddresses": [],
-            "PhoneNumber": {
-            },
-            "Location": {
-            }
-         },
-         "VisitProvider": {
-            "Credentials": [],
-            "Address": {
-            },
-            "EmailAddresses": [],
-            "PhoneNumber": {
-            },
-            "Location": {
-            }
-         },
-         "Location": {
-            "Department": "Clinic A"
-         },
-         "AdditionalStaff": [],
-         "Diagnoses": [],
-         "Equipment": [],
-         "Patient": {
-            "Identifiers": [
-               {
-                  "ID": "0000000003",
-                  "IDType": "MR"
-               },
-               {
-                  "ID": "e3fedf48-c8bf-4728-845f-cb810001b571",
-                  "IDType": "EHRID"
-               },
-               {
-                  "ID": "ef05d4068ee144f^^^&1.3.6.1.4.1.21367.2005.13.20.1000&ISO",
-                  "IDType": "NIST"
-               }
-            ],
-            "Demographics": {
-               "FirstName": "Walter",
-               "LastName": "Carthwright",
-               "DOB": "1945-03-04",
-               "SSN": "303-03-0003",
-               "Sex": "Male",
-               "Race": "Black",
-               "IsHispanic": true,
-               "MaritalStatus": "Widowed",
-               "PhoneNumber": {
-                  "Home": "+18088675310"
-               },
-               "EmailAddresses": [
-                  "wc1945@test.net"
-               ],
-               "Language": "es",
-               "Citizenship": [],
-               "Address": {
-                  "StreetAddress": "648 Ethan Terrace",
-                  "City": "Agoura Hills",
-                  "State": "CA",
-                  "ZIP": "91301",
-                  "County": "Los Angelas",
-                  "Country": "US"
-               }
-            },
-            "Notes": []
-         },
-         "AppointmentInfo": []
+        "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
+        "Name": "Redox EMR"
       }
-   ]
+    ],
+    "Logs": [
+      {
+        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
+        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
+      }
+    ],
+    "Message": {
+      "ID": 5565
+    },
+    "Transmission": {
+      "ID": 12414
+    },
+    "IsIncomplete": false
+  },
+  "Visits": [
+    {
+      "VisitNumber": "1234",
+      "VisitDateTime": "2016-08-01T10:00:00Z",
+      "Duration": 15,
+      "Reason": "Follow Up",
+      "CancelReason": "Conflicting appointment",
+      "Instructions": [],
+      "AttendingProvider": {
+        "ID": "4356789876",
+        "IDType": "NPI",
+        "FirstName": "Pat",
+        "LastName": "Granite",
+        "Credentials": [
+          "MD"
+        ],
+        "Address": {
+          "StreetAddress": "123 Main St.",
+          "City": "Madison",
+          "State": "WI",
+          "ZIP": "53703",
+          "County": "Dane",
+          "Country": "USA"
+        },
+        "EmailAddresses": [],
+        "PhoneNumber": {
+          "Office": "+16085551234"
+        },
+        "Location": {}
+      },
+      "ConsultingProvider": {
+        "Credentials": [],
+        "Address": {},
+        "EmailAddresses": [],
+        "PhoneNumber": {},
+        "Location": {}
+      },
+      "ReferringProvider": {
+        "Credentials": [],
+        "Address": {},
+        "EmailAddresses": [],
+        "PhoneNumber": {},
+        "Location": {}
+      },
+      "VisitProvider": {
+        "Credentials": [],
+        "Address": {},
+        "EmailAddresses": [],
+        "PhoneNumber": {},
+        "Location": {}
+      },
+      "Location": {
+        "Department": "Clinic A"
+      },
+      "AdditionalStaff": [],
+      "Diagnoses": [],
+      "Equipment": [],
+      "Patient": {
+        "Identifiers": [
+          {
+            "ID": "0000000001",
+            "IDType": "MR"
+          },
+          {
+            "ID": "e167267c-16c9-4fe3-96ae-9cff5703e90a",
+            "IDType": "EHRID"
+          },
+          {
+            "ID": "a1d4ee8aba494ca",
+            "IDType": "NIST"
+          }
+        ],
+        "Demographics": {
+          "FirstName": "Timothy",
+          "MiddleName": "Paul",
+          "LastName": "Bixby",
+          "DOB": "2008-01-06",
+          "SSN": "101-01-0001",
+          "Sex": "Male",
+          "Race": "White",
+          "MaritalStatus": "Single",
+          "PhoneNumber": {
+            "Home": "+18088675301"
+          },
+          "EmailAddresses": [],
+          "Language": "en",
+          "Citizenship": [],
+          "Address": {
+            "StreetAddress": "4762 Hickory Street",
+            "City": "Monroe",
+            "State": "WI",
+            "ZIP": "53566",
+            "County": "Green",
+            "Country": "US"
+          }
+        },
+        "Notes": []
+      },
+      "AppointmentInfo": []
+    },
+    {
+      "VisitNumber": "1235",
+      "VisitDateTime": "2016-08-01T11:00:00Z",
+      "Duration": 15,
+      "Reason": "Follow Up",
+      "Instructions": [],
+      "AttendingProvider": {
+        "ID": "4236464757",
+        "IDType": "NPI",
+        "FirstName": "John",
+        "LastName": "Slate",
+        "Credentials": [
+          "DO"
+        ],
+        "Address": {
+          "StreetAddress": "500 First St.",
+          "City": "Clayton",
+          "State": "MO",
+          "ZIP": "63105",
+          "County": "Saint Louis",
+          "Country": "USA"
+        },
+        "EmailAddresses": [],
+        "PhoneNumber": {
+          "Office": "+13145554321"
+        },
+        "Location": {}
+      },
+      "ConsultingProvider": {
+        "Credentials": [],
+        "Address": {},
+        "EmailAddresses": [],
+        "PhoneNumber": {},
+        "Location": {}
+      },
+      "ReferringProvider": {
+        "Credentials": [],
+        "Address": {},
+        "EmailAddresses": [],
+        "PhoneNumber": {},
+        "Location": {}
+      },
+      "VisitProvider": {
+        "Credentials": [],
+        "Address": {},
+        "EmailAddresses": [],
+        "PhoneNumber": {},
+        "Location": {}
+      },
+      "Location": {
+        "Department": "Clinic A"
+      },
+      "AdditionalStaff": [],
+      "Diagnoses": [],
+      "Equipment": [],
+      "Patient": {
+        "Identifiers": [
+          {
+            "ID": "0000000002",
+            "IDType": "MR"
+          },
+          {
+            "ID": "81ac9647-3a07-46b7-85b4-c5d09099fb3b",
+            "IDType": "EHRID"
+          },
+          {
+            "ID": "ffc486eff2b04b8^^^&1.3.6.1.4.1.21367.2005.13.20.1000&ISO",
+            "IDType": "NIST"
+          }
+        ],
+        "Demographics": {
+          "FirstName": "Barbara",
+          "LastName": "Bixby",
+          "DOB": "1982-07-24",
+          "SSN": "202-02-0002",
+          "Sex": "Female",
+          "Race": "White",
+          "MaritalStatus": "Married",
+          "PhoneNumber": {
+            "Home": "+18088675303",
+            "Office": "+17077543758",
+            "Mobile": "+19189368865"
+          },
+          "EmailAddresses": [
+            "[email\u00a0protected]"
+          ],
+          "Language": "en",
+          "Citizenship": [],
+          "Address": {
+            "StreetAddress": "4762 Hickory Street",
+            "City": "Monroe",
+            "State": "WI",
+            "ZIP": "53566",
+            "County": "Green",
+            "Country": "US"
+          }
+        },
+        "Notes": []
+      },
+      "AppointmentInfo": []
+    },
+    {
+      "VisitNumber": "1236",
+      "VisitDateTime": "2016-08-01T12:00:00Z",
+      "Duration": 15,
+      "Reason": "Follow Up",
+      "Instructions": [],
+      "AttendingProvider": {
+        "ID": "2434534567",
+        "IDType": "NPI",
+        "FirstName": "Sharon",
+        "LastName": "Chalk",
+        "Credentials": [
+          "MD",
+          "PhD"
+        ],
+        "Address": {
+          "StreetAddress": "312 Maple Dr. Suite 400",
+          "City": "Verona",
+          "State": "WI",
+          "ZIP": "53593",
+          "County": "Dane",
+          "Country": "USA"
+        },
+        "EmailAddresses": [],
+        "PhoneNumber": {
+          "Office": "+16085559999"
+        },
+        "Location": {}
+      },
+      "ConsultingProvider": {
+        "Credentials": [],
+        "Address": {},
+        "EmailAddresses": [],
+        "PhoneNumber": {},
+        "Location": {}
+      },
+      "ReferringProvider": {
+        "Credentials": [],
+        "Address": {},
+        "EmailAddresses": [],
+        "PhoneNumber": {},
+        "Location": {}
+      },
+      "VisitProvider": {
+        "Credentials": [],
+        "Address": {},
+        "EmailAddresses": [],
+        "PhoneNumber": {},
+        "Location": {}
+      },
+      "Location": {
+        "Department": "Clinic A"
+      },
+      "AdditionalStaff": [],
+      "Diagnoses": [],
+      "Equipment": [],
+      "Patient": {
+        "Identifiers": [
+          {
+            "ID": "0000000003",
+            "IDType": "MR"
+          },
+          {
+            "ID": "e3fedf48-c8bf-4728-845f-cb810001b571",
+            "IDType": "EHRID"
+          },
+          {
+            "ID": "ef05d4068ee144f^^^&1.3.6.1.4.1.21367.2005.13.20.1000&ISO",
+            "IDType": "NIST"
+          }
+        ],
+        "Demographics": {
+          "FirstName": "Walter",
+          "LastName": "Carthwright",
+          "DOB": "1945-03-04",
+          "SSN": "303-03-0003",
+          "Sex": "Male",
+          "Race": "Black",
+          "IsHispanic": true,
+          "MaritalStatus": "Widowed",
+          "PhoneNumber": {
+            "Home": "+18088675310"
+          },
+          "EmailAddresses": [
+            "[email\u00a0protected]"
+          ],
+          "Language": "es",
+          "Citizenship": [],
+          "Address": {
+            "StreetAddress": "648 Ethan Terrace",
+            "City": "Agoura Hills",
+            "State": "CA",
+            "ZIP": "91301",
+            "County": "Los Angelas",
+            "Country": "US"
+          }
+        },
+        "Notes": []
+      },
+      "AppointmentInfo": []
+    }
+  ]
 }

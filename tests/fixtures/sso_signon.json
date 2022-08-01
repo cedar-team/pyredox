@@ -1,0 +1,75 @@
+{
+  "Meta": {
+    "DataModel": "SSO",
+    "EventType": "Sign-on",
+    "EventDateTime": "2017-11-02T20:37:41.634Z",
+    "Test": true,
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
+    },
+    "SessionID": "abcdefghijklmnop",
+    "SessionBaseURL": "https://api.redoxengine.com/fhir/R4/redox-fhir-sandbox/Development",
+    "Destinations": [
+      {
+        "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
+        "Name": "Redox EMR"
+      }
+    ]
+  },
+  "Subject": "https://healtsystem.com/provider/4356789876",
+  "Expiration": "2022-08-01T18:53:58.392Z",
+  "IssuedAt": "2022-08-01T18:38:58.392Z",
+  "Name": "Pat Granite MD",
+  "FirstName": "Pat",
+  "LastName": "Granite",
+  "NPI": "4356789876",
+  "TimeZone": "America/Chicago",
+  "Locale": "en-US",
+  "PhoneNumber": {
+    "Office": "+16085551234"
+  },
+  "Patient": {
+    "Identifiers": [
+      {
+        "ID": "0000000001",
+        "IDType": "MR"
+      },
+      {
+        "ID": "e167267c-16c9-4fe3-96ae-9cff5703e90a",
+        "IDType": "EHRID"
+      },
+      {
+        "ID": "a1d4ee8aba494ca",
+        "IDType": "NIST"
+      }
+    ],
+    "Demographics": {
+      "FirstName": "Timothy",
+      "LastName": "Bixby",
+      "MiddleName": "Paul",
+      "DOB": "2008-01-06",
+      "Sex": "Male",
+      "PhoneNumber": {
+        "Home": "+18088675301"
+      },
+      "Address": {
+        "StreetAddress": "4762 Hickory Street",
+        "City": "Monroe",
+        "State": "WI",
+        "ZIP": "53566",
+        "County": "Green",
+        "Country": "US"
+      }
+    }
+  },
+  "Visit": {
+    "Location": {
+      "Type": "Inpatient",
+      "Facility": "RES General Hospital",
+      "Department": "3N",
+      "Room": "136"
+    }
+  },
+  "Order": {}
+}
