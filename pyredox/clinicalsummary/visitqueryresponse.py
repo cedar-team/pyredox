@@ -19,6 +19,7 @@ class VisitQueryResponse(EventTypeAbstractModel):
     AllergyText: Union[str, None] = Field(None)
     Assessment: "VisitQueryResponseAssessment" = Field(None)
     AssessmentText: Union[str, None] = Field(None)
+    CareTeams: List["VisitQueryResponseCareTeam"] = Field(None)
     ChiefComplaintText: Union[str, None] = Field(None)
     DischargeDiagnosis: List["VisitQueryResponseDischargeDiagnosis"] = Field(None)
     DischargeDiagnosisText: Union[str, None] = Field(None)
@@ -296,6 +297,167 @@ class VisitQueryResponseAssessmentDiagnosisComment(RedoxAbstractModel):
     Text: Union[str, None] = Field(None)
 
 
+class VisitQueryResponseCareTeam(RedoxAbstractModel):
+
+    Encounter: "VisitQueryResponseCareTeamEncounter" = Field(None)
+    Members: List["VisitQueryResponseCareTeamMember"] = Field(None)
+    Name: Union[str, None] = Field(None)
+    Organization: "VisitQueryResponseCareTeamOrganization" = Field(None)
+    Status: Union[str, None] = Field(None)
+    Types: List["VisitQueryResponseCareTeamType"] = Field(None)
+
+
+class VisitQueryResponseCareTeamEncounter(RedoxAbstractModel):
+
+    DateTime: Union[str, None] = Field(None)
+    EndDateTime: Union[str, None] = Field(None)
+    Identifiers: List["VisitQueryResponseCareTeamEncounterIdentifier"] = Field(None)
+    Type: "VisitQueryResponseCareTeamEncounterType" = Field(None)
+
+
+class VisitQueryResponseCareTeamEncounterIdentifier(RedoxAbstractModel):
+
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseCareTeamEncounterType(RedoxAbstractModel):
+
+    AltCodes: List["VisitQueryResponseCareTeamEncounterTypeAltCode"] = Field(None)
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseCareTeamEncounterTypeAltCode(RedoxAbstractModel):
+
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseCareTeamMember(RedoxAbstractModel):
+
+    Address: "VisitQueryResponseCareTeamMemberAddress" = Field(None)
+    Credentials: List[str] = Field(None)
+    EndDateTime: Union[str, None] = Field(None)
+    FirstName: Union[str, None] = Field(None)
+    Identifiers: List["VisitQueryResponseCareTeamMemberIdentifier"] = Field(None)
+    LastName: Union[str, None] = Field(None)
+    MiddleName: Union[str, None] = Field(None)
+    Roles: List["VisitQueryResponseCareTeamMemberRole"] = Field(None)
+    StartDateTime: Union[str, None] = Field(None)
+    Telecom: List["VisitQueryResponseCareTeamMemberTelecom"] = Field(None)
+
+
+class VisitQueryResponseCareTeamMemberAddress(RedoxAbstractModel):
+
+    City: Union[str, None] = Field(None)
+    Country: Union[str, None] = Field(None)
+    County: Union[str, None] = Field(None)
+    State: Union[str, None] = Field(None)
+    StreetAddress: Union[str, None] = Field(None)
+    ZIP: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseCareTeamMemberIdentifier(RedoxAbstractModel):
+
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseCareTeamMemberRole(RedoxAbstractModel):
+
+    AltCodes: List["VisitQueryResponseCareTeamMemberRoleAltCode"] = Field(None)
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseCareTeamMemberRoleAltCode(RedoxAbstractModel):
+
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseCareTeamMemberTelecom(RedoxAbstractModel):
+
+    System: Union[None] = Field(None)
+    Use: Union[None] = Field(None)
+    Value: Union[None] = Field(None)
+
+
+class VisitQueryResponseCareTeamOrganization(RedoxAbstractModel):
+
+    Address: "VisitQueryResponseCareTeamOrganizationAddress" = Field(None)
+    Identifiers: List["VisitQueryResponseCareTeamOrganizationIdentifier"] = Field(None)
+    Name: Union[None] = Field(None)
+    Telecom: List["VisitQueryResponseCareTeamOrganizationTelecom"] = Field(None)
+    Type: "VisitQueryResponseCareTeamOrganizationType" = Field(None)
+
+
+class VisitQueryResponseCareTeamOrganizationAddress(RedoxAbstractModel):
+
+    City: Union[str, None] = Field(None)
+    Country: Union[str, None] = Field(None)
+    County: Union[str, None] = Field(None)
+    State: Union[str, None] = Field(None)
+    StreetAddress: Union[str, None] = Field(None)
+    ZIP: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseCareTeamOrganizationIdentifier(RedoxAbstractModel):
+
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseCareTeamOrganizationTelecom(RedoxAbstractModel):
+
+    System: Union[None] = Field(None)
+    Use: Union[None] = Field(None)
+    Value: Union[None] = Field(None)
+
+
+class VisitQueryResponseCareTeamOrganizationType(RedoxAbstractModel):
+
+    AltCodes: List["VisitQueryResponseCareTeamOrganizationTypeAltCode"] = Field(None)
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseCareTeamOrganizationTypeAltCode(RedoxAbstractModel):
+
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseCareTeamType(RedoxAbstractModel):
+
+    AltCodes: List["VisitQueryResponseCareTeamTypeAltCode"] = Field(None)
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseCareTeamTypeAltCode(RedoxAbstractModel):
+
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
 class VisitQueryResponseDischargeDiagnosis(RedoxAbstractModel):
 
     AltCodes: List["VisitQueryResponseDischargeDiagnosisAltCode"] = Field(None)
@@ -427,6 +589,9 @@ class VisitQueryResponseEncounter(RedoxAbstractModel):
 
     DateTime: Union[str, None] = Field(None)
     Diagnosis: List["VisitQueryResponseEncounterDiagnosis"] = Field(None)
+    DischargeDisposition: "VisitQueryResponseEncounterDischargeDisposition" = Field(
+        None
+    )
     EndDateTime: Union[str, None] = Field(None)
     Identifiers: List["VisitQueryResponseEncounterIdentifier"] = Field(None)
     Locations: List["VisitQueryResponseEncounterLocation"] = Field(None)
@@ -452,6 +617,25 @@ class VisitQueryResponseEncounterDiagnosisAltCode(RedoxAbstractModel):
     Name: Union[str, None] = Field(None)
 
 
+class VisitQueryResponseEncounterDischargeDisposition(RedoxAbstractModel):
+
+    AltCodes: List["VisitQueryResponseEncounterDischargeDispositionAltCode"] = Field(
+        None
+    )
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseEncounterDischargeDispositionAltCode(RedoxAbstractModel):
+
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
 class VisitQueryResponseEncounterIdentifier(RedoxAbstractModel):
 
     ID: Union[str, None] = Field(None)
@@ -461,7 +645,9 @@ class VisitQueryResponseEncounterIdentifier(RedoxAbstractModel):
 class VisitQueryResponseEncounterLocation(RedoxAbstractModel):
 
     Address: "VisitQueryResponseEncounterLocationAddress" = Field(None)
+    Identifiers: List["VisitQueryResponseEncounterLocationIdentifier"] = Field(None)
     Name: Union[str, None] = Field(None)
+    Telecom: List["VisitQueryResponseEncounterLocationTelecom"] = Field(None)
     Type: "VisitQueryResponseEncounterLocationType" = Field(None)
 
 
@@ -472,6 +658,19 @@ class VisitQueryResponseEncounterLocationAddress(RedoxAbstractModel):
     State: Union[str, None] = Field(None)
     StreetAddress: Union[str, None] = Field(None)
     ZIP: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseEncounterLocationIdentifier(RedoxAbstractModel):
+
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseEncounterLocationTelecom(RedoxAbstractModel):
+
+    System: Union[None] = Field(None)
+    Use: Union[None] = Field(None)
+    Value: Union[None] = Field(None)
 
 
 class VisitQueryResponseEncounterLocationType(RedoxAbstractModel):
@@ -847,6 +1046,7 @@ class VisitQueryResponseHeader(RedoxAbstractModel):
 class VisitQueryResponseHeaderDocument(RedoxAbstractModel):
 
     Author: "VisitQueryResponseHeaderDocumentAuthor" = Field(None)
+    Confidentiality: "VisitQueryResponseHeaderDocumentConfidentiality" = Field(None)
     Custodian: "VisitQueryResponseHeaderDocumentCustodian" = Field(None)
     DateTime: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
@@ -892,6 +1092,14 @@ class VisitQueryResponseHeaderDocumentAuthorLocation(RedoxAbstractModel):
 class VisitQueryResponseHeaderDocumentAuthorPhoneNumber(RedoxAbstractModel):
 
     Office: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseHeaderDocumentConfidentiality(RedoxAbstractModel):
+
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
 
 
 class VisitQueryResponseHeaderDocumentCustodian(RedoxAbstractModel):
@@ -955,12 +1163,36 @@ class VisitQueryResponseHeaderDocumentTypeCode(RedoxAbstractModel):
 
 class VisitQueryResponseHeaderDocumentVisit(RedoxAbstractModel):
 
+    DischargeDisposition: "VisitQueryResponseHeaderDocumentVisitDischargeDisposition" = Field(
+        None
+    )
     EndDateTime: Union[str, None] = Field(None)
     Location: "VisitQueryResponseHeaderDocumentVisitLocation" = Field(None)
     Reason: Union[str, None] = Field(None)
     StartDateTime: Union[str, None] = Field(None)
     Type: "VisitQueryResponseHeaderDocumentVisitType" = Field(None)
     VisitNumber: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseHeaderDocumentVisitDischargeDisposition(RedoxAbstractModel):
+
+    AltCodes: List[
+        "VisitQueryResponseHeaderDocumentVisitDischargeDispositionAltCode"
+    ] = Field(None)
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseHeaderDocumentVisitDischargeDispositionAltCode(
+    RedoxAbstractModel
+):
+
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
 
 
 class VisitQueryResponseHeaderDocumentVisitLocation(RedoxAbstractModel):
@@ -1158,17 +1390,40 @@ class VisitQueryResponseHeaderPatientOrganizationTypeAltCode(RedoxAbstractModel)
 class VisitQueryResponseHealthConcern(RedoxAbstractModel):
 
     AltCodes: List["VisitQueryResponseHealthConcernAltCode"] = Field(None)
+    Category: "VisitQueryResponseHealthConcernCategory" = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
     Comments: List["VisitQueryResponseHealthConcernComment"] = Field(None)
+    ConcernType: Union[str, None] = Field(None)
     EndDate: Union[str, None] = Field(None)
+    Interpretation: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
     StartDate: Union[str, None] = Field(None)
     Status: Union[str, None] = Field(None)
+    TargetSite: "VisitQueryResponseHealthConcernTargetSite" = Field(None)
+    Units: Union[None] = Field(None)
+    Value: Union[None] = Field(None)
 
 
 class VisitQueryResponseHealthConcernAltCode(RedoxAbstractModel):
+
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseHealthConcernCategory(RedoxAbstractModel):
+
+    AltCodes: List["VisitQueryResponseHealthConcernCategoryAltCode"] = Field(None)
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseHealthConcernCategoryAltCode(RedoxAbstractModel):
 
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
@@ -1181,12 +1436,30 @@ class VisitQueryResponseHealthConcernComment(RedoxAbstractModel):
     Text: Union[str, None] = Field(None)
 
 
+class VisitQueryResponseHealthConcernTargetSite(RedoxAbstractModel):
+
+    AltCodes: List["VisitQueryResponseHealthConcernTargetSiteAltCode"] = Field(None)
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseHealthConcernTargetSiteAltCode(RedoxAbstractModel):
+
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
 class VisitQueryResponseImmunization(RedoxAbstractModel):
 
     DateTime: Union[str, None] = Field(None)
     Dose: "VisitQueryResponseImmunizationDose" = Field(None)
     Product: "VisitQueryResponseImmunizationProduct" = Field(None)
     Route: "VisitQueryResponseImmunizationRoute" = Field(None)
+    Status: Union[str, None] = Field(None)
 
 
 class VisitQueryResponseImmunizationDose(RedoxAbstractModel):
@@ -1305,22 +1578,119 @@ class VisitQueryResponseInsurancePlan(RedoxAbstractModel):
 
 class VisitQueryResponseMedicalEquipment(RedoxAbstractModel):
 
+    Comments: List["VisitQueryResponseMedicalEquipmentComment"] = Field(None)
+    Procedure: "VisitQueryResponseMedicalEquipmentProcedure" = Field(None)
     Product: "VisitQueryResponseMedicalEquipmentProduct" = Field(None)
     Quantity: Union[str, None] = Field(None)
     StartDate: Union[str, None] = Field(None)
     Status: Union[str, None] = Field(None)
 
 
-class VisitQueryResponseMedicalEquipmentProduct(RedoxAbstractModel):
+class VisitQueryResponseMedicalEquipmentComment(RedoxAbstractModel):
 
-    AltCodes: List["VisitQueryResponseMedicalEquipmentProductAltCode"] = Field(None)
+    Text: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseMedicalEquipmentProcedure(RedoxAbstractModel):
+
+    AltCodes: List["VisitQueryResponseMedicalEquipmentProcedureAltCode"] = Field(None)
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+    TargetSite: "VisitQueryResponseMedicalEquipmentProcedureTargetSite" = Field(None)
+
+
+class VisitQueryResponseMedicalEquipmentProcedureAltCode(RedoxAbstractModel):
+
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
+class VisitQueryResponseMedicalEquipmentProcedureTargetSite(RedoxAbstractModel):
+
+    AltCodes: List[
+        "VisitQueryResponseMedicalEquipmentProcedureTargetSiteAltCode"
+    ] = Field(None)
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseMedicalEquipmentProcedureTargetSiteAltCode(RedoxAbstractModel):
+
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseMedicalEquipmentProduct(RedoxAbstractModel):
+
+    AltCodes: List["VisitQueryResponseMedicalEquipmentProductAltCode"] = Field(None)
+    BrandName: Union[str, None] = Field(None)
+    CatalogNumber: Union[str, None] = Field(None)
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    DeviceID: Union[str, None] = Field(None)
+    DistinctID: Union[str, None] = Field(None)
+    ExpirationDate: Union[str, None] = Field(None)
+    Identifiers: List["VisitQueryResponseMedicalEquipmentProductIdentifier"] = Field(
+        None
+    )
+    Issuer: Union[str, None] = Field(None)
+    LotNumber: Union[str, None] = Field(None)
+    ManufactureDate: Union[str, None] = Field(None)
+    ManufacturerName: Union[str, None] = Field(None)
+    ModelNumber: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+    SafetyObservations: List[
+        "VisitQueryResponseMedicalEquipmentProductSafetyObservation"
+    ] = Field(None)
+    SerialNumber: Union[str, None] = Field(None)
+    Status: "VisitQueryResponseMedicalEquipmentProductStatus" = Field(None)
+
+
 class VisitQueryResponseMedicalEquipmentProductAltCode(RedoxAbstractModel):
+
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseMedicalEquipmentProductIdentifier(RedoxAbstractModel):
+
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseMedicalEquipmentProductSafetyObservation(RedoxAbstractModel):
+
+    AltCodes: List[
+        "VisitQueryResponseMedicalEquipmentProductSafetyObservationAltCode"
+    ] = Field(None)
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseMedicalEquipmentProductSafetyObservationAltCode(
+    RedoxAbstractModel
+):
+
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseMedicalEquipmentProductStatus(RedoxAbstractModel):
 
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
@@ -2265,6 +2635,7 @@ class VisitQueryResponseVitalSignObservation(RedoxAbstractModel):
     Interpretation: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
     Status: Union[str, None] = Field(None)
+    TargetSite: "VisitQueryResponseVitalSignObservationTargetSite" = Field(None)
     Units: Union[str, None] = Field(None)
     Value: Union[str, None] = Field(None)
 
@@ -2282,6 +2653,25 @@ class VisitQueryResponseVitalSignObservationComment(RedoxAbstractModel):
     Text: Union[str, None] = Field(None)
 
 
+class VisitQueryResponseVitalSignObservationTargetSite(RedoxAbstractModel):
+
+    AltCodes: List["VisitQueryResponseVitalSignObservationTargetSiteAltCode"] = Field(
+        None
+    )
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
+class VisitQueryResponseVitalSignObservationTargetSiteAltCode(RedoxAbstractModel):
+
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
 VisitQueryResponse.update_forward_refs()
 VisitQueryResponseAdmissionDiagnosis.update_forward_refs()
 VisitQueryResponseAdvanceDirective.update_forward_refs()
@@ -2293,6 +2683,14 @@ VisitQueryResponseAllergySubstance.update_forward_refs()
 VisitQueryResponseAllergyType.update_forward_refs()
 VisitQueryResponseAssessment.update_forward_refs()
 VisitQueryResponseAssessmentDiagnosis.update_forward_refs()
+VisitQueryResponseCareTeam.update_forward_refs()
+VisitQueryResponseCareTeamEncounter.update_forward_refs()
+VisitQueryResponseCareTeamEncounterType.update_forward_refs()
+VisitQueryResponseCareTeamMember.update_forward_refs()
+VisitQueryResponseCareTeamMemberRole.update_forward_refs()
+VisitQueryResponseCareTeamOrganization.update_forward_refs()
+VisitQueryResponseCareTeamOrganizationType.update_forward_refs()
+VisitQueryResponseCareTeamType.update_forward_refs()
 VisitQueryResponseDischargeDiagnosis.update_forward_refs()
 VisitQueryResponseDischargeMedication.update_forward_refs()
 VisitQueryResponseDischargeMedicationIndication.update_forward_refs()
@@ -2300,6 +2698,7 @@ VisitQueryResponseDischargeMedicationProduct.update_forward_refs()
 VisitQueryResponseDischargeMedicationRoute.update_forward_refs()
 VisitQueryResponseEncounter.update_forward_refs()
 VisitQueryResponseEncounterDiagnosis.update_forward_refs()
+VisitQueryResponseEncounterDischargeDisposition.update_forward_refs()
 VisitQueryResponseEncounterLocation.update_forward_refs()
 VisitQueryResponseEncounterLocationType.update_forward_refs()
 VisitQueryResponseEncounterProvider.update_forward_refs()
@@ -2323,6 +2722,7 @@ VisitQueryResponseHeaderDocumentAuthor.update_forward_refs()
 VisitQueryResponseHeaderDocumentCustodian.update_forward_refs()
 VisitQueryResponseHeaderDocumentCustodianType.update_forward_refs()
 VisitQueryResponseHeaderDocumentVisit.update_forward_refs()
+VisitQueryResponseHeaderDocumentVisitDischargeDisposition.update_forward_refs()
 VisitQueryResponseHeaderDocumentVisitType.update_forward_refs()
 VisitQueryResponseHeaderPatient.update_forward_refs()
 VisitQueryResponseHeaderPatientDemographics.update_forward_refs()
@@ -2330,6 +2730,8 @@ VisitQueryResponseHeaderPatientOrganization.update_forward_refs()
 VisitQueryResponseHeaderPatientOrganizationType.update_forward_refs()
 VisitQueryResponseHeaderPCP.update_forward_refs()
 VisitQueryResponseHealthConcern.update_forward_refs()
+VisitQueryResponseHealthConcernCategory.update_forward_refs()
+VisitQueryResponseHealthConcernTargetSite.update_forward_refs()
 VisitQueryResponseImmunization.update_forward_refs()
 VisitQueryResponseImmunizationProduct.update_forward_refs()
 VisitQueryResponseImmunizationRoute.update_forward_refs()
@@ -2337,7 +2739,10 @@ VisitQueryResponseInsurance.update_forward_refs()
 VisitQueryResponseInsuranceCompany.update_forward_refs()
 VisitQueryResponseInsuranceInsured.update_forward_refs()
 VisitQueryResponseMedicalEquipment.update_forward_refs()
+VisitQueryResponseMedicalEquipmentProcedure.update_forward_refs()
+VisitQueryResponseMedicalEquipmentProcedureTargetSite.update_forward_refs()
 VisitQueryResponseMedicalEquipmentProduct.update_forward_refs()
+VisitQueryResponseMedicalEquipmentProductSafetyObservation.update_forward_refs()
 VisitQueryResponseMedication.update_forward_refs()
 VisitQueryResponseMedicationIndication.update_forward_refs()
 VisitQueryResponseMedicationProduct.update_forward_refs()
@@ -2382,3 +2787,4 @@ VisitQueryResponseSocialHistoryPregnancy.update_forward_refs()
 VisitQueryResponseSocialHistoryTobaccoUse.update_forward_refs()
 VisitQueryResponseVitalSign.update_forward_refs()
 VisitQueryResponseVitalSignObservation.update_forward_refs()
+VisitQueryResponseVitalSignObservationTargetSite.update_forward_refs()
