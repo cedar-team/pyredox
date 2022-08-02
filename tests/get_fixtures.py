@@ -60,7 +60,7 @@ def save_fixture(sample: str):
         sample, object_hook=lambda d: {k: v for k, v in d.items() if v is not None}
     )  # Hook removes any None values from the dict
 
-    model: str = sample_dict["Meta"]["DataModel"].lower()
+    model: str = sample_dict["Meta"]["DataModel"].lower().replace(" ", "")
     event: str = sample_dict["Meta"]["EventType"].lower().replace("-", "")
     fixture_file_name = f"{model}_{event}.json"
 
