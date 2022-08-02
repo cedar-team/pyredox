@@ -42,7 +42,8 @@ def get_class_type(redox_dict: dict) -> Type[EventTypeAbstractModel]:
     if not model_module:
         raise AttributeError(f"Couldn't find Redox model module for {data_model}")
 
-    if event_class := getattr(model_module, event_type):
+    event_class = getattr(model_module, event_type)
+    if event_class:
         return event_class
     raise AttributeError(f"Couldn't find Redox event class for {event_type}")
 
