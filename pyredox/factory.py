@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
-import importlib
+import contextlib
+from importlib import import_module
 from json import loads
-from typing import Dict, List, Optional, Union
+
+from typing import Dict, List, Optional, Tuple, Type, Union
 from warnings import warn
 
 from . import generic
@@ -15,6 +17,34 @@ from .abstract_base import (
 JSONValue = Union[None, bool, int, float, str]
 JSONType = Union[List["JSONType"], Dict[str, Union[JSONValue, "JSONType"]]]
 JsonPayload = Union[str, JSONType]
+
+
+def get_model_and_event(redox_dict: dict) -> Tuple[str, str]:
+    meta: JSONType = redox_dict.get("Meta")
+    if not meta:
+        raise ValueError("Unable to find Meta attribute of JSON payload.")
+
+    model: str = meta["DataModel"].replace(" ", "")  # PatientAdmin, Scheduling, etc
+    event: str = meta["EventType"]  # NewPatient, Reschedule, etc
+
+    # This is to handle the weird naming in the SSO folder
+    if "-" in event:
+        event = event.replace("-", " ").title().replace(" ", "")
+
+    return model, event
+
+
+def get_class_type(redox_dict: dict) -> Type[EventTypeAbstractModel]:
+    data_model, event_type = get_model_and_event(redox_dict)
+
+    with contextlib.suppress(ModuleNotFoundError):
+        model_module = import_module(f"pyredox.{data_model.lower()}")
+    if not model_module:
+        raise AttributeError(f"Couldn't find Redox model module for {data_model}")
+
+    if event_class := getattr(model_module, event_type):
+        return event_class
+    raise AttributeError(f"Couldn't find Redox event class for {event_type}")
 
 
 def redox_object_factory(
@@ -42,26 +72,7 @@ def redox_object_factory(
             f"{type(json_payload)}"
         )
 
-    meta: JSONType = json_payload.get("Meta")
-    if not meta:
-        raise ValueError("Unable to find Meta attribute of JSON payload.")
-
-    data_model = meta["DataModel"]  # e.g., PatientAdmin, Scheduling, etc
-    event_type = meta["EventType"]  # e.g., NewPatient, Reschedule, etc
-
-    model_module_name = f"pyredox.{data_model.lower()}"
-    model_module = None
-    try:
-        model_module = importlib.import_module(model_module_name)
-    except ModuleNotFoundError:
-        pass
-    if not model_module:
-        raise AttributeError(f"Couldn't find Redox model module for {data_model}")
-
-    event_class = getattr(model_module, event_type)
-    if not event_class:
-        raise AttributeError(f"Couldn't find Redox event class for {event_type}")
-
+    event_class = get_class_type(json_payload)
     return event_class.parse_obj(json_payload)
 
 

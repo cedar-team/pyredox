@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
-from importlib import import_module
+
 from json import load
 from pathlib import Path
 
 import pytest
+
+from pyredox.factory import get_class_type, redox_object_factory
+
+# noinspection PyPackageRequirements
 from retry import retry
 
 SAMPLES_DIR = (Path(__file__).parent / "fixtures").resolve()
@@ -42,15 +46,27 @@ def test_json_pyredox_json(json_file_path: Path):
             return
         raise
 
-    model: str = sample["Meta"]["DataModel"].lower().replace(" ", "")
-    event: str = sample["Meta"]["EventType"]
-    # This is to handle the weird naming in the SSO folder
-    if "-" in event:
-        event = event.replace("-", " ").title().replace(" ", "")
-
-    module = import_module(f"pyredox.{model}")
-    expected_type = getattr(module, event)
-
+    expected_type = get_class_type(sample)
     obj = expected_type(**sample)
+    assert isinstance(obj, expected_type)
+    assert sample == obj.dict()
+
+
+@pytest.mark.parametrize(("json_file_path",), SAMPLE_DATA_FILE_PATH)
+@retry(FileNotFoundError, tries=3, delay=1, backoff=1.5)
+def test_redox_factory(json_file_path: Path):
+    current_sample_path = SAMPLES_DIR / json_file_path
+    print(current_sample_path)
+    assert current_sample_path.exists
+    try:
+        with open(current_sample_path) as sample_fd:
+            sample = load(sample_fd)
+    except FileNotFoundError as err:
+        if err.filename in SKIP_FILES:
+            return
+        raise
+
+    expected_type = get_class_type(sample)
+    obj = redox_object_factory(sample)
     assert isinstance(obj, expected_type)
     assert sample == obj.dict()
