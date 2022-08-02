@@ -1,395 +1,278 @@
 {
-   "Meta": {
-      "DataModel": "PatientAdmin",
-      "EventType": "PreAdmit",
-      "EventDateTime": "2022-03-31T19:07:13.597Z",
-      "Test": true,
-      "Source": {
-         "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
-         "Name": "Redox Dev Tools"
-      },
-      "Destinations": [
-         {
-            "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
-            "Name": "Redox EMR"
-         }
-      ],
-      "Logs": [
-         {
-            "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
-            "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
-         }
-      ],
-      "Message": {
-         "ID": 5565
-      },
-      "Transmission": {
-         "ID": 12414
-      },
-      "FacilityCode": null
-   },
-   "Patient": {
-      "Identifiers": [
-         {
-            "ID": "0000000001",
-            "IDType": "MR"
-         },
-         {
-            "ID": "e167267c-16c9-4fe3-96ae-9cff5703e90a",
-            "IDType": "EHRID"
-         },
-         {
-            "ID": "a1d4ee8aba494ca",
-            "IDType": "NIST"
-         }
-      ],
-      "Demographics": {
-         "FirstName": "Timothy",
-         "MiddleName": "Paul",
-         "LastName": "Bixby",
-         "DOB": "2008-01-06",
-         "SSN": "101-01-0001",
-         "Sex": "Male",
-         "Race": "White",
-         "IsHispanic": null,
-         "Religion": null,
-         "MaritalStatus": "Single",
-         "IsDeceased": null,
-         "DeathDateTime": null,
-         "PhoneNumber": {
-            "Home": "+18088675301",
-            "Office": null,
-            "Mobile": null
-         },
-         "EmailAddresses": [],
-         "Language": "en",
-         "Citizenship": [],
-         "Address": {
-            "StreetAddress": "4762 Hickory Street",
-            "City": "Monroe",
-            "State": "WI",
-            "ZIP": "53566",
-            "County": "Green",
-            "Country": "US"
-         }
-      },
-      "Notes": [],
-      "Contacts": [
-         {
-            "FirstName": "Barbara",
-            "MiddleName": null,
-            "LastName": "Bixby",
-            "Address": {
-               "StreetAddress": "4762 Hickory Street",
-               "City": "Monroe",
-               "State": "WI",
-               "ZIP": "53566",
-               "County": "Green",
-               "Country": "US"
-            },
-            "PhoneNumber": {
-               "Home": "+18088675303",
-               "Office": "+17077543758",
-               "Mobile": "+19189368865"
-            },
-            "RelationToPatient": "Mother",
-            "EmailAddresses": [
-               "barb.bixby@test.net"
-            ],
-            "Roles": [
-               "Emergency Contact"
-            ]
-         }
-      ],
-      "Diagnoses": [
-         {
-            "Code": "R07.0",
-            "Codeset": "ICD-10",
-            "Name": "Pain in throat",
-            "Type": null,
-            "DocumentedDateTime": null
-         }
-      ],
-      "Allergies": [
-         {
-            "Code": "7982",
-            "Codeset": "RxNorm",
-            "Name": "Penicillin",
-            "Type": {
-               "Code": null,
-               "Codeset": null,
-               "Name": null
-            },
-            "OnsetDateTime": null,
-            "Reaction": [
-               {
-                  "Code": "28926001",
-                  "Codeset": "SNOMED CT",
-                  "Name": "Rash"
-               },
-               {
-                  "Code": "247472004",
-                  "Codeset": "SNOMED CT",
-                  "Name": "Hives"
-               }
-            ],
-            "Severity": {
-               "Code": null,
-               "Codeset": null,
-               "Name": null
-            },
-            "Status": null
-         }
-      ],
-      "PCP": {
-         "NPI": "4356789876",
-         "ID": "4356789876",
-         "IDType": "NPI",
-         "FirstName": "Pat",
-         "LastName": "Granite",
-         "Credentials": [
-            "MD"
-         ],
-         "Address": {
-            "StreetAddress": "123 Main St.",
-            "City": "Madison",
-            "State": "WI",
-            "ZIP": "53703",
-            "County": "Dane",
-            "Country": "USA"
-         },
-         "EmailAddresses": [],
-         "PhoneNumber": {
-            "Office": "+16085551234"
-         },
-         "Location": {
-            "Type": null,
-            "Facility": null,
-            "Department": null,
-            "Room": null
-         }
+  "Meta": {
+    "DataModel": "PatientAdmin",
+    "EventType": "PreAdmit",
+    "EventDateTime": "2022-08-01T18:38:57.072Z",
+    "Test": true,
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
+    },
+    "Destinations": [
+      {
+        "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
+        "Name": "Redox EMR"
       }
-   },
-   "Visit": {
-      "VisitNumber": "1234",
-      "AccountNumber": null,
-      "PatientClass": "Inpatient",
-      "VisitDateTime": "2022-03-31T19:07:14.357Z",
-      "Duration": 15,
-      "Reason": "Check up",
-      "Instructions": [],
-      "Balance": null,
-      "DiagnosisRelatedGroup": null,
-      "DiagnosisRelatedGroupType": null,
-      "AttendingProvider": {
-         "ID": "4356789876",
-         "IDType": "NPI",
-         "FirstName": "Pat",
-         "LastName": "Granite",
-         "Credentials": [
-            "MD"
-         ],
-         "Address": {
-            "StreetAddress": "123 Main St.",
-            "City": "Madison",
-            "State": "WI",
-            "ZIP": "53703",
-            "County": "Dane",
-            "Country": "USA"
-         },
-         "EmailAddresses": [],
-         "PhoneNumber": {
-            "Office": "+16085551234"
-         },
-         "Location": {
-            "Type": null,
-            "Facility": null,
-            "Department": null,
-            "Room": null
-         }
+    ],
+    "Logs": [
+      {
+        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
+        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
+      }
+    ],
+    "Message": {
+      "ID": 5565
+    },
+    "Transmission": {
+      "ID": 12414
+    }
+  },
+  "Patient": {
+    "Identifiers": [
+      {
+        "ID": "0000000001",
+        "IDType": "MR"
       },
-      "ConsultingProvider": {
-         "ID": null,
-         "IDType": null,
-         "FirstName": null,
-         "LastName": null,
-         "Credentials": [],
-         "Address": {
-            "StreetAddress": null,
-            "City": null,
-            "State": null,
-            "ZIP": null,
-            "County": null,
-            "Country": null
-         },
-         "EmailAddresses": [],
-         "PhoneNumber": {
-            "Office": null
-         },
-         "Location": {
-            "Type": null,
-            "Facility": null,
-            "Department": null,
-            "Room": null
-         }
+      {
+        "ID": "e167267c-16c9-4fe3-96ae-9cff5703e90a",
+        "IDType": "EHRID"
       },
-      "ReferringProvider": {
-         "ID": null,
-         "IDType": null,
-         "FirstName": null,
-         "LastName": null,
-         "Credentials": [],
-         "Address": {
-            "StreetAddress": null,
-            "City": null,
-            "State": null,
-            "ZIP": null,
-            "County": null,
-            "Country": null
-         },
-         "EmailAddresses": [],
-         "PhoneNumber": {
-            "Office": null
-         },
-         "Location": {
-            "Type": null,
-            "Facility": null,
-            "Department": null,
-            "Room": null
-         }
+      {
+        "ID": "a1d4ee8aba494ca",
+        "IDType": "NIST"
+      }
+    ],
+    "Demographics": {
+      "FirstName": "Timothy",
+      "MiddleName": "Paul",
+      "LastName": "Bixby",
+      "DOB": "2008-01-06",
+      "SSN": "101-01-0001",
+      "Sex": "Male",
+      "Race": "White",
+      "MaritalStatus": "Single",
+      "PhoneNumber": {
+        "Home": "+18088675301"
       },
-      "AdmittingProvider": {
-         "ID": null,
-         "IDType": null,
-         "FirstName": null,
-         "LastName": null,
-         "Credentials": [],
-         "Address": {
-            "StreetAddress": null,
-            "City": null,
-            "State": null,
-            "ZIP": null,
-            "County": null,
-            "Country": null
-         },
-         "EmailAddresses": [],
-         "PhoneNumber": {
-            "Office": null
-         },
-         "Location": {
-            "Type": null,
-            "Facility": null,
-            "Department": null,
-            "Room": null
-         }
+      "EmailAddresses": [],
+      "Language": "en",
+      "Citizenship": [],
+      "Address": {
+        "StreetAddress": "4762 Hickory Street",
+        "City": "Monroe",
+        "State": "WI",
+        "ZIP": "53566",
+        "County": "Green",
+        "Country": "US"
+      }
+    },
+    "Notes": [],
+    "Contacts": [
+      {
+        "FirstName": "Barbara",
+        "LastName": "Bixby",
+        "Address": {
+          "StreetAddress": "4762 Hickory Street",
+          "City": "Monroe",
+          "State": "WI",
+          "ZIP": "53566",
+          "County": "Green",
+          "Country": "US"
+        },
+        "PhoneNumber": {
+          "Home": "+18088675303",
+          "Office": "+17077543758",
+          "Mobile": "+19189368865"
+        },
+        "RelationToPatient": "Mother",
+        "EmailAddresses": [
+          "[email\u00a0protected]"
+        ],
+        "Roles": [
+          "Emergency Contact"
+        ]
+      }
+    ],
+    "Diagnoses": [
+      {
+        "Code": "R07.0",
+        "Codeset": "ICD-10",
+        "Name": "Pain in throat"
+      }
+    ],
+    "Allergies": [
+      {
+        "Code": "7982",
+        "Codeset": "RxNorm",
+        "Name": "Penicillin",
+        "Type": {},
+        "Reaction": [
+          {
+            "Code": "28926001",
+            "Codeset": "SNOMED CT",
+            "Name": "Rash"
+          },
+          {
+            "Code": "247472004",
+            "Codeset": "SNOMED CT",
+            "Name": "Hives"
+          }
+        ],
+        "Severity": {}
+      }
+    ],
+    "PCP": {
+      "NPI": "4356789876",
+      "ID": "4356789876",
+      "IDType": "NPI",
+      "FirstName": "Pat",
+      "LastName": "Granite",
+      "Credentials": [
+        "MD"
+      ],
+      "Address": {
+        "StreetAddress": "123 Main St.",
+        "City": "Madison",
+        "State": "WI",
+        "ZIP": "53703",
+        "County": "Dane",
+        "Country": "USA"
       },
-      "AdditionalStaff": [],
-      "Location": {
-         "Type": "Inpatient",
-         "Facility": "RES General Hospital",
-         "Department": "3N",
-         "Room": "136",
-         "Bed": "B",
-         "Address": {
-            "StreetAddress": "9509 Integration Ln",
-            "City": "Madison",
-            "State": "WI",
-            "ZIP": "53719",
-            "County": "Dane",
+      "EmailAddresses": [],
+      "PhoneNumber": {
+        "Office": "+16085551234"
+      },
+      "Location": {}
+    }
+  },
+  "Visit": {
+    "VisitNumber": "1234",
+    "PatientClass": "Inpatient",
+    "VisitDateTime": "2022-08-01T18:38:58.118Z",
+    "Duration": 15,
+    "Reason": "Check up",
+    "Instructions": [],
+    "AttendingProvider": {
+      "ID": "4356789876",
+      "IDType": "NPI",
+      "FirstName": "Pat",
+      "LastName": "Granite",
+      "Credentials": [
+        "MD"
+      ],
+      "Address": {
+        "StreetAddress": "123 Main St.",
+        "City": "Madison",
+        "State": "WI",
+        "ZIP": "53703",
+        "County": "Dane",
+        "Country": "USA"
+      },
+      "EmailAddresses": [],
+      "PhoneNumber": {
+        "Office": "+16085551234"
+      },
+      "Location": {}
+    },
+    "ConsultingProvider": {
+      "Credentials": [],
+      "Address": {},
+      "EmailAddresses": [],
+      "PhoneNumber": {},
+      "Location": {}
+    },
+    "ReferringProvider": {
+      "Credentials": [],
+      "Address": {},
+      "EmailAddresses": [],
+      "PhoneNumber": {},
+      "Location": {}
+    },
+    "AdmittingProvider": {
+      "Credentials": [],
+      "Address": {},
+      "EmailAddresses": [],
+      "PhoneNumber": {},
+      "Location": {}
+    },
+    "AdditionalStaff": [],
+    "Location": {
+      "Type": "Inpatient",
+      "Facility": "RES General Hospital",
+      "Department": "3N",
+      "Room": "136",
+      "Bed": "B",
+      "Address": {
+        "StreetAddress": "9509 Integration Ln",
+        "City": "Madison",
+        "State": "WI",
+        "ZIP": "53719",
+        "County": "Dane",
+        "Country": "US"
+      }
+    },
+    "Guarantor": {
+      "Number": "10001910",
+      "FirstName": "Kent",
+      "LastName": "Bixby",
+      "Spouse": {
+        "FirstName": "Barbara",
+        "LastName": "Bixby"
+      },
+      "Address": {
+        "StreetAddress": "4762 Hickory Street",
+        "City": "Monroe",
+        "State": "WI",
+        "ZIP": "53566",
+        "County": "Green",
+        "Country": "USA"
+      },
+      "PhoneNumber": {},
+      "EmailAddresses": [],
+      "RelationToPatient": "Father",
+      "Employer": {
+        "Name": "Accelerator Labs",
+        "Address": {
+          "StreetAddress": "1456 Old Sauk Road",
+          "City": "Madison",
+          "State": "WI",
+          "ZIP": "53719",
+          "County": "Dane",
+          "Country": "USA"
+        },
+        "PhoneNumber": "+18083451121"
+      }
+    },
+    "Insurances": [
+      {
+        "Plan": {
+          "ID": "31572",
+          "IDType": "Payor ID",
+          "Name": "HMO Deductible Plan"
+        },
+        "Company": {
+          "ID": "60054",
+          "Name": "aetna (60054 0131)",
+          "Address": {
+            "StreetAddress": "PO Box 14080",
+            "City": "Lexington",
+            "State": "KY",
+            "ZIP": "40512-4079",
+            "County": "Fayette",
             "Country": "US"
-         }
-      },
-      "Guarantor": {
-         "Number": "10001910",
-         "FirstName": "Kent",
-         "MiddleName": null,
-         "LastName": "Bixby",
-         "SSN": null,
-         "DOB": null,
-         "Sex": null,
-         "Spouse": {
-            "FirstName": "Barbara",
-            "LastName": "Bixby"
-         },
-         "Address": {
-            "StreetAddress": "4762 Hickory Street",
-            "City": "Monroe",
-            "State": "WI",
-            "ZIP": "53566",
-            "County": "Green",
-            "Country": "USA"
-         },
-         "PhoneNumber": {
-            "Home": null,
-            "Business": null,
-            "Mobile": null
-         },
-         "EmailAddresses": [],
-         "Type": null,
-         "RelationToPatient": "Father",
-         "Employer": {
-            "Name": "Accelerator Labs",
-            "Address": {
-               "StreetAddress": "1456 Old Sauk Road",
-               "City": "Madison",
-               "State": "WI",
-               "ZIP": "53719",
-               "County": "Dane",
-               "Country": "USA"
-            },
-            "PhoneNumber": "+18083451121"
-         }
-      },
-      "Insurances": [
-         {
-            "Plan": {
-               "ID": "31572",
-               "IDType": "Payor ID",
-               "Name": "HMO Deductible Plan",
-               "Type": null
-            },
-            "MemberNumber": null,
-            "Company": {
-               "ID": "60054",
-               "IDType": null,
-               "Name": "aetna (60054 0131)",
-               "Address": {
-                  "StreetAddress": "PO Box 14080",
-                  "City": "Lexington",
-                  "State": "KY",
-                  "ZIP": "40512-4079",
-                  "County": "Fayette",
-                  "Country": "US"
-               },
-               "PhoneNumber": "+18089541123"
-            },
-            "GroupNumber": "847025-024-0009",
-            "GroupName": "Accelerator Labs",
-            "EffectiveDate": "2015-01-01",
-            "ExpirationDate": "2020-12-31",
-            "PolicyNumber": "9140860055",
-            "Priority": null,
-            "AgreementType": null,
-            "CoverageType": null,
-            "Insured": {
-               "Identifiers": [],
-               "LastName": null,
-               "MiddleName": null,
-               "FirstName": null,
-               "SSN": null,
-               "Relationship": null,
-               "DOB": null,
-               "Sex": null,
-               "Address": {
-                  "StreetAddress": null,
-                  "City": null,
-                  "State": null,
-                  "ZIP": null,
-                  "County": null,
-                  "Country": null
-               }
-            }
-         }
-      ]
-   }
+          },
+          "PhoneNumber": "+18089541123"
+        },
+        "GroupNumber": "847025-024-0009",
+        "GroupName": "Accelerator Labs",
+        "EffectiveDate": "2015-01-01",
+        "ExpirationDate": "2020-12-31",
+        "PolicyNumber": "9140860055",
+        "Insured": {
+          "Identifiers": [],
+          "Address": {}
+        }
+      }
+    ]
+  }
 }

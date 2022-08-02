@@ -1,0 +1,288 @@
+{
+  "Meta": {
+    "DataModel": "Order",
+    "EventType": "Cancel",
+    "EventDateTime": "2022-08-01T18:38:57.072Z",
+    "Test": true,
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
+    },
+    "Destinations": [
+      {
+        "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
+        "Name": "Redox EMR"
+      }
+    ],
+    "Logs": [
+      {
+        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
+        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
+      }
+    ],
+    "Message": {
+      "ID": 5565
+    },
+    "Transmission": {
+      "ID": 12414
+    }
+  },
+  "Patient": {
+    "Identifiers": [
+      {
+        "ID": "0000000001",
+        "IDType": "MR"
+      },
+      {
+        "ID": "e167267c-16c9-4fe3-96ae-9cff5703e90a",
+        "IDType": "EHRID"
+      },
+      {
+        "ID": "a1d4ee8aba494ca",
+        "IDType": "NIST"
+      }
+    ],
+    "Demographics": {
+      "FirstName": "Timothy",
+      "MiddleName": "Paul",
+      "LastName": "Bixby",
+      "DOB": "2008-01-06",
+      "SSN": "101-01-0001",
+      "Sex": "Male",
+      "Race": "White",
+      "MaritalStatus": "Single",
+      "PhoneNumber": {
+        "Home": "+18088675301"
+      },
+      "EmailAddresses": [],
+      "Language": "en",
+      "Citizenship": [],
+      "Address": {
+        "StreetAddress": "4762 Hickory Street",
+        "City": "Monroe",
+        "State": "WI",
+        "ZIP": "53566",
+        "County": "Green",
+        "Country": "US"
+      }
+    },
+    "Notes": []
+  },
+  "Visit": {
+    "VisitNumber": "1234",
+    "VisitDateTime": "2015-04-21T13:54:49.863Z",
+    "AttendingProvider": {
+      "ID": "4356789876",
+      "IDType": "NPI",
+      "FirstName": "Pat",
+      "LastName": "Granite",
+      "Credentials": [
+        "MD"
+      ],
+      "Address": {
+        "StreetAddress": "123 Main St.",
+        "City": "Madison",
+        "State": "WI",
+        "ZIP": "53703",
+        "County": "Dane",
+        "Country": "USA"
+      },
+      "EmailAddresses": [],
+      "PhoneNumber": {
+        "Office": "+16085551234"
+      },
+      "Location": {}
+    },
+    "ConsultingProvider": {
+      "ID": "2434534567",
+      "IDType": "NPI",
+      "FirstName": "Sharon",
+      "LastName": "Chalk",
+      "Credentials": [
+        "MD",
+        "PhD"
+      ],
+      "Address": {
+        "StreetAddress": "312 Maple Dr. Suite 400",
+        "City": "Verona",
+        "State": "WI",
+        "ZIP": "53593",
+        "County": "Dane",
+        "Country": "USA"
+      },
+      "EmailAddresses": [],
+      "PhoneNumber": {
+        "Office": "+16085559999"
+      },
+      "Location": {}
+    },
+    "ReferringProvider": {
+      "ID": "4236464757",
+      "IDType": "NPI",
+      "FirstName": "John",
+      "LastName": "Slate",
+      "Credentials": [
+        "DO"
+      ],
+      "Address": {
+        "StreetAddress": "500 First St.",
+        "City": "Clayton",
+        "State": "MO",
+        "ZIP": "63105",
+        "County": "Saint Louis",
+        "Country": "USA"
+      },
+      "EmailAddresses": [],
+      "PhoneNumber": {
+        "Office": "+13145554321"
+      },
+      "Location": {}
+    },
+    "Guarantor": {
+      "Number": "10001910",
+      "FirstName": "Kent",
+      "LastName": "Bixby",
+      "Spouse": {
+        "FirstName": "Barbara",
+        "LastName": "Bixby"
+      },
+      "Address": {
+        "StreetAddress": "4762 Hickory Street",
+        "City": "Monroe",
+        "State": "WI",
+        "ZIP": "53566",
+        "County": "Green",
+        "Country": "USA"
+      },
+      "PhoneNumber": {},
+      "EmailAddresses": [],
+      "RelationToPatient": "Father",
+      "Employer": {
+        "Name": "Accelerator Labs",
+        "Address": {
+          "StreetAddress": "1456 Old Sauk Road",
+          "City": "Madison",
+          "State": "WI",
+          "ZIP": "53719",
+          "County": "Dane",
+          "Country": "USA"
+        },
+        "PhoneNumber": "+18083451121"
+      }
+    },
+    "Insurances": [
+      {
+        "Plan": {
+          "ID": "31572",
+          "IDType": "Payor ID",
+          "Name": "HMO Deductible Plan"
+        },
+        "Company": {
+          "ID": "60054",
+          "Name": "aetna (60054 0131)",
+          "Address": {
+            "StreetAddress": "PO Box 14080",
+            "City": "Lexington",
+            "State": "KY",
+            "ZIP": "40512-4079",
+            "County": "Fayette",
+            "Country": "US"
+          },
+          "PhoneNumber": "+18089541123"
+        },
+        "GroupNumber": "847025-024-0009",
+        "GroupName": "Accelerator Labs",
+        "EffectiveDate": "2015-01-01",
+        "ExpirationDate": "2020-12-31",
+        "PolicyNumber": "9140860055",
+        "Insured": {
+          "Identifiers": [],
+          "Address": {}
+        }
+      }
+    ],
+    "Location": {
+      "Type": "Inpatient",
+      "Facility": "RES General Hospital",
+      "Department": "3N",
+      "Room": "136",
+      "Bed": "B"
+    }
+  },
+  "Order": {
+    "ID": "157968300",
+    "Status": "New",
+    "TransactionDateTime": "2015-05-06T06:00:58.872Z",
+    "CollectionDateTime": "2015-05-06T06:00:58.872Z",
+    "Specimen": {},
+    "Procedure": {
+      "Code": "49086-2",
+      "Description": "First trimester maternal screen with nuchal translucency panel"
+    },
+    "Provider": {
+      "NPI": "4356789876",
+      "ID": "4356789876",
+      "IDType": "NPI",
+      "FirstName": "Pat",
+      "LastName": "Granite",
+      "Credentials": [
+        "MD"
+      ],
+      "Address": {
+        "StreetAddress": "123 Main St.",
+        "City": "Madison",
+        "State": "WI",
+        "ZIP": "53703",
+        "County": "Dane",
+        "Country": "USA"
+      },
+      "EmailAddresses": [],
+      "PhoneNumber": {
+        "Office": "+16085551234"
+      },
+      "Location": {}
+    },
+    "ResultCopyProviders": [],
+    "OrderingFacility": {
+      "Address": {}
+    },
+    "Priority": "Stat",
+    "Notes": [],
+    "Diagnoses": [
+      {
+        "Code": "Z31.41",
+        "Codeset": "ICD-10",
+        "Name": "Encounter for fertility testing"
+      }
+    ],
+    "ClinicalInfo": [
+      {
+        "Code": "QUESTION001",
+        "Description": "Estimated Due Date",
+        "Value": "2015-10-05",
+        "Notes": []
+      },
+      {
+        "Code": "QUESTION002",
+        "Description": "Ethnicity",
+        "Value": "White",
+        "Abbreviation": "W",
+        "Notes": []
+      },
+      {
+        "Code": "QUESTION010",
+        "Description": "Is this a twin pregnancy?",
+        "Value": "Singleton",
+        "Abbreviation": "sng",
+        "Notes": []
+      },
+      {
+        "Code": "QUESTION011",
+        "Description": "Dating Method",
+        "Value": "LMP",
+        "Abbreviation": "lmp",
+        "Notes": []
+      }
+    ]
+  }
+}

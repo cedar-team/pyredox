@@ -388,6 +388,16 @@ class BodySite(RedoxAbstractModel):
     Description: Union[str, None] = Field(None)
 
 
+class CareTeam(RedoxAbstractModel):
+
+    Encounter: "Encounter" = Field(None)
+    Members: List["Member"] = Field(None)
+    Name: Union[str, None] = Field(None)
+    Organization: "Organization" = Field(None)
+    Status: Union[str, None] = Field(None)
+    Types: List["Type"] = Field(None)
+
+
 class Category(RedoxAbstractModel):
 
     AltCodes: List["AltCode"] = Field(None)
@@ -513,6 +523,14 @@ class Condition(RedoxAbstractModel):
     Name: Union[str, None] = Field(None)
 
 
+class Confidentiality(RedoxAbstractModel):
+
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
 class ConnectionType(RedoxAbstractModel):
 
     System: Union[str, None] = Field(None)
@@ -623,7 +641,7 @@ class Demographics(RedoxAbstractModel):
     Credentials: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
     DeathDateTime: Union[str, None] = Field(None)
-    EmailAddresses: List["EmailAddress"] = Field(None)
+    EmailAddresses: Union[List["EmailAddress"], List[str]] = Field(None)
     EthnicGroupCodes: List["EthnicGroupCode"] = Field(None)
     Ethnicity: Union[str, None] = Field(None)
     FirstName: Union[str, None] = Field(None)
@@ -698,6 +716,15 @@ class DischargeDiagnosis(RedoxAbstractModel):
     StartDate: Union[str, None] = Field(None)
 
 
+class DischargeDisposition(RedoxAbstractModel):
+
+    AltCodes: List["AltCode"] = Field(None)
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
 class DischargeLocation(RedoxAbstractModel):
 
     Department: Union[str, None] = Field(None)
@@ -740,6 +767,7 @@ class Dispense(RedoxAbstractModel):
 class Document(RedoxAbstractModel):
 
     Author: "Author" = Field(None)
+    Confidentiality: "Confidentiality" = Field(None)
     Custodian: "Custodian" = Field(None)
     DateTime: Union[str, None] = Field(None)
     EndDate: Union[str, None] = Field(None)
@@ -805,6 +833,7 @@ class Encounter(RedoxAbstractModel):
     CodeSystemName: Union[str, None] = Field(None)
     DateTime: Union[str, None] = Field(None)
     Diagnosis: List["Diagnosis"] = Field(None)
+    DischargeDisposition: "DischargeDisposition" = Field(None)
     EndDateTime: Union[str, None] = Field(None)
     Identifiers: List["Identifier"] = Field(None)
     Locations: List["Location"] = Field(None)
@@ -940,14 +969,20 @@ class Header(RedoxAbstractModel):
 class HealthConcern(RedoxAbstractModel):
 
     AltCodes: List["AltCode"] = Field(None)
+    Category: "Category" = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
     Comments: List["Comment"] = Field(None)
+    ConcernType: Union[str, None] = Field(None)
     EndDate: Union[str, None] = Field(None)
+    Interpretation: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
     StartDate: Union[str, None] = Field(None)
     Status: Union[str, None] = Field(None)
+    TargetSite: "TargetSite" = Field(None)
+    Units: Union[None] = Field(None)
+    Value: Union[None] = Field(None)
 
 
 class HealthStatus(RedoxAbstractModel):
@@ -974,6 +1009,7 @@ class Immunization(RedoxAbstractModel):
     Dose: "Dose" = Field(None)
     Product: "Product" = Field(None)
     Route: "Route" = Field(None)
+    Status: Union[str, None] = Field(None)
 
 
 class Indication(RedoxAbstractModel):
@@ -1073,7 +1109,9 @@ class Location(RedoxAbstractModel):
     Name: Union[str, None] = Field(None)
     PhoneNumber: "PhoneNumber" = Field(None)
     Room: Union[str, None] = Field(None)
+    SpecialtyDepartment: "SpecialtyDepartment" = Field(None)
     Status: Union[str, None] = Field(None)
+    Telecom: List["Telecom"] = Field(None)
     Type: Union["Type", str, None] = Field(None)
 
 
@@ -1112,6 +1150,8 @@ class Media(RedoxAbstractModel):
 
 class MedicalEquipment(RedoxAbstractModel):
 
+    Comments: List["Comment"] = Field(None)
+    Procedure: "Procedure" = Field(None)
     Product: "Product" = Field(None)
     Quantity: Union[str, None] = Field(None)
     StartDate: Union[str, None] = Field(None)
@@ -1176,6 +1216,20 @@ class Medium(RedoxAbstractModel):
     Patient: "Patient" = Field(None)
     ServiceDateTime: Union[str, None] = Field(None)
     Visit: "Visit" = Field(None)
+
+
+class Member(RedoxAbstractModel):
+
+    Address: "Address" = Field(None)
+    Credentials: List[str] = Field(None)
+    EndDateTime: Union[str, None] = Field(None)
+    FirstName: Union[str, None] = Field(None)
+    Identifiers: List["Identifier"] = Field(None)
+    LastName: Union[str, None] = Field(None)
+    MiddleName: Union[str, None] = Field(None)
+    Roles: List["Role"] = Field(None)
+    StartDateTime: Union[str, None] = Field(None)
+    Telecom: List["Telecom"] = Field(None)
 
 
 class Message(RedoxAbstractModel):
@@ -1694,15 +1748,27 @@ class Producer(RedoxAbstractModel):
 class Product(RedoxAbstractModel):
 
     AltCodes: List["AltCode"] = Field(None)
+    BrandName: Union[str, None] = Field(None)
+    CatalogNumber: Union[str, None] = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
+    DeviceID: Union[str, None] = Field(None)
+    DistinctID: Union[str, None] = Field(None)
     ExpirationDate: Union[str, None] = Field(None)
+    Identifiers: List["Identifier"] = Field(None)
+    Issuer: Union[str, None] = Field(None)
     LotNumber: Union[str, None] = Field(None)
+    ManufactureDate: Union[str, None] = Field(None)
     Manufacturer: Union["Manufacturer", str, None] = Field(None)
+    ManufacturerName: Union[str, None] = Field(None)
+    ModelNumber: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
+    SafetyObservations: List["SafetyObservation"] = Field(None)
+    SerialNumber: Union[str, None] = Field(None)
+    Status: "Status" = Field(None)
 
 
 class Protocol(RedoxAbstractModel):
@@ -1986,6 +2052,15 @@ class Route(RedoxAbstractModel):
     Name: Union[str, None] = Field(None)
 
 
+class SafetyObservation(RedoxAbstractModel):
+
+    AltCodes: List["AltCode"] = Field(None)
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+
+
 class Service(RedoxAbstractModel):
 
     AdjudicatedProcedure: "AdjudicatedProcedure" = Field(None)
@@ -2017,7 +2092,7 @@ class Service(RedoxAbstractModel):
     IssueDate: Union[str, None] = Field(None)
     Modifiers: List[str] = Field(None)
     Name: Union[str, None] = Field(None)
-    Notes: Union[str, None] = Field(None)
+    Notes: Union[List[str], str, None] = Field(None)
     PaymentAmount: Union[str, None] = Field(None)
     PaymentUnits: Union[str, None] = Field(None)
     PhoneNumber: "PhoneNumber" = Field(None)
@@ -2087,6 +2162,13 @@ class Specialty(RedoxAbstractModel):
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
+
+
+class SpecialtyDepartment(RedoxAbstractModel):
+
+    Code: Union[str, None] = Field(None)
+    Codeset: Union[str, None] = Field(None)
+    Description: Union[str, None] = Field(None)
 
 
 class Specimen(RedoxAbstractModel):
@@ -2414,7 +2496,7 @@ class Vendor(RedoxAbstractModel):
 class VerifiedBy(RedoxAbstractModel):
 
     Address: "Address" = Field(None)
-    Credentials: Union[str, None] = Field(None)
+    Credentials: Union[List[str], str, None] = Field(None)
     DateTime: Union[str, None] = Field(None)
     EmailAddresses: List[str] = Field(None)
     FirstName: Union[str, None] = Field(None)
@@ -2448,6 +2530,7 @@ class Visit(RedoxAbstractModel):
     DiagnosisRelatedGroup: Union[Number, None] = Field(None)
     DiagnosisRelatedGroupType: Union[Number, None] = Field(None)
     DischargeDateTime: Union[str, None] = Field(None)
+    DischargeDisposition: "DischargeDisposition" = Field(None)
     DischargeLocation: "DischargeLocation" = Field(None)
     DischargeStatus: "DischargeStatus" = Field(None)
     Duration: Union[Number, None] = Field(None)
@@ -2478,7 +2561,17 @@ class Visit(RedoxAbstractModel):
     Type: Union["Type", str, None] = Field(None)
     VisitDateTime: Union[str, None] = Field(None)
     VisitNumber: Union[str, None] = Field(None)
+    VisitPreference: List["VisitPreference"] = Field(None)
     VisitProvider: "VisitProvider" = Field(None)
+    VisitType: List["VisitType"] = Field(None)
+
+
+class VisitPreference(RedoxAbstractModel):
+
+    Day: List[str] = Field(None)
+    Duration: Union[str, None] = Field(None)
+    DurationUnit: Union[str, None] = Field(None)
+    Time: List[str] = Field(None)
 
 
 class VisitProvider(RedoxAbstractModel):
@@ -2492,6 +2585,13 @@ class VisitProvider(RedoxAbstractModel):
     LastName: Union[str, None] = Field(None)
     Location: "Location" = Field(None)
     PhoneNumber: "PhoneNumber" = Field(None)
+
+
+class VisitType(RedoxAbstractModel):
+
+    Code: Union[str, None] = Field(None)
+    Codeset: Union[str, None] = Field(None)
+    Description: Union[str, None] = Field(None)
 
 
 class VitalSign(RedoxAbstractModel):
@@ -2520,6 +2620,7 @@ Authorization.update_forward_refs()
 AuthorizingProvider.update_forward_refs()
 AvailableSlot.update_forward_refs()
 BillingProvider.update_forward_refs()
+CareTeam.update_forward_refs()
 Category.update_forward_refs()
 Claim.update_forward_refs()
 CodedValue.update_forward_refs()
@@ -2535,6 +2636,7 @@ Day.update_forward_refs()
 Demographics.update_forward_refs()
 Diagnosis.update_forward_refs()
 DischargeDiagnosis.update_forward_refs()
+DischargeDisposition.update_forward_refs()
 DischargeMedication.update_forward_refs()
 Document.update_forward_refs()
 Drug.update_forward_refs()
@@ -2564,6 +2666,7 @@ Medication.update_forward_refs()
 MedicationAdministration.update_forward_refs()
 MedicationsAdministered.update_forward_refs()
 Medium.update_forward_refs()
+Member.update_forward_refs()
 Meta.update_forward_refs()
 Milestone.update_forward_refs()
 MixtureComponent.update_forward_refs()
@@ -2610,6 +2713,7 @@ Result.update_forward_refs()
 ResultCopyProvider.update_forward_refs()
 Role.update_forward_refs()
 Route.update_forward_refs()
+SafetyObservation.update_forward_refs()
 Service.update_forward_refs()
 Session.update_forward_refs()
 Slot.update_forward_refs()
