@@ -641,7 +641,7 @@ class Demographics(RedoxAbstractModel):
     Credentials: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
     DeathDateTime: Union[str, None] = Field(None)
-    EmailAddresses: List["EmailAddress"] = Field(None)
+    EmailAddresses: Union[List["EmailAddress"], List[str]] = Field(None)
     EthnicGroupCodes: List["EthnicGroupCode"] = Field(None)
     Ethnicity: Union[str, None] = Field(None)
     FirstName: Union[str, None] = Field(None)
@@ -2092,7 +2092,7 @@ class Service(RedoxAbstractModel):
     IssueDate: Union[str, None] = Field(None)
     Modifiers: List[str] = Field(None)
     Name: Union[str, None] = Field(None)
-    Notes: Union[str, None] = Field(None)
+    Notes: Union[List[str], str, None] = Field(None)
     PaymentAmount: Union[str, None] = Field(None)
     PaymentUnits: Union[str, None] = Field(None)
     PhoneNumber: "PhoneNumber" = Field(None)
@@ -2496,7 +2496,7 @@ class Vendor(RedoxAbstractModel):
 class VerifiedBy(RedoxAbstractModel):
 
     Address: "Address" = Field(None)
-    Credentials: Union[str, None] = Field(None)
+    Credentials: Union[List[str], str, None] = Field(None)
     DateTime: Union[str, None] = Field(None)
     EmailAddresses: List[str] = Field(None)
     FirstName: Union[str, None] = Field(None)
