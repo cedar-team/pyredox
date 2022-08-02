@@ -4,6 +4,7 @@ from json import load
 from pathlib import Path
 
 import pytest
+from retry import retry
 
 SAMPLES_DIR = (Path(__file__).parent / "fixtures").resolve()
 
@@ -11,7 +12,7 @@ PYREDOX_DIR = (Path(__file__).parent.parent / "pyredox").resolve()
 SAMPLE_DATA_FILE_PATH = [
     (Path(f"{module.name}_{event.stem.lower()}.json"),)
     for module in PYREDOX_DIR.iterdir()
-    if module.is_dir() and module.name != "generic"
+    if module.is_dir() and module.name != "generic" and not module.name.startswith("_")
     for event in module.iterdir()
     if not event.name.startswith("_")
 ]
@@ -28,6 +29,7 @@ SKIP_FILES = [
 
 
 @pytest.mark.parametrize(("json_file_path",), SAMPLE_DATA_FILE_PATH)
+@retry(FileNotFoundError, tries=3, delay=1, backoff=1.5)
 def test_json_pyredox_json(json_file_path: Path):
     current_sample_path = SAMPLES_DIR / json_file_path
     print(current_sample_path)
