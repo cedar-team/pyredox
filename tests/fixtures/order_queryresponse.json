@@ -1,0 +1,111 @@
+{
+  "Meta": {
+    "DataModel": "Order",
+    "EventType": "QueryResponse",
+    "EventDateTime": "2022-08-01T18:38:57.072Z",
+    "Test": true,
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
+    },
+    "Destinations": [
+      {
+        "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
+        "Name": "Redox EMR"
+      }
+    ],
+    "Logs": [
+      {
+        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
+        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
+      }
+    ],
+    "Message": {
+      "ID": 5565
+    },
+    "Transmission": {
+      "ID": 12414
+    }
+  },
+  "Orders": [
+    {
+      "Patient": {
+        "Identifiers": [
+          {
+            "ID": "0000000001",
+            "IDType": "MR"
+          },
+          {
+            "ID": "e167267c-16c9-4fe3-96ae-9cff5703e90a",
+            "IDType": "EHRID"
+          },
+          {
+            "ID": "a1d4ee8aba494ca",
+            "IDType": "NIST"
+          }
+        ]
+      },
+      "Visit": {
+        "VisitNumber": "1234"
+      },
+      "ID": "157968300",
+      "Status": "New",
+      "TransactionDateTime": "2015-05-06T06:00:58.872Z",
+      "CollectionDateTime": "2015-05-06T06:00:58.872Z",
+      "Specimen": {},
+      "Procedure": {
+        "Code": "49086-2",
+        "Description": "First trimester maternal screen with nuchal translucency panel"
+      },
+      "Provider": {
+        "Credentials": [],
+        "Address": {},
+        "EmailAddresses": [],
+        "PhoneNumber": {},
+        "Location": {}
+      },
+      "ResultCopyProviders": [],
+      "OrderingFacility": {
+        "Address": {}
+      },
+      "Priority": "Stat",
+      "Notes": [],
+      "Diagnoses": [
+        {
+          "Code": "Z31.41",
+          "Codeset": "ICD-10",
+          "Name": "Encounter for fertility testing"
+        }
+      ],
+      "ClinicalInfo": [
+        {
+          "Code": "QUESTION001",
+          "Description": "Estimated Due Date",
+          "Value": "2015-10-05",
+          "Notes": []
+        },
+        {
+          "Code": "QUESTION002",
+          "Description": "Ethnicity",
+          "Value": "White",
+          "Abbreviation": "W",
+          "Notes": []
+        },
+        {
+          "Code": "QUESTION010",
+          "Description": "Is this a twin pregnancy?",
+          "Value": "Singleton",
+          "Abbreviation": "sng",
+          "Notes": []
+        },
+        {
+          "Code": "QUESTION011",
+          "Description": "Dating Method",
+          "Value": "LMP",
+          "Abbreviation": "lmp",
+          "Notes": []
+        }
+      ]
+    }
+  ]
+}

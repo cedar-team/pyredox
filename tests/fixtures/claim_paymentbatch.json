@@ -1,0 +1,251 @@
+{
+  "Meta": {
+    "DataModel": "Claim",
+    "EventType": "PaymentBatch",
+    "EventDateTime": "2022-08-01T18:38:57.072Z",
+    "Test": true,
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
+    },
+    "Destinations": [
+      {
+        "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
+        "Name": "Redox EMR"
+      }
+    ],
+    "Logs": [
+      {
+        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
+        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
+      }
+    ],
+    "Message": {
+      "ID": 5565
+    },
+    "Transmission": {
+      "ID": 12414
+    }
+  },
+  "Transactions": [
+    {
+      "ID": "000000001",
+      "Type": "Profressional",
+      "TotalPaymentAmount": "580.00",
+      "CreditOrDebit": "Credit",
+      "PaymentMethod": "Check",
+      "PaymentDateTime": "2016-11-11T02:11:03.111Z",
+      "TrackingNumber": "8675309",
+      "Submitter": {
+        "Identifiers": [
+          {
+            "ID": "123456",
+            "IDType": "TIN"
+          }
+        ],
+        "Name": "National Insurance Company of Redox",
+        "Address": {},
+        "PhoneNumber": {}
+      },
+      "Receiver": {
+        "Identifiers": [
+          {
+            "ID": "8675309",
+            "IDType": "TIN"
+          }
+        ],
+        "Name": "Redox Health System",
+        "Address": {},
+        "PhoneNumber": {}
+      },
+      "Payments": [
+        {
+          "DateTime": "2016-11-08T02:11:03.111Z",
+          "Patient": {
+            "Identifiers": [
+              {
+                "ID": "0000000001",
+                "IDType": "MR"
+              },
+              {
+                "ID": "e167267c-16c9-4fe3-96ae-9cff5703e90a",
+                "IDType": "EHRID"
+              },
+              {
+                "ID": "a1d4ee8aba494ca",
+                "IDType": "NIST"
+              }
+            ],
+            "Demographics": {
+              "FirstName": "Timothy",
+              "MiddleName": "Paul",
+              "LastName": "Bixby",
+              "DOB": "2008-01-06",
+              "SSN": "101-01-0001",
+              "Sex": "Male",
+              "Race": "White",
+              "MaritalStatus": "Single",
+              "PhoneNumber": {
+                "Home": "+18088675301"
+              },
+              "EmailAddresses": [],
+              "Language": "en",
+              "Citizenship": [],
+              "Address": {
+                "StreetAddress": "4762 Hickory Street",
+                "City": "Monroe",
+                "State": "WI",
+                "ZIP": "53566",
+                "County": "Green",
+                "Country": "US"
+              }
+            },
+            "Notes": []
+          },
+          "Claims": [
+            {
+              "ControlNumber": "94151100100",
+              "SubmissionNumber": "66729659983",
+              "ReceivedDate": "2016-10-31",
+              "Status": "Processed as Primary",
+              "ChargedAmount": "100.00",
+              "PaymentAmount": "65.00",
+              "PatientResponsibilityAmount": "20.00",
+              "ReferenceNumbers": [
+                {
+                  "ID": "AUTH000000",
+                  "IDType": "Prior Authorization"
+                }
+              ],
+              "Adjustments": [],
+              "Services": [
+                {
+                  "ChargedAmount": "100.00",
+                  "PaymentAmount": "65.00",
+                  "AllowedAmount": "85.00",
+                  "SubmittedService": {
+                    "Modifiers": []
+                  },
+                  "AdjudicatedService": {
+                    "Modifiers": []
+                  },
+                  "Adjustments": [
+                    {
+                      "Amount": "20.00",
+                      "Type": "Patient responsibility",
+                      "Reason": "Deductible amount"
+                    },
+                    {
+                      "Amount": "15.00",
+                      "Type": "Contractual obligations",
+                      "Reason": "Claim specific negotiated discount"
+                    }
+                  ],
+                  "ReferenceNumbers": [
+                    {
+                      "ID": "1",
+                      "IDType": "Control Number"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "DateTime": "2016-11-08T02:11:03.111Z",
+          "Patient": {
+            "Identifiers": [
+              {
+                "ID": "0000000001",
+                "IDType": "MR"
+              },
+              {
+                "ID": "e167267c-16c9-4fe3-96ae-9cff5703e90a",
+                "IDType": "EHRID"
+              },
+              {
+                "ID": "a1d4ee8aba494ca",
+                "IDType": "NIST"
+              }
+            ],
+            "Demographics": {
+              "FirstName": "Timothy",
+              "MiddleName": "Paul",
+              "LastName": "Bixby",
+              "DOB": "2008-01-06",
+              "SSN": "101-01-0001",
+              "Sex": "Male",
+              "Race": "White",
+              "MaritalStatus": "Single",
+              "PhoneNumber": {
+                "Home": "+18088675301"
+              },
+              "EmailAddresses": [],
+              "Language": "en",
+              "Citizenship": [],
+              "Address": {
+                "StreetAddress": "4762 Hickory Street",
+                "City": "Monroe",
+                "State": "WI",
+                "ZIP": "53566",
+                "County": "Green",
+                "Country": "US"
+              }
+            },
+            "Notes": []
+          },
+          "Claims": [
+            {
+              "ControlNumber": "94151100200",
+              "SubmissionNumber": "774466586",
+              "ReceivedDate": "2016-10-31",
+              "Status": "Processed as Primary",
+              "ChargedAmount": "100.00",
+              "PaymentAmount": "75.00",
+              "PatientResponsibilityAmount": "20.00",
+              "ReferenceNumbers": [
+                {
+                  "ID": "AUTH000000",
+                  "IDType": "Prior Authorization"
+                }
+              ],
+              "Adjustments": [],
+              "Services": [
+                {
+                  "ChargedAmount": "100.00",
+                  "PaymentAmount": "75.00",
+                  "AllowedAmount": "95.00",
+                  "SubmittedService": {
+                    "Modifiers": []
+                  },
+                  "AdjudicatedService": {
+                    "Modifiers": []
+                  },
+                  "Adjustments": [
+                    {
+                      "Amount": "20.00",
+                      "Type": "Patient responsibility",
+                      "Reason": "Deductible amount"
+                    },
+                    {
+                      "Amount": "5.00",
+                      "Type": "Contractual obligations",
+                      "Reason": "Claim specific negotiated discount"
+                    }
+                  ],
+                  "ReferenceNumbers": [
+                    {
+                      "ID": "1",
+                      "IDType": "Control Number"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

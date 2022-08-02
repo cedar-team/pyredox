@@ -1,0 +1,84 @@
+{
+  "Meta": {
+    "DataModel": "Organization",
+    "EventType": "QueryResponse",
+    "EventDateTime": "2022-08-01T18:38:57.072Z",
+    "Test": true,
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
+    },
+    "Destinations": [
+      {
+        "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
+        "Name": "Redox EMR"
+      }
+    ],
+    "Logs": [
+      {
+        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
+        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
+      }
+    ],
+    "Message": {
+      "ID": 5565
+    },
+    "Transmission": {
+      "ID": 12414
+    }
+  },
+  "Directory": "Carequality",
+  "Organizations": [
+    {
+      "Active": true,
+      "Name": "Test Org",
+      "Aliases": [],
+      "Identifiers": [
+        {
+          "ID": "0000000001",
+          "IDType": "FACID"
+        },
+        {
+          "ID": "1.2.3.4.5",
+          "IDType": "OID"
+        }
+      ],
+      "Type": {
+        "System": "http://hl7.org/fhir/organization-type",
+        "Value": "Implementer"
+      },
+      "PartOf": {
+        "Identifier": {
+          "Type": "HCID",
+          "System": "http://www.hl7.org/oid/",
+          "Value": "1.2.3.4"
+        }
+      },
+      "Contacts": [
+        {
+          "Name": "Bixby, Barbara",
+          "EmailAddresses": [
+            "[email\u00a0protected]"
+          ],
+          "PhoneNumber": {
+            "Home": "+18088675303",
+            "Mobile": "+19189368865"
+          }
+        }
+      ],
+      "Address": {
+        "StreetAddress": "123 Main St.",
+        "City": "ATown",
+        "State": "AL",
+        "ZIP": "86754",
+        "County": "Madison",
+        "Country": "USA"
+      },
+      "ManagingOrg": "Redox Health System"
+    }
+  ],
+  "Paging": {
+    "Count": 1,
+    "Index": 0
+  }
+}

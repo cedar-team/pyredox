@@ -1,54 +1,55 @@
 # -*- coding: utf-8 -*-
+from importlib import import_module
 from json import load
 from pathlib import Path
-from typing import Type
 
 import pytest
-
-from pyredox import patientadmin, scheduling
-from pyredox.abstract_base import EventTypeAbstractModel
+from retry import retry
 
 SAMPLES_DIR = (Path(__file__).parent / "fixtures").resolve()
 
-SAMPLE_DATA_TYPE_AND_FILE_PATH = [
-    (patientadmin.Arrival, Path("patientadmin_arrival.json")),
-    (patientadmin.Cancel, Path("patientadmin_cancel.json")),
-    (patientadmin.CensusQuery, Path("patientadmin_censusquery.json")),
-    (patientadmin.CensusQueryResponse, Path("patientadmin_censusqueryresponse.json")),
-    (patientadmin.Discharge, Path("patientadmin_discharge.json")),
-    (patientadmin.NewPatient, Path("patientadmin_newpatient.json")),
-    (patientadmin.PatientMerge, Path("patientadmin_patientmerge.json")),
-    (patientadmin.PatientUpdate, Path("patientadmin_patientupdate.json")),
-    (patientadmin.PreAdmit, Path("patientadmin_preadmit.json")),
-    (patientadmin.Registration, Path("patientadmin_registration.json")),
-    (patientadmin.Transfer, Path("patientadmin_transfer.json")),
-    (patientadmin.VisitMerge, Path("patientadmin_visitmerge.json")),
-    (patientadmin.VisitQuery, Path("patientadmin_visitquery.json")),
-    (patientadmin.VisitQueryResponse, Path("patientadmin_visitqueryresponse.json")),
-    (patientadmin.VisitUpdate, Path("patientadmin_visitupdate.json")),
-    (scheduling.AvailableSlots, Path("scheduling_availableslots.json")),
-    (scheduling.AvailableSlotsResponse, Path("scheduling_availableslotsresponse.json")),
-    (scheduling.Booked, Path("scheduling_booked.json")),
-    (scheduling.BookedResponse, Path("scheduling_bookedresponse.json")),
-    (scheduling.Cancel, Path("scheduling_cancel.json")),
-    (scheduling.Modification, Path("scheduling_modification.json")),
-    (scheduling.New, Path("scheduling_new.json")),
-    (scheduling.NoShow, Path("scheduling_noshow.json")),
-    (scheduling.PushSlots, Path("scheduling_pushslots.json")),
-    (scheduling.Reschedule, Path("scheduling_reschedule.json")),
+PYREDOX_DIR = (Path(__file__).parent.parent / "pyredox").resolve()
+SAMPLE_DATA_FILE_PATH = [
+    (Path(f"{module.name}_{event.stem.lower()}.json"),)
+    for module in PYREDOX_DIR.iterdir()
+    if module.is_dir() and module.name != "generic" and not module.name.startswith("_")
+    for event in module.iterdir()
+    if not event.name.startswith("_")
+]
+SKIP_FILES = [
+    str(SAMPLES_DIR / f)
+    for f in [
+        "clinicalsummary_patientpush.json",
+        "clinicalsummary_visitpush.json",
+        "clinicalsummary_visitqueryresponse.json",
+        "clinicalsummary_patientqueryresponse.json",
+        "clinicaldecisions_request.json",
+    ]
 ]
 
 
-@pytest.mark.parametrize(
-    ("expected_type", "json_file_path"), SAMPLE_DATA_TYPE_AND_FILE_PATH
-)
-def test_json_pyredox_json(
-    expected_type: Type[EventTypeAbstractModel], json_file_path: Path
-):
+@pytest.mark.parametrize(("json_file_path",), SAMPLE_DATA_FILE_PATH)
+@retry(FileNotFoundError, tries=3, delay=1, backoff=1.5)
+def test_json_pyredox_json(json_file_path: Path):
     current_sample_path = SAMPLES_DIR / json_file_path
+    print(current_sample_path)
     assert current_sample_path.exists
-    with open(current_sample_path) as sample_fd:
-        sample = load(sample_fd)
+    try:
+        with open(current_sample_path) as sample_fd:
+            sample = load(sample_fd)
+    except FileNotFoundError as err:
+        if err.filename in SKIP_FILES:
+            return
+        raise
+
+    model: str = sample["Meta"]["DataModel"].lower().replace(" ", "")
+    event: str = sample["Meta"]["EventType"]
+    # This is to handle the weird naming in the SSO folder
+    if "-" in event:
+        event = event.replace("-", " ").title().replace(" ", "")
+
+    module = import_module(f"pyredox.{model}")
+    expected_type = getattr(module, event)
 
     obj = expected_type(**sample)
     assert isinstance(obj, expected_type)

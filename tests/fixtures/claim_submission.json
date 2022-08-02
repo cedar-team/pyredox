@@ -1,0 +1,211 @@
+{
+  "Meta": {
+    "DataModel": "Claim",
+    "EventType": "Submission",
+    "EventDateTime": "2022-08-01T18:38:57.072Z",
+    "Test": true,
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
+    },
+    "Destinations": [
+      {
+        "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
+        "Name": "Redox EMR"
+      }
+    ],
+    "Logs": [
+      {
+        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
+        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
+      }
+    ],
+    "Message": {
+      "ID": 5565
+    },
+    "Transmission": {
+      "ID": 12414
+    }
+  },
+  "Transaction": {
+    "ID": "94151100100",
+    "Type": "Professional",
+    "Submitter": {
+      "PhoneNumber": {}
+    },
+    "Receiver": {}
+  },
+  "BillingProvider": {
+    "ID": "4356789876",
+    "IDType": "NPI",
+    "FirstName": "Pat",
+    "LastName": "Granite",
+    "Specialty": {},
+    "Address": {
+      "StreetAddress": "123 Main St.",
+      "City": "Madison",
+      "State": "WI",
+      "ZIP": "53703",
+      "County": "Dane",
+      "Country": "USA"
+    },
+    "PhoneNumber": {
+      "Office": "+16085551234"
+    }
+  },
+  "Subscriber": {
+    "FirstName": "Timothy",
+    "MiddleName": "Paul",
+    "LastName": "Bixby",
+    "Address": {
+      "StreetAddress": "4762 Hickory Street",
+      "City": "Monroe",
+      "State": "WI",
+      "ZIP": "53566",
+      "County": "Green",
+      "Country": "US"
+    },
+    "DOB": "2008-01-06",
+    "Sex": "Male",
+    "RelationToPatient": "Self",
+    "ResponsibilityLevel": "Primary",
+    "Insurance": {
+      "Plan": {
+        "ID": "31572",
+        "IDType": "Payor ID",
+        "Name": "HMO Deductible Plan"
+      },
+      "Company": {
+        "ID": "60054",
+        "Name": "aetna (60054 0131)",
+        "Address": {
+          "StreetAddress": "PO Box 14080",
+          "City": "Lexington",
+          "State": "KY",
+          "ZIP": "40512-4079",
+          "County": "Fayette",
+          "Country": "US"
+        },
+        "PhoneNumber": "+18089541123"
+      },
+      "GroupNumber": "847025-024-0009",
+      "GroupName": "Accelerator Labs",
+      "EffectiveDate": "2015-01-01",
+      "ExpirationDate": "2020-12-31",
+      "PolicyNumber": "9140860055"
+    }
+  },
+  "Patient": {
+    "Identifiers": [
+      {
+        "ID": "0000000001",
+        "IDType": "MR"
+      },
+      {
+        "ID": "e167267c-16c9-4fe3-96ae-9cff5703e90a",
+        "IDType": "EHRID"
+      },
+      {
+        "ID": "a1d4ee8aba494ca",
+        "IDType": "NIST"
+      }
+    ],
+    "Demographics": {
+      "FirstName": "Timothy",
+      "MiddleName": "Paul",
+      "LastName": "Bixby",
+      "DOB": "2008-01-06",
+      "SSN": "101-01-0001",
+      "Sex": "Male",
+      "Race": "White",
+      "MaritalStatus": "Single",
+      "PhoneNumber": {
+        "Home": "+18088675301"
+      },
+      "EmailAddresses": [],
+      "Language": "en",
+      "Citizenship": [],
+      "Address": {
+        "StreetAddress": "4762 Hickory Street",
+        "City": "Monroe",
+        "State": "WI",
+        "ZIP": "53566",
+        "County": "Green",
+        "Country": "US"
+      }
+    },
+    "Notes": []
+  },
+  "Claims": [
+    {
+      "ID": "123456789",
+      "Type": "Admit thru Discharge Claim",
+      "TotalAmount": "200.00",
+      "CopayAmount": "10.00",
+      "IsProviderSignatureOnFile": true,
+      "IsReleaseOfInformationOnFile": true,
+      "ReferenceNumbers": [
+        {
+          "ID": "AUTH000000"
+        }
+      ],
+      "Visit": {
+        "DateTime": "2016-10-08",
+        "Location": {
+          "Type": "Outpatient Clinic",
+          "Facility": "RHS Vista Oaks Clinic",
+          "Department": "Vista Oaks Clinic"
+        },
+        "PreviousLocation": {}
+      },
+      "AdditionalDates": [
+        {
+          "Type": "Service Period Start",
+          "DateTime": "2016-10-08"
+        }
+      ],
+      "Diagnoses": [
+        {
+          "Code": "M54.5",
+          "Codeset": "ICD-10",
+          "Name": "Lower back pain"
+        },
+        {
+          "Code": "J45.909",
+          "Codeset": "ICD-10",
+          "Name": "Unspecified asthma, uncomplicated"
+        }
+      ],
+      "Procedures": [],
+      "Lines": [
+        {
+          "ID": "12345678",
+          "Amount": "100.00",
+          "Diagnoses": [],
+          "Procedure": {
+            "Code": "73560",
+            "CodeSet": "CPT",
+            "Modifiers": []
+          },
+          "ServiceDateTime": "2016-10-5",
+          "UnitCount": "1",
+          "Units": "Units",
+          "IsEmergency": false
+        }
+      ],
+      "Providers": [
+        {
+          "ID": "4236464757",
+          "IDType": "NPI",
+          "Role": "Attending",
+          "FirstName": "John",
+          "LastName": "Slate",
+          "Specialty": {
+            "ID": "1223G0001X",
+            "Description": "General Practice"
+          }
+        }
+      ]
+    }
+  ]
+}

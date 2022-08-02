@@ -1,0 +1,221 @@
+{
+  "Meta": {
+    "DataModel": "Referral",
+    "EventType": "AuthResponse",
+    "EventDateTime": "2022-08-01T18:38:57.072Z",
+    "Test": true,
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
+    },
+    "Destinations": [
+      {
+        "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
+        "Name": "Redox EMR"
+      }
+    ],
+    "Logs": [
+      {
+        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
+        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
+      }
+    ],
+    "Message": {
+      "ID": 5565
+    },
+    "Transmission": {
+      "ID": 12414
+    }
+  },
+  "Referral": {
+    "Notes": [],
+    "Authorization": {
+      "Plan": {},
+      "Company": {},
+      "Notes": []
+    },
+    "Diagnoses": [],
+    "Procedures": [],
+    "Providers": [],
+    "Visit": {}
+  },
+  "Authorization": {
+    "Request": {
+      "ID": "4356789876"
+    },
+    "AlternateID": "2133311",
+    "Number": "AB448876",
+    "Type": "Professional",
+    "Category": "Procedure",
+    "CertificationCode": "Initial",
+    "ServiceType": "Medical Care",
+    "ServiceLocation": "On Campus - Outpatient Hospital",
+    "EventDate": "2021-05-25",
+    "Quantity": {
+      "Value": "1",
+      "Units": "Visit"
+    },
+    "AdditionalDates": [],
+    "Decision": "Certified",
+    "EffectiveDate": "2021-05-01",
+    "ExpirationDate": "2021-07-01",
+    "Diagnoses": [],
+    "Notes": [],
+    "Services": [
+      {
+        "Code": "400500400",
+        "Codeset": "CPT4",
+        "Description": "Anticoag Therapy Referral",
+        "Quantity": {
+          "Value": "1",
+          "Units": "Visit"
+        },
+        "Modifiers": [],
+        "AuthorizationNumber": "VVS12345",
+        "Decision": "Certified",
+        "EffectiveDate": "2021-05-01",
+        "ExpirationDate": "2021-07-01",
+        "Notes": []
+      }
+    ],
+    "Providers": [
+      {
+        "ID": "4236464757",
+        "IDType": "NPI",
+        "FirstName": "John",
+        "LastName": "Slate",
+        "Credentials": [
+          "DO"
+        ],
+        "Address": {
+          "StreetAddress": "500 First St.",
+          "City": "Clayton",
+          "State": "MO",
+          "ZIP": "63105",
+          "County": "Saint Louis",
+          "Country": "USA"
+        },
+        "EmailAddresses": [],
+        "PhoneNumber": {},
+        "Type": "Referring Provider",
+        "Location": {}
+      },
+      {
+        "ID": "4236567757",
+        "IDType": "NPI",
+        "LastName": "East River Hospital",
+        "Credentials": [],
+        "Address": {
+          "StreetAddress": "500 First St.",
+          "City": "Clayton",
+          "State": "MO",
+          "ZIP": "63105",
+          "County": "Saint Louis",
+          "Country": "USA"
+        },
+        "EmailAddresses": [],
+        "PhoneNumber": {},
+        "Type": "Service Facility",
+        "Location": {}
+      }
+    ]
+  },
+  "Patient": {
+    "Identifiers": [
+      {
+        "ID": "0000000001",
+        "IDType": "MR"
+      },
+      {
+        "ID": "e167267c-16c9-4fe3-96ae-9cff5703e90a",
+        "IDType": "EHRID"
+      },
+      {
+        "ID": "a1d4ee8aba494ca",
+        "IDType": "NIST"
+      }
+    ],
+    "Demographics": {
+      "FirstName": "Timothy",
+      "MiddleName": "Paul",
+      "LastName": "Bixby",
+      "DOB": "2008-01-06",
+      "SSN": "101-01-0001",
+      "Sex": "Male",
+      "Race": "White",
+      "MaritalStatus": "Single",
+      "PhoneNumber": {
+        "Home": "+18088675301"
+      },
+      "EmailAddresses": [],
+      "Language": "en",
+      "Citizenship": [],
+      "Address": {
+        "StreetAddress": "4762 Hickory Street",
+        "City": "Monroe",
+        "State": "WI",
+        "ZIP": "53566",
+        "County": "Green",
+        "Country": "US"
+      }
+    },
+    "Notes": [],
+    "Contacts": [
+      {
+        "FirstName": "Barbara",
+        "LastName": "Bixby",
+        "Address": {
+          "StreetAddress": "4762 Hickory Street",
+          "City": "Monroe",
+          "State": "WI",
+          "ZIP": "53566",
+          "County": "Green",
+          "Country": "US"
+        },
+        "PhoneNumber": {
+          "Home": "+18088675303",
+          "Office": "+17077543758",
+          "Mobile": "+19189368865"
+        },
+        "RelationToPatient": "Mother",
+        "EmailAddresses": [
+          "[email\u00a0protected]"
+        ],
+        "Roles": [
+          "Emergency Contact"
+        ]
+      }
+    ],
+    "Insurances": [
+      {
+        "Plan": {
+          "ID": "31572",
+          "IDType": "Payor ID",
+          "Name": "HMO Deductible Plan"
+        },
+        "Company": {
+          "ID": "60054",
+          "Name": "aetna (60054 0131)",
+          "Address": {
+            "StreetAddress": "PO Box 14080",
+            "City": "Lexington",
+            "State": "KY",
+            "ZIP": "40512-4079",
+            "County": "Fayette",
+            "Country": "US"
+          },
+          "PhoneNumber": "+18089541123"
+        },
+        "GroupNumber": "847025-024-0009",
+        "GroupName": "Accelerator Labs",
+        "EffectiveDate": "2015-01-01",
+        "ExpirationDate": "2020-12-31",
+        "PolicyNumber": "9140860055",
+        "Insured": {
+          "Identifiers": [],
+          "Address": {}
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "Meta": {
+    "DataModel": "Clinical Summary",
+    "EventType": "DocumentQuery",
+    "EventDateTime": "2022-08-01T18:38:57.072Z",
+    "Test": true,
+    "Destinations": [
+      {
+        "ID": "ef9e7448-7f65-4432-aa96-059647e9b357",
+        "Name": "Patient Query Endpoint"
+      }
+    ],
+    "Logs": [
+      {
+        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
+        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
+      }
+    ]
+  },
+  "Patient": {
+    "Identifiers": [
+      {
+        "ID": "0000000001",
+        "IDType": "MR"
+      },
+      {
+        "ID": "e167267c-16c9-4fe3-96ae-9cff5703e90a",
+        "IDType": "EHRID"
+      },
+      {
+        "ID": "a1d4ee8aba494ca",
+        "IDType": "NIST"
+      }
+    ]
+  },
+  "Location": {},
+  "Visit": {
+    "ID": "1222335"
+  },
+  "Document": {
+    "Types": [
+      {
+        "Code": "34133-9",
+        "Codeset": "LOINC",
+        "Name": "Continuity of Care Document"
+      }
+    ]
+  }
+}

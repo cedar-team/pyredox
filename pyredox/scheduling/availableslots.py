@@ -62,7 +62,57 @@ class AvailableSlotsMetaTransmission(RedoxAbstractModel):
 
 class AvailableSlotsPatient(RedoxAbstractModel):
 
+    Demographics: "AvailableSlotsPatientDemographics" = Field(None)
+    Diagnoses: List["AvailableSlotsPatientDiagnosis"] = Field(None)
     Identifiers: List["AvailableSlotsPatientIdentifier"] = Field(None)
+    Notes: List[str] = Field(None)
+
+
+class AvailableSlotsPatientDemographics(RedoxAbstractModel):
+
+    Address: "AvailableSlotsPatientDemographicsAddress" = Field(None)
+    Citizenship: List[str] = Field(None)
+    DOB: Union[str, None] = Field(None)
+    DeathDateTime: Union[str, None] = Field(None)
+    EmailAddresses: List[str] = Field(None)
+    FirstName: Union[str, None] = Field(None)
+    IsDeceased: Union[bool, None] = Field(None)
+    IsHispanic: Union[bool, None] = Field(None)
+    Language: Union[str, None] = Field(None)
+    LastName: Union[str, None] = Field(None)
+    MaritalStatus: Union[str, None] = Field(None)
+    MiddleName: Union[str, None] = Field(None)
+    PhoneNumber: "AvailableSlotsPatientDemographicsPhoneNumber" = Field(None)
+    Race: Union[str, None] = Field(None)
+    Religion: Union[str, None] = Field(None)
+    SSN: Union[str, None] = Field(None)
+    Sex: Union[str, None] = Field(None)
+
+
+class AvailableSlotsPatientDemographicsAddress(RedoxAbstractModel):
+
+    City: Union[str, None] = Field(None)
+    Country: Union[str, None] = Field(None)
+    County: Union[str, None] = Field(None)
+    State: Union[str, None] = Field(None)
+    StreetAddress: Union[str, None] = Field(None)
+    ZIP: Union[str, None] = Field(None)
+
+
+class AvailableSlotsPatientDemographicsPhoneNumber(RedoxAbstractModel):
+
+    Home: Union[str, None] = Field(None)
+    Mobile: Union[str, None] = Field(None)
+    Office: Union[str, None] = Field(None)
+
+
+class AvailableSlotsPatientDiagnosis(RedoxAbstractModel):
+
+    Code: Union[str, None] = Field(None)
+    Codeset: Union[str, None] = Field(None)
+    DocumentedDateTime: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+    Type: Union[str, None] = Field(None)
 
 
 class AvailableSlotsPatientIdentifier(RedoxAbstractModel):
@@ -76,6 +126,8 @@ class AvailableSlotsVisit(RedoxAbstractModel):
     AttendingProviders: List["AvailableSlotsVisitAttendingProvider"] = Field(None)
     Locations: List["AvailableSlotsVisitLocation"] = Field(None)
     Reasons: List[str] = Field(None)
+    VisitPreference: List["AvailableSlotsVisitVisitPreference"] = Field(None)
+    VisitType: List["AvailableSlotsVisitVisitType"] = Field(None)
 
 
 class AvailableSlotsVisitAttendingProvider(RedoxAbstractModel):
@@ -118,12 +170,38 @@ class AvailableSlotsVisitLocation(RedoxAbstractModel):
 
     Department: Union[str, None] = Field(None)
     Facility: Union[str, None] = Field(None)
+    ID: Union[str, None] = Field(None)
     Room: Union[str, None] = Field(None)
+    SpecialtyDepartment: "AvailableSlotsVisitLocationSpecialtyDepartment" = Field(None)
     Type: Union[str, None] = Field(None)
+
+
+class AvailableSlotsVisitLocationSpecialtyDepartment(RedoxAbstractModel):
+
+    Code: Union[str, None] = Field(None)
+    Codeset: Union[str, None] = Field(None)
+    Description: Union[str, None] = Field(None)
+
+
+class AvailableSlotsVisitVisitPreference(RedoxAbstractModel):
+
+    Day: List[str] = Field(None)
+    Duration: Union[str, None] = Field(None)
+    DurationUnit: Union[str, None] = Field(None)
+    Time: List[str] = Field(None)
+
+
+class AvailableSlotsVisitVisitType(RedoxAbstractModel):
+
+    Code: Union[str, None] = Field(None)
+    Codeset: Union[str, None] = Field(None)
+    Description: Union[str, None] = Field(None)
 
 
 AvailableSlots.update_forward_refs()
 AvailableSlotsMeta.update_forward_refs()
 AvailableSlotsPatient.update_forward_refs()
+AvailableSlotsPatientDemographics.update_forward_refs()
 AvailableSlotsVisit.update_forward_refs()
 AvailableSlotsVisitAttendingProvider.update_forward_refs()
+AvailableSlotsVisitLocation.update_forward_refs()
