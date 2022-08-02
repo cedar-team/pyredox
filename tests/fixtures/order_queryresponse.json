@@ -46,7 +46,7 @@
         ]
       },
       "Visit": {
-        "VisitNumber": 1234
+        "VisitNumber": "1234"
       },
       "ID": "157968300",
       "Status": "New",

@@ -32,7 +32,7 @@
     {
       "VisitNumber": "1234",
       "VisitDateTime": "2016-08-01T10:00:00Z",
-      "Duration": "15",
+      "Duration": 15,
       "Reason": "Follow Up",
       "CancelReason": "Conflicting appointment",
       "Instructions": [],
@@ -131,7 +131,7 @@
     {
       "VisitNumber": "1235",
       "VisitDateTime": "2016-08-01T11:00:00Z",
-      "Duration": "15",
+      "Duration": 15,
       "Reason": "Follow Up",
       "Instructions": [],
       "AttendingProvider": {
@@ -232,7 +232,7 @@
     {
       "VisitNumber": "1236",
       "VisitDateTime": "2016-08-01T12:00:00Z",
-      "Duration": "15",
+      "Duration": 15,
       "Reason": "Follow Up",
       "Instructions": [],
       "AttendingProvider": {

@@ -207,7 +207,7 @@
         "StreetAddress": "123 Fake Street",
         "City": "Madison",
         "State": "WI",
-        "ZIP": 53703
+        "ZIP": "53703"
       },
       "PhoneNumber": {}
     }

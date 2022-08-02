@@ -38,7 +38,7 @@
         ]
       },
       "Visit": {
-        "VisitNumber": 1234567
+        "VisitNumber": "1234567"
       },
       "ID": "157968300",
       "TransactionDateTime": "2015-05-06T06:00:58.872Z",

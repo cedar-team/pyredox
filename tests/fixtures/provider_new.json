@@ -95,7 +95,7 @@
                 "ID": "135"
               }
             ],
-            "IsActive": true,
+            "IsActive": "True",
             "Type": "Provider",
             "Name": "Redox Clinic",
             "Address": {
