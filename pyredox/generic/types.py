@@ -600,7 +600,7 @@ class Custodian(RedoxAbstractModel):
     FirstName: Union[str, None] = Field(None)
     Identifiers: List["Identifier"] = Field(None)
     LastName: Union[str, None] = Field(None)
-    Name: Union[None] = Field(None)
+    Name: Union[str, None] = Field(None)
     Telecom: List["Telecom"] = Field(None)
     Type: "Type" = Field(None)
 
@@ -959,8 +959,8 @@ class Guarantor(RedoxAbstractModel):
 
 class Header(RedoxAbstractModel):
 
-    DirectAddressFrom: Union[None] = Field(None)
-    DirectAddressTo: Union[None] = Field(None)
+    DirectAddressFrom: Union[str, None] = Field(None)
+    DirectAddressTo: Union[str, None] = Field(None)
     Document: "Document" = Field(None)
     PCP: "PCP" = Field(None)
     Patient: "Patient" = Field(None)
@@ -981,8 +981,8 @@ class HealthConcern(RedoxAbstractModel):
     StartDate: Union[str, None] = Field(None)
     Status: Union[str, None] = Field(None)
     TargetSite: "TargetSite" = Field(None)
-    Units: Union[None] = Field(None)
-    Value: Union[None] = Field(None)
+    Units: Union[str, None] = Field(None)
+    Value: Union[str, None] = Field(None)
 
 
 class HealthStatus(RedoxAbstractModel):
@@ -2174,7 +2174,7 @@ class SpecialtyDepartment(RedoxAbstractModel):
 class Specimen(RedoxAbstractModel):
 
     BodySite: Union[str, None] = Field(None)
-    CollectionDateTime: Union[None] = Field(None)
+    CollectionDateTime: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
     Identifiers: List[str] = Field(None)
     Source: Union["Source", str, None] = Field(None)
@@ -2347,9 +2347,9 @@ class TargetSite(RedoxAbstractModel):
 
 class Telecom(RedoxAbstractModel):
 
-    System: Union[None] = Field(None)
-    Use: Union[None] = Field(None)
-    Value: Union[None] = Field(None)
+    System: Union[str, None] = Field(None)
+    Use: Union[str, None] = Field(None)
+    Value: Union[str, None] = Field(None)
 
 
 class TobaccoUse(RedoxAbstractModel):
@@ -2436,7 +2436,7 @@ class UnsignedMedicationOrder(RedoxAbstractModel):
     Priority: Union[str, None] = Field(None)
     Product: "Product" = Field(None)
     Questions: List["Question"] = Field(None)
-    Route: Union[None] = Field(None)
+    Route: Union[str, None] = Field(None)
     StartDate: Union[str, None] = Field(None)
 
 

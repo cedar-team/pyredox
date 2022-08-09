@@ -387,16 +387,16 @@ class VisitPushCareTeamMemberRoleAltCode(RedoxAbstractModel):
 
 class VisitPushCareTeamMemberTelecom(RedoxAbstractModel):
 
-    System: Union[None] = Field(None)
-    Use: Union[None] = Field(None)
-    Value: Union[None] = Field(None)
+    System: Union[str, None] = Field(None)
+    Use: Union[str, None] = Field(None)
+    Value: Union[str, None] = Field(None)
 
 
 class VisitPushCareTeamOrganization(RedoxAbstractModel):
 
     Address: "VisitPushCareTeamOrganizationAddress" = Field(None)
     Identifiers: List["VisitPushCareTeamOrganizationIdentifier"] = Field(None)
-    Name: Union[None] = Field(None)
+    Name: Union[str, None] = Field(None)
     Telecom: List["VisitPushCareTeamOrganizationTelecom"] = Field(None)
     Type: "VisitPushCareTeamOrganizationType" = Field(None)
 
@@ -419,9 +419,9 @@ class VisitPushCareTeamOrganizationIdentifier(RedoxAbstractModel):
 
 class VisitPushCareTeamOrganizationTelecom(RedoxAbstractModel):
 
-    System: Union[None] = Field(None)
-    Use: Union[None] = Field(None)
-    Value: Union[None] = Field(None)
+    System: Union[str, None] = Field(None)
+    Use: Union[str, None] = Field(None)
+    Value: Union[str, None] = Field(None)
 
 
 class VisitPushCareTeamOrganizationType(RedoxAbstractModel):
@@ -662,9 +662,9 @@ class VisitPushEncounterLocationIdentifier(RedoxAbstractModel):
 
 class VisitPushEncounterLocationTelecom(RedoxAbstractModel):
 
-    System: Union[None] = Field(None)
-    Use: Union[None] = Field(None)
-    Value: Union[None] = Field(None)
+    System: Union[str, None] = Field(None)
+    Use: Union[str, None] = Field(None)
+    Value: Union[str, None] = Field(None)
 
 
 class VisitPushEncounterLocationType(RedoxAbstractModel):
@@ -1028,8 +1028,8 @@ class VisitPushGoalPriority(RedoxAbstractModel):
 
 class VisitPushHeader(RedoxAbstractModel):
 
-    DirectAddressFrom: Union[None] = Field(None)
-    DirectAddressTo: Union[None] = Field(None)
+    DirectAddressFrom: Union[str, None] = Field(None)
+    DirectAddressTo: Union[str, None] = Field(None)
     Document: "VisitPushHeaderDocument" = Field(None)
     PCP: "VisitPushHeaderPCP" = Field(None)
     Patient: "VisitPushHeaderPatient" = Field(None)
@@ -1098,7 +1098,7 @@ class VisitPushHeaderDocumentCustodian(RedoxAbstractModel):
 
     Address: "VisitPushHeaderDocumentCustodianAddress" = Field(None)
     Identifiers: List["VisitPushHeaderDocumentCustodianIdentifier"] = Field(None)
-    Name: Union[None] = Field(None)
+    Name: Union[str, None] = Field(None)
     Telecom: List["VisitPushHeaderDocumentCustodianTelecom"] = Field(None)
     Type: "VisitPushHeaderDocumentCustodianType" = Field(None)
 
@@ -1121,9 +1121,9 @@ class VisitPushHeaderDocumentCustodianIdentifier(RedoxAbstractModel):
 
 class VisitPushHeaderDocumentCustodianTelecom(RedoxAbstractModel):
 
-    System: Union[None] = Field(None)
-    Use: Union[None] = Field(None)
-    Value: Union[None] = Field(None)
+    System: Union[str, None] = Field(None)
+    Use: Union[str, None] = Field(None)
+    Value: Union[str, None] = Field(None)
 
 
 class VisitPushHeaderDocumentCustodianType(RedoxAbstractModel):
@@ -1324,7 +1324,7 @@ class VisitPushHeaderPatientOrganization(RedoxAbstractModel):
 
     Address: "VisitPushHeaderPatientOrganizationAddress" = Field(None)
     Identifiers: List["VisitPushHeaderPatientOrganizationIdentifier"] = Field(None)
-    Name: Union[None] = Field(None)
+    Name: Union[str, None] = Field(None)
     Telecom: List["VisitPushHeaderPatientOrganizationTelecom"] = Field(None)
     Type: "VisitPushHeaderPatientOrganizationType" = Field(None)
 
@@ -1347,9 +1347,9 @@ class VisitPushHeaderPatientOrganizationIdentifier(RedoxAbstractModel):
 
 class VisitPushHeaderPatientOrganizationTelecom(RedoxAbstractModel):
 
-    System: Union[None] = Field(None)
-    Use: Union[None] = Field(None)
-    Value: Union[None] = Field(None)
+    System: Union[str, None] = Field(None)
+    Use: Union[str, None] = Field(None)
+    Value: Union[str, None] = Field(None)
 
 
 class VisitPushHeaderPatientOrganizationType(RedoxAbstractModel):
@@ -1384,8 +1384,8 @@ class VisitPushHealthConcern(RedoxAbstractModel):
     StartDate: Union[str, None] = Field(None)
     Status: Union[str, None] = Field(None)
     TargetSite: "VisitPushHealthConcernTargetSite" = Field(None)
-    Units: Union[None] = Field(None)
-    Value: Union[None] = Field(None)
+    Units: Union[str, None] = Field(None)
+    Value: Union[str, None] = Field(None)
 
 
 class VisitPushHealthConcernAltCode(RedoxAbstractModel):
@@ -2539,7 +2539,7 @@ class VisitPushResultProducerAddress(RedoxAbstractModel):
 
 class VisitPushResultSpecimen(RedoxAbstractModel):
 
-    CollectionDateTime: Union[None] = Field(None)
+    CollectionDateTime: Union[str, None] = Field(None)
     Identifiers: List[str] = Field(None)
     Source: "VisitPushResultSpecimenSource" = Field(None)
     TargetSite: "VisitPushResultSpecimenTargetSite" = Field(None)

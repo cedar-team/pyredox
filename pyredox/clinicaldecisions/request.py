@@ -225,7 +225,7 @@ class RequestUnsignedMedicationOrder(RedoxAbstractModel):
     Priority: Union[str, None] = Field(None)
     Product: "RequestUnsignedMedicationOrderProduct" = Field(None)
     Questions: List["RequestUnsignedMedicationOrderQuestion"] = Field(None)
-    Route: Union[None] = Field(None)
+    Route: Union[str, None] = Field(None)
     StartDate: Union[str, None] = Field(None)
 
 

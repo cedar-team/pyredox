@@ -387,16 +387,16 @@ class VisitQueryResponseCareTeamMemberRoleAltCode(RedoxAbstractModel):
 
 class VisitQueryResponseCareTeamMemberTelecom(RedoxAbstractModel):
 
-    System: Union[None] = Field(None)
-    Use: Union[None] = Field(None)
-    Value: Union[None] = Field(None)
+    System: Union[str, None] = Field(None)
+    Use: Union[str, None] = Field(None)
+    Value: Union[str, None] = Field(None)
 
 
 class VisitQueryResponseCareTeamOrganization(RedoxAbstractModel):
 
     Address: "VisitQueryResponseCareTeamOrganizationAddress" = Field(None)
     Identifiers: List["VisitQueryResponseCareTeamOrganizationIdentifier"] = Field(None)
-    Name: Union[None] = Field(None)
+    Name: Union[str, None] = Field(None)
     Telecom: List["VisitQueryResponseCareTeamOrganizationTelecom"] = Field(None)
     Type: "VisitQueryResponseCareTeamOrganizationType" = Field(None)
 
@@ -419,9 +419,9 @@ class VisitQueryResponseCareTeamOrganizationIdentifier(RedoxAbstractModel):
 
 class VisitQueryResponseCareTeamOrganizationTelecom(RedoxAbstractModel):
 
-    System: Union[None] = Field(None)
-    Use: Union[None] = Field(None)
-    Value: Union[None] = Field(None)
+    System: Union[str, None] = Field(None)
+    Use: Union[str, None] = Field(None)
+    Value: Union[str, None] = Field(None)
 
 
 class VisitQueryResponseCareTeamOrganizationType(RedoxAbstractModel):
@@ -668,9 +668,9 @@ class VisitQueryResponseEncounterLocationIdentifier(RedoxAbstractModel):
 
 class VisitQueryResponseEncounterLocationTelecom(RedoxAbstractModel):
 
-    System: Union[None] = Field(None)
-    Use: Union[None] = Field(None)
-    Value: Union[None] = Field(None)
+    System: Union[str, None] = Field(None)
+    Use: Union[str, None] = Field(None)
+    Value: Union[str, None] = Field(None)
 
 
 class VisitQueryResponseEncounterLocationType(RedoxAbstractModel):
@@ -1108,7 +1108,7 @@ class VisitQueryResponseHeaderDocumentCustodian(RedoxAbstractModel):
     Identifiers: List["VisitQueryResponseHeaderDocumentCustodianIdentifier"] = Field(
         None
     )
-    Name: Union[None] = Field(None)
+    Name: Union[str, None] = Field(None)
     Telecom: List["VisitQueryResponseHeaderDocumentCustodianTelecom"] = Field(None)
     Type: "VisitQueryResponseHeaderDocumentCustodianType" = Field(None)
 
@@ -1131,9 +1131,9 @@ class VisitQueryResponseHeaderDocumentCustodianIdentifier(RedoxAbstractModel):
 
 class VisitQueryResponseHeaderDocumentCustodianTelecom(RedoxAbstractModel):
 
-    System: Union[None] = Field(None)
-    Use: Union[None] = Field(None)
-    Value: Union[None] = Field(None)
+    System: Union[str, None] = Field(None)
+    Use: Union[str, None] = Field(None)
+    Value: Union[str, None] = Field(None)
 
 
 class VisitQueryResponseHeaderDocumentCustodianType(RedoxAbstractModel):
@@ -1340,7 +1340,7 @@ class VisitQueryResponseHeaderPatientOrganization(RedoxAbstractModel):
     Identifiers: List["VisitQueryResponseHeaderPatientOrganizationIdentifier"] = Field(
         None
     )
-    Name: Union[None] = Field(None)
+    Name: Union[str, None] = Field(None)
     Telecom: List["VisitQueryResponseHeaderPatientOrganizationTelecom"] = Field(None)
     Type: "VisitQueryResponseHeaderPatientOrganizationType" = Field(None)
 
@@ -1363,9 +1363,9 @@ class VisitQueryResponseHeaderPatientOrganizationIdentifier(RedoxAbstractModel):
 
 class VisitQueryResponseHeaderPatientOrganizationTelecom(RedoxAbstractModel):
 
-    System: Union[None] = Field(None)
-    Use: Union[None] = Field(None)
-    Value: Union[None] = Field(None)
+    System: Union[str, None] = Field(None)
+    Use: Union[str, None] = Field(None)
+    Value: Union[str, None] = Field(None)
 
 
 class VisitQueryResponseHeaderPatientOrganizationType(RedoxAbstractModel):
@@ -1402,8 +1402,8 @@ class VisitQueryResponseHealthConcern(RedoxAbstractModel):
     StartDate: Union[str, None] = Field(None)
     Status: Union[str, None] = Field(None)
     TargetSite: "VisitQueryResponseHealthConcernTargetSite" = Field(None)
-    Units: Union[None] = Field(None)
-    Value: Union[None] = Field(None)
+    Units: Union[str, None] = Field(None)
+    Value: Union[str, None] = Field(None)
 
 
 class VisitQueryResponseHealthConcernAltCode(RedoxAbstractModel):
@@ -2504,7 +2504,7 @@ class VisitQueryResponseResultProducerAddress(RedoxAbstractModel):
 
 class VisitQueryResponseResultSpecimen(RedoxAbstractModel):
 
-    CollectionDateTime: Union[None] = Field(None)
+    CollectionDateTime: Union[str, None] = Field(None)
     Identifiers: List[str] = Field(None)
     Source: "VisitQueryResponseResultSpecimenSource" = Field(None)
     TargetSite: "VisitQueryResponseResultSpecimenTargetSite" = Field(None)
