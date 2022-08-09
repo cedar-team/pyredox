@@ -23,11 +23,7 @@ SAMPLE_DATA_FILE_PATH = [
 SKIP_FILES = [
     str(SAMPLES_DIR / f)
     for f in [
-        "clinicalsummary_patientpush.json",
-        "clinicalsummary_visitpush.json",
-        "clinicalsummary_visitqueryresponse.json",
-        "clinicalsummary_patientqueryresponse.json",
-        "clinicaldecisions_request.json",
+        # "clinicaldecisions_request.json",
     ]
 ]
 

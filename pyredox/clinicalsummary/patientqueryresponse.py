@@ -311,9 +311,9 @@ class PatientQueryResponseCareTeamMemberRoleAltCode(RedoxAbstractModel):
 
 class PatientQueryResponseCareTeamMemberTelecom(RedoxAbstractModel):
 
-    System: Union[None] = Field(None)
-    Use: Union[None] = Field(None)
-    Value: Union[None] = Field(None)
+    System: Union[str, None] = Field(None)
+    Use: Union[str, None] = Field(None)
+    Value: Union[str, None] = Field(None)
 
 
 class PatientQueryResponseCareTeamOrganization(RedoxAbstractModel):
@@ -322,7 +322,7 @@ class PatientQueryResponseCareTeamOrganization(RedoxAbstractModel):
     Identifiers: List["PatientQueryResponseCareTeamOrganizationIdentifier"] = Field(
         None
     )
-    Name: Union[None] = Field(None)
+    Name: Union[str, None] = Field(None)
     Telecom: List["PatientQueryResponseCareTeamOrganizationTelecom"] = Field(None)
     Type: "PatientQueryResponseCareTeamOrganizationType" = Field(None)
 
@@ -345,9 +345,9 @@ class PatientQueryResponseCareTeamOrganizationIdentifier(RedoxAbstractModel):
 
 class PatientQueryResponseCareTeamOrganizationTelecom(RedoxAbstractModel):
 
-    System: Union[None] = Field(None)
-    Use: Union[None] = Field(None)
-    Value: Union[None] = Field(None)
+    System: Union[str, None] = Field(None)
+    Use: Union[str, None] = Field(None)
+    Value: Union[str, None] = Field(None)
 
 
 class PatientQueryResponseCareTeamOrganizationType(RedoxAbstractModel):
@@ -467,9 +467,9 @@ class PatientQueryResponseEncounterLocationIdentifier(RedoxAbstractModel):
 
 class PatientQueryResponseEncounterLocationTelecom(RedoxAbstractModel):
 
-    System: Union[None] = Field(None)
-    Use: Union[None] = Field(None)
-    Value: Union[None] = Field(None)
+    System: Union[str, None] = Field(None)
+    Use: Union[str, None] = Field(None)
+    Value: Union[str, None] = Field(None)
 
 
 class PatientQueryResponseEncounterLocationType(RedoxAbstractModel):
@@ -914,7 +914,7 @@ class PatientQueryResponseHeaderDocumentCustodian(RedoxAbstractModel):
     Identifiers: List["PatientQueryResponseHeaderDocumentCustodianIdentifier"] = Field(
         None
     )
-    Name: Union[None] = Field(None)
+    Name: Union[str, None] = Field(None)
     Telecom: List["PatientQueryResponseHeaderDocumentCustodianTelecom"] = Field(None)
     Type: "PatientQueryResponseHeaderDocumentCustodianType" = Field(None)
 
@@ -937,9 +937,9 @@ class PatientQueryResponseHeaderDocumentCustodianIdentifier(RedoxAbstractModel):
 
 class PatientQueryResponseHeaderDocumentCustodianTelecom(RedoxAbstractModel):
 
-    System: Union[None] = Field(None)
-    Use: Union[None] = Field(None)
-    Value: Union[None] = Field(None)
+    System: Union[str, None] = Field(None)
+    Use: Union[str, None] = Field(None)
+    Value: Union[str, None] = Field(None)
 
 
 class PatientQueryResponseHeaderDocumentCustodianType(RedoxAbstractModel):
@@ -1093,7 +1093,7 @@ class PatientQueryResponseHeaderPatientOrganization(RedoxAbstractModel):
     Identifiers: List[
         "PatientQueryResponseHeaderPatientOrganizationIdentifier"
     ] = Field(None)
-    Name: Union[None] = Field(None)
+    Name: Union[str, None] = Field(None)
     Telecom: List["PatientQueryResponseHeaderPatientOrganizationTelecom"] = Field(None)
     Type: "PatientQueryResponseHeaderPatientOrganizationType" = Field(None)
 
@@ -1116,9 +1116,9 @@ class PatientQueryResponseHeaderPatientOrganizationIdentifier(RedoxAbstractModel
 
 class PatientQueryResponseHeaderPatientOrganizationTelecom(RedoxAbstractModel):
 
-    System: Union[None] = Field(None)
-    Use: Union[None] = Field(None)
-    Value: Union[None] = Field(None)
+    System: Union[str, None] = Field(None)
+    Use: Union[str, None] = Field(None)
+    Value: Union[str, None] = Field(None)
 
 
 class PatientQueryResponseHeaderPatientOrganizationType(RedoxAbstractModel):
@@ -1155,8 +1155,8 @@ class PatientQueryResponseHealthConcern(RedoxAbstractModel):
     StartDate: Union[str, None] = Field(None)
     Status: Union[str, None] = Field(None)
     TargetSite: "PatientQueryResponseHealthConcernTargetSite" = Field(None)
-    Units: Union[None] = Field(None)
-    Value: Union[None] = Field(None)
+    Units: Union[str, None] = Field(None)
+    Value: Union[str, None] = Field(None)
 
 
 class PatientQueryResponseHealthConcernAltCode(RedoxAbstractModel):
@@ -2162,7 +2162,7 @@ class PatientQueryResponseResultProducerAddress(RedoxAbstractModel):
 
 class PatientQueryResponseResultSpecimen(RedoxAbstractModel):
 
-    CollectionDateTime: Union[None] = Field(None)
+    CollectionDateTime: Union[str, None] = Field(None)
     Identifiers: List[str] = Field(None)
     Source: "PatientQueryResponseResultSpecimenSource" = Field(None)
     TargetSite: "PatientQueryResponseResultSpecimenTargetSite" = Field(None)

@@ -68,6 +68,7 @@ def save_fixture(sample: str):
     with open(dest_file, "w") as fixture_file:
         click.echo(f"Writing file {dest_file}")
         dump(sample_dict, fixture_file, indent=2)
+        fixture_file.write("\n")
 
 
 @click.command()

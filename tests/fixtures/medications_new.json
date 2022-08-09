@@ -2,7 +2,7 @@
   "Meta": {
     "DataModel": "Medications",
     "EventType": "New",
-    "EventDateTime": "2022-08-01T18:38:57.072Z",
+    "EventDateTime": "2022-08-03T18:06:43.597Z",
     "Test": true,
     "Source": {
       "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
@@ -96,7 +96,7 @@
     ]
   },
   "Visit": {
-    "VisitDateTime": "2022-08-01T18:38:57.943Z",
+    "VisitDateTime": "2022-08-03T18:06:44.401Z",
     "VisitNumber": "1234",
     "Location": {},
     "AttendingProvider": {
@@ -116,7 +116,7 @@
     "Insurances": []
   },
   "Order": {
-    "ID": "b5e3adcd-08ae-4a29-a394-2833c7682c20",
+    "ID": "4e87f33a-e40c-4821-88cd-81c8c94884e5",
     "Notes": [],
     "Medication": {
       "Dose": {
@@ -139,7 +139,7 @@
         "Name": "Ondansetron 4 Mg Po Tbdp",
         "AltCodes": []
       },
-      "StartDate": "2022-08-01T18:38:57.069Z",
+      "StartDate": "2022-08-03T18:06:43.593Z",
       "Frequency": {
         "Period": 8,
         "Unit": "h"

@@ -2,7 +2,7 @@
   "Meta": {
     "DataModel": "SurgicalScheduling",
     "EventType": "Reschedule",
-    "EventDateTime": "2022-08-01T18:38:57.072Z",
+    "EventDateTime": "2022-08-03T18:06:43.597Z",
     "Test": true,
     "Source": {
       "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
@@ -128,7 +128,7 @@
   ],
   "Visit": {
     "VisitNumber": "1234",
-    "VisitDateTime": "2022-08-08T18:38:58.404Z",
+    "VisitDateTime": "2022-08-10T18:06:44.838Z",
     "Notes": [],
     "AttendingProvider": {
       "ID": "4356789876",

@@ -2,7 +2,7 @@
   "Meta": {
     "DataModel": "PatientAdmin",
     "EventType": "CensusQuery",
-    "EventDateTime": "2022-08-01T18:38:57.072Z",
+    "EventDateTime": "2022-08-03T18:06:43.597Z",
     "Test": true,
     "Destinations": [
       {
