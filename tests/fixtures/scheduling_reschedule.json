@@ -2,7 +2,7 @@
   "Meta": {
     "DataModel": "Scheduling",
     "EventType": "Reschedule",
-    "EventDateTime": "2022-08-01T18:38:57.072Z",
+    "EventDateTime": "2022-08-03T18:06:43.597Z",
     "Test": true,
     "Source": {
       "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
@@ -85,8 +85,8 @@
   "Visit": {
     "VisitNumber": "1234",
     "OldVisitNumber": "1234",
-    "VisitDateTime": "2022-08-08T18:38:58.319Z",
-    "OldDateTime": "2022-08-01T18:38:58.319Z",
+    "VisitDateTime": "2022-08-10T18:06:44.763Z",
+    "OldDateTime": "2022-08-03T18:06:44.763Z",
     "Duration": 15,
     "Reason": "Check up",
     "Instructions": [],
