@@ -137,6 +137,7 @@ def test_casting():
             Insurance=dict(
                 Company=dict(Address=dict(StreetAddress="123 Nowhere", Blahblah="Nope"))
             ),
+            FirstName="Emma",
         ),
     )
 
@@ -157,3 +158,6 @@ def test_casting():
         modification.Subscriber.Insurance.Company.Address.StreetAddress == "123 Nowhere"
     )
     assert not hasattr(modification.Subscriber.Insurance.Company.Address, "Blahblah")
+
+    # This shows that the value from the patient.Demographics object took precedence
+    assert modification.Subscriber.FirstName == "Olivia"

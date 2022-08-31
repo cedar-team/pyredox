@@ -2,7 +2,6 @@
 """Base class for all Redox elements."""
 import abc
 from functools import reduce
-from operator import or_
 from typing import Any, Mapping, Union
 
 from pydantic import BaseModel, Extra, ExtraError, Field, ValidationError
@@ -46,11 +45,12 @@ def _pop_offending_field_values(
         offending_field = locations.pop()
         traversed = []
         for field in locations:
-            # Note: It's currently unclear if this loop will ever be used. In tests, it
-            # wasn't, but since loc_tuple() is always a tuple, we're erring on the side
+            # Note: It's currently unclear if this loop will ever be used. It wasn't in
+            # tests, but since loc_tuple() is always a tuple, we're erring on the side
             # of caution by leaving this here. But it's also unclear how to test the
-            # loop functions properly.
-            if not (next_in_loc := parent_of_offending_field.get(field, None)):
+            # loop operations properly.
+            next_in_loc = parent_of_offending_field.get(field, None)
+            if not next_in_loc:
                 raise CannotRectifyValidationError(
                     f"Cannot traverse path to offending field: "
                     f"{'->'.join(traversed) if traversed else 'Object'} doesn't have "
@@ -107,22 +107,19 @@ class RedoxAbstractModel(BaseModel, abc.ABC):
         """
 
         # Gather all arguments for creating the new object into a single dictionary by
-        # using the bitwise OR operator on the dict version of each object in ``others``
-        # with the ``operator.or_`` function. Some helpful references:
-        # https://docs.python.org/3/library/operator.html#operator.or_
-        # https://docs.python.org/3/library/stdtypes.html#dict -> Scroll down to the
-        # description of the "d | other" operator.
-        args: dict = reduce(
-            or_,
-            (
-                other.dict() if hasattr(other, "dict") else dict(other)
-                for other in reversed(others)
-            ),
-        )
+        # starting with an empty dict then `update()`ing it using the dict version of
+        # each object in ``others``.
+        others = [
+            other.dict() if hasattr(other, "dict") else dict(other)
+            for other in reversed(others)
+        ]
+        args = {}
+        for other in others:
+            args.update(other)
+
         new_object = None
         while new_object is None:
             try:
-                # noinspection Pydantic
                 new_object = cls(**args)
             except ValidationError as err:
                 _pop_offending_field_values(args, err)
