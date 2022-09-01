@@ -1,9 +1,12 @@
 # Pyredox - A Pydantic-Based Library for Redox Data
 
 [![PyPI Info](https://img.shields.io/pypi/v/pyredox.svg)](https://pypi.python.org/pypi/pyredox)
+[![Python Version](https://img.shields.io/pypi/pyversions/pyredox)](https://pypi.python.org/pypi/pyredox)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/cedar-team/pyredox/test-and-coverage)](https://github.com/cedar-team/pyredox/actions)
 [![Coverage Info](https://coveralls.io/repos/github/cedar-team/pyredox/badge.svg?branch=main)](https://coveralls.io/github/cedar-team/pyredox?branch=main)
 [![Black Code Style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/pyredox)](https://pypi.python.org/pypi/pyredox)
+[![PyPI - License](https://img.shields.io/pypi/l/pyredox?color=blue)](https://pypi.python.org/pypi/pyredox)
 
 Pyredox is library for producing, ingesting, and validating data from [Redox], a "data platform designed to connect
 providers, payers and products."
@@ -280,3 +283,27 @@ underlying Pydantic models](https://pydantic-docs.helpmanual.io/usage/exporting_
 
 When serializing generic types, be aware that `pyredox` will convert the object to the corresponding "proper Redox"
 before returning the serialized data. See above for more information.
+
+### Casting between types
+
+Every `pyredox` object has a `cast_from()` method that is intended for use when you need to assign the same values to
+multiple objects while avoiding any type-checking errors. For example, on a generic `Visit` object, there are multiple
+provider fields that only differ in which role that provider filled for the visit. If the same provider filled multiple
+roles, it is redundant to specify the same provider information in multiple object instances.
+
+Using this `cast_from()` class method, you only need to create a generic object with all the provider information and
+then cast it to the different types:
+
+```python
+provider = AdmittingProvider(...)
+visit = Visit(
+    AdmittingProvider=provider,
+    AttendingProvider=AttendingProvider.cast_from(provider),
+    VisitProvider=VisitProvider.cast_from(provider),
+)
+```
+
+If multiple objects are passed to `cast_from`, the first object's fields will be given preference, then the second
+object's fields, and so on. This mimics the MRO for multiple inheritance (see
+https://docs.python.org/3/tutorial/classes.html#multiple-inheritance
+for more info).
