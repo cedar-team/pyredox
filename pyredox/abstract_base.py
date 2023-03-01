@@ -3,7 +3,7 @@
 import abc
 from typing import Any, Mapping, Union
 
-from pydantic import BaseModel, ExtraError, Field, ValidationError
+from pydantic import BaseModel, Extra, ExtraError, Field, ValidationError
 from pydantic.error_wrappers import ErrorWrapper
 
 __all__ = [
@@ -68,7 +68,7 @@ def _pop_offending_field_values(
             ) from err
 
 
-class RedoxAbstractModel(BaseModel, abc.ABC):
+class RedoxAbstractModel(BaseModel, abc.ABC, extra=Extra.forbid):
     Extensions: Any = Field(None)
 
     def __str__(self):

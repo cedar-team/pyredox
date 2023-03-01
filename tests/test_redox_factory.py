@@ -88,13 +88,13 @@ def test_invalid_payload():
         redox_object_factory(patient_missing)
 
 
-def test_extra_field_doesnt_break_anything():
-    """Ensure adding extra fields still yields a valid model instance."""
+def test_extra_field_invalidates_model():
+    """Ensure adding extra fields is forbidden."""
     patient_extra = deepcopy(dict_patient_update)
     patient_extra["Blobby"] = {"Bloop": []}
 
-    redox_object = redox_object_factory(patient_extra)
-    assert isinstance(redox_object, PatientUpdate)
+    with pytest.raises(ValidationError):
+        redox_object_factory(patient_extra)
 
 
 def test_casting():
