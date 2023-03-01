@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """Base class for all Redox elements."""
 import abc
-from functools import reduce
 from typing import Any, Mapping, Union
 
 from pydantic import BaseModel, Extra, ExtraError, Field, ValidationError
@@ -10,7 +9,7 @@ from pydantic.error_wrappers import ErrorWrapper
 __all__ = [
     "CannotRectifyValidationError",
     "EventTypeAbstractModel",
-    "GenericRedoxAbstractModel",
+    "GenericEventTypeAbstractModel",
     "RedoxAbstractModel",
 ]
 
@@ -69,7 +68,7 @@ def _pop_offending_field_values(
             ) from err
 
 
-class RedoxAbstractModel(BaseModel, abc.ABC):
+class RedoxAbstractModel(BaseModel, abc.ABC, extra=Extra.forbid):
     Extensions: Any = Field(None)
 
     def __str__(self):
@@ -165,8 +164,9 @@ class EventTypeAbstractModel(RedoxAbstractModel, abc.ABC):
     Meta: _Meta = Field(...)
 
 
-class GenericRedoxAbstractModel(RedoxAbstractModel):
+class GenericEventTypeAbstractModel(RedoxAbstractModel):
     _redox_module = ...  # e.g. patientadmin
+    Meta: _Meta = Field(...)
 
     def to_redox(self) -> RedoxAbstractModel:
         """Figure out the correct pyredox model, instantiate, and return."""

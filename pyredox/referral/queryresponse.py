@@ -10,13 +10,11 @@ from ..field_types import Number
 
 
 class QueryResponse(EventTypeAbstractModel):
-
     Meta: "QueryResponseMeta" = Field(...)
     Referrals: List["QueryResponseReferral"] = Field(None)
 
 
 class QueryResponseMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["QueryResponseMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -30,35 +28,29 @@ class QueryResponseMeta(RedoxAbstractModel):
 
 
 class QueryResponseMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class QueryResponseMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class QueryResponseMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class QueryResponseMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class QueryResponseMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class QueryResponseReferral(RedoxAbstractModel):
-
     AlternateID: Union[str, None] = Field(None)
     Authorization: "QueryResponseReferralAuthorization" = Field(None)
     Category: Union[str, None] = Field(None)
@@ -81,7 +73,6 @@ class QueryResponseReferral(RedoxAbstractModel):
 
 
 class QueryResponseReferralAuthorization(RedoxAbstractModel):
-
     AuthorizedTreatmentCount: Union[str, None] = Field(None)
     Company: "QueryResponseReferralAuthorizationCompany" = Field(None)
     DateTime: Union[str, None] = Field(None)
@@ -95,21 +86,18 @@ class QueryResponseReferralAuthorization(RedoxAbstractModel):
 
 
 class QueryResponseReferralAuthorizationCompany(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class QueryResponseReferralAuthorizationPlan(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class QueryResponseReferralDiagnosis(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     DocumentedDateTime: Union[str, None] = Field(None)
@@ -119,7 +107,6 @@ class QueryResponseReferralDiagnosis(RedoxAbstractModel):
 
 
 class QueryResponseReferralProcedure(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
@@ -130,7 +117,6 @@ class QueryResponseReferralProcedure(RedoxAbstractModel):
 
 
 class QueryResponseReferralProvider(RedoxAbstractModel):
-
     Address: "QueryResponseReferralProviderAddress" = Field(None)
     ContactInfo: Union[str, None] = Field(None)
     Credentials: List[str] = Field(None)
@@ -145,7 +131,6 @@ class QueryResponseReferralProvider(RedoxAbstractModel):
 
 
 class QueryResponseReferralProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -155,20 +140,33 @@ class QueryResponseReferralProviderAddress(RedoxAbstractModel):
 
 
 class QueryResponseReferralProviderLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "QueryResponseReferralProviderLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "QueryResponseReferralProviderLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class QueryResponseReferralProviderPhoneNumber(RedoxAbstractModel):
+class QueryResponseReferralProviderLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class QueryResponseReferralProviderLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class QueryResponseReferralProviderPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class QueryResponseReferralVisit(RedoxAbstractModel):
-
     VisitNumber: Union[str, None] = Field(None)
 
 
@@ -177,3 +175,4 @@ QueryResponseMeta.update_forward_refs()
 QueryResponseReferral.update_forward_refs()
 QueryResponseReferralAuthorization.update_forward_refs()
 QueryResponseReferralProvider.update_forward_refs()
+QueryResponseReferralProviderLocation.update_forward_refs()

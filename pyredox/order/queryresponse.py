@@ -10,13 +10,11 @@ from ..field_types import Number
 
 
 class QueryResponse(EventTypeAbstractModel):
-
     Meta: "QueryResponseMeta" = Field(...)
     Orders: List["QueryResponseOrder"] = Field(None)
 
 
 class QueryResponseMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["QueryResponseMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -30,35 +28,29 @@ class QueryResponseMeta(RedoxAbstractModel):
 
 
 class QueryResponseMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class QueryResponseMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class QueryResponseMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class QueryResponseMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class QueryResponseMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class QueryResponseOrder(RedoxAbstractModel):
-
     ApplicationOrderID: Union[str, None] = Field(None)
     ClinicalInfo: List["QueryResponseOrderClinicalInfo"] = Field(None)
     CollectionDateTime: Union[str, None] = Field(None)
@@ -79,7 +71,6 @@ class QueryResponseOrder(RedoxAbstractModel):
 
 
 class QueryResponseOrderClinicalInfo(RedoxAbstractModel):
-
     Abbreviation: Union[str, None] = Field(None)
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
@@ -90,7 +81,6 @@ class QueryResponseOrderClinicalInfo(RedoxAbstractModel):
 
 
 class QueryResponseOrderDiagnosis(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     DocumentedDateTime: Union[str, None] = Field(None)
@@ -99,14 +89,12 @@ class QueryResponseOrderDiagnosis(RedoxAbstractModel):
 
 
 class QueryResponseOrderOrderingFacility(RedoxAbstractModel):
-
     Address: "QueryResponseOrderOrderingFacilityAddress" = Field(None)
     Name: Union[str, None] = Field(None)
     PhoneNumber: Union[str, None] = Field(None)
 
 
 class QueryResponseOrderOrderingFacilityAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -116,25 +104,21 @@ class QueryResponseOrderOrderingFacilityAddress(RedoxAbstractModel):
 
 
 class QueryResponseOrderPatient(RedoxAbstractModel):
-
     Identifiers: List["QueryResponseOrderPatientIdentifier"] = Field(None)
 
 
 class QueryResponseOrderPatientIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class QueryResponseOrderProcedure(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
 
 
 class QueryResponseOrderProvider(RedoxAbstractModel):
-
     Address: "QueryResponseOrderProviderAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -148,7 +132,6 @@ class QueryResponseOrderProvider(RedoxAbstractModel):
 
 
 class QueryResponseOrderProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -158,20 +141,33 @@ class QueryResponseOrderProviderAddress(RedoxAbstractModel):
 
 
 class QueryResponseOrderProviderLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "QueryResponseOrderProviderLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "QueryResponseOrderProviderLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class QueryResponseOrderProviderPhoneNumber(RedoxAbstractModel):
+class QueryResponseOrderProviderLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class QueryResponseOrderProviderLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class QueryResponseOrderProviderPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class QueryResponseOrderResultCopyProvider(RedoxAbstractModel):
-
     Address: "QueryResponseOrderResultCopyProviderAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -185,7 +181,6 @@ class QueryResponseOrderResultCopyProvider(RedoxAbstractModel):
 
 
 class QueryResponseOrderResultCopyProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -195,27 +190,43 @@ class QueryResponseOrderResultCopyProviderAddress(RedoxAbstractModel):
 
 
 class QueryResponseOrderResultCopyProviderLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "QueryResponseOrderResultCopyProviderLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "QueryResponseOrderResultCopyProviderLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class QueryResponseOrderResultCopyProviderPhoneNumber(RedoxAbstractModel):
+class QueryResponseOrderResultCopyProviderLocationDepartmentIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class QueryResponseOrderResultCopyProviderLocationFacilityIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class QueryResponseOrderResultCopyProviderPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class QueryResponseOrderSpecimen(RedoxAbstractModel):
-
     BodySite: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
     Source: Union[str, None] = Field(None)
 
 
 class QueryResponseOrderVisit(RedoxAbstractModel):
-
     VisitNumber: Union[str, None] = Field(None)
 
 
@@ -225,4 +236,6 @@ QueryResponseOrder.update_forward_refs()
 QueryResponseOrderOrderingFacility.update_forward_refs()
 QueryResponseOrderPatient.update_forward_refs()
 QueryResponseOrderProvider.update_forward_refs()
+QueryResponseOrderProviderLocation.update_forward_refs()
 QueryResponseOrderResultCopyProvider.update_forward_refs()
+QueryResponseOrderResultCopyProviderLocation.update_forward_refs()

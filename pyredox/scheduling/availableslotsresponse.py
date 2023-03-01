@@ -10,13 +10,11 @@ from ..field_types import Number
 
 
 class AvailableSlotsResponse(EventTypeAbstractModel):
-
     AvailableSlots: List["AvailableSlotsResponseAvailableSlot"] = Field(...)
     Meta: "AvailableSlotsResponseMeta" = Field(...)
 
 
 class AvailableSlotsResponseAvailableSlot(RedoxAbstractModel):
-
     DateTime: str = Field(...)
     Duration: Number = Field(...)
     ID: Union[str, None] = Field(None)
@@ -27,15 +25,31 @@ class AvailableSlotsResponseAvailableSlot(RedoxAbstractModel):
 
 
 class AvailableSlotsResponseAvailableSlotLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "AvailableSlotsResponseAvailableSlotLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "AvailableSlotsResponseAvailableSlotLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class AvailableSlotsResponseAvailableSlotProvider(RedoxAbstractModel):
+class AvailableSlotsResponseAvailableSlotLocationDepartmentIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class AvailableSlotsResponseAvailableSlotLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class AvailableSlotsResponseAvailableSlotProvider(RedoxAbstractModel):
     Address: "AvailableSlotsResponseAvailableSlotProviderAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -48,7 +62,6 @@ class AvailableSlotsResponseAvailableSlotProvider(RedoxAbstractModel):
 
 
 class AvailableSlotsResponseAvailableSlotProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -58,20 +71,37 @@ class AvailableSlotsResponseAvailableSlotProviderAddress(RedoxAbstractModel):
 
 
 class AvailableSlotsResponseAvailableSlotProviderLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "AvailableSlotsResponseAvailableSlotProviderLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "AvailableSlotsResponseAvailableSlotProviderLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class AvailableSlotsResponseAvailableSlotProviderPhoneNumber(RedoxAbstractModel):
+class AvailableSlotsResponseAvailableSlotProviderLocationDepartmentIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class AvailableSlotsResponseAvailableSlotProviderLocationFacilityIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class AvailableSlotsResponseAvailableSlotProviderPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class AvailableSlotsResponseMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["AvailableSlotsResponseMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -86,34 +116,31 @@ class AvailableSlotsResponseMeta(RedoxAbstractModel):
 
 
 class AvailableSlotsResponseMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class AvailableSlotsResponseMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class AvailableSlotsResponseMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class AvailableSlotsResponseMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class AvailableSlotsResponseMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 AvailableSlotsResponse.update_forward_refs()
 AvailableSlotsResponseAvailableSlot.update_forward_refs()
+AvailableSlotsResponseAvailableSlotLocation.update_forward_refs()
 AvailableSlotsResponseAvailableSlotProvider.update_forward_refs()
+AvailableSlotsResponseAvailableSlotProviderLocation.update_forward_refs()
 AvailableSlotsResponseMeta.update_forward_refs()

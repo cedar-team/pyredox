@@ -10,7 +10,6 @@ from ..field_types import Number
 
 
 class Cancel(EventTypeAbstractModel):
-
     Meta: "CancelMeta" = Field(...)
     Order: "CancelOrder" = Field(...)
     Patient: "CancelPatient" = Field(...)
@@ -18,7 +17,6 @@ class Cancel(EventTypeAbstractModel):
 
 
 class CancelMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["CancelMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -32,35 +30,29 @@ class CancelMeta(RedoxAbstractModel):
 
 
 class CancelMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class CancelMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class CancelMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class CancelMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class CancelMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class CancelOrder(RedoxAbstractModel):
-
     ApplicationOrderID: Union[str, None] = Field(None)
     ClinicalInfo: List["CancelOrderClinicalInfo"] = Field(None)
     CollectionDateTime: Union[str, None] = Field(None)
@@ -80,7 +72,6 @@ class CancelOrder(RedoxAbstractModel):
 
 
 class CancelOrderClinicalInfo(RedoxAbstractModel):
-
     Abbreviation: Union[str, None] = Field(None)
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
@@ -91,7 +82,6 @@ class CancelOrderClinicalInfo(RedoxAbstractModel):
 
 
 class CancelOrderDiagnosis(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     DocumentedDateTime: Union[str, None] = Field(None)
@@ -100,14 +90,12 @@ class CancelOrderDiagnosis(RedoxAbstractModel):
 
 
 class CancelOrderOrderingFacility(RedoxAbstractModel):
-
     Address: "CancelOrderOrderingFacilityAddress" = Field(None)
     Name: Union[str, None] = Field(None)
     PhoneNumber: Union[str, None] = Field(None)
 
 
 class CancelOrderOrderingFacilityAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -117,14 +105,12 @@ class CancelOrderOrderingFacilityAddress(RedoxAbstractModel):
 
 
 class CancelOrderProcedure(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
 
 
 class CancelOrderProvider(RedoxAbstractModel):
-
     Address: "CancelOrderProviderAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -138,7 +124,6 @@ class CancelOrderProvider(RedoxAbstractModel):
 
 
 class CancelOrderProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -148,20 +133,33 @@ class CancelOrderProviderAddress(RedoxAbstractModel):
 
 
 class CancelOrderProviderLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "CancelOrderProviderLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List["CancelOrderProviderLocationFacilityIdentifier"] = Field(
+        None
+    )
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class CancelOrderProviderPhoneNumber(RedoxAbstractModel):
+class CancelOrderProviderLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class CancelOrderProviderLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class CancelOrderProviderPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class CancelOrderResultCopyProvider(RedoxAbstractModel):
-
     Address: "CancelOrderResultCopyProviderAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -174,7 +172,6 @@ class CancelOrderResultCopyProvider(RedoxAbstractModel):
 
 
 class CancelOrderResultCopyProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -184,34 +181,45 @@ class CancelOrderResultCopyProviderAddress(RedoxAbstractModel):
 
 
 class CancelOrderResultCopyProviderLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "CancelOrderResultCopyProviderLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "CancelOrderResultCopyProviderLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class CancelOrderResultCopyProviderPhoneNumber(RedoxAbstractModel):
+class CancelOrderResultCopyProviderLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class CancelOrderResultCopyProviderLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class CancelOrderResultCopyProviderPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class CancelOrderSpecimen(RedoxAbstractModel):
-
     BodySite: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
     Source: Union[str, None] = Field(None)
 
 
 class CancelPatient(RedoxAbstractModel):
-
     Demographics: "CancelPatientDemographics" = Field(None)
     Identifiers: List["CancelPatientIdentifier"] = Field(...)
     Notes: List[str] = Field(None)
 
 
 class CancelPatientDemographics(RedoxAbstractModel):
-
     Address: "CancelPatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
@@ -232,7 +240,6 @@ class CancelPatientDemographics(RedoxAbstractModel):
 
 
 class CancelPatientDemographicsAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -242,20 +249,17 @@ class CancelPatientDemographicsAddress(RedoxAbstractModel):
 
 
 class CancelPatientDemographicsPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class CancelPatientIdentifier(RedoxAbstractModel):
-
     ID: str = Field(...)
     IDType: str = Field(...)
 
 
 class CancelVisit(RedoxAbstractModel):
-
     AccountNumber: Union[str, None] = Field(None)
     AttendingProvider: "CancelVisitAttendingProvider" = Field(None)
     ConsultingProvider: "CancelVisitConsultingProvider" = Field(None)
@@ -269,7 +273,6 @@ class CancelVisit(RedoxAbstractModel):
 
 
 class CancelVisitAttendingProvider(RedoxAbstractModel):
-
     Address: "CancelVisitAttendingProviderAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -282,7 +285,6 @@ class CancelVisitAttendingProvider(RedoxAbstractModel):
 
 
 class CancelVisitAttendingProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -292,20 +294,33 @@ class CancelVisitAttendingProviderAddress(RedoxAbstractModel):
 
 
 class CancelVisitAttendingProviderLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "CancelVisitAttendingProviderLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "CancelVisitAttendingProviderLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class CancelVisitAttendingProviderPhoneNumber(RedoxAbstractModel):
+class CancelVisitAttendingProviderLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class CancelVisitAttendingProviderLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class CancelVisitAttendingProviderPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class CancelVisitConsultingProvider(RedoxAbstractModel):
-
     Address: "CancelVisitConsultingProviderAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -318,7 +333,6 @@ class CancelVisitConsultingProvider(RedoxAbstractModel):
 
 
 class CancelVisitConsultingProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -328,20 +342,33 @@ class CancelVisitConsultingProviderAddress(RedoxAbstractModel):
 
 
 class CancelVisitConsultingProviderLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "CancelVisitConsultingProviderLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "CancelVisitConsultingProviderLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class CancelVisitConsultingProviderPhoneNumber(RedoxAbstractModel):
+class CancelVisitConsultingProviderLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class CancelVisitConsultingProviderLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class CancelVisitConsultingProviderPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class CancelVisitGuarantor(RedoxAbstractModel):
-
     Address: "CancelVisitGuarantorAddress" = Field(None)
     DOB: Union[str, None] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -359,7 +386,6 @@ class CancelVisitGuarantor(RedoxAbstractModel):
 
 
 class CancelVisitGuarantorAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -369,14 +395,12 @@ class CancelVisitGuarantorAddress(RedoxAbstractModel):
 
 
 class CancelVisitGuarantorEmployer(RedoxAbstractModel):
-
     Address: "CancelVisitGuarantorEmployerAddress" = Field(None)
     Name: Union[str, None] = Field(None)
     PhoneNumber: Union[str, None] = Field(None)
 
 
 class CancelVisitGuarantorEmployerAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -386,20 +410,17 @@ class CancelVisitGuarantorEmployerAddress(RedoxAbstractModel):
 
 
 class CancelVisitGuarantorPhoneNumber(RedoxAbstractModel):
-
     Business: Union[str, None] = Field(None)
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
 
 
 class CancelVisitGuarantorSpouse(RedoxAbstractModel):
-
     FirstName: Union[str, None] = Field(None)
     LastName: Union[str, None] = Field(None)
 
 
 class CancelVisitInsurance(RedoxAbstractModel):
-
     AgreementType: Union[str, None] = Field(None)
     Company: "CancelVisitInsuranceCompany" = Field(None)
     CoverageType: Union[str, None] = Field(None)
@@ -415,7 +436,6 @@ class CancelVisitInsurance(RedoxAbstractModel):
 
 
 class CancelVisitInsuranceCompany(RedoxAbstractModel):
-
     Address: "CancelVisitInsuranceCompanyAddress" = Field(None)
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
@@ -424,7 +444,6 @@ class CancelVisitInsuranceCompany(RedoxAbstractModel):
 
 
 class CancelVisitInsuranceCompanyAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -434,7 +453,6 @@ class CancelVisitInsuranceCompanyAddress(RedoxAbstractModel):
 
 
 class CancelVisitInsuranceInsured(RedoxAbstractModel):
-
     Address: "CancelVisitInsuranceInsuredAddress" = Field(None)
     DOB: Union[str, None] = Field(None)
     FirstName: Union[str, None] = Field(None)
@@ -447,7 +465,6 @@ class CancelVisitInsuranceInsured(RedoxAbstractModel):
 
 
 class CancelVisitInsuranceInsuredAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -457,13 +474,11 @@ class CancelVisitInsuranceInsuredAddress(RedoxAbstractModel):
 
 
 class CancelVisitInsuranceInsuredIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class CancelVisitInsurancePlan(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
@@ -471,16 +486,26 @@ class CancelVisitInsurancePlan(RedoxAbstractModel):
 
 
 class CancelVisitLocation(RedoxAbstractModel):
-
     Bed: Union[str, None] = Field(None)
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List["CancelVisitLocationDepartmentIdentifier"] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List["CancelVisitLocationFacilityIdentifier"] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class CancelVisitReferringProvider(RedoxAbstractModel):
+class CancelVisitLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class CancelVisitLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class CancelVisitReferringProvider(RedoxAbstractModel):
     Address: "CancelVisitReferringProviderAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -493,7 +518,6 @@ class CancelVisitReferringProvider(RedoxAbstractModel):
 
 
 class CancelVisitReferringProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -503,15 +527,29 @@ class CancelVisitReferringProviderAddress(RedoxAbstractModel):
 
 
 class CancelVisitReferringProviderLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "CancelVisitReferringProviderLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "CancelVisitReferringProviderLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class CancelVisitReferringProviderPhoneNumber(RedoxAbstractModel):
+class CancelVisitReferringProviderLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class CancelVisitReferringProviderLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class CancelVisitReferringProviderPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
@@ -520,15 +558,21 @@ CancelMeta.update_forward_refs()
 CancelOrder.update_forward_refs()
 CancelOrderOrderingFacility.update_forward_refs()
 CancelOrderProvider.update_forward_refs()
+CancelOrderProviderLocation.update_forward_refs()
 CancelOrderResultCopyProvider.update_forward_refs()
+CancelOrderResultCopyProviderLocation.update_forward_refs()
 CancelPatient.update_forward_refs()
 CancelPatientDemographics.update_forward_refs()
 CancelVisit.update_forward_refs()
 CancelVisitAttendingProvider.update_forward_refs()
+CancelVisitAttendingProviderLocation.update_forward_refs()
 CancelVisitConsultingProvider.update_forward_refs()
+CancelVisitConsultingProviderLocation.update_forward_refs()
 CancelVisitGuarantor.update_forward_refs()
 CancelVisitGuarantorEmployer.update_forward_refs()
 CancelVisitInsurance.update_forward_refs()
 CancelVisitInsuranceCompany.update_forward_refs()
 CancelVisitInsuranceInsured.update_forward_refs()
+CancelVisitLocation.update_forward_refs()
 CancelVisitReferringProvider.update_forward_refs()
+CancelVisitReferringProviderLocation.update_forward_refs()

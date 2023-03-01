@@ -10,7 +10,6 @@ from ..field_types import Number
 
 
 class Deplete(EventTypeAbstractModel):
-
     Items: List["DepleteItem"] = Field(...)
     Meta: "DepleteMeta" = Field(...)
     Patient: "DepletePatient" = Field(None)
@@ -18,7 +17,6 @@ class Deplete(EventTypeAbstractModel):
 
 
 class DepleteItem(RedoxAbstractModel):
-
     Description: Union[str, None] = Field(None)
     Identifiers: List["DepleteItemIdentifier"] = Field(...)
     Location: "DepleteItemLocation" = Field(None)
@@ -36,13 +34,11 @@ class DepleteItem(RedoxAbstractModel):
 
 
 class DepleteItemIdentifier(RedoxAbstractModel):
-
     ID: str = Field(...)
     IDType: str = Field(...)
 
 
 class DepleteItemLocation(RedoxAbstractModel):
-
     Bin: Union[str, None] = Field(None)
     Department: Union[str, None] = Field(None)
     Facility: Union[str, None] = Field(None)
@@ -50,7 +46,6 @@ class DepleteItemLocation(RedoxAbstractModel):
 
 
 class DepleteItemOrderingProvider(RedoxAbstractModel):
-
     Address: "DepleteItemOrderingProviderAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -63,7 +58,6 @@ class DepleteItemOrderingProvider(RedoxAbstractModel):
 
 
 class DepleteItemOrderingProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -73,34 +67,45 @@ class DepleteItemOrderingProviderAddress(RedoxAbstractModel):
 
 
 class DepleteItemOrderingProviderLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "DepleteItemOrderingProviderLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "DepleteItemOrderingProviderLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class DepleteItemOrderingProviderPhoneNumber(RedoxAbstractModel):
+class DepleteItemOrderingProviderLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class DepleteItemOrderingProviderLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class DepleteItemOrderingProviderPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class DepleteItemProcedure(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Modifier: Union[str, None] = Field(None)
 
 
 class DepleteItemVendor(RedoxAbstractModel):
-
     CatalogNumber: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class DepleteMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["DepleteMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -114,42 +119,35 @@ class DepleteMeta(RedoxAbstractModel):
 
 
 class DepleteMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class DepleteMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class DepleteMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class DepleteMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class DepleteMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class DepletePatient(RedoxAbstractModel):
-
     Demographics: "DepletePatientDemographics" = Field(None)
     Identifiers: List["DepletePatientIdentifier"] = Field(None)
     Notes: List[str] = Field(None)
 
 
 class DepletePatientDemographics(RedoxAbstractModel):
-
     Address: "DepletePatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
@@ -170,7 +168,6 @@ class DepletePatientDemographics(RedoxAbstractModel):
 
 
 class DepletePatientDemographicsAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -180,26 +177,24 @@ class DepletePatientDemographicsAddress(RedoxAbstractModel):
 
 
 class DepletePatientDemographicsPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class DepletePatientIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class DepleteVisit(RedoxAbstractModel):
-
     VisitNumber: Union[str, None] = Field(None)
 
 
 Deplete.update_forward_refs()
 DepleteItem.update_forward_refs()
 DepleteItemOrderingProvider.update_forward_refs()
+DepleteItemOrderingProviderLocation.update_forward_refs()
 DepleteMeta.update_forward_refs()
 DepletePatient.update_forward_refs()
 DepletePatientDemographics.update_forward_refs()

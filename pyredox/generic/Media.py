@@ -6,16 +6,15 @@ from typing import List, Union
 from pydantic import Field
 
 from pyredox import media
-from ..abstract_base import GenericRedoxAbstractModel
+from ..abstract_base import GenericEventTypeAbstractModel
 from . import types as generic
 
 
-class _Media(GenericRedoxAbstractModel):
+class _Media(GenericEventTypeAbstractModel):
     _redox_module = media
 
 
 class Delete(_Media):
-
     Media: generic.Media = Field(...)
     Meta: generic.Meta = Field(...)
     Orders: List[generic.Order] = Field(None)
@@ -24,7 +23,6 @@ class Delete(_Media):
 
 
 class New(_Media):
-
     Media: generic.Media = Field(...)
     Meta: generic.Meta = Field(...)
     Orders: List[generic.Order] = Field(None)
@@ -33,7 +31,6 @@ class New(_Media):
 
 
 class Query(_Media):
-
     DocumentIDs: List[str] = Field(None)
     DocumentTypes: List[str] = Field(None)
     Meta: generic.Meta = Field(...)
@@ -42,13 +39,11 @@ class Query(_Media):
 
 
 class QueryResponse(_Media):
-
     Media: List[generic.Medium] = Field(None)
     Meta: generic.Meta = Field(...)
 
 
 class Replace(_Media):
-
     Media: generic.Media = Field(...)
     Meta: generic.Meta = Field(...)
     Orders: List[generic.Order] = Field(None)

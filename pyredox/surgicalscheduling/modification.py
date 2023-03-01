@@ -10,7 +10,6 @@ from ..field_types import Number
 
 
 class Modification(EventTypeAbstractModel):
-
     Meta: "ModificationMeta" = Field(...)
     Patient: "ModificationPatient" = Field(...)
     Procedures: List["ModificationProcedure"] = Field(...)
@@ -21,7 +20,6 @@ class Modification(EventTypeAbstractModel):
 
 
 class ModificationMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["ModificationMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -35,42 +33,35 @@ class ModificationMeta(RedoxAbstractModel):
 
 
 class ModificationMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class ModificationMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class ModificationMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class ModificationMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class ModificationMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class ModificationPatient(RedoxAbstractModel):
-
     Demographics: "ModificationPatientDemographics" = Field(None)
     Identifiers: List["ModificationPatientIdentifier"] = Field(...)
     Notes: List[str] = Field(None)
 
 
 class ModificationPatientDemographics(RedoxAbstractModel):
-
     Address: "ModificationPatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
@@ -91,7 +82,6 @@ class ModificationPatientDemographics(RedoxAbstractModel):
 
 
 class ModificationPatientDemographicsAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -101,20 +91,17 @@ class ModificationPatientDemographicsAddress(RedoxAbstractModel):
 
 
 class ModificationPatientDemographicsPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class ModificationPatientIdentifier(RedoxAbstractModel):
-
     ID: str = Field(...)
     IDType: str = Field(...)
 
 
 class ModificationProcedure(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     DateTime: str = Field(...)
@@ -124,13 +111,11 @@ class ModificationProcedure(RedoxAbstractModel):
 
 
 class ModificationProcedureProcedureInfo(RedoxAbstractModel):
-
     Description: Union[str, None] = Field(None)
     Value: Union[str, None] = Field(None)
 
 
 class ModificationSurgeryStaff(RedoxAbstractModel):
-
     Address: "ModificationSurgeryStaffAddress" = Field(None)
     Credentials: List[str] = Field(None)
     Duration: Union[Number, None] = Field(None)
@@ -146,7 +131,6 @@ class ModificationSurgeryStaff(RedoxAbstractModel):
 
 
 class ModificationSurgeryStaffAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -156,33 +140,44 @@ class ModificationSurgeryStaffAddress(RedoxAbstractModel):
 
 
 class ModificationSurgeryStaffLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "ModificationSurgeryStaffLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "ModificationSurgeryStaffLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class ModificationSurgeryStaffPhoneNumber(RedoxAbstractModel):
+class ModificationSurgeryStaffLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class ModificationSurgeryStaffLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class ModificationSurgeryStaffPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class ModificationSurgeryStaffRole(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
 
 
 class ModificationSurgicalCase(RedoxAbstractModel):
-
     Number: Union[str, None] = Field(None)
     Status: Union[str, None] = Field(None)
 
 
 class ModificationSurgicalInfo(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
@@ -190,7 +185,6 @@ class ModificationSurgicalInfo(RedoxAbstractModel):
 
 
 class ModificationVisit(RedoxAbstractModel):
-
     AccountNumber: Union[str, None] = Field(None)
     AttendingProvider: "ModificationVisitAttendingProvider" = Field(None)
     Diagnoses: List["ModificationVisitDiagnosis"] = Field(None)
@@ -205,7 +199,6 @@ class ModificationVisit(RedoxAbstractModel):
 
 
 class ModificationVisitAttendingProvider(RedoxAbstractModel):
-
     Address: "ModificationVisitAttendingProviderAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -218,7 +211,6 @@ class ModificationVisitAttendingProvider(RedoxAbstractModel):
 
 
 class ModificationVisitAttendingProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -228,20 +220,35 @@ class ModificationVisitAttendingProviderAddress(RedoxAbstractModel):
 
 
 class ModificationVisitAttendingProviderLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "ModificationVisitAttendingProviderLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "ModificationVisitAttendingProviderLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class ModificationVisitAttendingProviderPhoneNumber(RedoxAbstractModel):
+class ModificationVisitAttendingProviderLocationDepartmentIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class ModificationVisitAttendingProviderLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class ModificationVisitAttendingProviderPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class ModificationVisitDiagnosis(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     DocumentedDateTime: Union[str, None] = Field(None)
@@ -250,7 +257,6 @@ class ModificationVisitDiagnosis(RedoxAbstractModel):
 
 
 class ModificationVisitEquipment(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
@@ -259,12 +265,27 @@ class ModificationVisitEquipment(RedoxAbstractModel):
 
 
 class ModificationVisitLocation(RedoxAbstractModel):
-
     Bed: Union[str, None] = Field(None)
     Department: str = Field(...)
+    DepartmentIdentifiers: List[
+        "ModificationVisitLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List["ModificationVisitLocationFacilityIdentifier"] = Field(
+        None
+    )
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
+
+
+class ModificationVisitLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class ModificationVisitLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
 
 Modification.update_forward_refs()
@@ -273,5 +294,8 @@ ModificationPatient.update_forward_refs()
 ModificationPatientDemographics.update_forward_refs()
 ModificationProcedure.update_forward_refs()
 ModificationSurgeryStaff.update_forward_refs()
+ModificationSurgeryStaffLocation.update_forward_refs()
 ModificationVisit.update_forward_refs()
 ModificationVisitAttendingProvider.update_forward_refs()
+ModificationVisitAttendingProviderLocation.update_forward_refs()
+ModificationVisitLocation.update_forward_refs()

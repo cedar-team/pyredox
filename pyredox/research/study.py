@@ -10,14 +10,12 @@ from ..field_types import Number
 
 
 class Study(EventTypeAbstractModel):
-
     Meta: "StudyMeta" = Field(...)
     Protocols: List["StudyProtocol"] = Field(None)
     Study: "StudyStudy" = Field(None)
 
 
 class StudyMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["StudyMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -31,35 +29,29 @@ class StudyMeta(RedoxAbstractModel):
 
 
 class StudyMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class StudyMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class StudyMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class StudyMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class StudyMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class StudyProtocol(RedoxAbstractModel):
-
     Cycles: List["StudyProtocolCycle"] = Field(None)
     Description: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
@@ -67,7 +59,6 @@ class StudyProtocol(RedoxAbstractModel):
 
 
 class StudyProtocolCycle(RedoxAbstractModel):
-
     Days: List["StudyProtocolCycleDay"] = Field(None)
     Description: Union[str, None] = Field(None)
     EndDate: Union[str, None] = Field(None)
@@ -77,7 +68,6 @@ class StudyProtocolCycle(RedoxAbstractModel):
 
 
 class StudyProtocolCycleDay(RedoxAbstractModel):
-
     ActivityDateTime: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
     EarliestDateTime: Union[str, None] = Field(None)
@@ -88,7 +78,6 @@ class StudyProtocolCycleDay(RedoxAbstractModel):
 
 
 class StudyProtocolCycleDayProcedure(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     CodeSet: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
@@ -96,7 +85,6 @@ class StudyProtocolCycleDayProcedure(RedoxAbstractModel):
 
 
 class StudyStudy(RedoxAbstractModel):
-
     Conditions: List["StudyStudyCondition"] = Field(None)
     Coordinators: List["StudyStudyCoordinator"] = Field(None)
     Description: Union[str, None] = Field(None)
@@ -113,7 +101,6 @@ class StudyStudy(RedoxAbstractModel):
 
 
 class StudyStudyCondition(RedoxAbstractModel):
-
     AltCodes: List["StudyStudyConditionAltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
@@ -122,7 +109,6 @@ class StudyStudyCondition(RedoxAbstractModel):
 
 
 class StudyStudyConditionAltCode(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
@@ -130,7 +116,6 @@ class StudyStudyConditionAltCode(RedoxAbstractModel):
 
 
 class StudyStudyCoordinator(RedoxAbstractModel):
-
     Address: "StudyStudyCoordinatorAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -143,7 +128,6 @@ class StudyStudyCoordinator(RedoxAbstractModel):
 
 
 class StudyStudyCoordinatorAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -153,48 +137,59 @@ class StudyStudyCoordinatorAddress(RedoxAbstractModel):
 
 
 class StudyStudyCoordinatorLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "StudyStudyCoordinatorLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "StudyStudyCoordinatorLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class StudyStudyCoordinatorPhoneNumber(RedoxAbstractModel):
+class StudyStudyCoordinatorLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class StudyStudyCoordinatorLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class StudyStudyCoordinatorPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class StudyStudyDesign(RedoxAbstractModel):
-
     Phase: Union[str, None] = Field(None)
     Purpose: Union[str, None] = Field(None)
 
 
 class StudyStudyEligibility(RedoxAbstractModel):
-
     Gender: Union[str, None] = Field(None)
     MaximumAge: Union[Number, None] = Field(None)
     MinimumAge: Union[Number, None] = Field(None)
 
 
 class StudyStudyIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class StudyStudyLocation(RedoxAbstractModel):
-
     Address: "StudyStudyLocationAddress" = Field(None)
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List["StudyStudyLocationDepartmentIdentifier"] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List["StudyStudyLocationFacilityIdentifier"] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
 class StudyStudyLocationAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -203,8 +198,17 @@ class StudyStudyLocationAddress(RedoxAbstractModel):
     ZIP: Union[str, None] = Field(None)
 
 
-class StudyStudyPrincipalInvestigator(RedoxAbstractModel):
+class StudyStudyLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class StudyStudyLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class StudyStudyPrincipalInvestigator(RedoxAbstractModel):
     Address: "StudyStudyPrincipalInvestigatorAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -217,7 +221,6 @@ class StudyStudyPrincipalInvestigator(RedoxAbstractModel):
 
 
 class StudyStudyPrincipalInvestigatorAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -227,20 +230,33 @@ class StudyStudyPrincipalInvestigatorAddress(RedoxAbstractModel):
 
 
 class StudyStudyPrincipalInvestigatorLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "StudyStudyPrincipalInvestigatorLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "StudyStudyPrincipalInvestigatorLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class StudyStudyPrincipalInvestigatorPhoneNumber(RedoxAbstractModel):
+class StudyStudyPrincipalInvestigatorLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class StudyStudyPrincipalInvestigatorLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class StudyStudyPrincipalInvestigatorPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class StudyStudySponsor(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
@@ -253,5 +269,7 @@ StudyProtocolCycleDay.update_forward_refs()
 StudyStudy.update_forward_refs()
 StudyStudyCondition.update_forward_refs()
 StudyStudyCoordinator.update_forward_refs()
+StudyStudyCoordinatorLocation.update_forward_refs()
 StudyStudyLocation.update_forward_refs()
 StudyStudyPrincipalInvestigator.update_forward_refs()
+StudyStudyPrincipalInvestigatorLocation.update_forward_refs()

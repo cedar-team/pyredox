@@ -10,13 +10,11 @@ from ..field_types import Number
 
 
 class Query(EventTypeAbstractModel):
-
     Meta: "QueryMeta" = Field(...)
     Patient: "QueryPatient" = Field(None)
 
 
 class QueryMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["QueryMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -30,42 +28,35 @@ class QueryMeta(RedoxAbstractModel):
 
 
 class QueryMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class QueryMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class QueryMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class QueryMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class QueryMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class QueryPatient(RedoxAbstractModel):
-
     Demographics: "QueryPatientDemographics" = Field(None)
     Identifiers: List["QueryPatientIdentifier"] = Field(None)
     Notes: List[str] = Field(None)
 
 
 class QueryPatientDemographics(RedoxAbstractModel):
-
     Address: "QueryPatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
@@ -86,7 +77,6 @@ class QueryPatientDemographics(RedoxAbstractModel):
 
 
 class QueryPatientDemographicsAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -96,14 +86,12 @@ class QueryPatientDemographicsAddress(RedoxAbstractModel):
 
 
 class QueryPatientDemographicsPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class QueryPatientIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 

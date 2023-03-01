@@ -10,13 +10,11 @@ from ..field_types import Number
 
 
 class LocationQuery(EventTypeAbstractModel):
-
     Meta: "LocationQueryMeta" = Field(...)
     Patient: "LocationQueryPatient" = Field(...)
 
 
 class LocationQueryMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["LocationQueryMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -30,40 +28,33 @@ class LocationQueryMeta(RedoxAbstractModel):
 
 
 class LocationQueryMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class LocationQueryMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class LocationQueryMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class LocationQueryMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class LocationQueryMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class LocationQueryPatient(RedoxAbstractModel):
-
     Identifiers: List["LocationQueryPatientIdentifier"] = Field(...)
 
 
 class LocationQueryPatientIdentifier(RedoxAbstractModel):
-
     ID: str = Field(...)
     IDType: str = Field(...)
 

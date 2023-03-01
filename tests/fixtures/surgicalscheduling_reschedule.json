@@ -2,7 +2,7 @@
   "Meta": {
     "DataModel": "SurgicalScheduling",
     "EventType": "Reschedule",
-    "EventDateTime": "2022-08-03T18:06:43.597Z",
+    "EventDateTime": "2023-02-27T22:09:03.585Z",
     "Test": true,
     "Source": {
       "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
@@ -103,7 +103,10 @@
       "PhoneNumber": {
         "Office": "+16085551234"
       },
-      "Location": {},
+      "Location": {
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
+      },
       "Role": {
         "Code": "1.1",
         "Description": "Primary Surgeon"
@@ -128,7 +131,7 @@
   ],
   "Visit": {
     "VisitNumber": "1234",
-    "VisitDateTime": "2022-08-10T18:06:44.838Z",
+    "VisitDateTime": "2023-03-06T22:09:04.901Z",
     "Notes": [],
     "AttendingProvider": {
       "ID": "4356789876",
@@ -150,12 +153,17 @@
       "PhoneNumber": {
         "Office": "+16085551234"
       },
-      "Location": {}
+      "Location": {
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
+      }
     },
     "Location": {
       "Type": "Inpatient",
       "Facility": "RES General Hospital",
+      "FacilityIdentifiers": [],
       "Department": "3N",
+      "DepartmentIdentifiers": [],
       "Room": "136",
       "Bed": "B"
     },

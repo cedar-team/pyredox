@@ -10,14 +10,12 @@ from ..field_types import Number
 
 
 class PatientQueryResponse(EventTypeAbstractModel):
-
     Meta: "PatientQueryResponseMeta" = Field(...)
     Patient: "PatientQueryResponsePatient" = Field(None)
     PotentialMatches: List["PatientQueryResponsePotentialMatch"] = Field(None)
 
 
 class PatientQueryResponseMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["PatientQueryResponseMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -31,35 +29,29 @@ class PatientQueryResponseMeta(RedoxAbstractModel):
 
 
 class PatientQueryResponseMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class PatientQueryResponseMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class PatientQueryResponseMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class PatientQueryResponseMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class PatientQueryResponseMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class PatientQueryResponsePatient(RedoxAbstractModel):
-
     Contacts: List["PatientQueryResponsePatientContact"] = Field(None)
     Demographics: "PatientQueryResponsePatientDemographics" = Field(None)
     Identifiers: List["PatientQueryResponsePatientIdentifier"] = Field(None)
@@ -69,7 +61,6 @@ class PatientQueryResponsePatient(RedoxAbstractModel):
 
 
 class PatientQueryResponsePatientContact(RedoxAbstractModel):
-
     Address: "PatientQueryResponsePatientContactAddress" = Field(None)
     EmailAddresses: List[str] = Field(None)
     FirstName: Union[str, None] = Field(None)
@@ -81,7 +72,6 @@ class PatientQueryResponsePatientContact(RedoxAbstractModel):
 
 
 class PatientQueryResponsePatientContactAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -91,14 +81,12 @@ class PatientQueryResponsePatientContactAddress(RedoxAbstractModel):
 
 
 class PatientQueryResponsePatientContactPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class PatientQueryResponsePatientDemographics(RedoxAbstractModel):
-
     Address: "PatientQueryResponsePatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
@@ -119,7 +107,6 @@ class PatientQueryResponsePatientDemographics(RedoxAbstractModel):
 
 
 class PatientQueryResponsePatientDemographicsAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -129,20 +116,17 @@ class PatientQueryResponsePatientDemographicsAddress(RedoxAbstractModel):
 
 
 class PatientQueryResponsePatientDemographicsPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class PatientQueryResponsePatientIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class PatientQueryResponsePatientPCP(RedoxAbstractModel):
-
     Address: "PatientQueryResponsePatientPCPAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -156,7 +140,6 @@ class PatientQueryResponsePatientPCP(RedoxAbstractModel):
 
 
 class PatientQueryResponsePatientPCPAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -166,20 +149,33 @@ class PatientQueryResponsePatientPCPAddress(RedoxAbstractModel):
 
 
 class PatientQueryResponsePatientPCPLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "PatientQueryResponsePatientPCPLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "PatientQueryResponsePatientPCPLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class PatientQueryResponsePatientPCPPhoneNumber(RedoxAbstractModel):
+class PatientQueryResponsePatientPCPLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class PatientQueryResponsePatientPCPLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class PatientQueryResponsePatientPCPPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class PatientQueryResponsePatientVaccination(RedoxAbstractModel):
-
     ClinicalInfo: List["PatientQueryResponsePatientVaccinationClinicalInfo"] = Field(
         None
     )
@@ -196,7 +192,6 @@ class PatientQueryResponsePatientVaccination(RedoxAbstractModel):
 
 
 class PatientQueryResponsePatientVaccinationClinicalInfo(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     CompletionDateTime: Union[str, None] = Field(None)
@@ -209,28 +204,44 @@ class PatientQueryResponsePatientVaccinationClinicalInfo(RedoxAbstractModel):
 
 
 class PatientQueryResponsePatientVaccinationDose(RedoxAbstractModel):
-
     Quantity: Union[str, None] = Field(None)
     Units: Union[str, None] = Field(None)
 
 
 class PatientQueryResponsePatientVaccinationLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "PatientQueryResponsePatientVaccinationLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "PatientQueryResponsePatientVaccinationLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class PatientQueryResponsePatientVaccinationOrder(RedoxAbstractModel):
+class PatientQueryResponsePatientVaccinationLocationDepartmentIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class PatientQueryResponsePatientVaccinationLocationFacilityIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class PatientQueryResponsePatientVaccinationOrder(RedoxAbstractModel):
     EHRID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
     Provider: "PatientQueryResponsePatientVaccinationOrderProvider" = Field(None)
 
 
 class PatientQueryResponsePatientVaccinationOrderProvider(RedoxAbstractModel):
-
     Address: "PatientQueryResponsePatientVaccinationOrderProviderAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -248,7 +259,6 @@ class PatientQueryResponsePatientVaccinationOrderProvider(RedoxAbstractModel):
 
 
 class PatientQueryResponsePatientVaccinationOrderProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -258,22 +268,39 @@ class PatientQueryResponsePatientVaccinationOrderProviderAddress(RedoxAbstractMo
 
 
 class PatientQueryResponsePatientVaccinationOrderProviderLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "PatientQueryResponsePatientVaccinationOrderProviderLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "PatientQueryResponsePatientVaccinationOrderProviderLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
+
+
+class PatientQueryResponsePatientVaccinationOrderProviderLocationDepartmentIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class PatientQueryResponsePatientVaccinationOrderProviderLocationFacilityIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
 
 class PatientQueryResponsePatientVaccinationOrderProviderPhoneNumber(
     RedoxAbstractModel
 ):
-
     Office: Union[str, None] = Field(None)
 
 
 class PatientQueryResponsePatientVaccinationProduct(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
@@ -285,14 +312,12 @@ class PatientQueryResponsePatientVaccinationProduct(RedoxAbstractModel):
 
 
 class PatientQueryResponsePatientVaccinationProductManufacturer(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class PatientQueryResponsePatientVaccinationProvider(RedoxAbstractModel):
-
     Address: "PatientQueryResponsePatientVaccinationProviderAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -307,7 +332,6 @@ class PatientQueryResponsePatientVaccinationProvider(RedoxAbstractModel):
 
 
 class PatientQueryResponsePatientVaccinationProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -317,34 +341,49 @@ class PatientQueryResponsePatientVaccinationProviderAddress(RedoxAbstractModel):
 
 
 class PatientQueryResponsePatientVaccinationProviderLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "PatientQueryResponsePatientVaccinationProviderLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "PatientQueryResponsePatientVaccinationProviderLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class PatientQueryResponsePatientVaccinationProviderPhoneNumber(RedoxAbstractModel):
+class PatientQueryResponsePatientVaccinationProviderLocationDepartmentIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class PatientQueryResponsePatientVaccinationProviderLocationFacilityIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class PatientQueryResponsePatientVaccinationProviderPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class PatientQueryResponsePatientVaccinationRoute(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class PatientQueryResponsePatientVaccinationSite(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class PatientQueryResponsePotentialMatch(RedoxAbstractModel):
-
     Contacts: List["PatientQueryResponsePotentialMatchContact"] = Field(None)
     Demographics: "PatientQueryResponsePotentialMatchDemographics" = Field(None)
     Identifiers: List["PatientQueryResponsePotentialMatchIdentifier"] = Field(None)
@@ -353,7 +392,6 @@ class PatientQueryResponsePotentialMatch(RedoxAbstractModel):
 
 
 class PatientQueryResponsePotentialMatchContact(RedoxAbstractModel):
-
     Address: "PatientQueryResponsePotentialMatchContactAddress" = Field(None)
     EmailAddresses: List[str] = Field(None)
     FirstName: Union[str, None] = Field(None)
@@ -365,7 +403,6 @@ class PatientQueryResponsePotentialMatchContact(RedoxAbstractModel):
 
 
 class PatientQueryResponsePotentialMatchContactAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -375,14 +412,12 @@ class PatientQueryResponsePotentialMatchContactAddress(RedoxAbstractModel):
 
 
 class PatientQueryResponsePotentialMatchContactPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class PatientQueryResponsePotentialMatchDemographics(RedoxAbstractModel):
-
     Address: "PatientQueryResponsePotentialMatchDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
@@ -405,7 +440,6 @@ class PatientQueryResponsePotentialMatchDemographics(RedoxAbstractModel):
 
 
 class PatientQueryResponsePotentialMatchDemographicsAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -415,20 +449,17 @@ class PatientQueryResponsePotentialMatchDemographicsAddress(RedoxAbstractModel):
 
 
 class PatientQueryResponsePotentialMatchDemographicsPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class PatientQueryResponsePotentialMatchIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class PatientQueryResponsePotentialMatchPCP(RedoxAbstractModel):
-
     Address: "PatientQueryResponsePotentialMatchPCPAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -442,7 +473,6 @@ class PatientQueryResponsePotentialMatchPCP(RedoxAbstractModel):
 
 
 class PatientQueryResponsePotentialMatchPCPAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -452,15 +482,33 @@ class PatientQueryResponsePotentialMatchPCPAddress(RedoxAbstractModel):
 
 
 class PatientQueryResponsePotentialMatchPCPLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "PatientQueryResponsePotentialMatchPCPLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "PatientQueryResponsePotentialMatchPCPLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class PatientQueryResponsePotentialMatchPCPPhoneNumber(RedoxAbstractModel):
+class PatientQueryResponsePotentialMatchPCPLocationDepartmentIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class PatientQueryResponsePotentialMatchPCPLocationFacilityIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class PatientQueryResponsePotentialMatchPCPPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
@@ -470,12 +518,17 @@ PatientQueryResponsePatient.update_forward_refs()
 PatientQueryResponsePatientContact.update_forward_refs()
 PatientQueryResponsePatientDemographics.update_forward_refs()
 PatientQueryResponsePatientPCP.update_forward_refs()
+PatientQueryResponsePatientPCPLocation.update_forward_refs()
 PatientQueryResponsePatientVaccination.update_forward_refs()
+PatientQueryResponsePatientVaccinationLocation.update_forward_refs()
 PatientQueryResponsePatientVaccinationOrder.update_forward_refs()
 PatientQueryResponsePatientVaccinationOrderProvider.update_forward_refs()
+PatientQueryResponsePatientVaccinationOrderProviderLocation.update_forward_refs()
 PatientQueryResponsePatientVaccinationProduct.update_forward_refs()
 PatientQueryResponsePatientVaccinationProvider.update_forward_refs()
+PatientQueryResponsePatientVaccinationProviderLocation.update_forward_refs()
 PatientQueryResponsePotentialMatch.update_forward_refs()
 PatientQueryResponsePotentialMatchContact.update_forward_refs()
 PatientQueryResponsePotentialMatchDemographics.update_forward_refs()
 PatientQueryResponsePotentialMatchPCP.update_forward_refs()
+PatientQueryResponsePotentialMatchPCPLocation.update_forward_refs()

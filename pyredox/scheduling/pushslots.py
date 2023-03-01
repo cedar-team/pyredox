@@ -10,13 +10,11 @@ from ..field_types import Number
 
 
 class PushSlots(EventTypeAbstractModel):
-
     Meta: "PushSlotsMeta" = Field(...)
     Slots: List["PushSlotsSlot"] = Field(...)
 
 
 class PushSlotsMeta(RedoxAbstractModel):
-
     BatchID: Union[str, None] = Field(None)
     CurrentBatch: Union[str, None] = Field(None)
     DataModel: str = Field(...)
@@ -33,35 +31,29 @@ class PushSlotsMeta(RedoxAbstractModel):
 
 
 class PushSlotsMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class PushSlotsMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class PushSlotsMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class PushSlotsMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class PushSlotsMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class PushSlotsSlot(RedoxAbstractModel):
-
     DateTime: str = Field(...)
     Duration: Number = Field(...)
     ID: Union[str, None] = Field(None)
@@ -71,15 +63,27 @@ class PushSlotsSlot(RedoxAbstractModel):
 
 
 class PushSlotsSlotLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List["PushSlotsSlotLocationDepartmentIdentifier"] = Field(
+        None
+    )
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List["PushSlotsSlotLocationFacilityIdentifier"] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class PushSlotsSlotProvider(RedoxAbstractModel):
+class PushSlotsSlotLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class PushSlotsSlotLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class PushSlotsSlotProvider(RedoxAbstractModel):
     Address: "PushSlotsSlotProviderAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -91,7 +95,6 @@ class PushSlotsSlotProvider(RedoxAbstractModel):
 
 
 class PushSlotsSlotProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -101,11 +104,11 @@ class PushSlotsSlotProviderAddress(RedoxAbstractModel):
 
 
 class PushSlotsSlotProviderPhoneNumber(RedoxAbstractModel):
-
     Office: Union[str, None] = Field(None)
 
 
 PushSlots.update_forward_refs()
 PushSlotsMeta.update_forward_refs()
 PushSlotsSlot.update_forward_refs()
+PushSlotsSlotLocation.update_forward_refs()
 PushSlotsSlotProvider.update_forward_refs()

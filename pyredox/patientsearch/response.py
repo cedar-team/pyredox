@@ -10,14 +10,12 @@ from ..field_types import Number
 
 
 class Response(EventTypeAbstractModel):
-
     Meta: "ResponseMeta" = Field(...)
     Patient: "ResponsePatient" = Field(None)
     PotentialMatches: List["ResponsePotentialMatch"] = Field(None)
 
 
 class ResponseMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["ResponseMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -32,35 +30,29 @@ class ResponseMeta(RedoxAbstractModel):
 
 
 class ResponseMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class ResponseMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class ResponseMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class ResponseMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class ResponseMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class ResponsePatient(RedoxAbstractModel):
-
     Contacts: List["ResponsePatientContact"] = Field(None)
     Demographics: "ResponsePatientDemographics" = Field(None)
     Guarantor: "ResponsePatientGuarantor" = Field(None)
@@ -71,7 +63,6 @@ class ResponsePatient(RedoxAbstractModel):
 
 
 class ResponsePatientContact(RedoxAbstractModel):
-
     Address: "ResponsePatientContactAddress" = Field(None)
     EmailAddresses: List[str] = Field(None)
     FirstName: Union[str, None] = Field(None)
@@ -83,7 +74,6 @@ class ResponsePatientContact(RedoxAbstractModel):
 
 
 class ResponsePatientContactAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -93,14 +83,12 @@ class ResponsePatientContactAddress(RedoxAbstractModel):
 
 
 class ResponsePatientContactPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class ResponsePatientDemographics(RedoxAbstractModel):
-
     Address: "ResponsePatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
@@ -121,7 +109,6 @@ class ResponsePatientDemographics(RedoxAbstractModel):
 
 
 class ResponsePatientDemographicsAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -131,14 +118,12 @@ class ResponsePatientDemographicsAddress(RedoxAbstractModel):
 
 
 class ResponsePatientDemographicsPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class ResponsePatientGuarantor(RedoxAbstractModel):
-
     Address: "ResponsePatientGuarantorAddress" = Field(None)
     DOB: Union[str, None] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -156,7 +141,6 @@ class ResponsePatientGuarantor(RedoxAbstractModel):
 
 
 class ResponsePatientGuarantorAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -166,14 +150,12 @@ class ResponsePatientGuarantorAddress(RedoxAbstractModel):
 
 
 class ResponsePatientGuarantorEmployer(RedoxAbstractModel):
-
     Address: "ResponsePatientGuarantorEmployerAddress" = Field(None)
     Name: Union[str, None] = Field(None)
     PhoneNumber: Union[str, None] = Field(None)
 
 
 class ResponsePatientGuarantorEmployerAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -183,26 +165,22 @@ class ResponsePatientGuarantorEmployerAddress(RedoxAbstractModel):
 
 
 class ResponsePatientGuarantorPhoneNumber(RedoxAbstractModel):
-
     Business: Union[str, None] = Field(None)
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
 
 
 class ResponsePatientGuarantorSpouse(RedoxAbstractModel):
-
     FirstName: Union[str, None] = Field(None)
     LastName: Union[str, None] = Field(None)
 
 
 class ResponsePatientIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class ResponsePatientInsurance(RedoxAbstractModel):
-
     AgreementType: Union[str, None] = Field(None)
     Company: "ResponsePatientInsuranceCompany" = Field(None)
     CoverageType: Union[str, None] = Field(None)
@@ -218,7 +196,6 @@ class ResponsePatientInsurance(RedoxAbstractModel):
 
 
 class ResponsePatientInsuranceCompany(RedoxAbstractModel):
-
     Address: "ResponsePatientInsuranceCompanyAddress" = Field(None)
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
@@ -227,7 +204,6 @@ class ResponsePatientInsuranceCompany(RedoxAbstractModel):
 
 
 class ResponsePatientInsuranceCompanyAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -237,7 +213,6 @@ class ResponsePatientInsuranceCompanyAddress(RedoxAbstractModel):
 
 
 class ResponsePatientInsuranceInsured(RedoxAbstractModel):
-
     Address: "ResponsePatientInsuranceInsuredAddress" = Field(None)
     DOB: Union[str, None] = Field(None)
     FirstName: Union[str, None] = Field(None)
@@ -250,7 +225,6 @@ class ResponsePatientInsuranceInsured(RedoxAbstractModel):
 
 
 class ResponsePatientInsuranceInsuredAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -260,13 +234,11 @@ class ResponsePatientInsuranceInsuredAddress(RedoxAbstractModel):
 
 
 class ResponsePatientInsuranceInsuredIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class ResponsePatientInsurancePlan(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
@@ -274,7 +246,6 @@ class ResponsePatientInsurancePlan(RedoxAbstractModel):
 
 
 class ResponsePatientPCP(RedoxAbstractModel):
-
     Address: "ResponsePatientPCPAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -288,7 +259,6 @@ class ResponsePatientPCP(RedoxAbstractModel):
 
 
 class ResponsePatientPCPAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -298,20 +268,33 @@ class ResponsePatientPCPAddress(RedoxAbstractModel):
 
 
 class ResponsePatientPCPLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "ResponsePatientPCPLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List["ResponsePatientPCPLocationFacilityIdentifier"] = Field(
+        None
+    )
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class ResponsePatientPCPPhoneNumber(RedoxAbstractModel):
+class ResponsePatientPCPLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class ResponsePatientPCPLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class ResponsePatientPCPPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class ResponsePotentialMatch(RedoxAbstractModel):
-
     Contacts: List["ResponsePotentialMatchContact"] = Field(None)
     Demographics: "ResponsePotentialMatchDemographics" = Field(None)
     Guarantor: "ResponsePotentialMatchGuarantor" = Field(None)
@@ -322,7 +305,6 @@ class ResponsePotentialMatch(RedoxAbstractModel):
 
 
 class ResponsePotentialMatchContact(RedoxAbstractModel):
-
     Address: "ResponsePotentialMatchContactAddress" = Field(None)
     EmailAddresses: List[str] = Field(None)
     FirstName: Union[str, None] = Field(None)
@@ -334,7 +316,6 @@ class ResponsePotentialMatchContact(RedoxAbstractModel):
 
 
 class ResponsePotentialMatchContactAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -344,14 +325,12 @@ class ResponsePotentialMatchContactAddress(RedoxAbstractModel):
 
 
 class ResponsePotentialMatchContactPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class ResponsePotentialMatchDemographics(RedoxAbstractModel):
-
     Address: "ResponsePotentialMatchDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
@@ -372,7 +351,6 @@ class ResponsePotentialMatchDemographics(RedoxAbstractModel):
 
 
 class ResponsePotentialMatchDemographicsAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -382,14 +360,12 @@ class ResponsePotentialMatchDemographicsAddress(RedoxAbstractModel):
 
 
 class ResponsePotentialMatchDemographicsPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class ResponsePotentialMatchGuarantor(RedoxAbstractModel):
-
     Address: "ResponsePotentialMatchGuarantorAddress" = Field(None)
     DOB: Union[str, None] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -407,7 +383,6 @@ class ResponsePotentialMatchGuarantor(RedoxAbstractModel):
 
 
 class ResponsePotentialMatchGuarantorAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -417,14 +392,12 @@ class ResponsePotentialMatchGuarantorAddress(RedoxAbstractModel):
 
 
 class ResponsePotentialMatchGuarantorEmployer(RedoxAbstractModel):
-
     Address: "ResponsePotentialMatchGuarantorEmployerAddress" = Field(None)
     Name: Union[str, None] = Field(None)
     PhoneNumber: Union[str, None] = Field(None)
 
 
 class ResponsePotentialMatchGuarantorEmployerAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -434,26 +407,22 @@ class ResponsePotentialMatchGuarantorEmployerAddress(RedoxAbstractModel):
 
 
 class ResponsePotentialMatchGuarantorPhoneNumber(RedoxAbstractModel):
-
     Business: Union[str, None] = Field(None)
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
 
 
 class ResponsePotentialMatchGuarantorSpouse(RedoxAbstractModel):
-
     FirstName: Union[str, None] = Field(None)
     LastName: Union[str, None] = Field(None)
 
 
 class ResponsePotentialMatchIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class ResponsePotentialMatchInsurance(RedoxAbstractModel):
-
     AgreementType: Union[str, None] = Field(None)
     Company: "ResponsePotentialMatchInsuranceCompany" = Field(None)
     CoverageType: Union[str, None] = Field(None)
@@ -469,7 +438,6 @@ class ResponsePotentialMatchInsurance(RedoxAbstractModel):
 
 
 class ResponsePotentialMatchInsuranceCompany(RedoxAbstractModel):
-
     Address: "ResponsePotentialMatchInsuranceCompanyAddress" = Field(None)
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
@@ -478,7 +446,6 @@ class ResponsePotentialMatchInsuranceCompany(RedoxAbstractModel):
 
 
 class ResponsePotentialMatchInsuranceCompanyAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -488,7 +455,6 @@ class ResponsePotentialMatchInsuranceCompanyAddress(RedoxAbstractModel):
 
 
 class ResponsePotentialMatchInsuranceInsured(RedoxAbstractModel):
-
     Address: "ResponsePotentialMatchInsuranceInsuredAddress" = Field(None)
     DOB: Union[str, None] = Field(None)
     FirstName: Union[str, None] = Field(None)
@@ -501,7 +467,6 @@ class ResponsePotentialMatchInsuranceInsured(RedoxAbstractModel):
 
 
 class ResponsePotentialMatchInsuranceInsuredAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -511,13 +476,11 @@ class ResponsePotentialMatchInsuranceInsuredAddress(RedoxAbstractModel):
 
 
 class ResponsePotentialMatchInsuranceInsuredIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class ResponsePotentialMatchInsurancePlan(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
@@ -525,7 +488,6 @@ class ResponsePotentialMatchInsurancePlan(RedoxAbstractModel):
 
 
 class ResponsePotentialMatchPCP(RedoxAbstractModel):
-
     Address: "ResponsePotentialMatchPCPAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -539,7 +501,6 @@ class ResponsePotentialMatchPCP(RedoxAbstractModel):
 
 
 class ResponsePotentialMatchPCPAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -549,15 +510,29 @@ class ResponsePotentialMatchPCPAddress(RedoxAbstractModel):
 
 
 class ResponsePotentialMatchPCPLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "ResponsePotentialMatchPCPLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "ResponsePotentialMatchPCPLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class ResponsePotentialMatchPCPPhoneNumber(RedoxAbstractModel):
+class ResponsePotentialMatchPCPLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class ResponsePotentialMatchPCPLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class ResponsePotentialMatchPCPPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
@@ -572,6 +547,7 @@ ResponsePatientInsurance.update_forward_refs()
 ResponsePatientInsuranceCompany.update_forward_refs()
 ResponsePatientInsuranceInsured.update_forward_refs()
 ResponsePatientPCP.update_forward_refs()
+ResponsePatientPCPLocation.update_forward_refs()
 ResponsePotentialMatch.update_forward_refs()
 ResponsePotentialMatchContact.update_forward_refs()
 ResponsePotentialMatchDemographics.update_forward_refs()
@@ -581,3 +557,4 @@ ResponsePotentialMatchInsurance.update_forward_refs()
 ResponsePotentialMatchInsuranceCompany.update_forward_refs()
 ResponsePotentialMatchInsuranceInsured.update_forward_refs()
 ResponsePotentialMatchPCP.update_forward_refs()
+ResponsePotentialMatchPCPLocation.update_forward_refs()

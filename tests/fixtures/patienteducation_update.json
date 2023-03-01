@@ -2,7 +2,7 @@
   "Meta": {
     "DataModel": "PatientEducation",
     "EventType": "Update",
-    "EventDateTime": "2022-08-03T18:06:43.597Z",
+    "EventDateTime": "2023-02-27T22:09:03.585Z",
     "Test": true,
     "Source": {
       "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
@@ -71,7 +71,7 @@
     "VisitNumber": "3498128348",
     "AccountNumber": "12945932",
     "PatientClass": "Inpatient",
-    "VisitDateTime": "2022-08-03T18:06:43.574Z",
+    "VisitDateTime": "2023-02-27T22:09:03.557Z",
     "AttendingProvider": {
       "ID": "426986",
       "IDType": "NCT",
@@ -95,7 +95,9 @@
       "Location": {
         "Type": "Department",
         "Facility": "Medical Center",
+        "FacilityIdentifiers": [],
         "Department": "Obstetrics and Gynaecology",
+        "DepartmentIdentifiers": [],
         "Room": "446"
       }
     },
@@ -104,7 +106,10 @@
       "Address": {},
       "EmailAddresses": [],
       "PhoneNumber": {},
-      "Location": {}
+      "Location": {
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
+      }
     },
     "ReferringProvider": {
       "ID": "12981294",
@@ -129,14 +134,18 @@
       "Location": {
         "Type": "Hawaii Pacific Health Hospital",
         "Facility": "Wilcox Medical Center",
+        "FacilityIdentifiers": [],
         "Department": "Obstetrics and Gynecology",
+        "DepartmentIdentifiers": [],
         "Room": "32"
       }
     },
     "Location": {
       "Type": "Inpatient",
       "Facility": "Chiang Mai Ram Hospital",
+      "FacilityIdentifiers": [],
       "Department": "MA",
+      "DepartmentIdentifiers": [],
       "Room": "13",
       "Bed": "A"
     }
@@ -148,7 +157,7 @@
         "Description": "Diet and Nutrition"
       },
       "InstanceID": "20898465",
-      "CreatedDateTime": "2022-08-03T18:06:44.614Z",
+      "CreatedDateTime": "2023-02-27T22:09:04.658Z",
       "Status": "Active",
       "ActionStatus": "Assign",
       "Assignments": [
@@ -162,7 +171,7 @@
             "Description": "Diet and Nutrition in Pregnancy"
           },
           "InstanceID": "87300586",
-          "CreatedDateTime": "2022-08-03T18:06:43.574Z",
+          "CreatedDateTime": "2023-02-27T22:09:03.557Z",
           "Status": "Active",
           "ActionStatus": "Assign",
           "Assignees": [

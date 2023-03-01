@@ -2,16 +2,11 @@
 import contextlib
 from importlib import import_module
 from json import loads
-
 from typing import Dict, List, Optional, Tuple, Type, Union
 from warnings import warn
 
 from . import generic
-from .abstract_base import (
-    EventTypeAbstractModel,
-    GenericRedoxAbstractModel,
-    RedoxAbstractModel,
-)
+from .abstract_base import EventTypeAbstractModel, GenericEventTypeAbstractModel
 
 # Got inspiration from https://github.com/python/typing/issues/182
 JSONValue = Union[None, bool, int, float, str]
@@ -78,8 +73,15 @@ def redox_object_factory(
 
 
 def from_redox_to_generic(
-    redox_instance: RedoxAbstractModel,
-) -> Optional[GenericRedoxAbstractModel]:
+    redox_instance: EventTypeAbstractModel,
+) -> Optional[GenericEventTypeAbstractModel]:
+    if not isinstance(redox_instance, EventTypeAbstractModel):
+        raise TypeError(
+            "The from_redox_to_generic function is only intended to convert Event Type "
+            "objects. To convert other types of data, please use the cast_from class "
+            "method."
+        )
+
     redox_dict = redox_instance.dict()
     # We don't have to do as much validation as the pyredox factory because we're
     # working with a validated Redox obj

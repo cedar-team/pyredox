@@ -10,13 +10,11 @@ from ..field_types import Number
 
 
 class VisitQueryResponse(EventTypeAbstractModel):
-
     Meta: "VisitQueryResponseMeta" = Field(...)
     Patients: List["VisitQueryResponsePatient"] = Field(None)
 
 
 class VisitQueryResponseMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["VisitQueryResponseMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -30,42 +28,35 @@ class VisitQueryResponseMeta(RedoxAbstractModel):
 
 
 class VisitQueryResponseMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class VisitQueryResponseMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class VisitQueryResponseMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class VisitQueryResponseMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class VisitQueryResponseMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class VisitQueryResponsePatient(RedoxAbstractModel):
-
     Demographics: "VisitQueryResponsePatientDemographics" = Field(None)
     Identifiers: List["VisitQueryResponsePatientIdentifier"] = Field(None)
     Visits: List["VisitQueryResponsePatientVisit"] = Field(None)
 
 
 class VisitQueryResponsePatientDemographics(RedoxAbstractModel):
-
     Address: "VisitQueryResponsePatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
@@ -86,7 +77,6 @@ class VisitQueryResponsePatientDemographics(RedoxAbstractModel):
 
 
 class VisitQueryResponsePatientDemographicsAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -96,20 +86,17 @@ class VisitQueryResponsePatientDemographicsAddress(RedoxAbstractModel):
 
 
 class VisitQueryResponsePatientDemographicsPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class VisitQueryResponsePatientIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class VisitQueryResponsePatientVisit(RedoxAbstractModel):
-
     Location: "VisitQueryResponsePatientVisitLocation" = Field(None)
     PatientClass: Union[str, None] = Field(None)
     Reason: Union[str, None] = Field(None)
@@ -119,12 +106,27 @@ class VisitQueryResponsePatientVisit(RedoxAbstractModel):
 
 
 class VisitQueryResponsePatientVisitLocation(RedoxAbstractModel):
-
     Bed: Union[str, None] = Field(None)
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "VisitQueryResponsePatientVisitLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "VisitQueryResponsePatientVisitLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
+
+
+class VisitQueryResponsePatientVisitLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class VisitQueryResponsePatientVisitLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
 
 VisitQueryResponse.update_forward_refs()
@@ -132,3 +134,4 @@ VisitQueryResponseMeta.update_forward_refs()
 VisitQueryResponsePatient.update_forward_refs()
 VisitQueryResponsePatientDemographics.update_forward_refs()
 VisitQueryResponsePatientVisit.update_forward_refs()
+VisitQueryResponsePatientVisitLocation.update_forward_refs()

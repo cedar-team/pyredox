@@ -10,7 +10,6 @@ from ..field_types import Number
 
 
 class DocumentQuery(EventTypeAbstractModel):
-
     Document: "DocumentQueryDocument" = Field(None)
     Location: "DocumentQueryLocation" = Field(None)
     Meta: "DocumentQueryMeta" = Field(...)
@@ -19,26 +18,22 @@ class DocumentQuery(EventTypeAbstractModel):
 
 
 class DocumentQueryDocument(RedoxAbstractModel):
-
     EndDate: Union[str, None] = Field(None)
     StartDate: Union[str, None] = Field(None)
     Types: List["DocumentQueryDocumentType"] = Field(None)
 
 
 class DocumentQueryDocumentType(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class DocumentQueryLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
 
 
 class DocumentQueryMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["DocumentQueryMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -52,46 +47,38 @@ class DocumentQueryMeta(RedoxAbstractModel):
 
 
 class DocumentQueryMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class DocumentQueryMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class DocumentQueryMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class DocumentQueryMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class DocumentQueryMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class DocumentQueryPatient(RedoxAbstractModel):
-
     Identifiers: List["DocumentQueryPatientIdentifier"] = Field(...)
 
 
 class DocumentQueryPatientIdentifier(RedoxAbstractModel):
-
     ID: str = Field(...)
     IDType: str = Field(...)
 
 
 class DocumentQueryVisit(RedoxAbstractModel):
-
     EndDateTime: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
     StartDateTime: Union[str, None] = Field(None)

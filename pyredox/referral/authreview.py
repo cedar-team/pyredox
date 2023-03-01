@@ -10,7 +10,6 @@ from ..field_types import Number
 
 
 class AuthReview(EventTypeAbstractModel):
-
     Authorization: "AuthReviewAuthorization" = Field(None)
     Meta: "AuthReviewMeta" = Field(...)
     Patient: "AuthReviewPatient" = Field(...)
@@ -18,7 +17,6 @@ class AuthReview(EventTypeAbstractModel):
 
 
 class AuthReviewAuthorization(RedoxAbstractModel):
-
     AdditionalDates: List["AuthReviewAuthorizationAdditionalDate"] = Field(None)
     AdmissionSource: Union[str, None] = Field(None)
     AdmissionType: Union[str, None] = Field(None)
@@ -40,13 +38,11 @@ class AuthReviewAuthorization(RedoxAbstractModel):
 
 
 class AuthReviewAuthorizationAdditionalDate(RedoxAbstractModel):
-
     DateTime: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
 class AuthReviewAuthorizationDiagnosis(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     DocumentedDateTime: Union[str, None] = Field(None)
@@ -55,7 +51,6 @@ class AuthReviewAuthorizationDiagnosis(RedoxAbstractModel):
 
 
 class AuthReviewAuthorizationProvider(RedoxAbstractModel):
-
     Address: "AuthReviewAuthorizationProviderAddress" = Field(None)
     ContactInfo: Union[str, None] = Field(None)
     Credentials: List[str] = Field(None)
@@ -70,7 +65,6 @@ class AuthReviewAuthorizationProvider(RedoxAbstractModel):
 
 
 class AuthReviewAuthorizationProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -80,32 +74,43 @@ class AuthReviewAuthorizationProviderAddress(RedoxAbstractModel):
 
 
 class AuthReviewAuthorizationProviderLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "AuthReviewAuthorizationProviderLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "AuthReviewAuthorizationProviderLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class AuthReviewAuthorizationProviderPhoneNumber(RedoxAbstractModel):
+class AuthReviewAuthorizationProviderLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class AuthReviewAuthorizationProviderLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class AuthReviewAuthorizationProviderPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class AuthReviewAuthorizationQuantity(RedoxAbstractModel):
-
     Units: Union[str, None] = Field(None)
     Value: Union[str, None] = Field(None)
 
 
 class AuthReviewAuthorizationRequest(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class AuthReviewAuthorizationService(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
@@ -117,13 +122,11 @@ class AuthReviewAuthorizationService(RedoxAbstractModel):
 
 
 class AuthReviewAuthorizationServiceQuantity(RedoxAbstractModel):
-
     Units: Union[str, None] = Field(None)
     Value: Union[str, None] = Field(None)
 
 
 class AuthReviewMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["AuthReviewMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -137,35 +140,29 @@ class AuthReviewMeta(RedoxAbstractModel):
 
 
 class AuthReviewMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class AuthReviewMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class AuthReviewMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class AuthReviewMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class AuthReviewMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class AuthReviewPatient(RedoxAbstractModel):
-
     Demographics: "AuthReviewPatientDemographics" = Field(None)
     Identifiers: List["AuthReviewPatientIdentifier"] = Field(...)
     Insurances: List["AuthReviewPatientInsurance"] = Field(None)
@@ -173,7 +170,6 @@ class AuthReviewPatient(RedoxAbstractModel):
 
 
 class AuthReviewPatientDemographics(RedoxAbstractModel):
-
     Address: "AuthReviewPatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
@@ -194,7 +190,6 @@ class AuthReviewPatientDemographics(RedoxAbstractModel):
 
 
 class AuthReviewPatientDemographicsAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -204,20 +199,17 @@ class AuthReviewPatientDemographicsAddress(RedoxAbstractModel):
 
 
 class AuthReviewPatientDemographicsPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class AuthReviewPatientIdentifier(RedoxAbstractModel):
-
     ID: str = Field(...)
     IDType: str = Field(...)
 
 
 class AuthReviewPatientInsurance(RedoxAbstractModel):
-
     AgreementType: Union[str, None] = Field(None)
     Company: "AuthReviewPatientInsuranceCompany" = Field(None)
     CoverageType: Union[str, None] = Field(None)
@@ -233,7 +225,6 @@ class AuthReviewPatientInsurance(RedoxAbstractModel):
 
 
 class AuthReviewPatientInsuranceCompany(RedoxAbstractModel):
-
     Address: "AuthReviewPatientInsuranceCompanyAddress" = Field(None)
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
@@ -242,7 +233,6 @@ class AuthReviewPatientInsuranceCompany(RedoxAbstractModel):
 
 
 class AuthReviewPatientInsuranceCompanyAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -252,7 +242,6 @@ class AuthReviewPatientInsuranceCompanyAddress(RedoxAbstractModel):
 
 
 class AuthReviewPatientInsuranceInsured(RedoxAbstractModel):
-
     Address: "AuthReviewPatientInsuranceInsuredAddress" = Field(None)
     DOB: Union[str, None] = Field(None)
     FirstName: Union[str, None] = Field(None)
@@ -265,7 +254,6 @@ class AuthReviewPatientInsuranceInsured(RedoxAbstractModel):
 
 
 class AuthReviewPatientInsuranceInsuredAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -275,13 +263,11 @@ class AuthReviewPatientInsuranceInsuredAddress(RedoxAbstractModel):
 
 
 class AuthReviewPatientInsuranceInsuredIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class AuthReviewPatientInsurancePlan(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
@@ -289,7 +275,6 @@ class AuthReviewPatientInsurancePlan(RedoxAbstractModel):
 
 
 class AuthReviewReferral(RedoxAbstractModel):
-
     AlternateID: Union[str, None] = Field(None)
     Authorization: "AuthReviewReferralAuthorization" = Field(None)
     Category: Union[str, None] = Field(None)
@@ -315,7 +300,6 @@ class AuthReviewReferral(RedoxAbstractModel):
 
 
 class AuthReviewReferralAuthorization(RedoxAbstractModel):
-
     AuthorizedTreatmentCount: Union[str, None] = Field(None)
     Company: "AuthReviewReferralAuthorizationCompany" = Field(None)
     DateTime: Union[str, None] = Field(None)
@@ -329,21 +313,18 @@ class AuthReviewReferralAuthorization(RedoxAbstractModel):
 
 
 class AuthReviewReferralAuthorizationCompany(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class AuthReviewReferralAuthorizationPlan(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class AuthReviewReferralDiagnosis(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     DocumentedDateTime: Union[str, None] = Field(None)
@@ -353,7 +334,6 @@ class AuthReviewReferralDiagnosis(RedoxAbstractModel):
 
 
 class AuthReviewReferralProcedure(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
@@ -364,7 +344,6 @@ class AuthReviewReferralProcedure(RedoxAbstractModel):
 
 
 class AuthReviewReferralProvider(RedoxAbstractModel):
-
     Address: "AuthReviewReferralProviderAddress" = Field(None)
     ContactInfo: Union[str, None] = Field(None)
     Credentials: List[str] = Field(None)
@@ -379,7 +358,6 @@ class AuthReviewReferralProvider(RedoxAbstractModel):
 
 
 class AuthReviewReferralProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -389,26 +367,40 @@ class AuthReviewReferralProviderAddress(RedoxAbstractModel):
 
 
 class AuthReviewReferralProviderLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "AuthReviewReferralProviderLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "AuthReviewReferralProviderLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class AuthReviewReferralProviderPhoneNumber(RedoxAbstractModel):
+class AuthReviewReferralProviderLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class AuthReviewReferralProviderLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class AuthReviewReferralProviderPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class AuthReviewReferralVisit(RedoxAbstractModel):
-
     VisitNumber: Union[str, None] = Field(None)
 
 
 AuthReview.update_forward_refs()
 AuthReviewAuthorization.update_forward_refs()
 AuthReviewAuthorizationProvider.update_forward_refs()
+AuthReviewAuthorizationProviderLocation.update_forward_refs()
 AuthReviewAuthorizationService.update_forward_refs()
 AuthReviewMeta.update_forward_refs()
 AuthReviewPatient.update_forward_refs()
@@ -419,3 +411,4 @@ AuthReviewPatientInsuranceInsured.update_forward_refs()
 AuthReviewReferral.update_forward_refs()
 AuthReviewReferralAuthorization.update_forward_refs()
 AuthReviewReferralProvider.update_forward_refs()
+AuthReviewReferralProviderLocation.update_forward_refs()
