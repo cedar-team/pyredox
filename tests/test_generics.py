@@ -5,7 +5,7 @@ from typing import Type
 
 import pytest
 
-from pyredox.abstract_base import GenericRedoxAbstractModel
+from pyredox.abstract_base import GenericEventTypeAbstractModel
 from pyredox.generic import PatientAdmin
 
 
@@ -30,7 +30,7 @@ round_trip_cases = (
 
 @pytest.mark.parametrize(("model", "dict_input"), round_trip_cases)
 def test_dict_to_generic_to_redox_to_dict(
-    model: Type[GenericRedoxAbstractModel], dict_input: dict
+    model: Type[GenericEventTypeAbstractModel], dict_input: dict
 ):
     generic_object = model(**dict_input)
     assert isinstance(generic_object, model)
