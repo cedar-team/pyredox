@@ -6,16 +6,15 @@ from typing import List, Union
 from pydantic import Field
 
 from pyredox import medications
-from ..abstract_base import GenericRedoxAbstractModel
+from ..abstract_base import GenericEventTypeAbstractModel
 from . import types as generic
 
 
-class _Medications(GenericRedoxAbstractModel):
+class _Medications(GenericEventTypeAbstractModel):
     _redox_module = medications
 
 
 class Administration(_Medications):
-
     Administrations: List[generic.Administration] = Field(...)
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(...)
@@ -23,7 +22,6 @@ class Administration(_Medications):
 
 
 class Cancel(_Medications):
-
     Meta: generic.Meta = Field(...)
     Order: generic.Order = Field(...)
     Patient: generic.Patient = Field(...)
@@ -31,7 +29,6 @@ class Cancel(_Medications):
 
 
 class New(_Medications):
-
     Meta: generic.Meta = Field(...)
     Order: generic.Order = Field(...)
     Patient: generic.Patient = Field(...)
@@ -39,7 +36,6 @@ class New(_Medications):
 
 
 class Update(_Medications):
-
     Meta: generic.Meta = Field(...)
     Order: generic.Order = Field(...)
     Patient: generic.Patient = Field(...)

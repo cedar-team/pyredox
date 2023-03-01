@@ -10,14 +10,12 @@ from ..field_types import Number
 
 
 class VisitQuery(EventTypeAbstractModel):
-
     Meta: "VisitQueryMeta" = Field(...)
     Patient: "VisitQueryPatient" = Field(...)
     Visit: "VisitQueryVisit" = Field(None)
 
 
 class VisitQueryMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["VisitQueryMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -31,46 +29,38 @@ class VisitQueryMeta(RedoxAbstractModel):
 
 
 class VisitQueryMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class VisitQueryMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class VisitQueryMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class VisitQueryMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class VisitQueryMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class VisitQueryPatient(RedoxAbstractModel):
-
     Identifiers: List["VisitQueryPatientIdentifier"] = Field(...)
 
 
 class VisitQueryPatientIdentifier(RedoxAbstractModel):
-
     ID: str = Field(...)
     IDType: str = Field(...)
 
 
 class VisitQueryVisit(RedoxAbstractModel):
-
     EndDateTime: Union[str, None] = Field(None)
     StartDateTime: Union[str, None] = Field(None)
     VisitNumber: Union[str, None] = Field(None)

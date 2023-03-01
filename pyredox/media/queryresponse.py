@@ -10,13 +10,11 @@ from ..field_types import Number
 
 
 class QueryResponse(EventTypeAbstractModel):
-
     Media: List["QueryResponseMedium"] = Field(None)
     Meta: "QueryResponseMeta" = Field(...)
 
 
 class QueryResponseMedium(RedoxAbstractModel):
-
     CreationDateTime: Union[str, None] = Field(None)
     DocumentDescription: Union[str, None] = Field(None)
     DocumentID: Union[str, None] = Field(None)
@@ -30,23 +28,19 @@ class QueryResponseMedium(RedoxAbstractModel):
 
 
 class QueryResponseMediumPatient(RedoxAbstractModel):
-
     Identifiers: List["QueryResponseMediumPatientIdentifier"] = Field(None)
 
 
 class QueryResponseMediumPatientIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class QueryResponseMediumVisit(RedoxAbstractModel):
-
     VisitNumber: Union[str, None] = Field(None)
 
 
 class QueryResponseMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["QueryResponseMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -60,30 +54,25 @@ class QueryResponseMeta(RedoxAbstractModel):
 
 
 class QueryResponseMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class QueryResponseMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class QueryResponseMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class QueryResponseMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class QueryResponseMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 

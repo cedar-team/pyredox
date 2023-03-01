@@ -10,7 +10,6 @@ from ..field_types import Number
 
 
 class Update(EventTypeAbstractModel):
-
     Action: str = Field(...)
     Directory: str = Field(...)
     Meta: "UpdateMeta" = Field(...)
@@ -18,7 +17,6 @@ class Update(EventTypeAbstractModel):
 
 
 class UpdateMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["UpdateMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -32,35 +30,29 @@ class UpdateMeta(RedoxAbstractModel):
 
 
 class UpdateMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class UpdateMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class UpdateMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class UpdateMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class UpdateMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class UpdateOrganization(RedoxAbstractModel):
-
     Active: bool = Field(...)
     Address: "UpdateOrganizationAddress" = Field(None)
     Aliases: List[str] = Field(None)
@@ -74,7 +66,6 @@ class UpdateOrganization(RedoxAbstractModel):
 
 
 class UpdateOrganizationAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -84,7 +75,6 @@ class UpdateOrganizationAddress(RedoxAbstractModel):
 
 
 class UpdateOrganizationContact(RedoxAbstractModel):
-
     EmailAddresses: List[str] = Field(None)
     Name: Union[str, None] = Field(None)
     PhoneNumber: "UpdateOrganizationContactPhoneNumber" = Field(None)
@@ -92,14 +82,12 @@ class UpdateOrganizationContact(RedoxAbstractModel):
 
 
 class UpdateOrganizationContactPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Work: Union[str, None] = Field(None)
 
 
 class UpdateOrganizationEndpoint(RedoxAbstractModel):
-
     Address: Union[str, None] = Field(None)
     Attributes: "UpdateOrganizationEndpointAttributes" = Field(None)
     ConnectionType: "UpdateOrganizationEndpointConnectionType" = Field(None)
@@ -109,7 +97,6 @@ class UpdateOrganizationEndpoint(RedoxAbstractModel):
 
 
 class UpdateOrganizationEndpointAttributes(RedoxAbstractModel):
-
     Actor: "UpdateOrganizationEndpointAttributesActor" = Field(None)
     PurposeOfUse: List["UpdateOrganizationEndpointAttributesPurposeOfUse"] = Field(None)
     Roles: List["UpdateOrganizationEndpointAttributesRole"] = Field(None)
@@ -119,68 +106,57 @@ class UpdateOrganizationEndpointAttributes(RedoxAbstractModel):
 
 
 class UpdateOrganizationEndpointAttributesActor(RedoxAbstractModel):
-
     System: Union[str, None] = Field(None)
     Value: Union[str, None] = Field(None)
 
 
 class UpdateOrganizationEndpointAttributesPurposeOfUse(RedoxAbstractModel):
-
     System: Union[str, None] = Field(None)
     Value: Union[str, None] = Field(None)
 
 
 class UpdateOrganizationEndpointAttributesRole(RedoxAbstractModel):
-
     System: Union[str, None] = Field(None)
     Value: Union[str, None] = Field(None)
 
 
 class UpdateOrganizationEndpointAttributesUseCase(RedoxAbstractModel):
-
     System: Union[str, None] = Field(None)
     Value: Union[str, None] = Field(None)
 
 
 class UpdateOrganizationEndpointAttributesVersion(RedoxAbstractModel):
-
     System: Union[str, None] = Field(None)
     Value: Union[str, None] = Field(None)
 
 
 class UpdateOrganizationEndpointConnectionType(RedoxAbstractModel):
-
     System: Union[str, None] = Field(None)
     Value: Union[str, None] = Field(None)
 
 
 class UpdateOrganizationEndpointIdentifier(RedoxAbstractModel):
-
     System: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
     Value: Union[str, None] = Field(None)
 
 
 class UpdateOrganizationIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class UpdateOrganizationPartOf(RedoxAbstractModel):
-
     Identifier: "UpdateOrganizationPartOfIdentifier" = Field(None)
 
 
 class UpdateOrganizationPartOfIdentifier(RedoxAbstractModel):
-
     System: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
     Value: Union[str, None] = Field(None)
 
 
 class UpdateOrganizationType(RedoxAbstractModel):
-
     System: Union[str, None] = Field(None)
     Value: Union[str, None] = Field(None)
 

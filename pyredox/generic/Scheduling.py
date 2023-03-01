@@ -6,16 +6,15 @@ from typing import List, Union
 from pydantic import Field
 
 from pyredox import scheduling
-from ..abstract_base import GenericRedoxAbstractModel
+from ..abstract_base import GenericEventTypeAbstractModel
 from . import types as generic
 
 
-class _Scheduling(GenericRedoxAbstractModel):
+class _Scheduling(GenericEventTypeAbstractModel):
     _redox_module = scheduling
 
 
 class AvailableSlots(_Scheduling):
-
     EndDateTime: Union[str, None] = Field(None)
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(None)
@@ -24,13 +23,11 @@ class AvailableSlots(_Scheduling):
 
 
 class AvailableSlotsResponse(_Scheduling):
-
     AvailableSlots: List[generic.AvailableSlot] = Field(...)
     Meta: generic.Meta = Field(...)
 
 
 class Booked(_Scheduling):
-
     EndDateTime: Union[str, None] = Field(None)
     Meta: generic.Meta = Field(...)
     StartDateTime: str = Field(...)
@@ -38,13 +35,11 @@ class Booked(_Scheduling):
 
 
 class BookedResponse(_Scheduling):
-
     Meta: generic.Meta = Field(...)
     Visits: List[generic.Visit] = Field(...)
 
 
 class Cancel(_Scheduling):
-
     AppointmentInfo: List[generic.AppointmentInfo] = Field(None)
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(None)
@@ -52,7 +47,6 @@ class Cancel(_Scheduling):
 
 
 class Modification(_Scheduling):
-
     AppointmentInfo: List[generic.AppointmentInfo] = Field(None)
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(None)
@@ -60,7 +54,6 @@ class Modification(_Scheduling):
 
 
 class New(_Scheduling):
-
     AppointmentInfo: List[generic.AppointmentInfo] = Field(None)
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(None)
@@ -68,7 +61,6 @@ class New(_Scheduling):
 
 
 class NoShow(_Scheduling):
-
     AppointmentInfo: List[generic.AppointmentInfo] = Field(None)
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(None)
@@ -76,13 +68,11 @@ class NoShow(_Scheduling):
 
 
 class PushSlots(_Scheduling):
-
     Meta: generic.Meta = Field(...)
     Slots: List[generic.Slot] = Field(...)
 
 
 class Reschedule(_Scheduling):
-
     AppointmentInfo: List[generic.AppointmentInfo] = Field(None)
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(None)

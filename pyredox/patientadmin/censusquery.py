@@ -10,7 +10,6 @@ from ..field_types import Number
 
 
 class CensusQuery(EventTypeAbstractModel):
-
     Departments: List[str] = Field(None)
     Facilities: List[str] = Field(None)
     Meta: "CensusQueryMeta" = Field(...)
@@ -18,7 +17,6 @@ class CensusQuery(EventTypeAbstractModel):
 
 
 class CensusQueryMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["CensusQueryMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -32,30 +30,25 @@ class CensusQueryMeta(RedoxAbstractModel):
 
 
 class CensusQueryMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class CensusQueryMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class CensusQueryMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class CensusQueryMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class CensusQueryMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 

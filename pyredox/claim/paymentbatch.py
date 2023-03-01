@@ -10,13 +10,11 @@ from ..field_types import Number
 
 
 class PaymentBatch(EventTypeAbstractModel):
-
     Meta: "PaymentBatchMeta" = Field(...)
     Transactions: List["PaymentBatchTransaction"] = Field(None)
 
 
 class PaymentBatchMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["PaymentBatchMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -30,35 +28,29 @@ class PaymentBatchMeta(RedoxAbstractModel):
 
 
 class PaymentBatchMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class PaymentBatchMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class PaymentBatchMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class PaymentBatchMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class PaymentBatchMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class PaymentBatchTransaction(RedoxAbstractModel):
-
     CreditOrDebit: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
@@ -73,14 +65,12 @@ class PaymentBatchTransaction(RedoxAbstractModel):
 
 
 class PaymentBatchTransactionPayment(RedoxAbstractModel):
-
     Claims: List["PaymentBatchTransactionPaymentClaim"] = Field(None)
     DateTime: Union[str, None] = Field(None)
     Patient: "PaymentBatchTransactionPaymentPatient" = Field(None)
 
 
 class PaymentBatchTransactionPaymentClaim(RedoxAbstractModel):
-
     Adjustments: List["PaymentBatchTransactionPaymentClaimAdjustment"] = Field(None)
     ChargedAmount: Union[str, None] = Field(None)
     ControlNumber: Union[str, None] = Field(None)
@@ -98,7 +88,6 @@ class PaymentBatchTransactionPaymentClaim(RedoxAbstractModel):
 
 
 class PaymentBatchTransactionPaymentClaimAdjustment(RedoxAbstractModel):
-
     Amount: Union[str, None] = Field(None)
     Quantity: Union[str, None] = Field(None)
     Reason: Union[str, None] = Field(None)
@@ -106,13 +95,11 @@ class PaymentBatchTransactionPaymentClaimAdjustment(RedoxAbstractModel):
 
 
 class PaymentBatchTransactionPaymentClaimReferenceNumber(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class PaymentBatchTransactionPaymentClaimService(RedoxAbstractModel):
-
     AdjudicatedService: "PaymentBatchTransactionPaymentClaimServiceAdjudicatedService" = Field(
         None
     )
@@ -135,7 +122,6 @@ class PaymentBatchTransactionPaymentClaimService(RedoxAbstractModel):
 
 
 class PaymentBatchTransactionPaymentClaimServiceAdjudicatedService(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
@@ -143,7 +129,6 @@ class PaymentBatchTransactionPaymentClaimServiceAdjudicatedService(RedoxAbstract
 
 
 class PaymentBatchTransactionPaymentClaimServiceAdjustment(RedoxAbstractModel):
-
     Amount: Union[str, None] = Field(None)
     Quantity: Union[str, None] = Field(None)
     Reason: Union[str, None] = Field(None)
@@ -151,13 +136,11 @@ class PaymentBatchTransactionPaymentClaimServiceAdjustment(RedoxAbstractModel):
 
 
 class PaymentBatchTransactionPaymentClaimServiceReferenceNumber(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class PaymentBatchTransactionPaymentClaimServiceSubmittedService(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
@@ -165,14 +148,12 @@ class PaymentBatchTransactionPaymentClaimServiceSubmittedService(RedoxAbstractMo
 
 
 class PaymentBatchTransactionPaymentPatient(RedoxAbstractModel):
-
     Demographics: "PaymentBatchTransactionPaymentPatientDemographics" = Field(None)
     Identifiers: List["PaymentBatchTransactionPaymentPatientIdentifier"] = Field(None)
     Notes: List[str] = Field(None)
 
 
 class PaymentBatchTransactionPaymentPatientDemographics(RedoxAbstractModel):
-
     Address: "PaymentBatchTransactionPaymentPatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
@@ -195,7 +176,6 @@ class PaymentBatchTransactionPaymentPatientDemographics(RedoxAbstractModel):
 
 
 class PaymentBatchTransactionPaymentPatientDemographicsAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -205,20 +185,17 @@ class PaymentBatchTransactionPaymentPatientDemographicsAddress(RedoxAbstractMode
 
 
 class PaymentBatchTransactionPaymentPatientDemographicsPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class PaymentBatchTransactionPaymentPatientIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class PaymentBatchTransactionReceiver(RedoxAbstractModel):
-
     Address: "PaymentBatchTransactionReceiverAddress" = Field(None)
     EmailAddress: Union[str, None] = Field(None)
     Identifiers: List["PaymentBatchTransactionReceiverIdentifier"] = Field(None)
@@ -227,7 +204,6 @@ class PaymentBatchTransactionReceiver(RedoxAbstractModel):
 
 
 class PaymentBatchTransactionReceiverAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -237,19 +213,16 @@ class PaymentBatchTransactionReceiverAddress(RedoxAbstractModel):
 
 
 class PaymentBatchTransactionReceiverIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class PaymentBatchTransactionReceiverPhoneNumber(RedoxAbstractModel):
-
     Fax: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class PaymentBatchTransactionSubmitter(RedoxAbstractModel):
-
     Address: "PaymentBatchTransactionSubmitterAddress" = Field(None)
     EmailAddress: Union[str, None] = Field(None)
     Identifiers: List["PaymentBatchTransactionSubmitterIdentifier"] = Field(None)
@@ -258,7 +231,6 @@ class PaymentBatchTransactionSubmitter(RedoxAbstractModel):
 
 
 class PaymentBatchTransactionSubmitterAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -268,13 +240,11 @@ class PaymentBatchTransactionSubmitterAddress(RedoxAbstractModel):
 
 
 class PaymentBatchTransactionSubmitterIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class PaymentBatchTransactionSubmitterPhoneNumber(RedoxAbstractModel):
-
     Fax: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 

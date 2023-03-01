@@ -2,7 +2,7 @@
   "Meta": {
     "DataModel": "Results",
     "EventType": "New",
-    "EventDateTime": "2022-08-01T18:38:57.072Z",
+    "EventDateTime": "2023-02-27T22:09:03.585Z",
     "Test": true,
     "Source": {
       "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
@@ -114,7 +114,10 @@
         "Address": {},
         "EmailAddresses": [],
         "PhoneNumber": {},
-        "Location": {}
+        "Location": {
+          "FacilityIdentifiers": [],
+          "DepartmentIdentifiers": []
+        }
       },
       "ResultCopyProviders": [],
       "Status": "Resulted",
@@ -137,7 +140,10 @@
             "Address": {},
             "EmailAddresses": [],
             "PhoneNumber": {},
-            "Location": {}
+            "Location": {
+              "FacilityIdentifiers": [],
+              "DepartmentIdentifiers": []
+            }
           },
           "Producer": {
             "ID": "RL001",
@@ -160,7 +166,10 @@
             "Address": {},
             "EmailAddresses": [],
             "PhoneNumber": {},
-            "Location": {}
+            "Location": {
+              "FacilityIdentifiers": [],
+              "DepartmentIdentifiers": []
+            }
           },
           "ReferenceRange": {},
           "ObservationMethod": {}
@@ -179,7 +188,10 @@
             "Address": {},
             "EmailAddresses": [],
             "PhoneNumber": {},
-            "Location": {}
+            "Location": {
+              "FacilityIdentifiers": [],
+              "DepartmentIdentifiers": []
+            }
           },
           "Producer": {
             "ID": "RL001",
@@ -202,7 +214,10 @@
             "Address": {},
             "EmailAddresses": [],
             "PhoneNumber": {},
-            "Location": {}
+            "Location": {
+              "FacilityIdentifiers": [],
+              "DepartmentIdentifiers": []
+            }
           },
           "ReferenceRange": {},
           "ObservationMethod": {}
@@ -211,20 +226,29 @@
     }
   ],
   "Visit": {
-    "Location": {},
+    "Location": {
+      "FacilityIdentifiers": [],
+      "DepartmentIdentifiers": []
+    },
     "AttendingProvider": {
       "Credentials": [],
       "Address": {},
       "EmailAddresses": [],
       "PhoneNumber": {},
-      "Location": {}
+      "Location": {
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
+      }
     },
     "ReferringProvider": {
       "Credentials": [],
       "Address": {},
       "EmailAddresses": [],
       "PhoneNumber": {},
-      "Location": {}
+      "Location": {
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
+      }
     },
     "AdditionalStaff": []
   }

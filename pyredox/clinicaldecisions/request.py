@@ -10,7 +10,6 @@ from ..field_types import Number
 
 
 class Request(EventTypeAbstractModel):
-
     AuthorizingProvider: "RequestAuthorizingProvider" = Field(None)
     Meta: "RequestMeta" = Field(...)
     OrderingProvider: "RequestOrderingProvider" = Field(None)
@@ -21,7 +20,6 @@ class Request(EventTypeAbstractModel):
 
 
 class RequestAuthorizingProvider(RedoxAbstractModel):
-
     Address: "RequestAuthorizingProviderAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -34,7 +32,6 @@ class RequestAuthorizingProvider(RedoxAbstractModel):
 
 
 class RequestAuthorizingProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -44,20 +41,33 @@ class RequestAuthorizingProviderAddress(RedoxAbstractModel):
 
 
 class RequestAuthorizingProviderLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "RequestAuthorizingProviderLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "RequestAuthorizingProviderLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class RequestAuthorizingProviderPhoneNumber(RedoxAbstractModel):
+class RequestAuthorizingProviderLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class RequestAuthorizingProviderLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class RequestAuthorizingProviderPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class RequestMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["RequestMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -71,35 +81,29 @@ class RequestMeta(RedoxAbstractModel):
 
 
 class RequestMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class RequestMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class RequestMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class RequestMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class RequestMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class RequestOrderingProvider(RedoxAbstractModel):
-
     Address: "RequestOrderingProviderAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -112,7 +116,6 @@ class RequestOrderingProvider(RedoxAbstractModel):
 
 
 class RequestOrderingProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -122,27 +125,39 @@ class RequestOrderingProviderAddress(RedoxAbstractModel):
 
 
 class RequestOrderingProviderLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "RequestOrderingProviderLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "RequestOrderingProviderLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class RequestOrderingProviderPhoneNumber(RedoxAbstractModel):
+class RequestOrderingProviderLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class RequestOrderingProviderLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class RequestOrderingProviderPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class RequestPatient(RedoxAbstractModel):
-
     Demographics: "RequestPatientDemographics" = Field(None)
     Identifiers: List["RequestPatientIdentifier"] = Field(...)
     Notes: List[str] = Field(None)
 
 
 class RequestPatientDemographics(RedoxAbstractModel):
-
     Address: "RequestPatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
@@ -163,7 +178,6 @@ class RequestPatientDemographics(RedoxAbstractModel):
 
 
 class RequestPatientDemographicsAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -173,45 +187,38 @@ class RequestPatientDemographicsAddress(RedoxAbstractModel):
 
 
 class RequestPatientDemographicsPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class RequestPatientIdentifier(RedoxAbstractModel):
-
     ID: str = Field(...)
     IDType: str = Field(...)
 
 
 class RequestSession(RedoxAbstractModel):
-
     Questions: List["RequestSessionQuestion"] = Field(None)
 
 
 class RequestSessionQuestion(RedoxAbstractModel):
-
     Answer: "RequestSessionQuestionAnswer" = Field(None)
     Question: "RequestSessionQuestionQuestion" = Field(None)
 
 
 class RequestSessionQuestionAnswer(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
 
 
 class RequestSessionQuestionQuestion(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
 
 
 class RequestUnsignedMedicationOrder(RedoxAbstractModel):
-
     Dose: "RequestUnsignedMedicationOrderDose" = Field(None)
     EndDate: Union[str, None] = Field(None)
     Frequency: "RequestUnsignedMedicationOrderFrequency" = Field(None)
@@ -225,70 +232,60 @@ class RequestUnsignedMedicationOrder(RedoxAbstractModel):
     Priority: Union[str, None] = Field(None)
     Product: "RequestUnsignedMedicationOrderProduct" = Field(None)
     Questions: List["RequestUnsignedMedicationOrderQuestion"] = Field(None)
-    Route: Union[None] = Field(None)
+    Route: Union[str, None] = Field(None)
     StartDate: Union[str, None] = Field(None)
 
 
 class RequestUnsignedMedicationOrderDose(RedoxAbstractModel):
-
     Quantity: Union[Number, None] = Field(None)
     Units: Union[str, None] = Field(None)
 
 
 class RequestUnsignedMedicationOrderFrequency(RedoxAbstractModel):
-
     Period: Union[str, None] = Field(None)
     Unit: Union[str, None] = Field(None)
 
 
 class RequestUnsignedMedicationOrderIdentifier(RedoxAbstractModel):
-
     ID: str = Field(...)
     IDType: str = Field(...)
 
 
 class RequestUnsignedMedicationOrderMixtureComponent(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     CodeType: Union[str, None] = Field(None)
     Dose: "RequestUnsignedMedicationOrderMixtureComponentDose" = Field(None)
 
 
 class RequestUnsignedMedicationOrderMixtureComponentDose(RedoxAbstractModel):
-
     Quantity: Union[str, None] = Field(None)
     Units: Union[str, None] = Field(None)
 
 
 class RequestUnsignedMedicationOrderProduct(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class RequestUnsignedMedicationOrderQuestion(RedoxAbstractModel):
-
     Answer: "RequestUnsignedMedicationOrderQuestionAnswer" = Field(None)
     Question: "RequestUnsignedMedicationOrderQuestionQuestion" = Field(None)
 
 
 class RequestUnsignedMedicationOrderQuestionAnswer(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
 
 
 class RequestUnsignedMedicationOrderQuestionQuestion(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
 
 
 class RequestUnsignedProcedureOrder(RedoxAbstractModel):
-
     BodySite: "RequestUnsignedProcedureOrderBodySite" = Field(None)
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
@@ -303,33 +300,28 @@ class RequestUnsignedProcedureOrder(RedoxAbstractModel):
 
 
 class RequestUnsignedProcedureOrderBodySite(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
 
 
 class RequestUnsignedProcedureOrderIdentifier(RedoxAbstractModel):
-
     ID: str = Field(...)
     IDType: Number = Field(...)
 
 
 class RequestUnsignedProcedureOrderQuestion(RedoxAbstractModel):
-
     Answer: "RequestUnsignedProcedureOrderQuestionAnswer" = Field(None)
     Question: "RequestUnsignedProcedureOrderQuestionQuestion" = Field(None)
 
 
 class RequestUnsignedProcedureOrderQuestionAnswer(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
 
 
 class RequestUnsignedProcedureOrderQuestionQuestion(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
@@ -337,8 +329,10 @@ class RequestUnsignedProcedureOrderQuestionQuestion(RedoxAbstractModel):
 
 Request.update_forward_refs()
 RequestAuthorizingProvider.update_forward_refs()
+RequestAuthorizingProviderLocation.update_forward_refs()
 RequestMeta.update_forward_refs()
 RequestOrderingProvider.update_forward_refs()
+RequestOrderingProviderLocation.update_forward_refs()
 RequestPatient.update_forward_refs()
 RequestPatientDemographics.update_forward_refs()
 RequestSession.update_forward_refs()

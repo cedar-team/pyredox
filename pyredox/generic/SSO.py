@@ -6,16 +6,15 @@ from typing import List, Union
 from pydantic import Field
 
 from pyredox import sso
-from ..abstract_base import GenericRedoxAbstractModel
+from ..abstract_base import GenericEventTypeAbstractModel
 from . import types as generic
 
 
-class _SSO(GenericRedoxAbstractModel):
+class _SSO(GenericEventTypeAbstractModel):
     _redox_module = sso
 
 
 class SignOn(_SSO):
-
     EmailAddress: Union[str, None] = Field(None)
     Expiration: str = Field(...)
     FirstName: Union[str, None] = Field(None)

@@ -23,20 +23,19 @@ SAMPLE_DATA_FILE_PATH = [
 SKIP_FILES = [
     str(SAMPLES_DIR / f)
     for f in [
-        "clinicalsummary_patientpush.json",
-        "clinicalsummary_visitpush.json",
-        "clinicalsummary_visitqueryresponse.json",
-        "clinicalsummary_patientqueryresponse.json",
-        "clinicaldecisions_request.json",
+        # "clinicaldecisions_request.json",
     ]
 ]
 
 
-@pytest.mark.parametrize(("json_file_path",), SAMPLE_DATA_FILE_PATH)
+@pytest.mark.parametrize(
+    ("json_file_path",),
+    SAMPLE_DATA_FILE_PATH,
+    ids=[str(p[0]) for p in SAMPLE_DATA_FILE_PATH],
+)
 @retry(FileNotFoundError, tries=3, delay=1, backoff=1.5)
 def test_json_pyredox_json(json_file_path: Path):
     current_sample_path = SAMPLES_DIR / json_file_path
-    print(current_sample_path)
     assert current_sample_path.exists
     try:
         with open(current_sample_path) as sample_fd:
@@ -52,11 +51,14 @@ def test_json_pyredox_json(json_file_path: Path):
     assert sample == obj.dict()
 
 
-@pytest.mark.parametrize(("json_file_path",), SAMPLE_DATA_FILE_PATH)
+@pytest.mark.parametrize(
+    ("json_file_path",),
+    SAMPLE_DATA_FILE_PATH,
+    ids=[str(p[0]) for p in SAMPLE_DATA_FILE_PATH],
+)
 @retry(FileNotFoundError, tries=3, delay=1, backoff=1.5)
 def test_redox_factory(json_file_path: Path):
     current_sample_path = SAMPLES_DIR / json_file_path
-    print(current_sample_path)
     assert current_sample_path.exists
     try:
         with open(current_sample_path) as sample_fd:

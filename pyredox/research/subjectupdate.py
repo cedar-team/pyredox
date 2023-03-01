@@ -10,7 +10,6 @@ from ..field_types import Number
 
 
 class SubjectUpdate(EventTypeAbstractModel):
-
     Enrollment: "SubjectUpdateEnrollment" = Field(None)
     Meta: "SubjectUpdateMeta" = Field(...)
     Patient: "SubjectUpdatePatient" = Field(None)
@@ -18,7 +17,6 @@ class SubjectUpdate(EventTypeAbstractModel):
 
 
 class SubjectUpdateEnrollment(RedoxAbstractModel):
-
     Coordinators: List["SubjectUpdateEnrollmentCoordinator"] = Field(None)
     EndDateTime: Union[str, None] = Field(None)
     StartDateTime: Union[str, None] = Field(None)
@@ -26,7 +24,6 @@ class SubjectUpdateEnrollment(RedoxAbstractModel):
 
 
 class SubjectUpdateEnrollmentCoordinator(RedoxAbstractModel):
-
     Address: "SubjectUpdateEnrollmentCoordinatorAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -39,7 +36,6 @@ class SubjectUpdateEnrollmentCoordinator(RedoxAbstractModel):
 
 
 class SubjectUpdateEnrollmentCoordinatorAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -49,20 +45,35 @@ class SubjectUpdateEnrollmentCoordinatorAddress(RedoxAbstractModel):
 
 
 class SubjectUpdateEnrollmentCoordinatorLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "SubjectUpdateEnrollmentCoordinatorLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "SubjectUpdateEnrollmentCoordinatorLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class SubjectUpdateEnrollmentCoordinatorPhoneNumber(RedoxAbstractModel):
+class SubjectUpdateEnrollmentCoordinatorLocationDepartmentIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class SubjectUpdateEnrollmentCoordinatorLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class SubjectUpdateEnrollmentCoordinatorPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class SubjectUpdateMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["SubjectUpdateMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -76,42 +87,35 @@ class SubjectUpdateMeta(RedoxAbstractModel):
 
 
 class SubjectUpdateMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class SubjectUpdateMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class SubjectUpdateMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class SubjectUpdateMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class SubjectUpdateMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class SubjectUpdatePatient(RedoxAbstractModel):
-
     Demographics: "SubjectUpdatePatientDemographics" = Field(None)
     Identifiers: List["SubjectUpdatePatientIdentifier"] = Field(None)
     Notes: List[str] = Field(None)
 
 
 class SubjectUpdatePatientDemographics(RedoxAbstractModel):
-
     Address: "SubjectUpdatePatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
@@ -132,7 +136,6 @@ class SubjectUpdatePatientDemographics(RedoxAbstractModel):
 
 
 class SubjectUpdatePatientDemographicsAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -142,27 +145,23 @@ class SubjectUpdatePatientDemographicsAddress(RedoxAbstractModel):
 
 
 class SubjectUpdatePatientDemographicsPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class SubjectUpdatePatientIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class SubjectUpdateStudy(RedoxAbstractModel):
-
     Identifiers: List["SubjectUpdateStudyIdentifier"] = Field(None)
     Title: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
 class SubjectUpdateStudyIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
@@ -170,6 +169,7 @@ class SubjectUpdateStudyIdentifier(RedoxAbstractModel):
 SubjectUpdate.update_forward_refs()
 SubjectUpdateEnrollment.update_forward_refs()
 SubjectUpdateEnrollmentCoordinator.update_forward_refs()
+SubjectUpdateEnrollmentCoordinatorLocation.update_forward_refs()
 SubjectUpdateMeta.update_forward_refs()
 SubjectUpdatePatient.update_forward_refs()
 SubjectUpdatePatientDemographics.update_forward_refs()

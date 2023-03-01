@@ -10,7 +10,6 @@ from ..field_types import Number
 
 
 class Delete(EventTypeAbstractModel):
-
     Meta: "DeleteMeta" = Field(...)
     Note: "DeleteNote" = Field(...)
     Orders: List["DeleteOrder"] = Field(None)
@@ -19,7 +18,6 @@ class Delete(EventTypeAbstractModel):
 
 
 class DeleteMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["DeleteMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -33,35 +31,29 @@ class DeleteMeta(RedoxAbstractModel):
 
 
 class DeleteMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class DeleteMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class DeleteMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class DeleteMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class DeleteMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class DeleteNote(RedoxAbstractModel):
-
     Authenticator: "DeleteNoteAuthenticator" = Field(None)
     Availability: Union[str, None] = Field(None)
     Components: List["DeleteNoteComponent"] = Field(None)
@@ -79,7 +71,6 @@ class DeleteNote(RedoxAbstractModel):
 
 
 class DeleteNoteAuthenticator(RedoxAbstractModel):
-
     Address: "DeleteNoteAuthenticatorAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -92,7 +83,6 @@ class DeleteNoteAuthenticator(RedoxAbstractModel):
 
 
 class DeleteNoteAuthenticatorAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -102,20 +92,33 @@ class DeleteNoteAuthenticatorAddress(RedoxAbstractModel):
 
 
 class DeleteNoteAuthenticatorLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "DeleteNoteAuthenticatorLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "DeleteNoteAuthenticatorLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class DeleteNoteAuthenticatorPhoneNumber(RedoxAbstractModel):
+class DeleteNoteAuthenticatorLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class DeleteNoteAuthenticatorLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class DeleteNoteAuthenticatorPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class DeleteNoteComponent(RedoxAbstractModel):
-
     Comments: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
@@ -123,7 +126,6 @@ class DeleteNoteComponent(RedoxAbstractModel):
 
 
 class DeleteNoteNotification(RedoxAbstractModel):
-
     Address: "DeleteNoteNotificationAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -136,7 +138,6 @@ class DeleteNoteNotification(RedoxAbstractModel):
 
 
 class DeleteNoteNotificationAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -146,20 +147,33 @@ class DeleteNoteNotificationAddress(RedoxAbstractModel):
 
 
 class DeleteNoteNotificationLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "DeleteNoteNotificationLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "DeleteNoteNotificationLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class DeleteNoteNotificationPhoneNumber(RedoxAbstractModel):
+class DeleteNoteNotificationLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class DeleteNoteNotificationLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class DeleteNoteNotificationPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class DeleteNoteProvider(RedoxAbstractModel):
-
     Address: "DeleteNoteProviderAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -172,7 +186,6 @@ class DeleteNoteProvider(RedoxAbstractModel):
 
 
 class DeleteNoteProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -182,33 +195,44 @@ class DeleteNoteProviderAddress(RedoxAbstractModel):
 
 
 class DeleteNoteProviderLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "DeleteNoteProviderLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List["DeleteNoteProviderLocationFacilityIdentifier"] = Field(
+        None
+    )
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class DeleteNoteProviderPhoneNumber(RedoxAbstractModel):
+class DeleteNoteProviderLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class DeleteNoteProviderLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class DeleteNoteProviderPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class DeleteOrder(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class DeletePatient(RedoxAbstractModel):
-
     Demographics: "DeletePatientDemographics" = Field(None)
     Identifiers: List["DeletePatientIdentifier"] = Field(...)
     Notes: List[str] = Field(None)
 
 
 class DeletePatientDemographics(RedoxAbstractModel):
-
     Address: "DeletePatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
@@ -229,7 +253,6 @@ class DeletePatientDemographics(RedoxAbstractModel):
 
 
 class DeletePatientDemographicsAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -239,20 +262,17 @@ class DeletePatientDemographicsAddress(RedoxAbstractModel):
 
 
 class DeletePatientDemographicsPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class DeletePatientIdentifier(RedoxAbstractModel):
-
     ID: str = Field(...)
     IDType: str = Field(...)
 
 
 class DeleteVisit(RedoxAbstractModel):
-
     AccountNumber: Union[str, None] = Field(None)
     AdditionalStaff: List["DeleteVisitAdditionalStaff"] = Field(None)
     Location: "DeleteVisitLocation" = Field(None)
@@ -262,7 +282,6 @@ class DeleteVisit(RedoxAbstractModel):
 
 
 class DeleteVisitAdditionalStaff(RedoxAbstractModel):
-
     Address: "DeleteVisitAdditionalStaffAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -276,7 +295,6 @@ class DeleteVisitAdditionalStaff(RedoxAbstractModel):
 
 
 class DeleteVisitAdditionalStaffAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -286,41 +304,70 @@ class DeleteVisitAdditionalStaffAddress(RedoxAbstractModel):
 
 
 class DeleteVisitAdditionalStaffLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "DeleteVisitAdditionalStaffLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "DeleteVisitAdditionalStaffLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class DeleteVisitAdditionalStaffPhoneNumber(RedoxAbstractModel):
+class DeleteVisitAdditionalStaffLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class DeleteVisitAdditionalStaffLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class DeleteVisitAdditionalStaffPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class DeleteVisitAdditionalStaffRole(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
 
 
 class DeleteVisitLocation(RedoxAbstractModel):
-
     Bed: Union[str, None] = Field(None)
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List["DeleteVisitLocationDepartmentIdentifier"] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List["DeleteVisitLocationFacilityIdentifier"] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
+
+
+class DeleteVisitLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class DeleteVisitLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
 
 Delete.update_forward_refs()
 DeleteMeta.update_forward_refs()
 DeleteNote.update_forward_refs()
 DeleteNoteAuthenticator.update_forward_refs()
+DeleteNoteAuthenticatorLocation.update_forward_refs()
 DeleteNoteNotification.update_forward_refs()
+DeleteNoteNotificationLocation.update_forward_refs()
 DeleteNoteProvider.update_forward_refs()
+DeleteNoteProviderLocation.update_forward_refs()
 DeletePatient.update_forward_refs()
 DeletePatientDemographics.update_forward_refs()
 DeleteVisit.update_forward_refs()
 DeleteVisitAdditionalStaff.update_forward_refs()
+DeleteVisitAdditionalStaffLocation.update_forward_refs()
+DeleteVisitLocation.update_forward_refs()

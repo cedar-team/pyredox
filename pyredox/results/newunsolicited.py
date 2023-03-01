@@ -10,7 +10,6 @@ from ..field_types import Number
 
 
 class NewUnsolicited(EventTypeAbstractModel):
-
     Meta: "NewUnsolicitedMeta" = Field(...)
     Orders: List["NewUnsolicitedOrder"] = Field(...)
     Patient: "NewUnsolicitedPatient" = Field(...)
@@ -18,7 +17,6 @@ class NewUnsolicited(EventTypeAbstractModel):
 
 
 class NewUnsolicitedMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["NewUnsolicitedMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -32,35 +30,29 @@ class NewUnsolicitedMeta(RedoxAbstractModel):
 
 
 class NewUnsolicitedMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class NewUnsolicitedMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class NewUnsolicitedMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class NewUnsolicitedMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class NewUnsolicitedMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class NewUnsolicitedOrder(RedoxAbstractModel):
-
     ApplicationOrderID: str = Field(...)
     CollectionDateTime: Union[str, None] = Field(None)
     CompletionDateTime: Union[str, None] = Field(None)
@@ -78,14 +70,12 @@ class NewUnsolicitedOrder(RedoxAbstractModel):
 
 
 class NewUnsolicitedOrderProcedure(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
 
 
 class NewUnsolicitedOrderProvider(RedoxAbstractModel):
-
     Address: "NewUnsolicitedOrderProviderAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -99,7 +89,6 @@ class NewUnsolicitedOrderProvider(RedoxAbstractModel):
 
 
 class NewUnsolicitedOrderProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -109,20 +98,33 @@ class NewUnsolicitedOrderProviderAddress(RedoxAbstractModel):
 
 
 class NewUnsolicitedOrderProviderLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "NewUnsolicitedOrderProviderLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "NewUnsolicitedOrderProviderLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class NewUnsolicitedOrderProviderPhoneNumber(RedoxAbstractModel):
+class NewUnsolicitedOrderProviderLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class NewUnsolicitedOrderProviderLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class NewUnsolicitedOrderProviderPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class NewUnsolicitedOrderResult(RedoxAbstractModel):
-
     AbnormalFlag: Union[str, None] = Field(None)
     Code: str = Field(...)
     Codeset: Union[str, None] = Field(None)
@@ -146,7 +148,6 @@ class NewUnsolicitedOrderResult(RedoxAbstractModel):
 
 
 class NewUnsolicitedOrderResultCopyProvider(RedoxAbstractModel):
-
     Address: "NewUnsolicitedOrderResultCopyProviderAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -159,7 +160,6 @@ class NewUnsolicitedOrderResultCopyProvider(RedoxAbstractModel):
 
 
 class NewUnsolicitedOrderResultCopyProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -169,27 +169,43 @@ class NewUnsolicitedOrderResultCopyProviderAddress(RedoxAbstractModel):
 
 
 class NewUnsolicitedOrderResultCopyProviderLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "NewUnsolicitedOrderResultCopyProviderLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "NewUnsolicitedOrderResultCopyProviderLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class NewUnsolicitedOrderResultCopyProviderPhoneNumber(RedoxAbstractModel):
+class NewUnsolicitedOrderResultCopyProviderLocationDepartmentIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class NewUnsolicitedOrderResultCopyProviderLocationFacilityIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class NewUnsolicitedOrderResultCopyProviderPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class NewUnsolicitedOrderResultObservationMethod(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
 
 
 class NewUnsolicitedOrderResultPerformer(RedoxAbstractModel):
-
     Address: "NewUnsolicitedOrderResultPerformerAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -202,7 +218,6 @@ class NewUnsolicitedOrderResultPerformer(RedoxAbstractModel):
 
 
 class NewUnsolicitedOrderResultPerformerAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -212,20 +227,35 @@ class NewUnsolicitedOrderResultPerformerAddress(RedoxAbstractModel):
 
 
 class NewUnsolicitedOrderResultPerformerLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "NewUnsolicitedOrderResultPerformerLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "NewUnsolicitedOrderResultPerformerLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class NewUnsolicitedOrderResultPerformerPhoneNumber(RedoxAbstractModel):
+class NewUnsolicitedOrderResultPerformerLocationDepartmentIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class NewUnsolicitedOrderResultPerformerLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class NewUnsolicitedOrderResultPerformerPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class NewUnsolicitedOrderResultPrimaryResultsInterpreter(RedoxAbstractModel):
-
     Address: "NewUnsolicitedOrderResultPrimaryResultsInterpreterAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -241,7 +271,6 @@ class NewUnsolicitedOrderResultPrimaryResultsInterpreter(RedoxAbstractModel):
 
 
 class NewUnsolicitedOrderResultPrimaryResultsInterpreterAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -251,20 +280,37 @@ class NewUnsolicitedOrderResultPrimaryResultsInterpreterAddress(RedoxAbstractMod
 
 
 class NewUnsolicitedOrderResultPrimaryResultsInterpreterLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "NewUnsolicitedOrderResultPrimaryResultsInterpreterLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "NewUnsolicitedOrderResultPrimaryResultsInterpreterLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class NewUnsolicitedOrderResultPrimaryResultsInterpreterPhoneNumber(RedoxAbstractModel):
+class NewUnsolicitedOrderResultPrimaryResultsInterpreterLocationDepartmentIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class NewUnsolicitedOrderResultPrimaryResultsInterpreterLocationFacilityIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class NewUnsolicitedOrderResultPrimaryResultsInterpreterPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class NewUnsolicitedOrderResultProducer(RedoxAbstractModel):
-
     Address: "NewUnsolicitedOrderResultProducerAddress" = Field(None)
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
@@ -272,7 +318,6 @@ class NewUnsolicitedOrderResultProducer(RedoxAbstractModel):
 
 
 class NewUnsolicitedOrderResultProducerAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -282,21 +327,18 @@ class NewUnsolicitedOrderResultProducerAddress(RedoxAbstractModel):
 
 
 class NewUnsolicitedOrderResultReferenceRange(RedoxAbstractModel):
-
     High: Union[Number, None] = Field(None)
     Low: Union[Number, None] = Field(None)
     Text: Union[str, None] = Field(None)
 
 
 class NewUnsolicitedOrderResultSpecimen(RedoxAbstractModel):
-
     BodySite: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
     Source: Union[str, None] = Field(None)
 
 
 class NewUnsolicitedPatient(RedoxAbstractModel):
-
     Contacts: List["NewUnsolicitedPatientContact"] = Field(None)
     Demographics: "NewUnsolicitedPatientDemographics" = Field(None)
     Identifiers: List["NewUnsolicitedPatientIdentifier"] = Field(...)
@@ -304,7 +346,6 @@ class NewUnsolicitedPatient(RedoxAbstractModel):
 
 
 class NewUnsolicitedPatientContact(RedoxAbstractModel):
-
     Address: "NewUnsolicitedPatientContactAddress" = Field(None)
     EmailAddresses: List[str] = Field(None)
     FirstName: Union[str, None] = Field(None)
@@ -316,7 +357,6 @@ class NewUnsolicitedPatientContact(RedoxAbstractModel):
 
 
 class NewUnsolicitedPatientContactAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -326,14 +366,12 @@ class NewUnsolicitedPatientContactAddress(RedoxAbstractModel):
 
 
 class NewUnsolicitedPatientContactPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class NewUnsolicitedPatientDemographics(RedoxAbstractModel):
-
     Address: "NewUnsolicitedPatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
@@ -354,7 +392,6 @@ class NewUnsolicitedPatientDemographics(RedoxAbstractModel):
 
 
 class NewUnsolicitedPatientDemographicsAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -364,20 +401,17 @@ class NewUnsolicitedPatientDemographicsAddress(RedoxAbstractModel):
 
 
 class NewUnsolicitedPatientDemographicsPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class NewUnsolicitedPatientIdentifier(RedoxAbstractModel):
-
     ID: str = Field(...)
     IDType: str = Field(...)
 
 
 class NewUnsolicitedVisit(RedoxAbstractModel):
-
     AccountNumber: Union[str, None] = Field(None)
     AdditionalStaff: List["NewUnsolicitedVisitAdditionalStaff"] = Field(None)
     AttendingProvider: "NewUnsolicitedVisitAttendingProvider" = Field(None)
@@ -389,7 +423,6 @@ class NewUnsolicitedVisit(RedoxAbstractModel):
 
 
 class NewUnsolicitedVisitAdditionalStaff(RedoxAbstractModel):
-
     Address: "NewUnsolicitedVisitAdditionalStaffAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -403,7 +436,6 @@ class NewUnsolicitedVisitAdditionalStaff(RedoxAbstractModel):
 
 
 class NewUnsolicitedVisitAdditionalStaffAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -413,27 +445,41 @@ class NewUnsolicitedVisitAdditionalStaffAddress(RedoxAbstractModel):
 
 
 class NewUnsolicitedVisitAdditionalStaffLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "NewUnsolicitedVisitAdditionalStaffLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "NewUnsolicitedVisitAdditionalStaffLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class NewUnsolicitedVisitAdditionalStaffPhoneNumber(RedoxAbstractModel):
+class NewUnsolicitedVisitAdditionalStaffLocationDepartmentIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class NewUnsolicitedVisitAdditionalStaffLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class NewUnsolicitedVisitAdditionalStaffPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class NewUnsolicitedVisitAdditionalStaffRole(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
 
 
 class NewUnsolicitedVisitAttendingProvider(RedoxAbstractModel):
-
     Address: "NewUnsolicitedVisitAttendingProviderAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -446,7 +492,6 @@ class NewUnsolicitedVisitAttendingProvider(RedoxAbstractModel):
 
 
 class NewUnsolicitedVisitAttendingProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -456,29 +501,61 @@ class NewUnsolicitedVisitAttendingProviderAddress(RedoxAbstractModel):
 
 
 class NewUnsolicitedVisitAttendingProviderLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "NewUnsolicitedVisitAttendingProviderLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "NewUnsolicitedVisitAttendingProviderLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class NewUnsolicitedVisitAttendingProviderPhoneNumber(RedoxAbstractModel):
+class NewUnsolicitedVisitAttendingProviderLocationDepartmentIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class NewUnsolicitedVisitAttendingProviderLocationFacilityIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class NewUnsolicitedVisitAttendingProviderPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class NewUnsolicitedVisitLocation(RedoxAbstractModel):
-
     Bed: Union[str, None] = Field(None)
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "NewUnsolicitedVisitLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List["NewUnsolicitedVisitLocationFacilityIdentifier"] = Field(
+        None
+    )
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class NewUnsolicitedVisitReferringProvider(RedoxAbstractModel):
+class NewUnsolicitedVisitLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class NewUnsolicitedVisitLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class NewUnsolicitedVisitReferringProvider(RedoxAbstractModel):
     Address: "NewUnsolicitedVisitReferringProviderAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -491,7 +568,6 @@ class NewUnsolicitedVisitReferringProvider(RedoxAbstractModel):
 
 
 class NewUnsolicitedVisitReferringProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -501,15 +577,33 @@ class NewUnsolicitedVisitReferringProviderAddress(RedoxAbstractModel):
 
 
 class NewUnsolicitedVisitReferringProviderLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "NewUnsolicitedVisitReferringProviderLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "NewUnsolicitedVisitReferringProviderLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class NewUnsolicitedVisitReferringProviderPhoneNumber(RedoxAbstractModel):
+class NewUnsolicitedVisitReferringProviderLocationDepartmentIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class NewUnsolicitedVisitReferringProviderLocationFacilityIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class NewUnsolicitedVisitReferringProviderPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
@@ -517,15 +611,23 @@ NewUnsolicited.update_forward_refs()
 NewUnsolicitedMeta.update_forward_refs()
 NewUnsolicitedOrder.update_forward_refs()
 NewUnsolicitedOrderProvider.update_forward_refs()
+NewUnsolicitedOrderProviderLocation.update_forward_refs()
 NewUnsolicitedOrderResult.update_forward_refs()
 NewUnsolicitedOrderResultCopyProvider.update_forward_refs()
+NewUnsolicitedOrderResultCopyProviderLocation.update_forward_refs()
 NewUnsolicitedOrderResultPerformer.update_forward_refs()
+NewUnsolicitedOrderResultPerformerLocation.update_forward_refs()
 NewUnsolicitedOrderResultPrimaryResultsInterpreter.update_forward_refs()
+NewUnsolicitedOrderResultPrimaryResultsInterpreterLocation.update_forward_refs()
 NewUnsolicitedOrderResultProducer.update_forward_refs()
 NewUnsolicitedPatient.update_forward_refs()
 NewUnsolicitedPatientContact.update_forward_refs()
 NewUnsolicitedPatientDemographics.update_forward_refs()
 NewUnsolicitedVisit.update_forward_refs()
 NewUnsolicitedVisitAdditionalStaff.update_forward_refs()
+NewUnsolicitedVisitAdditionalStaffLocation.update_forward_refs()
 NewUnsolicitedVisitAttendingProvider.update_forward_refs()
+NewUnsolicitedVisitAttendingProviderLocation.update_forward_refs()
+NewUnsolicitedVisitLocation.update_forward_refs()
 NewUnsolicitedVisitReferringProvider.update_forward_refs()
+NewUnsolicitedVisitReferringProviderLocation.update_forward_refs()

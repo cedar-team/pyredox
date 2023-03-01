@@ -1,50 +1,8 @@
 {
-  "Visit": {
-    "CancelReason": "Conflicting appointment",
-    "VisitNumber": "1234",
-    "Notes": [],
-    "AttendingProvider": {
-      "ID": "4356789876",
-      "IDType": "NPI",
-      "FirstName": "Pat",
-      "LastName": "Granite",
-      "Credentials": [
-        "MD"
-      ],
-      "Address": {
-        "StreetAddress": "123 Main St.",
-        "City": "Madison",
-        "State": "WI",
-        "ZIP": "53703",
-        "County": "Dane",
-        "Country": "USA"
-      },
-      "EmailAddresses": [],
-      "PhoneNumber": {
-        "Office": "+16085551234"
-      },
-      "Location": {}
-    },
-    "Location": {
-      "Type": "Inpatient",
-      "Facility": "RES General Hospital",
-      "Department": "3N",
-      "Room": "136",
-      "Bed": "B"
-    },
-    "Diagnoses": [
-      {
-        "Code": "R07.0",
-        "Codeset": "ICD-10",
-        "Name": "Pain in throat"
-      }
-    ],
-    "Equipment": []
-  },
   "Meta": {
     "DataModel": "SurgicalScheduling",
     "EventType": "Cancel",
-    "EventDateTime": "2022-08-01T18:38:57.072Z",
+    "EventDateTime": "2023-02-27T22:09:03.585Z",
     "Test": true,
     "Source": {
       "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
@@ -145,7 +103,10 @@
       "PhoneNumber": {
         "Office": "+16085551234"
       },
-      "Location": {},
+      "Location": {
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
+      },
       "Role": {
         "Code": "1.1",
         "Description": "Primary Surgeon"
@@ -168,5 +129,52 @@
       "Value": "Y"
     }
   ],
+  "Visit": {
+    "VisitNumber": "1234",
+    "CancelReason": "Conflicting appointment",
+    "Notes": [],
+    "AttendingProvider": {
+      "ID": "4356789876",
+      "IDType": "NPI",
+      "FirstName": "Pat",
+      "LastName": "Granite",
+      "Credentials": [
+        "MD"
+      ],
+      "Address": {
+        "StreetAddress": "123 Main St.",
+        "City": "Madison",
+        "State": "WI",
+        "ZIP": "53703",
+        "County": "Dane",
+        "Country": "USA"
+      },
+      "EmailAddresses": [],
+      "PhoneNumber": {
+        "Office": "+16085551234"
+      },
+      "Location": {
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
+      }
+    },
+    "Location": {
+      "Type": "Inpatient",
+      "Facility": "RES General Hospital",
+      "FacilityIdentifiers": [],
+      "Department": "3N",
+      "DepartmentIdentifiers": [],
+      "Room": "136",
+      "Bed": "B"
+    },
+    "Diagnoses": [
+      {
+        "Code": "R07.0",
+        "Codeset": "ICD-10",
+        "Name": "Pain in throat"
+      }
+    ],
+    "Equipment": []
+  },
   "SurgicalCase": {}
 }

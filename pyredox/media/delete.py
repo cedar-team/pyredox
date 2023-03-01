@@ -10,7 +10,6 @@ from ..field_types import Number
 
 
 class Delete(EventTypeAbstractModel):
-
     Media: "DeleteMedia" = Field(...)
     Meta: "DeleteMeta" = Field(...)
     Orders: List["DeleteOrder"] = Field(None)
@@ -19,7 +18,6 @@ class Delete(EventTypeAbstractModel):
 
 
 class DeleteMedia(RedoxAbstractModel):
-
     Authenticated: Union[str, None] = Field(None)
     Authenticator: "DeleteMediaAuthenticator" = Field(None)
     Availability: str = Field(...)
@@ -37,7 +35,6 @@ class DeleteMedia(RedoxAbstractModel):
 
 
 class DeleteMediaAuthenticator(RedoxAbstractModel):
-
     Address: "DeleteMediaAuthenticatorAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -50,7 +47,6 @@ class DeleteMediaAuthenticator(RedoxAbstractModel):
 
 
 class DeleteMediaAuthenticatorAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -60,20 +56,33 @@ class DeleteMediaAuthenticatorAddress(RedoxAbstractModel):
 
 
 class DeleteMediaAuthenticatorLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "DeleteMediaAuthenticatorLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "DeleteMediaAuthenticatorLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class DeleteMediaAuthenticatorPhoneNumber(RedoxAbstractModel):
+class DeleteMediaAuthenticatorLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class DeleteMediaAuthenticatorLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class DeleteMediaAuthenticatorPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class DeleteMediaNotification(RedoxAbstractModel):
-
     Address: "DeleteMediaNotificationAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -86,7 +95,6 @@ class DeleteMediaNotification(RedoxAbstractModel):
 
 
 class DeleteMediaNotificationAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -96,20 +104,33 @@ class DeleteMediaNotificationAddress(RedoxAbstractModel):
 
 
 class DeleteMediaNotificationLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "DeleteMediaNotificationLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "DeleteMediaNotificationLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class DeleteMediaNotificationPhoneNumber(RedoxAbstractModel):
+class DeleteMediaNotificationLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class DeleteMediaNotificationLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class DeleteMediaNotificationPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class DeleteMediaProvider(RedoxAbstractModel):
-
     Address: "DeleteMediaProviderAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -122,7 +143,6 @@ class DeleteMediaProvider(RedoxAbstractModel):
 
 
 class DeleteMediaProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -132,20 +152,33 @@ class DeleteMediaProviderAddress(RedoxAbstractModel):
 
 
 class DeleteMediaProviderLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "DeleteMediaProviderLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List["DeleteMediaProviderLocationFacilityIdentifier"] = Field(
+        None
+    )
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class DeleteMediaProviderPhoneNumber(RedoxAbstractModel):
+class DeleteMediaProviderLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class DeleteMediaProviderLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class DeleteMediaProviderPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class DeleteMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["DeleteMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -159,48 +192,40 @@ class DeleteMeta(RedoxAbstractModel):
 
 
 class DeleteMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class DeleteMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class DeleteMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class DeleteMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class DeleteMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class DeleteOrder(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class DeletePatient(RedoxAbstractModel):
-
     Demographics: "DeletePatientDemographics" = Field(None)
     Identifiers: List["DeletePatientIdentifier"] = Field(...)
     Notes: List[str] = Field(None)
 
 
 class DeletePatientDemographics(RedoxAbstractModel):
-
     Address: "DeletePatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
@@ -221,7 +246,6 @@ class DeletePatientDemographics(RedoxAbstractModel):
 
 
 class DeletePatientDemographicsAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -231,40 +255,52 @@ class DeletePatientDemographicsAddress(RedoxAbstractModel):
 
 
 class DeletePatientDemographicsPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class DeletePatientIdentifier(RedoxAbstractModel):
-
     ID: str = Field(...)
     IDType: str = Field(...)
 
 
 class DeleteVisit(RedoxAbstractModel):
-
     AccountNumber: Union[str, None] = Field(None)
     Location: "DeleteVisitLocation" = Field(None)
     VisitNumber: Union[str, None] = Field(None)
 
 
 class DeleteVisitLocation(RedoxAbstractModel):
-
     Bed: Union[str, None] = Field(None)
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List["DeleteVisitLocationDepartmentIdentifier"] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List["DeleteVisitLocationFacilityIdentifier"] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
+
+
+class DeleteVisitLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class DeleteVisitLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
 
 Delete.update_forward_refs()
 DeleteMedia.update_forward_refs()
 DeleteMediaAuthenticator.update_forward_refs()
+DeleteMediaAuthenticatorLocation.update_forward_refs()
 DeleteMediaNotification.update_forward_refs()
+DeleteMediaNotificationLocation.update_forward_refs()
 DeleteMediaProvider.update_forward_refs()
+DeleteMediaProviderLocation.update_forward_refs()
 DeleteMeta.update_forward_refs()
 DeletePatient.update_forward_refs()
 DeletePatientDemographics.update_forward_refs()
 DeleteVisit.update_forward_refs()
+DeleteVisitLocation.update_forward_refs()

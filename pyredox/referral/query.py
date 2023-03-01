@@ -10,13 +10,11 @@ from ..field_types import Number
 
 
 class Query(EventTypeAbstractModel):
-
     Meta: "QueryMeta" = Field(...)
     Patient: "QueryPatient" = Field(...)
 
 
 class QueryMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["QueryMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -30,47 +28,39 @@ class QueryMeta(RedoxAbstractModel):
 
 
 class QueryMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class QueryMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class QueryMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class QueryMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class QueryMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class QueryPatient(RedoxAbstractModel):
-
     Identifiers: List["QueryPatientIdentifier"] = Field(...)
     Insurances: List["QueryPatientInsurance"] = Field(None)
 
 
 class QueryPatientIdentifier(RedoxAbstractModel):
-
     ID: str = Field(...)
     IDType: str = Field(...)
 
 
 class QueryPatientInsurance(RedoxAbstractModel):
-
     AgreementType: Union[str, None] = Field(None)
     Company: "QueryPatientInsuranceCompany" = Field(None)
     CoverageType: Union[str, None] = Field(None)
@@ -86,7 +76,6 @@ class QueryPatientInsurance(RedoxAbstractModel):
 
 
 class QueryPatientInsuranceCompany(RedoxAbstractModel):
-
     Address: "QueryPatientInsuranceCompanyAddress" = Field(None)
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
@@ -95,7 +84,6 @@ class QueryPatientInsuranceCompany(RedoxAbstractModel):
 
 
 class QueryPatientInsuranceCompanyAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -105,7 +93,6 @@ class QueryPatientInsuranceCompanyAddress(RedoxAbstractModel):
 
 
 class QueryPatientInsuranceInsured(RedoxAbstractModel):
-
     Address: "QueryPatientInsuranceInsuredAddress" = Field(None)
     DOB: Union[str, None] = Field(None)
     FirstName: Union[str, None] = Field(None)
@@ -118,7 +105,6 @@ class QueryPatientInsuranceInsured(RedoxAbstractModel):
 
 
 class QueryPatientInsuranceInsuredAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -128,13 +114,11 @@ class QueryPatientInsuranceInsuredAddress(RedoxAbstractModel):
 
 
 class QueryPatientInsuranceInsuredIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class QueryPatientInsurancePlan(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)

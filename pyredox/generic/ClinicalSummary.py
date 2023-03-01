@@ -6,22 +6,20 @@ from typing import List, Union
 from pydantic import Field
 
 from pyredox import clinicalsummary
-from ..abstract_base import GenericRedoxAbstractModel
+from ..abstract_base import GenericEventTypeAbstractModel
 from . import types as generic
 
 
-class _ClinicalSummary(GenericRedoxAbstractModel):
+class _ClinicalSummary(GenericEventTypeAbstractModel):
     _redox_module = clinicalsummary
 
 
 class DocumentGet(_ClinicalSummary):
-
     Document: generic.Document = Field(...)
     Meta: generic.Meta = Field(...)
 
 
 class DocumentGetResponse(_ClinicalSummary):
-
     Data: str = Field(...)
     Document: generic.Document = Field(...)
     FileType: str = Field(...)
@@ -29,7 +27,6 @@ class DocumentGetResponse(_ClinicalSummary):
 
 
 class DocumentQuery(_ClinicalSummary):
-
     Document: generic.Document = Field(None)
     Location: generic.Location = Field(None)
     Meta: generic.Meta = Field(...)
@@ -38,14 +35,12 @@ class DocumentQuery(_ClinicalSummary):
 
 
 class DocumentQueryResponse(_ClinicalSummary):
-
     Documents: List[generic.Document] = Field(...)
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(None)
 
 
 class PatientPush(_ClinicalSummary):
-
     AdvanceDirectives: List[generic.AdvanceDirective] = Field(None)
     AdvanceDirectivesText: Union[str, None] = Field(None)
     Allergies: List[generic.Allergy] = Field(None)
@@ -90,14 +85,12 @@ class PatientPush(_ClinicalSummary):
 
 
 class PatientQuery(_ClinicalSummary):
-
     Location: generic.Location = Field(None)
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(...)
 
 
 class PatientQueryResponse(_ClinicalSummary):
-
     AdvanceDirectives: List[generic.AdvanceDirective] = Field(None)
     AdvanceDirectivesText: Union[str, None] = Field(None)
     Allergies: List[generic.Allergy] = Field(None)
@@ -140,7 +133,6 @@ class PatientQueryResponse(_ClinicalSummary):
 
 
 class VisitPush(_ClinicalSummary):
-
     AdmissionDiagnosis: List[generic.AdmissionDiagnosis] = Field(None)
     AdmissionDiagnosisText: Union[str, None] = Field(None)
     AdvanceDirectives: List[generic.AdvanceDirective] = Field(None)
@@ -169,6 +161,7 @@ class VisitPush(_ClinicalSummary):
     HistoryOfPresentIllnessText: Union[str, None] = Field(None)
     ImmunizationText: Union[str, None] = Field(None)
     Immunizations: List[generic.Immunization] = Field(None)
+    Instructions: List[generic.Instruction] = Field(None)
     InstructionsText: Union[str, None] = Field(None)
     Insurances: List[generic.Insurance] = Field(None)
     InsurancesText: Union[str, None] = Field(None)
@@ -206,14 +199,12 @@ class VisitPush(_ClinicalSummary):
 
 
 class VisitQuery(_ClinicalSummary):
-
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(...)
     Visit: generic.Visit = Field(None)
 
 
 class VisitQueryResponse(_ClinicalSummary):
-
     AdmissionDiagnosis: List[generic.AdmissionDiagnosis] = Field(None)
     AdmissionDiagnosisText: Union[str, None] = Field(None)
     AdvanceDirectives: List[generic.AdvanceDirective] = Field(None)
@@ -242,6 +233,7 @@ class VisitQueryResponse(_ClinicalSummary):
     HistoryOfPresentIllnessText: Union[str, None] = Field(None)
     ImmunizationText: Union[str, None] = Field(None)
     Immunizations: List[generic.Immunization] = Field(None)
+    Instructions: List[generic.Instruction] = Field(None)
     InstructionsText: Union[str, None] = Field(None)
     Insurances: List[generic.Insurance] = Field(None)
     InsurancesText: Union[str, None] = Field(None)

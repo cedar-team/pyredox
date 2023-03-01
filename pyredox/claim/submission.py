@@ -10,7 +10,6 @@ from ..field_types import Number
 
 
 class Submission(EventTypeAbstractModel):
-
     BillingProvider: "SubmissionBillingProvider" = Field(None)
     Claims: List["SubmissionClaim"] = Field(None)
     Meta: "SubmissionMeta" = Field(...)
@@ -20,7 +19,6 @@ class Submission(EventTypeAbstractModel):
 
 
 class SubmissionBillingProvider(RedoxAbstractModel):
-
     Address: "SubmissionBillingProviderAddress" = Field(None)
     EmailAddress: Union[str, None] = Field(None)
     FirstName: Union[str, None] = Field(None)
@@ -35,7 +33,6 @@ class SubmissionBillingProvider(RedoxAbstractModel):
 
 
 class SubmissionBillingProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -45,19 +42,16 @@ class SubmissionBillingProviderAddress(RedoxAbstractModel):
 
 
 class SubmissionBillingProviderPhoneNumber(RedoxAbstractModel):
-
     Fax: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class SubmissionBillingProviderSpecialty(RedoxAbstractModel):
-
     Description: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class SubmissionClaim(RedoxAbstractModel):
-
     AdditionalDates: List["SubmissionClaimAdditionalDate"] = Field(None)
     CopayAmount: Union[str, None] = Field(None)
     Diagnoses: List["SubmissionClaimDiagnosis"] = Field(None)
@@ -75,13 +69,11 @@ class SubmissionClaim(RedoxAbstractModel):
 
 
 class SubmissionClaimAdditionalDate(RedoxAbstractModel):
-
     DateTime: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
 class SubmissionClaimDiagnosis(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
@@ -89,7 +81,6 @@ class SubmissionClaimDiagnosis(RedoxAbstractModel):
 
 
 class SubmissionClaimLine(RedoxAbstractModel):
-
     Amount: Union[str, None] = Field(None)
     Diagnoses: List["SubmissionClaimLineDiagnosis"] = Field(None)
     ID: Union[str, None] = Field(None)
@@ -104,7 +95,6 @@ class SubmissionClaimLine(RedoxAbstractModel):
 
 
 class SubmissionClaimLineDiagnosis(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
@@ -112,7 +102,6 @@ class SubmissionClaimLineDiagnosis(RedoxAbstractModel):
 
 
 class SubmissionClaimLineProcedure(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     CodeSet: Union[str, None] = Field(None)
     Modifiers: List[str] = Field(None)
@@ -120,7 +109,6 @@ class SubmissionClaimLineProcedure(RedoxAbstractModel):
 
 
 class SubmissionClaimProcedure(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     CodeSet: Union[str, None] = Field(None)
     Modifiers: List[str] = Field(None)
@@ -128,7 +116,6 @@ class SubmissionClaimProcedure(RedoxAbstractModel):
 
 
 class SubmissionClaimProvider(RedoxAbstractModel):
-
     FirstName: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
@@ -139,19 +126,16 @@ class SubmissionClaimProvider(RedoxAbstractModel):
 
 
 class SubmissionClaimProviderSpecialty(RedoxAbstractModel):
-
     Description: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class SubmissionClaimReferenceNumber(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
 class SubmissionClaimVisit(RedoxAbstractModel):
-
     DateTime: Union[str, None] = Field(None)
     DischargeDateTime: Union[str, None] = Field(None)
     Location: "SubmissionClaimVisitLocation" = Field(None)
@@ -161,23 +145,52 @@ class SubmissionClaimVisit(RedoxAbstractModel):
 
 
 class SubmissionClaimVisitLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "SubmissionClaimVisitLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List["SubmissionClaimVisitLocationFacilityIdentifier"] = Field(
+        None
+    )
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
+
+
+class SubmissionClaimVisitLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class SubmissionClaimVisitLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
 
 class SubmissionClaimVisitPreviousLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "SubmissionClaimVisitPreviousLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "SubmissionClaimVisitPreviousLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class SubmissionMeta(RedoxAbstractModel):
+class SubmissionClaimVisitPreviousLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class SubmissionClaimVisitPreviousLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class SubmissionMeta(RedoxAbstractModel):
     DataModel: str = Field(...)
     Destinations: List["SubmissionMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -191,35 +204,29 @@ class SubmissionMeta(RedoxAbstractModel):
 
 
 class SubmissionMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class SubmissionMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class SubmissionMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class SubmissionMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class SubmissionMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class SubmissionPatient(RedoxAbstractModel):
-
     Demographics: "SubmissionPatientDemographics" = Field(None)
     Identifiers: List["SubmissionPatientIdentifier"] = Field(None)
     IsPregnant: Union[str, None] = Field(None)
@@ -228,7 +235,6 @@ class SubmissionPatient(RedoxAbstractModel):
 
 
 class SubmissionPatientDemographics(RedoxAbstractModel):
-
     Address: "SubmissionPatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
@@ -249,7 +255,6 @@ class SubmissionPatientDemographics(RedoxAbstractModel):
 
 
 class SubmissionPatientDemographicsAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -259,20 +264,17 @@ class SubmissionPatientDemographicsAddress(RedoxAbstractModel):
 
 
 class SubmissionPatientDemographicsPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class SubmissionPatientIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class SubmissionSubscriber(RedoxAbstractModel):
-
     Address: "SubmissionSubscriberAddress" = Field(None)
     DOB: Union[str, None] = Field(None)
     FirstName: Union[str, None] = Field(None)
@@ -288,7 +290,6 @@ class SubmissionSubscriber(RedoxAbstractModel):
 
 
 class SubmissionSubscriberAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -298,7 +299,6 @@ class SubmissionSubscriberAddress(RedoxAbstractModel):
 
 
 class SubmissionSubscriberInsurance(RedoxAbstractModel):
-
     AgreementType: Union[str, None] = Field(None)
     Company: "SubmissionSubscriberInsuranceCompany" = Field(None)
     CoverageType: Union[str, None] = Field(None)
@@ -313,7 +313,6 @@ class SubmissionSubscriberInsurance(RedoxAbstractModel):
 
 
 class SubmissionSubscriberInsuranceCompany(RedoxAbstractModel):
-
     Address: "SubmissionSubscriberInsuranceCompanyAddress" = Field(None)
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
@@ -322,7 +321,6 @@ class SubmissionSubscriberInsuranceCompany(RedoxAbstractModel):
 
 
 class SubmissionSubscriberInsuranceCompanyAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -332,7 +330,6 @@ class SubmissionSubscriberInsuranceCompanyAddress(RedoxAbstractModel):
 
 
 class SubmissionSubscriberInsurancePlan(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
@@ -340,7 +337,6 @@ class SubmissionSubscriberInsurancePlan(RedoxAbstractModel):
 
 
 class SubmissionTransaction(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
     Receiver: "SubmissionTransactionReceiver" = Field(None)
@@ -349,14 +345,12 @@ class SubmissionTransaction(RedoxAbstractModel):
 
 
 class SubmissionTransactionReceiver(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class SubmissionTransactionSubmitter(RedoxAbstractModel):
-
     EmailAddress: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
@@ -365,7 +359,6 @@ class SubmissionTransactionSubmitter(RedoxAbstractModel):
 
 
 class SubmissionTransactionSubmitterPhoneNumber(RedoxAbstractModel):
-
     Fax: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
@@ -376,6 +369,8 @@ SubmissionClaim.update_forward_refs()
 SubmissionClaimLine.update_forward_refs()
 SubmissionClaimProvider.update_forward_refs()
 SubmissionClaimVisit.update_forward_refs()
+SubmissionClaimVisitLocation.update_forward_refs()
+SubmissionClaimVisitPreviousLocation.update_forward_refs()
 SubmissionMeta.update_forward_refs()
 SubmissionPatient.update_forward_refs()
 SubmissionPatientDemographics.update_forward_refs()

@@ -6,16 +6,15 @@ from typing import List, Union
 from pydantic import Field
 
 from pyredox import claim
-from ..abstract_base import GenericRedoxAbstractModel
+from ..abstract_base import GenericEventTypeAbstractModel
 from . import types as generic
 
 
-class _Claim(GenericRedoxAbstractModel):
+class _Claim(GenericEventTypeAbstractModel):
     _redox_module = claim
 
 
 class Payment(_Claim):
-
     Meta: generic.Meta = Field(...)
     Payee: generic.Payee = Field(None)
     Payer: generic.Payer = Field(None)
@@ -24,13 +23,11 @@ class Payment(_Claim):
 
 
 class PaymentBatch(_Claim):
-
     Meta: generic.Meta = Field(...)
     Transactions: List[generic.Transaction] = Field(None)
 
 
 class Submission(_Claim):
-
     BillingProvider: generic.BillingProvider = Field(None)
     Claims: List[generic.Claim] = Field(None)
     Meta: generic.Meta = Field(...)
@@ -40,6 +37,5 @@ class Submission(_Claim):
 
 
 class SubmissionBatch(_Claim):
-
     Meta: generic.Meta = Field(...)
     Transactions: List[generic.Transaction] = Field(None)

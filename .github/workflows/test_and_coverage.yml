@@ -5,13 +5,44 @@ on:
   push:
     branches:
       - 'main'
+      - 'dev'
 
 jobs:
-  run-tests-get-coverage:
+  test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.6', '3.7', '3.8', '3.9', '3.10']
+        python-version: ['3.7', '3.8', '3.9', '3.10']
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Python and Poetry
+        uses: ITProKyle/action-setup-python@v0.1.0 # it is HIGHLY recommended to pin this to a release
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Set up poetry virtualenv
+        run: poetry install
+
+      - name: Run tests
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COVERALLS_FLAG_NAME: ${{ matrix.python-version }}
+          COVERALLS_PARALLEL: true
+        run: poetry run tox
+
+      - name: Send partial results to Coveralls
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COVERALLS_FLAG_NAME: ${{ matrix.python-version }}
+          COVERALLS_PARALLEL: true
+        run: poetry run coveralls --service=github
+
+  test-optional:  # This is allowed to fail and the coveralls job will still run
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11.0-beta.5']
     steps:
       - uses: actions/checkout@v3
 
@@ -39,7 +70,8 @@ jobs:
 
   coveralls:
     name: Indicate completion to coveralls.io
-    needs: run-tests-get-coverage
+    needs: [test, test-optional]
+    if: ${{ success() || needs.test.result == 'success' }}
     runs-on: ubuntu-latest
     container: python:3-slim
     steps:

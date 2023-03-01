@@ -18,8 +18,8 @@
     ]
   },
   "Subject": "https://healtsystem.com/provider/4356789876",
-  "Expiration": "2022-08-01T18:53:58.392Z",
-  "IssuedAt": "2022-08-01T18:38:58.392Z",
+  "Expiration": "2023-02-27T22:24:04.887Z",
+  "IssuedAt": "2023-02-27T22:09:04.887Z",
   "Name": "Pat Granite MD",
   "FirstName": "Pat",
   "LastName": "Granite",
@@ -67,7 +67,9 @@
     "Location": {
       "Type": "Inpatient",
       "Facility": "RES General Hospital",
+      "FacilityIdentifiers": [],
       "Department": "3N",
+      "DepartmentIdentifiers": [],
       "Room": "136"
     }
   },

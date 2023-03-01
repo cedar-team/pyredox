@@ -2,7 +2,7 @@
   "Meta": {
     "DataModel": "Research",
     "EventType": "Study",
-    "EventDateTime": "2022-08-01T18:38:57.072Z",
+    "EventDateTime": "2023-02-27T22:09:03.585Z",
     "Test": true,
     "Source": {
       "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
@@ -53,7 +53,9 @@
         "Office": "6174078483"
       },
       "Location": {
-        "Facility": "Brigham and Women's Hospital"
+        "Facility": "Brigham and Women's Hospital",
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
       }
     },
     "Coordinators": [
@@ -77,7 +79,10 @@
         "PhoneNumber": {
           "Office": "+16085551234"
         },
-        "Location": {}
+        "Location": {
+          "FacilityIdentifiers": [],
+          "DepartmentIdentifiers": []
+        }
       }
     ],
     "Description": "Test the effect of added a single-use Varnum mouthpiece on pharyngeal collapsibility and\n    obstructive sleep apnea (OSA) severity in patients who identify themselves as mouth\n    breathers. Research indicates that nasal breathing not only may improve sleep apnea but it\n    also increases circulation, blood oxygen, and carbon dioxide levels, slows the breathing\n    rate, and improves overall lung volumes. Thus, the investigators will test whether a\n    single-use Varnum mouthpiece can improve pharyngeal collapsibility and OSA severity in mouth\n    breathers.",
@@ -99,7 +104,9 @@
     },
     "Location": {
       "Facility": "Brigham and Women's Hospital",
+      "FacilityIdentifiers": [],
       "Department": "Sleep Disorders Research Program Brigham and Women's Hospital",
+      "DepartmentIdentifiers": [],
       "Address": {
         "City": "Boston",
         "State": "MA",

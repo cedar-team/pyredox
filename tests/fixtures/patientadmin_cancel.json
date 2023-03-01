@@ -2,7 +2,7 @@
   "Meta": {
     "DataModel": "PatientAdmin",
     "EventType": "Cancel",
-    "EventDateTime": "2022-08-01T18:38:57.072Z",
+    "EventDateTime": "2023-02-27T22:09:03.585Z",
     "CanceledEvent": "Arrival",
     "Test": true,
     "Source": {
@@ -143,13 +143,16 @@
       "PhoneNumber": {
         "Office": "+16085551234"
       },
-      "Location": {}
+      "Location": {
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
+      }
     }
   },
   "Visit": {
     "VisitNumber": "1234",
     "PatientClass": "Inpatient",
-    "VisitDateTime": "2022-08-01T18:38:58.088Z",
+    "VisitDateTime": "2023-02-27T22:09:04.572Z",
     "Duration": 15,
     "Reason": "Check up",
     "Instructions": [],
@@ -173,34 +176,48 @@
       "PhoneNumber": {
         "Office": "+16085551234"
       },
-      "Location": {}
+      "Location": {
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
+      }
     },
     "ConsultingProvider": {
       "Credentials": [],
       "Address": {},
       "EmailAddresses": [],
       "PhoneNumber": {},
-      "Location": {}
+      "Location": {
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
+      }
     },
     "ReferringProvider": {
       "Credentials": [],
       "Address": {},
       "EmailAddresses": [],
       "PhoneNumber": {},
-      "Location": {}
+      "Location": {
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
+      }
     },
     "AdmittingProvider": {
       "Credentials": [],
       "Address": {},
       "EmailAddresses": [],
       "PhoneNumber": {},
-      "Location": {}
+      "Location": {
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
+      }
     },
     "AdditionalStaff": [],
     "Location": {
       "Type": "Inpatient",
       "Facility": "RES General Hospital",
+      "FacilityIdentifiers": [],
       "Department": "3N",
+      "DepartmentIdentifiers": [],
       "Room": "136",
       "Bed": "B",
       "Address": {

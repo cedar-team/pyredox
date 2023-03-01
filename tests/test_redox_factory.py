@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from copy import deepcopy
+from datetime import date, datetime, timezone
 from typing import List, Type
 
 import pytest
@@ -7,7 +8,9 @@ from pydantic import ValidationError
 from pydantic.typing import NoneType
 
 from pyredox.abstract_base import EventTypeAbstractModel
+from pyredox.claim import Submission
 from pyredox.factory import redox_object_factory
+from pyredox.generic import Claim as GenericClaim, types
 from pyredox.patientadmin import PatientUpdate
 
 str_patient_update = """
@@ -85,10 +88,76 @@ def test_invalid_payload():
         redox_object_factory(patient_missing)
 
 
-def test_extra_field_doesnt_break_anything():
-    """Ensure adding extra fields still yields a valid model instance."""
+def test_extra_field_invalidates_model():
+    """Ensure adding extra fields is forbidden."""
     patient_extra = deepcopy(dict_patient_update)
     patient_extra["Blobby"] = {"Bloop": []}
 
-    redox_object = redox_object_factory(patient_extra)
-    assert isinstance(redox_object, PatientUpdate)
+    with pytest.raises(ValidationError):
+        redox_object_factory(patient_extra)
+
+
+def test_casting():
+    meta = types.Meta(
+        DataModel="Scheduling",
+        EventType="Modification",
+        EventDateTime=datetime.now().isoformat(),
+        Test=True,
+        Source=types.Source(ID="SecretSourceID", Name="Cedar"),
+        Destinations=[types.Destination(ID="SecretDestinationID")],
+    )
+
+    address = types.Address(
+        StreetAddress="123 Sesame Street",
+        City="New York",
+        State="NY",
+        ZIP="10123",
+        Country="USA",
+    )
+
+    patient = types.Patient(
+        Demographics=types.Demographics(
+            FirstName="Olivia",
+            MiddleName="Test",
+            LastName="Patient",
+            Address=address,
+            Citizenship=["United States of America", "Canada", "Mexico"],
+            DeathDateTime=datetime(2050, 2, 14, 9, 15, tzinfo=timezone.utc).isoformat(),
+            DOB=date(1970, 2, 15).isoformat(),
+            SSN="123-43-2123",
+            IsHispanic=False,
+            Sex="Female",
+            PhoneNumber=types.PhoneNumber(Mobile="123-456-7890"),
+        )
+    )
+    subscriber = types.Subscriber.cast_from(
+        patient.Demographics,
+        dict(
+            ResponsibilityLevel="High",
+            Insurance=dict(
+                Company=dict(Address=dict(StreetAddress="123 Nowhere", Blahblah="Nope"))
+            ),
+            FirstName="Emma",
+        ),
+    )
+
+    generic_submission = GenericClaim.Submission(
+        Meta=meta,
+        Patient=patient,
+        Subscriber=subscriber,
+    )
+
+    # Calling to_redox() forces validation of all the values by the stricter models
+    modification = generic_submission.to_redox()
+
+    assert isinstance(modification, Submission)
+
+    # This verifies that setting fields by dictionary works as expected
+    assert modification.Subscriber.ResponsibilityLevel == "High"
+    assert (
+        modification.Subscriber.Insurance.Company.Address.StreetAddress == "123 Nowhere"
+    )
+    assert not hasattr(modification.Subscriber.Insurance.Company.Address, "Blahblah")
+
+    # This shows that the value from the patient.Demographics object took precedence
+    assert modification.Subscriber.FirstName == "Olivia"

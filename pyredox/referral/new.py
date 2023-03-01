@@ -10,7 +10,6 @@ from ..field_types import Number
 
 
 class New(EventTypeAbstractModel):
-
     Meta: "NewMeta" = Field(...)
     Patient: "NewPatient" = Field(...)
     Referral: "NewReferral" = Field(None)
@@ -18,7 +17,6 @@ class New(EventTypeAbstractModel):
 
 
 class NewMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["NewMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -32,35 +30,29 @@ class NewMeta(RedoxAbstractModel):
 
 
 class NewMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class NewMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class NewMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class NewMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class NewMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class NewPatient(RedoxAbstractModel):
-
     Contacts: List["NewPatientContact"] = Field(None)
     Demographics: "NewPatientDemographics" = Field(None)
     Guarantor: "NewPatientGuarantor" = Field(None)
@@ -70,7 +62,6 @@ class NewPatient(RedoxAbstractModel):
 
 
 class NewPatientContact(RedoxAbstractModel):
-
     Address: "NewPatientContactAddress" = Field(None)
     EmailAddresses: List[str] = Field(None)
     FirstName: Union[str, None] = Field(None)
@@ -82,7 +73,6 @@ class NewPatientContact(RedoxAbstractModel):
 
 
 class NewPatientContactAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -92,14 +82,12 @@ class NewPatientContactAddress(RedoxAbstractModel):
 
 
 class NewPatientContactPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class NewPatientDemographics(RedoxAbstractModel):
-
     Address: "NewPatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
@@ -120,7 +108,6 @@ class NewPatientDemographics(RedoxAbstractModel):
 
 
 class NewPatientDemographicsAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -130,14 +117,12 @@ class NewPatientDemographicsAddress(RedoxAbstractModel):
 
 
 class NewPatientDemographicsPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class NewPatientGuarantor(RedoxAbstractModel):
-
     Address: "NewPatientGuarantorAddress" = Field(None)
     DOB: Union[str, None] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -155,7 +140,6 @@ class NewPatientGuarantor(RedoxAbstractModel):
 
 
 class NewPatientGuarantorAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -165,14 +149,12 @@ class NewPatientGuarantorAddress(RedoxAbstractModel):
 
 
 class NewPatientGuarantorEmployer(RedoxAbstractModel):
-
     Address: "NewPatientGuarantorEmployerAddress" = Field(None)
     Name: Union[str, None] = Field(None)
     PhoneNumber: Union[str, None] = Field(None)
 
 
 class NewPatientGuarantorEmployerAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -182,26 +164,22 @@ class NewPatientGuarantorEmployerAddress(RedoxAbstractModel):
 
 
 class NewPatientGuarantorPhoneNumber(RedoxAbstractModel):
-
     Business: Union[str, None] = Field(None)
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
 
 
 class NewPatientGuarantorSpouse(RedoxAbstractModel):
-
     FirstName: Union[str, None] = Field(None)
     LastName: Union[str, None] = Field(None)
 
 
 class NewPatientIdentifier(RedoxAbstractModel):
-
     ID: str = Field(...)
     IDType: str = Field(...)
 
 
 class NewPatientInsurance(RedoxAbstractModel):
-
     AgreementType: Union[str, None] = Field(None)
     Company: "NewPatientInsuranceCompany" = Field(None)
     CoverageType: Union[str, None] = Field(None)
@@ -217,7 +195,6 @@ class NewPatientInsurance(RedoxAbstractModel):
 
 
 class NewPatientInsuranceCompany(RedoxAbstractModel):
-
     Address: "NewPatientInsuranceCompanyAddress" = Field(None)
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
@@ -226,7 +203,6 @@ class NewPatientInsuranceCompany(RedoxAbstractModel):
 
 
 class NewPatientInsuranceCompanyAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -236,7 +212,6 @@ class NewPatientInsuranceCompanyAddress(RedoxAbstractModel):
 
 
 class NewPatientInsuranceInsured(RedoxAbstractModel):
-
     Address: "NewPatientInsuranceInsuredAddress" = Field(None)
     DOB: Union[str, None] = Field(None)
     FirstName: Union[str, None] = Field(None)
@@ -249,7 +224,6 @@ class NewPatientInsuranceInsured(RedoxAbstractModel):
 
 
 class NewPatientInsuranceInsuredAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -259,13 +233,11 @@ class NewPatientInsuranceInsuredAddress(RedoxAbstractModel):
 
 
 class NewPatientInsuranceInsuredIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class NewPatientInsurancePlan(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
@@ -273,7 +245,6 @@ class NewPatientInsurancePlan(RedoxAbstractModel):
 
 
 class NewReferral(RedoxAbstractModel):
-
     AlternateID: Union[str, None] = Field(None)
     Authorization: "NewReferralAuthorization" = Field(None)
     Category: Union[str, None] = Field(None)
@@ -296,7 +267,6 @@ class NewReferral(RedoxAbstractModel):
 
 
 class NewReferralAuthorization(RedoxAbstractModel):
-
     AuthorizedTreatmentCount: Union[str, None] = Field(None)
     Company: "NewReferralAuthorizationCompany" = Field(None)
     DateTime: Union[str, None] = Field(None)
@@ -310,21 +280,18 @@ class NewReferralAuthorization(RedoxAbstractModel):
 
 
 class NewReferralAuthorizationCompany(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class NewReferralAuthorizationPlan(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class NewReferralDiagnosis(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     DocumentedDateTime: Union[str, None] = Field(None)
@@ -334,7 +301,6 @@ class NewReferralDiagnosis(RedoxAbstractModel):
 
 
 class NewReferralProcedure(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
@@ -345,7 +311,6 @@ class NewReferralProcedure(RedoxAbstractModel):
 
 
 class NewReferralProvider(RedoxAbstractModel):
-
     Address: "NewReferralProviderAddress" = Field(None)
     ContactInfo: Union[str, None] = Field(None)
     Credentials: List[str] = Field(None)
@@ -360,7 +325,6 @@ class NewReferralProvider(RedoxAbstractModel):
 
 
 class NewReferralProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -370,25 +334,37 @@ class NewReferralProviderAddress(RedoxAbstractModel):
 
 
 class NewReferralProviderLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "NewReferralProviderLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List["NewReferralProviderLocationFacilityIdentifier"] = Field(
+        None
+    )
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class NewReferralProviderPhoneNumber(RedoxAbstractModel):
+class NewReferralProviderLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class NewReferralProviderLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class NewReferralProviderPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class NewReferralVisit(RedoxAbstractModel):
-
     VisitNumber: Union[str, None] = Field(None)
 
 
 class NewVisit(RedoxAbstractModel):
-
     VisitNumber: Union[str, None] = Field(None)
 
 
@@ -405,3 +381,4 @@ NewPatientInsuranceInsured.update_forward_refs()
 NewReferral.update_forward_refs()
 NewReferralAuthorization.update_forward_refs()
 NewReferralProvider.update_forward_refs()
+NewReferralProviderLocation.update_forward_refs()

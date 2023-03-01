@@ -10,13 +10,11 @@ from ..field_types import Number
 
 
 class ProviderQueryResponse(EventTypeAbstractModel):
-
     Meta: "ProviderQueryResponseMeta" = Field(...)
     Providers: List["ProviderQueryResponseProvider"] = Field(...)
 
 
 class ProviderQueryResponseMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["ProviderQueryResponseMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -30,35 +28,29 @@ class ProviderQueryResponseMeta(RedoxAbstractModel):
 
 
 class ProviderQueryResponseMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class ProviderQueryResponseMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class ProviderQueryResponseMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class ProviderQueryResponseMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class ProviderQueryResponseMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class ProviderQueryResponseProvider(RedoxAbstractModel):
-
     Demographics: "ProviderQueryResponseProviderDemographics" = Field(None)
     Identifiers: List["ProviderQueryResponseProviderIdentifier"] = Field(...)
     IsActive: bool = Field(...)
@@ -67,7 +59,6 @@ class ProviderQueryResponseProvider(RedoxAbstractModel):
 
 
 class ProviderQueryResponseProviderDemographics(RedoxAbstractModel):
-
     Addresses: List["ProviderQueryResponseProviderDemographicsAddress"] = Field(None)
     Credentials: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
@@ -81,7 +72,6 @@ class ProviderQueryResponseProviderDemographics(RedoxAbstractModel):
 
 
 class ProviderQueryResponseProviderDemographicsAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -92,20 +82,17 @@ class ProviderQueryResponseProviderDemographicsAddress(RedoxAbstractModel):
 
 
 class ProviderQueryResponseProviderDemographicsPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class ProviderQueryResponseProviderIdentifier(RedoxAbstractModel):
-
     ID: str = Field(...)
     IDType: Union[str, None] = Field(None)
 
 
 class ProviderQueryResponseProviderQualification(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
@@ -117,13 +104,11 @@ class ProviderQueryResponseProviderQualification(RedoxAbstractModel):
 
 
 class ProviderQueryResponseProviderQualificationIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class ProviderQueryResponseProviderRole(RedoxAbstractModel):
-
     Availability: List["ProviderQueryResponseProviderRoleAvailability"] = Field(None)
     Identifiers: List["ProviderQueryResponseProviderRoleIdentifier"] = Field(None)
     Locations: List["ProviderQueryResponseProviderRoleLocation"] = Field(None)
@@ -133,20 +118,17 @@ class ProviderQueryResponseProviderRole(RedoxAbstractModel):
 
 
 class ProviderQueryResponseProviderRoleAvailability(RedoxAbstractModel):
-
     AvailableEndTime: Union[str, None] = Field(None)
     AvailableStartTime: Union[str, None] = Field(None)
     Days: List[str] = Field(None)
 
 
 class ProviderQueryResponseProviderRoleIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class ProviderQueryResponseProviderRoleLocation(RedoxAbstractModel):
-
     Address: "ProviderQueryResponseProviderRoleLocationAddress" = Field(None)
     Description: Union[str, None] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -159,7 +141,6 @@ class ProviderQueryResponseProviderRoleLocation(RedoxAbstractModel):
 
 
 class ProviderQueryResponseProviderRoleLocationAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -169,18 +150,15 @@ class ProviderQueryResponseProviderRoleLocationAddress(RedoxAbstractModel):
 
 
 class ProviderQueryResponseProviderRoleLocationIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class ProviderQueryResponseProviderRoleLocationPhoneNumber(RedoxAbstractModel):
-
     Office: Union[str, None] = Field(None)
 
 
 class ProviderQueryResponseProviderRoleOrganization(RedoxAbstractModel):
-
     Address: "ProviderQueryResponseProviderRoleOrganizationAddress" = Field(None)
     Identifiers: List[
         "ProviderQueryResponseProviderRoleOrganizationIdentifier"
@@ -191,7 +169,6 @@ class ProviderQueryResponseProviderRoleOrganization(RedoxAbstractModel):
 
 
 class ProviderQueryResponseProviderRoleOrganizationAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -201,13 +178,11 @@ class ProviderQueryResponseProviderRoleOrganizationAddress(RedoxAbstractModel):
 
 
 class ProviderQueryResponseProviderRoleOrganizationIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class ProviderQueryResponseProviderRoleService(RedoxAbstractModel):
-
     Description: Union[str, None] = Field(None)
     Identifiers: List["ProviderQueryResponseProviderRoleServiceIdentifier"] = Field(
         None
@@ -217,18 +192,15 @@ class ProviderQueryResponseProviderRoleService(RedoxAbstractModel):
 
 
 class ProviderQueryResponseProviderRoleServiceIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class ProviderQueryResponseProviderRoleServicePhoneNumber(RedoxAbstractModel):
-
     Office: Union[str, None] = Field(None)
 
 
 class ProviderQueryResponseProviderRoleSpecialty(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)

@@ -10,7 +10,6 @@ from ..field_types import Number
 
 
 class Transaction(EventTypeAbstractModel):
-
     Meta: "TransactionMeta" = Field(...)
     Patient: "TransactionPatient" = Field(...)
     Transactions: List["TransactionTransaction"] = Field(...)
@@ -18,7 +17,6 @@ class Transaction(EventTypeAbstractModel):
 
 
 class TransactionMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["TransactionMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -32,42 +30,35 @@ class TransactionMeta(RedoxAbstractModel):
 
 
 class TransactionMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class TransactionMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class TransactionMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class TransactionMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class TransactionMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class TransactionPatient(RedoxAbstractModel):
-
     Demographics: "TransactionPatientDemographics" = Field(None)
     Identifiers: List["TransactionPatientIdentifier"] = Field(...)
     Notes: List[str] = Field(None)
 
 
 class TransactionPatientDemographics(RedoxAbstractModel):
-
     Address: "TransactionPatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
@@ -88,7 +79,6 @@ class TransactionPatientDemographics(RedoxAbstractModel):
 
 
 class TransactionPatientDemographicsAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -98,20 +88,17 @@ class TransactionPatientDemographicsAddress(RedoxAbstractModel):
 
 
 class TransactionPatientDemographicsPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class TransactionPatientIdentifier(RedoxAbstractModel):
-
     ID: str = Field(...)
     IDType: str = Field(...)
 
 
 class TransactionTransaction(RedoxAbstractModel):
-
     Chargeable: "TransactionTransactionChargeable" = Field(...)
     DateTimeOfService: str = Field(...)
     Department: "TransactionTransactionDepartment" = Field(None)
@@ -127,7 +114,6 @@ class TransactionTransaction(RedoxAbstractModel):
 
 
 class TransactionTransactionChargeable(RedoxAbstractModel):
-
     Amount: Union[Number, None] = Field(None)
     Code: str = Field(...)
     Codeset: Union[str, None] = Field(None)
@@ -136,14 +122,12 @@ class TransactionTransactionChargeable(RedoxAbstractModel):
 
 
 class TransactionTransactionDepartment(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class TransactionTransactionDiagnosis(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     DocumentedDateTime: Union[str, None] = Field(None)
@@ -152,13 +136,11 @@ class TransactionTransactionDiagnosis(RedoxAbstractModel):
 
 
 class TransactionTransactionNDC(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
 
 
 class TransactionTransactionOrderingProvider(RedoxAbstractModel):
-
     Address: "TransactionTransactionOrderingProviderAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -171,7 +153,6 @@ class TransactionTransactionOrderingProvider(RedoxAbstractModel):
 
 
 class TransactionTransactionOrderingProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -181,20 +162,37 @@ class TransactionTransactionOrderingProviderAddress(RedoxAbstractModel):
 
 
 class TransactionTransactionOrderingProviderLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "TransactionTransactionOrderingProviderLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "TransactionTransactionOrderingProviderLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class TransactionTransactionOrderingProviderPhoneNumber(RedoxAbstractModel):
+class TransactionTransactionOrderingProviderLocationDepartmentIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class TransactionTransactionOrderingProviderLocationFacilityIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class TransactionTransactionOrderingProviderPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class TransactionTransactionPerformer(RedoxAbstractModel):
-
     Address: "TransactionTransactionPerformerAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -207,7 +205,6 @@ class TransactionTransactionPerformer(RedoxAbstractModel):
 
 
 class TransactionTransactionPerformerAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -217,20 +214,33 @@ class TransactionTransactionPerformerAddress(RedoxAbstractModel):
 
 
 class TransactionTransactionPerformerLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "TransactionTransactionPerformerLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "TransactionTransactionPerformerLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class TransactionTransactionPerformerPhoneNumber(RedoxAbstractModel):
+class TransactionTransactionPerformerLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class TransactionTransactionPerformerLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class TransactionTransactionPerformerPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class TransactionTransactionProcedure(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
@@ -238,17 +248,16 @@ class TransactionTransactionProcedure(RedoxAbstractModel):
 
 
 class TransactionVisit(RedoxAbstractModel):
-
     AccountNumber: Union[str, None] = Field(None)
     Guarantor: "TransactionVisitGuarantor" = Field(None)
     Insurances: List["TransactionVisitInsurance"] = Field(None)
     Location: "TransactionVisitLocation" = Field(None)
+    PatientClass: Union[str, None] = Field(None)
     VisitDateTime: Union[str, None] = Field(None)
     VisitNumber: Union[str, None] = Field(None)
 
 
 class TransactionVisitGuarantor(RedoxAbstractModel):
-
     Address: "TransactionVisitGuarantorAddress" = Field(None)
     DOB: Union[str, None] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -266,7 +275,6 @@ class TransactionVisitGuarantor(RedoxAbstractModel):
 
 
 class TransactionVisitGuarantorAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -276,14 +284,12 @@ class TransactionVisitGuarantorAddress(RedoxAbstractModel):
 
 
 class TransactionVisitGuarantorEmployer(RedoxAbstractModel):
-
     Address: "TransactionVisitGuarantorEmployerAddress" = Field(None)
     Name: Union[str, None] = Field(None)
     PhoneNumber: Union[str, None] = Field(None)
 
 
 class TransactionVisitGuarantorEmployerAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -293,20 +299,17 @@ class TransactionVisitGuarantorEmployerAddress(RedoxAbstractModel):
 
 
 class TransactionVisitGuarantorPhoneNumber(RedoxAbstractModel):
-
     Business: Union[str, None] = Field(None)
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
 
 
 class TransactionVisitGuarantorSpouse(RedoxAbstractModel):
-
     FirstName: Union[str, None] = Field(None)
     LastName: Union[str, None] = Field(None)
 
 
 class TransactionVisitInsurance(RedoxAbstractModel):
-
     AgreementType: Union[str, None] = Field(None)
     Company: "TransactionVisitInsuranceCompany" = Field(None)
     CoverageType: Union[str, None] = Field(None)
@@ -322,7 +325,6 @@ class TransactionVisitInsurance(RedoxAbstractModel):
 
 
 class TransactionVisitInsuranceCompany(RedoxAbstractModel):
-
     Address: "TransactionVisitInsuranceCompanyAddress" = Field(None)
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
@@ -331,7 +333,6 @@ class TransactionVisitInsuranceCompany(RedoxAbstractModel):
 
 
 class TransactionVisitInsuranceCompanyAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -341,7 +342,6 @@ class TransactionVisitInsuranceCompanyAddress(RedoxAbstractModel):
 
 
 class TransactionVisitInsuranceInsured(RedoxAbstractModel):
-
     Address: "TransactionVisitInsuranceInsuredAddress" = Field(None)
     DOB: Union[str, None] = Field(None)
     FirstName: Union[str, None] = Field(None)
@@ -354,7 +354,6 @@ class TransactionVisitInsuranceInsured(RedoxAbstractModel):
 
 
 class TransactionVisitInsuranceInsuredAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -364,13 +363,11 @@ class TransactionVisitInsuranceInsuredAddress(RedoxAbstractModel):
 
 
 class TransactionVisitInsuranceInsuredIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class TransactionVisitInsurancePlan(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
@@ -378,17 +375,21 @@ class TransactionVisitInsurancePlan(RedoxAbstractModel):
 
 
 class TransactionVisitLocation(RedoxAbstractModel):
-
     Address: "TransactionVisitLocationAddress" = Field(None)
     Bed: Union[str, None] = Field(None)
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List["TransactionVisitLocationDepartmentIdentifier"] = Field(
+        None
+    )
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List["TransactionVisitLocationFacilityIdentifier"] = Field(
+        None
+    )
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
 class TransactionVisitLocationAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -397,13 +398,25 @@ class TransactionVisitLocationAddress(RedoxAbstractModel):
     ZIP: Union[str, None] = Field(None)
 
 
+class TransactionVisitLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class TransactionVisitLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
 Transaction.update_forward_refs()
 TransactionMeta.update_forward_refs()
 TransactionPatient.update_forward_refs()
 TransactionPatientDemographics.update_forward_refs()
 TransactionTransaction.update_forward_refs()
 TransactionTransactionOrderingProvider.update_forward_refs()
+TransactionTransactionOrderingProviderLocation.update_forward_refs()
 TransactionTransactionPerformer.update_forward_refs()
+TransactionTransactionPerformerLocation.update_forward_refs()
 TransactionVisit.update_forward_refs()
 TransactionVisitGuarantor.update_forward_refs()
 TransactionVisitGuarantorEmployer.update_forward_refs()

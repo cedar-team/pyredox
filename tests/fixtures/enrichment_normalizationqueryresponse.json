@@ -1,0 +1,162 @@
+{
+  "Meta": {
+    "DataModel": "Enrichment",
+    "EventType": "NormalizationQueryResponse",
+    "EventDateTime": "2023-02-27T22:09:03.585Z",
+    "Test": true,
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
+    },
+    "Destinations": [
+      {
+        "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
+        "Name": "Redox EMR"
+      }
+    ],
+    "Logs": [
+      {
+        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
+        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
+      }
+    ]
+  },
+  "Entries": [
+    {
+      "Category": "Problem",
+      "Status": "Success",
+      "Transaction": {
+        "VendorID": "IMO",
+        "ID": "18ff2b09-4013-49be-a736-48dc8d954c11"
+      },
+      "Submitted": {
+        "Category": "Problem",
+        "EntryID": "My-Normalization-199f3120-4108-4c59-b09f-9766a8eeeefc",
+        "Code": "E11.29",
+        "Codeset": "ICD-10-CM"
+      },
+      "Normalization": [
+        {
+          "LexicalReference": {
+            "Code": "E11.29",
+            "Name": "Uncontrolled type 2 diabetes with renal manifestation",
+            "DefaultCode": "E11.65",
+            "DefaultName": "Type 2 diabetes mellitus with hyperglycemia"
+          },
+          "Score": {
+            "Value": 1,
+            "Description": "Exact"
+          },
+          "Matches": [
+            {
+              "Codeset": "ICD-10-CM",
+              "Status": "Success",
+              "Codes": [
+                {
+                  "Code": "E11.65",
+                  "MatchPriority": "Preferred primary",
+                  "Variants": [
+                    {
+                      "Title": "Type 2 diabetes mellitus with hyperglycemia",
+                      "ExtendedProperties": [
+                        {
+                          "Category": "CCSR",
+                          "Properties": [
+                            {
+                              "Property": "END",
+                              "Value": "Endocrine, nutritional and metabolic diseases"
+                            }
+                          ]
+                        },
+                        {
+                          "Category": "HCC",
+                          "Properties": [
+                            {
+                              "Property": "HCC Model Category",
+                              "Value": "18"
+                            },
+                            {
+                              "Property": "Community, Non-Dual-Aged",
+                              "Value": "0.302"
+                            },
+                            {
+                              "Property": "Community, Non-Dual-Disabled",
+                              "Value": "0.351"
+                            },
+                            {
+                              "Property": "Community, Full Benefit, Dual Aged",
+                              "Value": "0.340"
+                            },
+                            {
+                              "Property": "CCommunity, Full Benefit, Dual-Disabled",
+                              "Value": "0.423"
+                            },
+                            {
+                              "Property": "Community, Partial Benefit, Dual Aged",
+                              "Value": "0.087"
+                            },
+                            {
+                              "Property": "Community, Partial Benefit, Dual-Disabled",
+                              "Value": "0.373"
+                            },
+                            {
+                              "Property": "Institutional",
+                              "Value": "0.440"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Codeset": "SNOMED CT",
+              "Status": "Success",
+              "Codes": [
+                {
+                  "Code": "420279001",
+                  "MatchPriority": "Preferred",
+                  "Variants": [
+                    {
+                      "Title": "Renal disorder due to type 2 diabetes mellitus",
+                      "ExtendedProperties": []
+                    }
+                  ]
+                },
+                {
+                  "Code": "44054006",
+                  "MatchPriority": "Preferred",
+                  "Variants": [
+                    {
+                      "Title": "Diabetes mellitus type 2 (disorder)",
+                      "ExtendedProperties": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Codeset": "ICD-9-CM",
+              "Status": "Success",
+              "Codes": [
+                {
+                  "Code": "250.00",
+                  "MatchPriority": "Preferred",
+                  "Variants": [
+                    {
+                      "Title": "Diabetes mellitus without mention of complication, type ii ",
+                      "ExtendedProperties": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "Error": {}
+    }
+  ]
+}

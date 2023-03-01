@@ -10,16 +10,15 @@ from ..field_types import Number
 
 
 class DocumentQueryResponse(EventTypeAbstractModel):
-
     Documents: List["DocumentQueryResponseDocument"] = Field(...)
     Meta: "DocumentQueryResponseMeta" = Field(...)
     Patient: "DocumentQueryResponsePatient" = Field(None)
 
 
 class DocumentQueryResponseDocument(RedoxAbstractModel):
-
     Author: "DocumentQueryResponseDocumentAuthor" = Field(None)
     DateTime: Union[str, None] = Field(None)
+    FileType: Union[str, None] = Field(None)
     ID: str = Field(...)
     Locale: Union[str, None] = Field(None)
     Location: "DocumentQueryResponseDocumentLocation" = Field(None)
@@ -29,7 +28,6 @@ class DocumentQueryResponseDocument(RedoxAbstractModel):
 
 
 class DocumentQueryResponseDocumentAuthor(RedoxAbstractModel):
-
     Address: "DocumentQueryResponseDocumentAuthorAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -43,7 +41,6 @@ class DocumentQueryResponseDocumentAuthor(RedoxAbstractModel):
 
 
 class DocumentQueryResponseDocumentAuthorAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -53,39 +50,51 @@ class DocumentQueryResponseDocumentAuthorAddress(RedoxAbstractModel):
 
 
 class DocumentQueryResponseDocumentAuthorLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "DocumentQueryResponseDocumentAuthorLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "DocumentQueryResponseDocumentAuthorLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class DocumentQueryResponseDocumentAuthorPhoneNumber(RedoxAbstractModel):
+class DocumentQueryResponseDocumentAuthorLocationDepartmentIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class DocumentQueryResponseDocumentAuthorLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class DocumentQueryResponseDocumentAuthorPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class DocumentQueryResponseDocumentLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
 
 
 class DocumentQueryResponseDocumentType(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class DocumentQueryResponseDocumentVisit(RedoxAbstractModel):
-
     EndDateTime: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
     StartDateTime: Union[str, None] = Field(None)
 
 
 class DocumentQueryResponseMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["DocumentQueryResponseMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -99,40 +108,33 @@ class DocumentQueryResponseMeta(RedoxAbstractModel):
 
 
 class DocumentQueryResponseMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class DocumentQueryResponseMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class DocumentQueryResponseMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class DocumentQueryResponseMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class DocumentQueryResponseMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class DocumentQueryResponsePatient(RedoxAbstractModel):
-
     Identifiers: List["DocumentQueryResponsePatientIdentifier"] = Field(None)
 
 
 class DocumentQueryResponsePatientIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
@@ -140,5 +142,6 @@ class DocumentQueryResponsePatientIdentifier(RedoxAbstractModel):
 DocumentQueryResponse.update_forward_refs()
 DocumentQueryResponseDocument.update_forward_refs()
 DocumentQueryResponseDocumentAuthor.update_forward_refs()
+DocumentQueryResponseDocumentAuthorLocation.update_forward_refs()
 DocumentQueryResponseMeta.update_forward_refs()
 DocumentQueryResponsePatient.update_forward_refs()

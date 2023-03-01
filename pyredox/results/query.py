@@ -10,7 +10,6 @@ from ..field_types import Number
 
 
 class Query(EventTypeAbstractModel):
-
     Completion: "QueryCompletion" = Field(None)
     LastUpdated: "QueryLastUpdated" = Field(None)
     Location: "QueryLocation" = Field(None)
@@ -22,24 +21,20 @@ class Query(EventTypeAbstractModel):
 
 
 class QueryCompletion(RedoxAbstractModel):
-
     EndDateTime: Union[str, None] = Field(None)
     StartDateTime: Union[str, None] = Field(None)
 
 
 class QueryLastUpdated(RedoxAbstractModel):
-
     EndDateTime: Union[str, None] = Field(None)
     StartDateTime: Union[str, None] = Field(None)
 
 
 class QueryLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
 
 
 class QueryMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["QueryMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -53,46 +48,38 @@ class QueryMeta(RedoxAbstractModel):
 
 
 class QueryMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class QueryMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class QueryMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class QueryMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class QueryMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class QueryPatient(RedoxAbstractModel):
-
     Identifiers: List["QueryPatientIdentifier"] = Field(None)
 
 
 class QueryPatientIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class QueryProcedure(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
 

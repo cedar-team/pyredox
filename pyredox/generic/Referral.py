@@ -6,16 +6,15 @@ from typing import List, Union
 from pydantic import Field
 
 from pyredox import referral
-from ..abstract_base import GenericRedoxAbstractModel
+from ..abstract_base import GenericEventTypeAbstractModel
 from . import types as generic
 
 
-class _Referral(GenericRedoxAbstractModel):
+class _Referral(GenericEventTypeAbstractModel):
     _redox_module = referral
 
 
 class AuthResponse(_Referral):
-
     Authorization: generic.Authorization = Field(None)
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(...)
@@ -23,7 +22,6 @@ class AuthResponse(_Referral):
 
 
 class AuthReview(_Referral):
-
     Authorization: generic.Authorization = Field(None)
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(...)
@@ -31,7 +29,6 @@ class AuthReview(_Referral):
 
 
 class Cancel(_Referral):
-
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(...)
     Referral: generic.Referral = Field(None)
@@ -39,7 +36,6 @@ class Cancel(_Referral):
 
 
 class Modify(_Referral):
-
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(...)
     Referral: generic.Referral = Field(None)
@@ -47,7 +43,6 @@ class Modify(_Referral):
 
 
 class New(_Referral):
-
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(...)
     Referral: generic.Referral = Field(None)
@@ -55,12 +50,10 @@ class New(_Referral):
 
 
 class Query(_Referral):
-
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(...)
 
 
 class QueryResponse(_Referral):
-
     Meta: generic.Meta = Field(...)
     Referrals: List[generic.Referral] = Field(None)

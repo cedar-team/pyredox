@@ -1,5 +1,30 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+"""
+This utility downloads and saves all the sample data models listed on the Redox
+documentation website. To run this, run the following  command:
+
+    poetry run python tests/get_fixtures.py
+
+Be mindful that some sample fixtures do not conform to the specification 🙄, so
+you may need to make some small modifications to the fixtures after downloading
+them. It's annoying but the fastest way is to identify one failure at a time
+with the following (with the virtual environment activated):
+
+    pytest --maxfail=1 -vv --ff
+
+The most common discrepancy is a mismatch of float/str values. For example, the
+example on the Redox website will have
+    "Quantity": {
+      "Value": 1,
+      "Units": "Unit"
+    },
+when the Value field should be a string, like this:
+    "Quantity": {
+      "Value": "1",
+      "Units": "Unit"
+    },
+"""
 from json import dump, loads
 from pathlib import Path
 
@@ -68,6 +93,7 @@ def save_fixture(sample: str):
     with open(dest_file, "w") as fixture_file:
         click.echo(f"Writing file {dest_file}")
         dump(sample_dict, fixture_file, indent=2)
+        fixture_file.write("\n")
 
 
 @click.command()

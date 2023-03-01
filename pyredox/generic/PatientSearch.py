@@ -6,34 +6,30 @@ from typing import List, Union
 from pydantic import Field
 
 from pyredox import patientsearch
-from ..abstract_base import GenericRedoxAbstractModel
+from ..abstract_base import GenericEventTypeAbstractModel
 from . import types as generic
 
 
-class _PatientSearch(GenericRedoxAbstractModel):
+class _PatientSearch(GenericEventTypeAbstractModel):
     _redox_module = patientsearch
 
 
 class LocationQuery(_PatientSearch):
-
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(...)
 
 
 class LocationQueryResponse(_PatientSearch):
-
     Meta: generic.Meta = Field(...)
     Patients: List[generic.Patient] = Field(...)
 
 
 class Query(_PatientSearch):
-
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(None)
 
 
 class Response(_PatientSearch):
-
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(None)
     PotentialMatches: List[generic.PotentialMatch] = Field(None)

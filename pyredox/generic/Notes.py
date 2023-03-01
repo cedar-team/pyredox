@@ -6,16 +6,15 @@ from typing import List, Union
 from pydantic import Field
 
 from pyredox import notes
-from ..abstract_base import GenericRedoxAbstractModel
+from ..abstract_base import GenericEventTypeAbstractModel
 from . import types as generic
 
 
-class _Notes(GenericRedoxAbstractModel):
+class _Notes(GenericEventTypeAbstractModel):
     _redox_module = notes
 
 
 class Delete(_Notes):
-
     Meta: generic.Meta = Field(...)
     Note: generic.Note = Field(...)
     Orders: List[generic.Order] = Field(None)
@@ -24,7 +23,6 @@ class Delete(_Notes):
 
 
 class New(_Notes):
-
     Meta: generic.Meta = Field(...)
     Note: generic.Note = Field(...)
     Orders: List[generic.Order] = Field(None)
@@ -33,7 +31,6 @@ class New(_Notes):
 
 
 class Query(_Notes):
-
     DocumentIDs: List[str] = Field(None)
     DocumentTypes: List[str] = Field(None)
     Meta: generic.Meta = Field(...)
@@ -42,13 +39,11 @@ class Query(_Notes):
 
 
 class QueryResponse(_Notes):
-
     Meta: generic.Meta = Field(...)
     Notes: List[generic.Note] = Field(None)
 
 
 class Replace(_Notes):
-
     Meta: generic.Meta = Field(...)
     Note: generic.Note = Field(...)
     Orders: List[generic.Order] = Field(None)

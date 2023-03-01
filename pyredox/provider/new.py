@@ -10,13 +10,11 @@ from ..field_types import Number
 
 
 class New(EventTypeAbstractModel):
-
     Meta: "NewMeta" = Field(...)
     Providers: List["NewProvider"] = Field(...)
 
 
 class NewMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["NewMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -30,35 +28,29 @@ class NewMeta(RedoxAbstractModel):
 
 
 class NewMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class NewMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class NewMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class NewMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class NewMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class NewProvider(RedoxAbstractModel):
-
     Demographics: "NewProviderDemographics" = Field(None)
     Identifiers: List["NewProviderIdentifier"] = Field(...)
     IsActive: bool = Field(...)
@@ -67,7 +59,6 @@ class NewProvider(RedoxAbstractModel):
 
 
 class NewProviderDemographics(RedoxAbstractModel):
-
     Addresses: List["NewProviderDemographicsAddress"] = Field(None)
     Credentials: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
@@ -81,7 +72,6 @@ class NewProviderDemographics(RedoxAbstractModel):
 
 
 class NewProviderDemographicsAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -92,20 +82,17 @@ class NewProviderDemographicsAddress(RedoxAbstractModel):
 
 
 class NewProviderDemographicsPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class NewProviderIdentifier(RedoxAbstractModel):
-
     ID: str = Field(...)
     IDType: Union[str, None] = Field(None)
 
 
 class NewProviderQualification(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
@@ -115,13 +102,11 @@ class NewProviderQualification(RedoxAbstractModel):
 
 
 class NewProviderQualificationIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class NewProviderRole(RedoxAbstractModel):
-
     Availability: List["NewProviderRoleAvailability"] = Field(None)
     Identifiers: List["NewProviderRoleIdentifier"] = Field(None)
     Locations: List["NewProviderRoleLocation"] = Field(None)
@@ -131,20 +116,17 @@ class NewProviderRole(RedoxAbstractModel):
 
 
 class NewProviderRoleAvailability(RedoxAbstractModel):
-
     AvailableEndTime: Union[str, None] = Field(None)
     AvailableStartTime: Union[str, None] = Field(None)
     Days: List[str] = Field(None)
 
 
 class NewProviderRoleIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class NewProviderRoleLocation(RedoxAbstractModel):
-
     Address: "NewProviderRoleLocationAddress" = Field(None)
     Description: Union[str, None] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -155,7 +137,6 @@ class NewProviderRoleLocation(RedoxAbstractModel):
 
 
 class NewProviderRoleLocationAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -165,18 +146,15 @@ class NewProviderRoleLocationAddress(RedoxAbstractModel):
 
 
 class NewProviderRoleLocationIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class NewProviderRoleLocationPhoneNumber(RedoxAbstractModel):
-
     Office: Union[str, None] = Field(None)
 
 
 class NewProviderRoleOrganization(RedoxAbstractModel):
-
     Address: "NewProviderRoleOrganizationAddress" = Field(None)
     Identifiers: List["NewProviderRoleOrganizationIdentifier"] = Field(None)
     IsActive: Union[str, None] = Field(None)
@@ -185,7 +163,6 @@ class NewProviderRoleOrganization(RedoxAbstractModel):
 
 
 class NewProviderRoleOrganizationAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -195,13 +172,11 @@ class NewProviderRoleOrganizationAddress(RedoxAbstractModel):
 
 
 class NewProviderRoleOrganizationIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class NewProviderRoleService(RedoxAbstractModel):
-
     Description: Union[str, None] = Field(None)
     Identifiers: List["NewProviderRoleServiceIdentifier"] = Field(None)
     PhoneNumber: "NewProviderRoleServicePhoneNumber" = Field(None)
@@ -209,18 +184,15 @@ class NewProviderRoleService(RedoxAbstractModel):
 
 
 class NewProviderRoleServiceIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class NewProviderRoleServicePhoneNumber(RedoxAbstractModel):
-
     Office: Union[str, None] = Field(None)
 
 
 class NewProviderRoleSpecialty(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)

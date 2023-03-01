@@ -10,7 +10,6 @@ from ..field_types import Number
 
 
 class AchievementStatus(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
@@ -18,25 +17,21 @@ class AchievementStatus(RedoxAbstractModel):
 
 
 class Actor(RedoxAbstractModel):
-
     System: Union[str, None] = Field(None)
     Value: Union[str, None] = Field(None)
 
 
 class AdditionalDate(RedoxAbstractModel):
-
     DateTime: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
 class AdditionalInfo(RedoxAbstractModel):
-
     DecisionSupport: "DecisionSupport" = Field(None)
     Link: Union[str, None] = Field(None)
 
 
 class AdditionalStaff(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Credentials: List[str] = Field(None)
     Duration: Union[Number, None] = Field(None)
@@ -52,7 +47,6 @@ class AdditionalStaff(RedoxAbstractModel):
 
 
 class AdditionalUnsignedOrder(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
     Questions: List["Question"] = Field(None)
@@ -60,7 +54,6 @@ class AdditionalUnsignedOrder(RedoxAbstractModel):
 
 
 class Address(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -71,7 +64,6 @@ class Address(RedoxAbstractModel):
 
 
 class AdjudicatedProcedure(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     CodeSet: Union[str, None] = Field(None)
     Modifiers: List[str] = Field(None)
@@ -79,7 +71,6 @@ class AdjudicatedProcedure(RedoxAbstractModel):
 
 
 class AdjudicatedService(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
@@ -87,7 +78,6 @@ class AdjudicatedService(RedoxAbstractModel):
 
 
 class Adjustment(RedoxAbstractModel):
-
     Amount: Union[str, None] = Field(None)
     Quantity: Union[str, None] = Field(None)
     Reason: Union[str, None] = Field(None)
@@ -96,7 +86,6 @@ class Adjustment(RedoxAbstractModel):
 
 
 class AdministeringProvider(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -110,7 +99,6 @@ class AdministeringProvider(RedoxAbstractModel):
 
 
 class Administration(RedoxAbstractModel):
-
     AdministeringProvider: "AdministeringProvider" = Field(None)
     EndDate: Union[str, None] = Field(None)
     Medication: "Medication" = Field(...)
@@ -121,7 +109,6 @@ class Administration(RedoxAbstractModel):
 
 
 class AdmissionDiagnosis(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
@@ -131,10 +118,10 @@ class AdmissionDiagnosis(RedoxAbstractModel):
     IsNegativeIndicator: Union[bool, None] = Field(None)
     Name: Union[str, None] = Field(None)
     StartDate: Union[str, None] = Field(None)
+    Status: "Status" = Field(None)
 
 
 class AdmittingProvider(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -147,7 +134,6 @@ class AdmittingProvider(RedoxAbstractModel):
 
 
 class AdvanceDirective(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
@@ -162,7 +148,6 @@ class AdvanceDirective(RedoxAbstractModel):
 
 
 class Advisory(RedoxAbstractModel):
-
     AdditionalInfo: List["AdditionalInfo"] = Field(None)
     AdditionalUnsignedOrders: List["AdditionalUnsignedOrder"] = Field(None)
     Description: Union[str, None] = Field(None)
@@ -174,7 +159,6 @@ class Advisory(RedoxAbstractModel):
 
 
 class Allergy(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
@@ -184,6 +168,7 @@ class Allergy(RedoxAbstractModel):
     Comments: List["Comment"] = Field(None)
     Criticality: "Criticality" = Field(None)
     EndDate: Union[str, None] = Field(None)
+    IsNegativeIndicator: Union[bool, None] = Field(None)
     Name: Union[str, None] = Field(None)
     OnsetDateTime: Union[str, None] = Field(None)
     Reaction: List["Reaction"] = Field(None)
@@ -195,7 +180,6 @@ class Allergy(RedoxAbstractModel):
 
 
 class AltCode(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
@@ -203,7 +187,6 @@ class AltCode(RedoxAbstractModel):
 
 
 class Answer(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Comment: Union[str, None] = Field(None)
@@ -211,7 +194,6 @@ class Answer(RedoxAbstractModel):
 
 
 class AppointmentInfo(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
@@ -219,12 +201,10 @@ class AppointmentInfo(RedoxAbstractModel):
 
 
 class Assessment(RedoxAbstractModel):
-
     Diagnoses: List["Diagnosis"] = Field(None)
 
 
 class Assignee(RedoxAbstractModel):
-
     ContentType: Union[str, None] = Field(None)
     Learner: Union[str, None] = Field(None)
     Notes: List[str] = Field(None)
@@ -233,7 +213,6 @@ class Assignee(RedoxAbstractModel):
 
 
 class Assignment(RedoxAbstractModel):
-
     ActionDateTime: Union[str, None] = Field(None)
     ActionStatus: Union[str, None] = Field(None)
     Assignees: List["Assignee"] = Field(None)
@@ -247,7 +226,6 @@ class Assignment(RedoxAbstractModel):
 
 
 class AttendingProvider(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -261,7 +239,6 @@ class AttendingProvider(RedoxAbstractModel):
 
 
 class Attributes(RedoxAbstractModel):
-
     Actor: "Actor" = Field(None)
     PurposeOfUse: List["PurposeOfUse"] = Field(None)
     Roles: List["Role"] = Field(None)
@@ -271,7 +248,6 @@ class Attributes(RedoxAbstractModel):
 
 
 class Authenticator(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -284,7 +260,6 @@ class Authenticator(RedoxAbstractModel):
 
 
 class Author(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -298,7 +273,6 @@ class Author(RedoxAbstractModel):
 
 
 class Authorization(RedoxAbstractModel):
-
     AdditionalDates: List["AdditionalDate"] = Field(None)
     AdmissionSource: Union[str, None] = Field(None)
     AdmissionType: Union[str, None] = Field(None)
@@ -334,7 +308,6 @@ class Authorization(RedoxAbstractModel):
 
 
 class AuthorizingProvider(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -347,14 +320,12 @@ class AuthorizingProvider(RedoxAbstractModel):
 
 
 class Availability(RedoxAbstractModel):
-
     AvailableEndTime: Union[str, None] = Field(None)
     AvailableStartTime: Union[str, None] = Field(None)
     Days: List[str] = Field(None)
 
 
 class AvailableSlot(RedoxAbstractModel):
-
     DateTime: str = Field(...)
     Duration: Number = Field(...)
     ID: Union[str, None] = Field(None)
@@ -365,7 +336,6 @@ class AvailableSlot(RedoxAbstractModel):
 
 
 class BillingProvider(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     EmailAddress: Union[str, None] = Field(None)
     FirstName: Union[str, None] = Field(None)
@@ -382,14 +352,12 @@ class BillingProvider(RedoxAbstractModel):
 
 
 class BodySite(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
 
 
 class CareTeam(RedoxAbstractModel):
-
     Encounter: "Encounter" = Field(None)
     Members: List["Member"] = Field(None)
     Name: Union[str, None] = Field(None)
@@ -399,8 +367,8 @@ class CareTeam(RedoxAbstractModel):
 
 
 class Category(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
+    CertaintyScore: Number = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
@@ -408,7 +376,6 @@ class Category(RedoxAbstractModel):
 
 
 class Chargeable(RedoxAbstractModel):
-
     Amount: Union[Number, None] = Field(None)
     Code: str = Field(...)
     Codeset: Union[str, None] = Field(None)
@@ -417,7 +384,6 @@ class Chargeable(RedoxAbstractModel):
 
 
 class Claim(RedoxAbstractModel):
-
     AdditionalDates: List["AdditionalDate"] = Field(None)
     Adjustments: List["Adjustment"] = Field(None)
     BenefitsAssignmentCode: Union[bool, None] = Field(None)
@@ -451,7 +417,6 @@ class Claim(RedoxAbstractModel):
 
 
 class ClinicalInfo(RedoxAbstractModel):
-
     Abbreviation: Union[str, None] = Field(None)
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
@@ -465,15 +430,15 @@ class ClinicalInfo(RedoxAbstractModel):
 
 
 class Code(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
+    MatchPriority: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
+    Variants: List["Variant"] = Field(None)
 
 
 class CodedValue(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
@@ -482,12 +447,10 @@ class CodedValue(RedoxAbstractModel):
 
 
 class Comment(RedoxAbstractModel):
-
     Text: Union[str, None] = Field(None)
 
 
 class Company(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
@@ -496,13 +459,11 @@ class Company(RedoxAbstractModel):
 
 
 class Completion(RedoxAbstractModel):
-
     EndDateTime: Union[str, None] = Field(None)
     StartDateTime: Union[str, None] = Field(None)
 
 
 class Component(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
@@ -514,8 +475,14 @@ class Component(RedoxAbstractModel):
     Value: Union[str, None] = Field(None)
 
 
-class Condition(RedoxAbstractModel):
+class Concept(RedoxAbstractModel):
+    CertaintyScore: Number = Field(...)
+    Code: Union[str, None] = Field(None)
+    Codeset: Union[str, None] = Field(None)
+    Description: Union[str, None] = Field(None)
 
+
+class Condition(RedoxAbstractModel):
     AltCodes: List["AltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
@@ -524,7 +491,6 @@ class Condition(RedoxAbstractModel):
 
 
 class Confidentiality(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
@@ -532,20 +498,17 @@ class Confidentiality(RedoxAbstractModel):
 
 
 class ConnectionType(RedoxAbstractModel):
-
     System: Union[str, None] = Field(None)
     Value: Union[str, None] = Field(None)
 
 
 class Consent(RedoxAbstractModel):
-
     EffectiveDate: Union[str, None] = Field(None)
     Notification: Union[str, None] = Field(None)
     Status: Union[str, None] = Field(None)
 
 
 class ConsultingProvider(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -559,7 +522,6 @@ class ConsultingProvider(RedoxAbstractModel):
 
 
 class Contact(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     EmailAddresses: List[str] = Field(None)
     FirstName: Union[str, None] = Field(None)
@@ -573,7 +535,6 @@ class Contact(RedoxAbstractModel):
 
 
 class Coordinator(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -586,7 +547,6 @@ class Coordinator(RedoxAbstractModel):
 
 
 class Criticality(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
@@ -594,19 +554,17 @@ class Criticality(RedoxAbstractModel):
 
 
 class Custodian(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Credentials: Union[str, None] = Field(None)
     FirstName: Union[str, None] = Field(None)
     Identifiers: List["Identifier"] = Field(None)
     LastName: Union[str, None] = Field(None)
-    Name: Union[None] = Field(None)
+    Name: Union[str, None] = Field(None)
     Telecom: List["Telecom"] = Field(None)
     Type: "Type" = Field(None)
 
 
 class Cycle(RedoxAbstractModel):
-
     Days: List["Day"] = Field(None)
     Description: Union[str, None] = Field(None)
     EndDate: Union[str, None] = Field(None)
@@ -616,7 +574,6 @@ class Cycle(RedoxAbstractModel):
 
 
 class Day(RedoxAbstractModel):
-
     ActivityDateTime: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
     EarliestDateTime: Union[str, None] = Field(None)
@@ -627,14 +584,12 @@ class Day(RedoxAbstractModel):
 
 
 class DecisionSupport(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
 
 
 class Demographics(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Addresses: List["Address"] = Field(None)
     Citizenship: List[str] = Field(None)
@@ -661,31 +616,31 @@ class Demographics(RedoxAbstractModel):
 
 
 class Department(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
-class Design(RedoxAbstractModel):
+class DepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class Design(RedoxAbstractModel):
     Phase: Union[str, None] = Field(None)
     Purpose: Union[str, None] = Field(None)
 
 
 class Destination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class Device(RedoxAbstractModel):
-
     ID: str = Field(...)
 
 
 class Diagnosis(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
@@ -696,15 +651,17 @@ class Diagnosis(RedoxAbstractModel):
     DateTime: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
     DocumentedDateTime: Union[str, None] = Field(None)
+    EndDate: Union[str, None] = Field(None)
     IsNegativeIndicator: Union[bool, None] = Field(None)
     Name: Union[str, None] = Field(None)
     Notes: List[str] = Field(None)
+    StartDate: Union[str, None] = Field(None)
+    Status: "Status" = Field(None)
     Type: Union[str, None] = Field(None)
     Value: Union[str, None] = Field(None)
 
 
 class DischargeDiagnosis(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
@@ -714,10 +671,10 @@ class DischargeDiagnosis(RedoxAbstractModel):
     IsNegativeIndicator: Union[bool, None] = Field(None)
     Name: Union[str, None] = Field(None)
     StartDate: Union[str, None] = Field(None)
+    Status: "Status" = Field(None)
 
 
 class DischargeDisposition(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
@@ -726,15 +683,15 @@ class DischargeDisposition(RedoxAbstractModel):
 
 
 class DischargeLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List["DepartmentIdentifier"] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List["FacilityIdentifier"] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
 class DischargeMedication(RedoxAbstractModel):
-
     Dose: "Dose" = Field(None)
     EndDate: Union[str, None] = Field(None)
     FreeTextSig: Union[str, None] = Field(None)
@@ -752,25 +709,23 @@ class DischargeMedication(RedoxAbstractModel):
 
 
 class DischargeStatus(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
 
 
 class Dispense(RedoxAbstractModel):
-
     Amount: Union[Number, None] = Field(None)
     Units: Union[str, None] = Field(None)
 
 
 class Document(RedoxAbstractModel):
-
     Author: "Author" = Field(None)
     Confidentiality: "Confidentiality" = Field(None)
     Custodian: "Custodian" = Field(None)
     DateTime: Union[str, None] = Field(None)
     EndDate: Union[str, None] = Field(None)
+    FileType: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
     Locale: Union[str, None] = Field(None)
     Location: "Location" = Field(None)
@@ -783,20 +738,17 @@ class Document(RedoxAbstractModel):
 
 
 class Dose(RedoxAbstractModel):
-
     Quantity: Union[Number, str, None] = Field(None)
     Units: Union[str, None] = Field(None)
 
 
 class Drug(RedoxAbstractModel):
-
     NDC: Union[str, None] = Field(None)
     PrescriptionID: Union[str, None] = Field(None)
     Quantity: "Quantity" = Field(None)
 
 
 class Education(RedoxAbstractModel):
-
     ActionDateTime: Union[str, None] = Field(None)
     ActionStatus: Union[str, None] = Field(None)
     Assignments: List["Assignment"] = Field(None)
@@ -807,26 +759,22 @@ class Education(RedoxAbstractModel):
 
 
 class Eligibility(RedoxAbstractModel):
-
     Gender: Union[str, None] = Field(None)
     MaximumAge: Union[Number, None] = Field(None)
     MinimumAge: Union[Number, None] = Field(None)
 
 
 class EmailAddress(RedoxAbstractModel):
-
     Address: Union[str, None] = Field(None)
 
 
 class Employer(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Name: Union[str, None] = Field(None)
     PhoneNumber: Union[str, None] = Field(None)
 
 
 class Encounter(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
@@ -845,7 +793,6 @@ class Encounter(RedoxAbstractModel):
 
 
 class Endpoint(RedoxAbstractModel):
-
     Address: Union[str, None] = Field(None)
     Attributes: "Attributes" = Field(None)
     ConnectionType: "ConnectionType" = Field(None)
@@ -855,7 +802,6 @@ class Endpoint(RedoxAbstractModel):
 
 
 class Enrollment(RedoxAbstractModel):
-
     Coordinators: List["Coordinator"] = Field(None)
     EndDateTime: Union[str, None] = Field(None)
     StartDateTime: Union[str, None] = Field(None)
@@ -863,7 +809,6 @@ class Enrollment(RedoxAbstractModel):
 
 
 class EnteredBy(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -875,8 +820,22 @@ class EnteredBy(RedoxAbstractModel):
     PhoneNumber: "PhoneNumber" = Field(None)
 
 
-class Equipment(RedoxAbstractModel):
+class Entry(RedoxAbstractModel):
+    Category: "Category" = Field(...)
+    Code: Union[str, None] = Field(None)
+    Codeset: Union[str, None] = Field(None)
+    Concept: "Concept" = Field(None)
+    Description: Union[str, None] = Field(None)
+    EntryID: Union[str, None] = Field(None)
+    Error: "Error" = Field(None)
+    Normalization: List["Normalization"] = Field(None)
+    Status: str = Field(None)
+    Submitted: "Submitted" = Field(None)
+    Text: "Text" = Field(None)
+    Transaction: "Transaction" = Field(None)
 
+
+class Equipment(RedoxAbstractModel):
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
@@ -885,28 +844,35 @@ class Equipment(RedoxAbstractModel):
 
 
 class Error(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
+    Message: Union[str, None] = Field(None)
 
 
 class EthnicGroupCode(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
-class FamilyHistory(RedoxAbstractModel):
+class ExtendedProperty(RedoxAbstractModel):
+    Category: Union[str, None] = Field(None)
+    Properties: List["Property"] = Field(None)
 
+
+class FacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class FamilyHistory(RedoxAbstractModel):
     Problems: List["Problem"] = Field(None)
     Relation: "Relation" = Field(None)
 
 
 class Frequency(RedoxAbstractModel):
-
     EventCode: Union[str, None] = Field(None)
     InstitutionSpecified: Union[bool, None] = Field(None)
     Period: Union[Number, str, None] = Field(None)
@@ -915,13 +881,11 @@ class Frequency(RedoxAbstractModel):
 
 
 class FunctionalStatus(RedoxAbstractModel):
-
     Observations: List["Observation"] = Field(None)
     Supplies: List["Supply"] = Field(None)
 
 
 class Goal(RedoxAbstractModel):
-
     AchievementStatus: "AchievementStatus" = Field(None)
     AltCodes: List["AltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
@@ -940,7 +904,6 @@ class Goal(RedoxAbstractModel):
 
 
 class Guarantor(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     DOB: Union[str, None] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -958,16 +921,14 @@ class Guarantor(RedoxAbstractModel):
 
 
 class Header(RedoxAbstractModel):
-
-    DirectAddressFrom: Union[None] = Field(None)
-    DirectAddressTo: Union[None] = Field(None)
+    DirectAddressFrom: Union[str, None] = Field(None)
+    DirectAddressTo: Union[str, None] = Field(None)
     Document: "Document" = Field(None)
     PCP: "PCP" = Field(None)
     Patient: "Patient" = Field(None)
 
 
 class HealthConcern(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
     Category: "Category" = Field(None)
     Code: Union[str, None] = Field(None)
@@ -981,12 +942,11 @@ class HealthConcern(RedoxAbstractModel):
     StartDate: Union[str, None] = Field(None)
     Status: Union[str, None] = Field(None)
     TargetSite: "TargetSite" = Field(None)
-    Units: Union[None] = Field(None)
-    Value: Union[None] = Field(None)
+    Units: Union[str, None] = Field(None)
+    Value: Union[str, None] = Field(None)
 
 
 class HealthStatus(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
@@ -995,7 +955,6 @@ class HealthStatus(RedoxAbstractModel):
 
 
 class Identifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
     System: Union[str, None] = Field(None)
@@ -1004,7 +963,6 @@ class Identifier(RedoxAbstractModel):
 
 
 class Immunization(RedoxAbstractModel):
-
     DateTime: Union[str, None] = Field(None)
     Dose: "Dose" = Field(None)
     Product: "Product" = Field(None)
@@ -1013,7 +971,6 @@ class Immunization(RedoxAbstractModel):
 
 
 class Indication(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
@@ -1023,8 +980,16 @@ class Indication(RedoxAbstractModel):
     Name: Union[str, None] = Field(None)
 
 
-class Insurance(RedoxAbstractModel):
+class Instruction(RedoxAbstractModel):
+    AltCodes: List["AltCode"] = Field(None)
+    Code: Union[str, None] = Field(None)
+    CodeSystem: Union[str, None] = Field(None)
+    CodeSystemName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
+    Text: Union[str, None] = Field(None)
 
+
+class Insurance(RedoxAbstractModel):
     AgreementType: Union[str, None] = Field(None)
     Company: "Company" = Field(None)
     CoverageType: Union[str, None] = Field(None)
@@ -1040,7 +1005,6 @@ class Insurance(RedoxAbstractModel):
 
 
 class Insured(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     DOB: Union[str, None] = Field(None)
     FirstName: Union[str, None] = Field(None)
@@ -1053,7 +1017,6 @@ class Insured(RedoxAbstractModel):
 
 
 class Item(RedoxAbstractModel):
-
     ContainsLatex: Union[bool, None] = Field(None)
     Description: Union[str, None] = Field(None)
     Identifiers: List["Identifier"] = Field(...)
@@ -1075,13 +1038,18 @@ class Item(RedoxAbstractModel):
 
 
 class LastUpdated(RedoxAbstractModel):
-
     EndDateTime: Union[str, None] = Field(None)
     StartDateTime: Union[str, None] = Field(None)
 
 
-class Line(RedoxAbstractModel):
+class LexicalReference(RedoxAbstractModel):
+    Code: Union[str, None] = Field(None)
+    DefaultCode: Union[str, None] = Field(None)
+    DefaultName: Union[str, None] = Field(None)
+    Name: Union[str, None] = Field(None)
 
+
+class Line(RedoxAbstractModel):
     Amount: Union[str, None] = Field(None)
     Diagnoses: List["Diagnosis"] = Field(None)
     ID: Union[str, None] = Field(None)
@@ -1096,14 +1064,15 @@ class Line(RedoxAbstractModel):
 
 
 class Location(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Bed: Union[str, None] = Field(None)
     Bin: Union[str, None] = Field(None)
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List["DepartmentIdentifier"] = Field(None)
     Description: Union[str, None] = Field(None)
     EmailAddresses: List[str] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List["FacilityIdentifier"] = Field(None)
     ID: Union[str, None] = Field(None)
     Identifiers: List["Identifier"] = Field(None)
     Name: Union[str, None] = Field(None)
@@ -1116,20 +1085,23 @@ class Location(RedoxAbstractModel):
 
 
 class Log(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class Manufacturer(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
-class Media(RedoxAbstractModel):
+class Match(RedoxAbstractModel):
+    Codes: List["Code"] = Field(None)
+    Codeset: Union[str, None] = Field(None)
+    Status: Union[str, None] = Field(None)
 
+
+class Media(RedoxAbstractModel):
     Authenticated: Union[str, None] = Field(None)
     Authenticator: "Authenticator" = Field(None)
     Availability: str = Field(...)
@@ -1149,7 +1121,6 @@ class Media(RedoxAbstractModel):
 
 
 class MedicalEquipment(RedoxAbstractModel):
-
     Comments: List["Comment"] = Field(None)
     Procedure: "Procedure" = Field(None)
     Product: "Product" = Field(None)
@@ -1159,7 +1130,6 @@ class MedicalEquipment(RedoxAbstractModel):
 
 
 class Medication(RedoxAbstractModel):
-
     Components: List["Component"] = Field(None)
     Dispense: "Dispense" = Field(None)
     Dose: "Dose" = Field(None)
@@ -1181,7 +1151,6 @@ class Medication(RedoxAbstractModel):
 
 
 class MedicationAdministration(RedoxAbstractModel):
-
     Dose: "Dose" = Field(None)
     EndDate: Union[str, None] = Field(None)
     Frequency: "Frequency" = Field(None)
@@ -1193,7 +1162,6 @@ class MedicationAdministration(RedoxAbstractModel):
 
 
 class MedicationsAdministered(RedoxAbstractModel):
-
     Dose: "Dose" = Field(None)
     EndDate: Union[str, None] = Field(None)
     Frequency: "Frequency" = Field(None)
@@ -1205,7 +1173,6 @@ class MedicationsAdministered(RedoxAbstractModel):
 
 
 class Medium(RedoxAbstractModel):
-
     CreationDateTime: Union[str, None] = Field(None)
     DocumentDescription: Union[str, None] = Field(None)
     DocumentID: Union[str, None] = Field(None)
@@ -1219,7 +1186,6 @@ class Medium(RedoxAbstractModel):
 
 
 class Member(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Credentials: List[str] = Field(None)
     EndDateTime: Union[str, None] = Field(None)
@@ -1233,12 +1199,10 @@ class Member(RedoxAbstractModel):
 
 
 class Message(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class Meta(RedoxAbstractModel):
-
     BatchID: Union[str, None] = Field(None)
     CanceledEvent: Union[str, None] = Field(None)
     CurrentBatch: Union[str, None] = Field(None)
@@ -1259,7 +1223,6 @@ class Meta(RedoxAbstractModel):
 
 
 class Milestone(RedoxAbstractModel):
-
     AchievementStatus: "AchievementStatus" = Field(None)
     AltCodes: List["AltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
@@ -1276,26 +1239,28 @@ class Milestone(RedoxAbstractModel):
 
 
 class MixtureComponent(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     CodeType: Union[str, None] = Field(None)
     Dose: "Dose" = Field(None)
 
 
 class NDC(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
 
 
 class NameSearch(RedoxAbstractModel):
-
     SearchType: Union[str, None] = Field(None)
     Value: Union[str, None] = Field(None)
 
 
-class Note(RedoxAbstractModel):
+class Normalization(RedoxAbstractModel):
+    LexicalReference: "LexicalReference" = Field(None)
+    Matches: List["Match"] = Field(None)
+    Score: "Score" = Field(None)
 
+
+class Note(RedoxAbstractModel):
     AltCodes: List["AltCode"] = Field(None)
     Authenticator: "Authenticator" = Field(None)
     Availability: Union[str, None] = Field(None)
@@ -1326,7 +1291,6 @@ class Note(RedoxAbstractModel):
 
 
 class NoteSection(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
@@ -1338,7 +1302,6 @@ class NoteSection(RedoxAbstractModel):
 
 
 class Notification(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -1351,7 +1314,6 @@ class Notification(RedoxAbstractModel):
 
 
 class Observation(RedoxAbstractModel):
-
     AbnormalFlag: Union[str, None] = Field(None)
     AltCodes: List["AltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
@@ -1378,14 +1340,12 @@ class Observation(RedoxAbstractModel):
 
 
 class ObservationMethod(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
 
 
 class Observer(RedoxAbstractModel):
-
     FirstName: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
@@ -1393,7 +1353,6 @@ class Observer(RedoxAbstractModel):
 
 
 class Order(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
     ApplicationOrderID: Union[str, None] = Field(None)
     ClinicalInfo: List["ClinicalInfo"] = Field(None)
@@ -1432,7 +1391,6 @@ class Order(RedoxAbstractModel):
 
 
 class OrderedBy(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -1445,14 +1403,12 @@ class OrderedBy(RedoxAbstractModel):
 
 
 class OrderingFacility(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Name: Union[str, None] = Field(None)
     PhoneNumber: Union[str, None] = Field(None)
 
 
 class OrderingProvider(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -1465,7 +1421,6 @@ class OrderingProvider(RedoxAbstractModel):
 
 
 class Organization(RedoxAbstractModel):
-
     Active: bool = Field(None)
     Address: "Address" = Field(None)
     Aliases: List[str] = Field(None)
@@ -1482,7 +1437,6 @@ class Organization(RedoxAbstractModel):
 
 
 class PCP(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -1497,18 +1451,15 @@ class PCP(RedoxAbstractModel):
 
 
 class Paging(RedoxAbstractModel):
-
     Count: Union[Number, None] = Field(None)
     Index: Union[Number, None] = Field(None)
 
 
 class PartOf(RedoxAbstractModel):
-
     Identifier: "Identifier" = Field(None)
 
 
 class Patient(RedoxAbstractModel):
-
     Allergies: List["Allergy"] = Field(None)
     Claims: List["Claim"] = Field(None)
     Consent: "Consent" = Field(None)
@@ -1530,7 +1481,6 @@ class Patient(RedoxAbstractModel):
 
 
 class Payee(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     EmailAddress: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
@@ -1540,7 +1490,6 @@ class Payee(RedoxAbstractModel):
 
 
 class Payer(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     EmailAddress: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
@@ -1550,7 +1499,6 @@ class Payer(RedoxAbstractModel):
 
 
 class Payment(RedoxAbstractModel):
-
     Claim: "Claim" = Field(None)
     Claims: List["Claim"] = Field(None)
     DateTime: Union[str, None] = Field(None)
@@ -1558,7 +1506,6 @@ class Payment(RedoxAbstractModel):
 
 
 class Performer(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -1571,7 +1518,6 @@ class Performer(RedoxAbstractModel):
 
 
 class Pharmacy(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
@@ -1580,7 +1526,6 @@ class Pharmacy(RedoxAbstractModel):
 
 
 class PhoneNumber(RedoxAbstractModel):
-
     Business: Union[str, None] = Field(None)
     Fax: Union[str, None] = Field(None)
     Home: Union[str, None] = Field(None)
@@ -1590,7 +1535,6 @@ class PhoneNumber(RedoxAbstractModel):
 
 
 class Plan(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
@@ -1598,7 +1542,6 @@ class Plan(RedoxAbstractModel):
 
 
 class PlanOfCare(RedoxAbstractModel):
-
     Encounters: List["Encounter"] = Field(None)
     MedicationAdministration: List["MedicationAdministration"] = Field(None)
     Orders: List["Order"] = Field(None)
@@ -1607,8 +1550,12 @@ class PlanOfCare(RedoxAbstractModel):
     Supplies: List["Supply"] = Field(None)
 
 
-class PotentialMatch(RedoxAbstractModel):
+class Position(RedoxAbstractModel):
+    BeginOffset: Number = Field(...)
+    EndOffset: Number = Field(...)
 
+
+class PotentialMatch(RedoxAbstractModel):
     Contacts: List["Contact"] = Field(None)
     Demographics: "Demographics" = Field(None)
     Guarantor: "Guarantor" = Field(None)
@@ -1619,7 +1566,6 @@ class PotentialMatch(RedoxAbstractModel):
 
 
 class Pregnancy(RedoxAbstractModel):
-
     Comments: List["Comment"] = Field(None)
     EndDate: Union[str, None] = Field(None)
     EstimatedDelivery: Union[str, None] = Field(None)
@@ -1627,23 +1573,22 @@ class Pregnancy(RedoxAbstractModel):
 
 
 class PreviousIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class PreviousLocation(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Bed: Union[str, None] = Field(None)
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List["DepartmentIdentifier"] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List["FacilityIdentifier"] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
 class PrimaryResultsInterpreter(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -1657,7 +1602,6 @@ class PrimaryResultsInterpreter(RedoxAbstractModel):
 
 
 class PrincipalInvestigator(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -1670,7 +1614,6 @@ class PrincipalInvestigator(RedoxAbstractModel):
 
 
 class Priority(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
@@ -1678,7 +1621,6 @@ class Priority(RedoxAbstractModel):
 
 
 class Problem(RedoxAbstractModel):
-
     AgeAtOnset: Union[str, None] = Field(None)
     AltCodes: List["AltCode"] = Field(None)
     Category: "Category" = Field(None)
@@ -1698,7 +1640,6 @@ class Problem(RedoxAbstractModel):
 
 
 class Procedure(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
     Authorization: "Authorization" = Field(None)
     Code: Union[str, None] = Field(None)
@@ -1725,20 +1666,17 @@ class Procedure(RedoxAbstractModel):
 
 
 class ProcedureInfo(RedoxAbstractModel):
-
     Description: Union[str, None] = Field(None)
     Value: Union[str, None] = Field(None)
 
 
 class Procedures(RedoxAbstractModel):
-
     Observations: List["Observation"] = Field(None)
     Procedures: List["Procedure"] = Field(None)
     Services: List["Service"] = Field(None)
 
 
 class Producer(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
@@ -1746,7 +1684,6 @@ class Producer(RedoxAbstractModel):
 
 
 class Product(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
     BrandName: Union[str, None] = Field(None)
     CatalogNumber: Union[str, None] = Field(None)
@@ -1771,8 +1708,12 @@ class Product(RedoxAbstractModel):
     Status: "Status" = Field(None)
 
 
-class Protocol(RedoxAbstractModel):
+class Property(RedoxAbstractModel):
+    Property: Union[str, None] = Field(None)
+    Value: Union[str, None] = Field(None)
 
+
+class Protocol(RedoxAbstractModel):
     Cycles: List["Cycle"] = Field(None)
     Description: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
@@ -1780,7 +1721,6 @@ class Protocol(RedoxAbstractModel):
 
 
 class Provider(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     ContactInfo: Union[str, None] = Field(None)
     Credentials: List[str] = Field(None)
@@ -1804,13 +1744,11 @@ class Provider(RedoxAbstractModel):
 
 
 class PurposeOfUse(RedoxAbstractModel):
-
     System: Union[str, None] = Field(None)
     Value: Union[str, None] = Field(None)
 
 
 class Qualification(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
@@ -1820,13 +1758,11 @@ class Qualification(RedoxAbstractModel):
 
 
 class Quantity(RedoxAbstractModel):
-
     Units: Union[str, None] = Field(None)
     Value: Union[str, None] = Field(None)
 
 
 class Question(RedoxAbstractModel):
-
     Answer: "Answer" = Field(None)
     Answers: List["Answer"] = Field(None)
     Code: Union[str, None] = Field(None)
@@ -1836,7 +1772,6 @@ class Question(RedoxAbstractModel):
 
 
 class RaceCode(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
@@ -1844,19 +1779,16 @@ class RaceCode(RedoxAbstractModel):
 
 
 class RadiusSearch(RedoxAbstractModel):
-
     Radius: Union[str, None] = Field(None)
     ZipCode: Union[str, None] = Field(None)
 
 
 class Rate(RedoxAbstractModel):
-
     Quantity: Union[Number, str, None] = Field(None)
     Units: Union[str, None] = Field(None)
 
 
 class Reaction(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
@@ -1868,7 +1800,6 @@ class Reaction(RedoxAbstractModel):
 
 
 class ReasonForVisit(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
     Category: "Category" = Field(None)
     Code: Union[str, None] = Field(None)
@@ -1878,7 +1809,6 @@ class ReasonForVisit(RedoxAbstractModel):
 
 
 class Receiver(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     EmailAddress: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
@@ -1889,21 +1819,18 @@ class Receiver(RedoxAbstractModel):
 
 
 class ReferenceNumber(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
 class ReferenceRange(RedoxAbstractModel):
-
     High: Union[Number, str, None] = Field(None)
     Low: Union[Number, str, None] = Field(None)
     Text: Union[str, None] = Field(None)
 
 
 class Referral(RedoxAbstractModel):
-
     AlternateID: Union[str, None] = Field(None)
     Authorization: "Authorization" = Field(None)
     Category: Union[str, None] = Field(None)
@@ -1930,7 +1857,6 @@ class Referral(RedoxAbstractModel):
 
 
 class ReferringProvider(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -1944,7 +1870,6 @@ class ReferringProvider(RedoxAbstractModel):
 
 
 class Relation(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
@@ -1954,20 +1879,17 @@ class Relation(RedoxAbstractModel):
 
 
 class RemovableUnsignedOrder(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
     Title: Union[str, None] = Field(None)
 
 
 class Request(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class ResolvedProblem(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
     Category: "Category" = Field(None)
     Code: Union[str, None] = Field(None)
@@ -1982,7 +1904,6 @@ class ResolvedProblem(RedoxAbstractModel):
 
 
 class Result(RedoxAbstractModel):
-
     AbnormalFlag: Union[str, None] = Field(None)
     AltCodes: List["AltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
@@ -2010,7 +1931,6 @@ class Result(RedoxAbstractModel):
 
 
 class ResultCopyProvider(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -2024,7 +1944,6 @@ class ResultCopyProvider(RedoxAbstractModel):
 
 
 class Role(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
     Availability: List["Availability"] = Field(None)
     Code: Union[str, None] = Field(None)
@@ -2043,7 +1962,6 @@ class Role(RedoxAbstractModel):
 
 
 class Route(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
@@ -2053,7 +1971,6 @@ class Route(RedoxAbstractModel):
 
 
 class SafetyObservation(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
@@ -2061,8 +1978,12 @@ class SafetyObservation(RedoxAbstractModel):
     Name: Union[str, None] = Field(None)
 
 
-class Service(RedoxAbstractModel):
+class Score(RedoxAbstractModel):
+    Description: Union[str, None] = Field(None)
+    Value: Union[Number, None] = Field(None)
 
+
+class Service(RedoxAbstractModel):
     AdjudicatedProcedure: "AdjudicatedProcedure" = Field(None)
     AdjudicatedService: "AdjudicatedService" = Field(None)
     Adjustments: List["Adjustment"] = Field(None)
@@ -2110,12 +2031,10 @@ class Service(RedoxAbstractModel):
 
 
 class Session(RedoxAbstractModel):
-
     Questions: List["Question"] = Field(None)
 
 
 class Severity(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
@@ -2124,14 +2043,12 @@ class Severity(RedoxAbstractModel):
 
 
 class Site(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class Slot(RedoxAbstractModel):
-
     DateTime: str = Field(...)
     Duration: Number = Field(...)
     ID: Union[str, None] = Field(None)
@@ -2141,14 +2058,12 @@ class Slot(RedoxAbstractModel):
 
 
 class SocialHistory(RedoxAbstractModel):
-
     Observations: List["Observation"] = Field(None)
     Pregnancy: List["Pregnancy"] = Field(None)
     TobaccoUse: List["TobaccoUse"] = Field(None)
 
 
 class Source(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
@@ -2157,7 +2072,6 @@ class Source(RedoxAbstractModel):
 
 
 class Specialty(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
@@ -2165,16 +2079,14 @@ class Specialty(RedoxAbstractModel):
 
 
 class SpecialtyDepartment(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
 
 
 class Specimen(RedoxAbstractModel):
-
     BodySite: Union[str, None] = Field(None)
-    CollectionDateTime: Union[None] = Field(None)
+    CollectionDateTime: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
     Identifiers: List[str] = Field(None)
     Source: Union["Source", str, None] = Field(None)
@@ -2182,19 +2094,16 @@ class Specimen(RedoxAbstractModel):
 
 
 class Sponsor(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class Spouse(RedoxAbstractModel):
-
     FirstName: Union[str, None] = Field(None)
     LastName: Union[str, None] = Field(None)
 
 
 class Status(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
@@ -2202,7 +2111,6 @@ class Status(RedoxAbstractModel):
 
 
 class Study(RedoxAbstractModel):
-
     Conditions: List["Condition"] = Field(None)
     Coordinators: List["Coordinator"] = Field(None)
     Description: Union[str, None] = Field(None)
@@ -2219,20 +2127,25 @@ class Study(RedoxAbstractModel):
 
 
 class Subject(RedoxAbstractModel):
-
     Code: str = Field(...)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
 
 
 class Submission(RedoxAbstractModel):
-
     BillingProvider: "BillingProvider" = Field(None)
     Subscribers: List["Subscriber"] = Field(None)
 
 
-class SubmittedProcedure(RedoxAbstractModel):
+class Submitted(RedoxAbstractModel):
+    Category: str = Field(...)
+    Code: Union[str, None] = Field(None)
+    Codeset: Union[str, None] = Field(None)
+    Description: Union[str, None] = Field(None)
+    EntryID: Union[str, None] = Field(None)
 
+
+class SubmittedProcedure(RedoxAbstractModel):
     Code: Union[str, None] = Field(None)
     CodeSet: Union[str, None] = Field(None)
     Modifiers: List[str] = Field(None)
@@ -2240,7 +2153,6 @@ class SubmittedProcedure(RedoxAbstractModel):
 
 
 class SubmittedService(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
@@ -2248,7 +2160,6 @@ class SubmittedService(RedoxAbstractModel):
 
 
 class Submitter(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     EmailAddress: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
@@ -2259,7 +2170,6 @@ class Submitter(RedoxAbstractModel):
 
 
 class Subscriber(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     DOB: Union[str, None] = Field(None)
     Demographics: "Demographics" = Field(None)
@@ -2278,7 +2188,6 @@ class Subscriber(RedoxAbstractModel):
 
 
 class Substance(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
@@ -2287,7 +2196,6 @@ class Substance(RedoxAbstractModel):
 
 
 class Supply(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
@@ -2298,7 +2206,6 @@ class Supply(RedoxAbstractModel):
 
 
 class SupplyOrder(RedoxAbstractModel):
-
     EndDate: Union[str, None] = Field(None)
     NumberOfRefillsRemaining: Union[Number, None] = Field(None)
     Quantity: Union[str, None] = Field(None)
@@ -2307,7 +2214,6 @@ class SupplyOrder(RedoxAbstractModel):
 
 
 class SurgeryStaff(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Credentials: List[str] = Field(None)
     Duration: Union[Number, None] = Field(None)
@@ -2323,13 +2229,11 @@ class SurgeryStaff(RedoxAbstractModel):
 
 
 class SurgicalCase(RedoxAbstractModel):
-
     Number: Union[str, None] = Field(None)
     Status: Union[str, None] = Field(None)
 
 
 class SurgicalInfo(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
@@ -2337,7 +2241,6 @@ class SurgicalInfo(RedoxAbstractModel):
 
 
 class TargetSite(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
@@ -2345,15 +2248,24 @@ class TargetSite(RedoxAbstractModel):
     Name: Union[str, None] = Field(None)
 
 
-class Telecom(RedoxAbstractModel):
+class Task(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    Message: Union[str, None] = Field(None)
+    Status: str = Field(None)
 
-    System: Union[None] = Field(None)
-    Use: Union[None] = Field(None)
-    Value: Union[None] = Field(None)
+
+class Telecom(RedoxAbstractModel):
+    System: Union[str, None] = Field(None)
+    Use: Union[str, None] = Field(None)
+    Value: Union[str, None] = Field(None)
+
+
+class Text(RedoxAbstractModel):
+    Contents: Union[str, None] = Field(None)
+    Position: "Position" = Field(None)
 
 
 class TobaccoUse(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
@@ -2366,14 +2278,12 @@ class TobaccoUse(RedoxAbstractModel):
 
 
 class Topic(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
 
 
 class Transaction(RedoxAbstractModel):
-
     Chargeable: "Chargeable" = Field(None)
     CreditOrDebit: Union[str, None] = Field(None)
     DateTimeOfService: str = Field(None)
@@ -2393,18 +2303,18 @@ class Transaction(RedoxAbstractModel):
     Receiver: "Receiver" = Field(None)
     Submissions: List["Submission"] = Field(None)
     Submitter: "Submitter" = Field(None)
+    Task: "Task" = Field(None)
     TotalPaymentAmount: Union[str, None] = Field(None)
     TrackingNumber: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
+    VendorID: str = Field(None)
 
 
 class Transmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class Type(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
@@ -2416,7 +2326,6 @@ class Type(RedoxAbstractModel):
 
 
 class TypeCode(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
     CodeSystemName: Union[str, None] = Field(None)
@@ -2424,7 +2333,6 @@ class TypeCode(RedoxAbstractModel):
 
 
 class UnsignedMedicationOrder(RedoxAbstractModel):
-
     Dose: "Dose" = Field(None)
     EndDate: Union[str, None] = Field(None)
     Frequency: "Frequency" = Field(None)
@@ -2436,12 +2344,11 @@ class UnsignedMedicationOrder(RedoxAbstractModel):
     Priority: Union[str, None] = Field(None)
     Product: "Product" = Field(None)
     Questions: List["Question"] = Field(None)
-    Route: Union[None] = Field(None)
+    Route: Union[str, None] = Field(None)
     StartDate: Union[str, None] = Field(None)
 
 
 class UnsignedProcedureOrder(RedoxAbstractModel):
-
     BodySite: "BodySite" = Field(None)
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
@@ -2456,13 +2363,11 @@ class UnsignedProcedureOrder(RedoxAbstractModel):
 
 
 class UseCase(RedoxAbstractModel):
-
     System: Union[str, None] = Field(None)
     Value: Union[str, None] = Field(None)
 
 
 class Vaccination(RedoxAbstractModel):
-
     Action: str = Field(None)
     ClinicalInfo: List["ClinicalInfo"] = Field(None)
     DateTime: Union[str, None] = Field(None)
@@ -2478,7 +2383,6 @@ class Vaccination(RedoxAbstractModel):
 
 
 class Value(RedoxAbstractModel):
-
     AltCodes: List["AltCode"] = Field(None)
     Code: Union[str, None] = Field(None)
     CodeSystem: Union[str, None] = Field(None)
@@ -2486,15 +2390,20 @@ class Value(RedoxAbstractModel):
     Name: Union[str, None] = Field(None)
 
 
-class Vendor(RedoxAbstractModel):
+class Variant(RedoxAbstractModel):
+    ExtendedProperties: List["ExtendedProperty"] = Field(None)
+    Title: Union[str, None] = Field(None)
+    TitleStatus: Union[str, None] = Field(None)
+    TitleType: Union[str, None] = Field(None)
 
+
+class Vendor(RedoxAbstractModel):
     CatalogNumber: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class VerifiedBy(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Credentials: Union[List[str], str, None] = Field(None)
     DateTime: Union[str, None] = Field(None)
@@ -2508,13 +2417,11 @@ class VerifiedBy(RedoxAbstractModel):
 
 
 class Version(RedoxAbstractModel):
-
     System: Union[str, None] = Field(None)
     Value: Union[str, None] = Field(None)
 
 
 class Visit(RedoxAbstractModel):
-
     AccountNumber: Union[str, None] = Field(None)
     AdditionalStaff: List["AdditionalStaff"] = Field(None)
     AdmittingProvider: "AdmittingProvider" = Field(None)
@@ -2567,7 +2474,6 @@ class Visit(RedoxAbstractModel):
 
 
 class VisitPreference(RedoxAbstractModel):
-
     Day: List[str] = Field(None)
     Duration: Union[str, None] = Field(None)
     DurationUnit: Union[str, None] = Field(None)
@@ -2575,7 +2481,6 @@ class VisitPreference(RedoxAbstractModel):
 
 
 class VisitProvider(RedoxAbstractModel):
-
     Address: "Address" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -2588,14 +2493,12 @@ class VisitProvider(RedoxAbstractModel):
 
 
 class VisitType(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
 
 
 class VitalSign(RedoxAbstractModel):
-
     DateTime: Union[str, None] = Field(None)
     Observations: List["Observation"] = Field(None)
 
@@ -2623,6 +2526,7 @@ BillingProvider.update_forward_refs()
 CareTeam.update_forward_refs()
 Category.update_forward_refs()
 Claim.update_forward_refs()
+Code.update_forward_refs()
 CodedValue.update_forward_refs()
 Company.update_forward_refs()
 Component.update_forward_refs()
@@ -2637,6 +2541,7 @@ Demographics.update_forward_refs()
 Diagnosis.update_forward_refs()
 DischargeDiagnosis.update_forward_refs()
 DischargeDisposition.update_forward_refs()
+DischargeLocation.update_forward_refs()
 DischargeMedication.update_forward_refs()
 Document.update_forward_refs()
 Drug.update_forward_refs()
@@ -2646,6 +2551,8 @@ Encounter.update_forward_refs()
 Endpoint.update_forward_refs()
 Enrollment.update_forward_refs()
 EnteredBy.update_forward_refs()
+Entry.update_forward_refs()
+ExtendedProperty.update_forward_refs()
 FamilyHistory.update_forward_refs()
 FunctionalStatus.update_forward_refs()
 Goal.update_forward_refs()
@@ -2655,11 +2562,13 @@ HealthConcern.update_forward_refs()
 HealthStatus.update_forward_refs()
 Immunization.update_forward_refs()
 Indication.update_forward_refs()
+Instruction.update_forward_refs()
 Insurance.update_forward_refs()
 Insured.update_forward_refs()
 Item.update_forward_refs()
 Line.update_forward_refs()
 Location.update_forward_refs()
+Match.update_forward_refs()
 Media.update_forward_refs()
 MedicalEquipment.update_forward_refs()
 Medication.update_forward_refs()
@@ -2670,6 +2579,7 @@ Member.update_forward_refs()
 Meta.update_forward_refs()
 Milestone.update_forward_refs()
 MixtureComponent.update_forward_refs()
+Normalization.update_forward_refs()
 Note.update_forward_refs()
 NoteSection.update_forward_refs()
 Notification.update_forward_refs()
@@ -2727,6 +2637,7 @@ Substance.update_forward_refs()
 Supply.update_forward_refs()
 SurgeryStaff.update_forward_refs()
 TargetSite.update_forward_refs()
+Text.update_forward_refs()
 TobaccoUse.update_forward_refs()
 Transaction.update_forward_refs()
 Type.update_forward_refs()
@@ -2734,6 +2645,7 @@ UnsignedMedicationOrder.update_forward_refs()
 UnsignedProcedureOrder.update_forward_refs()
 Vaccination.update_forward_refs()
 Value.update_forward_refs()
+Variant.update_forward_refs()
 VerifiedBy.update_forward_refs()
 Visit.update_forward_refs()
 VisitProvider.update_forward_refs()

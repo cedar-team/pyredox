@@ -6,16 +6,15 @@ from typing import List, Union
 from pydantic import Field
 
 from pyredox import device
-from ..abstract_base import GenericRedoxAbstractModel
+from ..abstract_base import GenericEventTypeAbstractModel
 from . import types as generic
 
 
-class _Device(GenericRedoxAbstractModel):
+class _Device(GenericEventTypeAbstractModel):
     _redox_module = device
 
 
 class New(_Device):
-
     Device: generic.Device = Field(...)
     Meta: generic.Meta = Field(...)
     Observations: List[generic.Observation] = Field(...)
