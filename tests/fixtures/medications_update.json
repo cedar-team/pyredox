@@ -2,7 +2,7 @@
   "Meta": {
     "DataModel": "Medications",
     "EventType": "Update",
-    "EventDateTime": "2022-08-03T18:06:43.597Z",
+    "EventDateTime": "2023-02-27T22:09:03.585Z",
     "Test": true,
     "Source": {
       "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
@@ -96,27 +96,36 @@
     ]
   },
   "Visit": {
-    "VisitDateTime": "2022-08-03T18:06:44.413Z",
+    "VisitDateTime": "2023-02-27T22:09:04.428Z",
     "VisitNumber": "1234",
-    "Location": {},
+    "Location": {
+      "FacilityIdentifiers": [],
+      "DepartmentIdentifiers": []
+    },
     "AttendingProvider": {
       "Credentials": [],
       "Address": {},
       "EmailAddresses": [],
       "PhoneNumber": {},
-      "Location": {}
+      "Location": {
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
+      }
     },
     "ReferringProvider": {
       "Credentials": [],
       "Address": {},
       "EmailAddresses": [],
       "PhoneNumber": {},
-      "Location": {}
+      "Location": {
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
+      }
     },
     "Insurances": []
   },
   "Order": {
-    "ID": "132e63eb-b242-4fe8-90fb-9d541eccb81d",
+    "ID": "a49dcbf6-d4d8-4d99-98c0-cb5079f5811e",
     "Notes": [],
     "Medication": {
       "Dose": {
@@ -139,7 +148,7 @@
         "Name": "Ondansetron 4 Mg Po Tbdp",
         "AltCodes": []
       },
-      "StartDate": "2022-08-03T18:06:43.593Z",
+      "StartDate": "2023-02-27T22:09:03.582Z",
       "Frequency": {
         "Period": 8,
         "Unit": "h"
@@ -168,7 +177,10 @@
       "PhoneNumber": {
         "Office": "+16085551234"
       },
-      "Location": {}
+      "Location": {
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
+      }
     },
     "EnteredBy": {
       "ID": "4356789876",
@@ -190,14 +202,20 @@
       "PhoneNumber": {
         "Office": "+16085551234"
       },
-      "Location": {}
+      "Location": {
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
+      }
     },
     "VerifiedBy": {
       "Credentials": [],
       "Address": {},
       "EmailAddresses": [],
       "PhoneNumber": {},
-      "Location": {}
+      "Location": {
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
+      }
     },
     "Pharmacy": {
       "Code": "1234567",

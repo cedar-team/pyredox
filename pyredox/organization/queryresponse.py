@@ -10,7 +10,6 @@ from ..field_types import Number
 
 
 class QueryResponse(EventTypeAbstractModel):
-
     Directory: str = Field(...)
     Meta: "QueryResponseMeta" = Field(...)
     Organizations: List["QueryResponseOrganization"] = Field(...)
@@ -18,7 +17,6 @@ class QueryResponse(EventTypeAbstractModel):
 
 
 class QueryResponseMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["QueryResponseMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -32,35 +30,29 @@ class QueryResponseMeta(RedoxAbstractModel):
 
 
 class QueryResponseMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class QueryResponseMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class QueryResponseMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class QueryResponseMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class QueryResponseMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class QueryResponseOrganization(RedoxAbstractModel):
-
     Active: bool = Field(...)
     Address: "QueryResponseOrganizationAddress" = Field(None)
     Aliases: List[str] = Field(None)
@@ -73,7 +65,6 @@ class QueryResponseOrganization(RedoxAbstractModel):
 
 
 class QueryResponseOrganizationAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -83,7 +74,6 @@ class QueryResponseOrganizationAddress(RedoxAbstractModel):
 
 
 class QueryResponseOrganizationContact(RedoxAbstractModel):
-
     EmailAddresses: List[str] = Field(None)
     Name: Union[str, None] = Field(None)
     PhoneNumber: "QueryResponseOrganizationContactPhoneNumber" = Field(None)
@@ -91,38 +81,32 @@ class QueryResponseOrganizationContact(RedoxAbstractModel):
 
 
 class QueryResponseOrganizationContactPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Work: Union[str, None] = Field(None)
 
 
 class QueryResponseOrganizationIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class QueryResponseOrganizationPartOf(RedoxAbstractModel):
-
     Identifier: "QueryResponseOrganizationPartOfIdentifier" = Field(None)
 
 
 class QueryResponseOrganizationPartOfIdentifier(RedoxAbstractModel):
-
     System: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
     Value: Union[str, None] = Field(None)
 
 
 class QueryResponseOrganizationType(RedoxAbstractModel):
-
     System: Union[str, None] = Field(None)
     Value: Union[str, None] = Field(None)
 
 
 class QueryResponsePaging(RedoxAbstractModel):
-
     Count: Union[Number, None] = Field(None)
     Index: Union[Number, None] = Field(None)
 

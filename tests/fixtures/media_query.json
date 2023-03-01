@@ -2,8 +2,12 @@
   "Meta": {
     "DataModel": "Media",
     "EventType": "Query",
-    "EventDateTime": "2022-08-03T18:06:43.597Z",
+    "EventDateTime": "2023-02-27T22:09:03.585Z",
     "Test": true,
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
+    },
     "Destinations": [
       {
         "ID": "af394f14-b34a-464f-8d24-895f370af4c9",

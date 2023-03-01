@@ -10,7 +10,7 @@ from ..field_types import Number
 
 
 class Query(EventTypeAbstractModel):
-
+    Active: Union[bool, None] = Field(None)
     Directory: str = Field(...)
     Identifier: "QueryIdentifier" = Field(None)
     Index: Union[str, None] = Field(None)
@@ -23,13 +23,11 @@ class Query(EventTypeAbstractModel):
 
 
 class QueryIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class QueryMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["QueryMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -43,41 +41,34 @@ class QueryMeta(RedoxAbstractModel):
 
 
 class QueryMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class QueryMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class QueryMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class QueryMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class QueryMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class QueryNameSearch(RedoxAbstractModel):
-
     SearchType: Union[str, None] = Field(None)
     Value: Union[str, None] = Field(None)
 
 
 class QueryRadiusSearch(RedoxAbstractModel):
-
     Radius: Union[str, None] = Field(None)
     ZipCode: Union[str, None] = Field(None)
 

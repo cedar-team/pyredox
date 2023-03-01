@@ -2,7 +2,7 @@
   "Meta": {
     "DataModel": "Clinical Summary",
     "EventType": "PatientQueryResponse",
-    "EventDateTime": "2022-08-03T18:06:43.597Z",
+    "EventDateTime": "2023-02-27T22:09:03.585Z",
     "Test": true,
     "Source": {
       "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
@@ -49,7 +49,10 @@
         "PhoneNumber": {
           "Office": "+16085551234"
         },
-        "Location": {}
+        "Location": {
+          "FacilityIdentifiers": [],
+          "DepartmentIdentifiers": []
+        }
       },
       "ID": "75cb4ad4-e5f9-4cd3-8750-eb5050521e0d",
       "Locale": "US",
@@ -153,7 +156,10 @@
       "Address": {},
       "EmailAddresses": [],
       "PhoneNumber": {},
-      "Location": {}
+      "Location": {
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
+      }
     }
   },
   "AdvanceDirectivesText": "<table width=\"100%\"><thead><tr><th>Directive</th><th>Description</th><th>Verification</th><th>Supporting Document(s)</th></tr></thead><tbody><tr><td>Resuscitation status</td><td ID=\"AD1\">Do not resuscitate</td><td>Dr. Robert Dolin, Nov 07, 1999</td><td><linkHtml href=\"AdvanceDirective.b50b7910-7ffb-4f4c-bbe4-177ed68cbbf3.pdf\">Advance directive</linkHtml></td></tr></tbody></table>",
@@ -401,7 +407,10 @@
           "Address": {},
           "EmailAddresses": [],
           "PhoneNumber": {},
-          "Location": {},
+          "Location": {
+            "FacilityIdentifiers": [],
+            "DepartmentIdentifiers": []
+          },
           "Role": {
             "Code": "59058001",
             "CodeSystem": "2.16.840.1.113883.6.96",
@@ -434,11 +443,16 @@
       ],
       "Diagnosis": [
         {
+          "StartDate": "2012-08-06T04:00:00.000Z",
+          "Status": {
+            "Name": "active"
+          },
           "Code": "233604007",
           "CodeSystem": "2.16.840.1.113883.6.96",
           "CodeSystemName": "SNOMED CT",
           "Name": "Pneumonia",
-          "AltCodes": []
+          "AltCodes": [],
+          "Comments": []
         }
       ],
       "ReasonForVisit": [
@@ -1325,7 +1339,8 @@
         "Value": {
           "AltCodes": []
         },
-        "ValueText": "None",
+        "ValueText": "1",
+        "Units": "/d",
         "StartDate": "1990-05-01T04:00:00.000Z",
         "Comments": []
       }

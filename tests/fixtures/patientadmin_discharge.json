@@ -2,7 +2,7 @@
   "Meta": {
     "DataModel": "PatientAdmin",
     "EventType": "Discharge",
-    "EventDateTime": "2022-08-03T18:06:43.597Z",
+    "EventDateTime": "2023-02-27T22:09:03.585Z",
     "Test": true,
     "Source": {
       "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
@@ -142,20 +142,26 @@
       "PhoneNumber": {
         "Office": "+16085551234"
       },
-      "Location": {}
+      "Location": {
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
+      }
     }
   },
   "Visit": {
     "VisitNumber": "1234",
     "PatientClass": "Inpatient",
-    "VisitDateTime": "2022-08-02T18:06:44.549Z",
-    "DischargeDateTime": "2022-08-03T18:06:44.549Z",
+    "VisitDateTime": "2023-02-26T22:09:04.581Z",
+    "DischargeDateTime": "2023-02-27T22:09:04.581Z",
     "DischargeStatus": {
       "Code": "01",
       "Codeset": "UB04FL17",
       "Description": "Discharged to home care or self care (routine discharge)"
     },
-    "DischargeLocation": {},
+    "DischargeLocation": {
+      "FacilityIdentifiers": [],
+      "DepartmentIdentifiers": []
+    },
     "Reason": "Acute post traumatic headache",
     "Instructions": [],
     "AttendingProvider": {
@@ -178,34 +184,48 @@
       "PhoneNumber": {
         "Office": "+16085551234"
       },
-      "Location": {}
+      "Location": {
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
+      }
     },
     "ConsultingProvider": {
       "Credentials": [],
       "Address": {},
       "EmailAddresses": [],
       "PhoneNumber": {},
-      "Location": {}
+      "Location": {
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
+      }
     },
     "ReferringProvider": {
       "Credentials": [],
       "Address": {},
       "EmailAddresses": [],
       "PhoneNumber": {},
-      "Location": {}
+      "Location": {
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
+      }
     },
     "AdmittingProvider": {
       "Credentials": [],
       "Address": {},
       "EmailAddresses": [],
       "PhoneNumber": {},
-      "Location": {}
+      "Location": {
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
+      }
     },
     "AdditionalStaff": [],
     "Location": {
       "Type": "Inpatient",
       "Facility": "RES General Hospital",
+      "FacilityIdentifiers": [],
       "Department": "3N",
+      "DepartmentIdentifiers": [],
       "Room": "136",
       "Bed": "B",
       "Address": {

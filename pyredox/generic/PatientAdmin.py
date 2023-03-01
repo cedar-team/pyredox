@@ -6,30 +6,27 @@ from typing import List, Union
 from pydantic import Field
 
 from pyredox import patientadmin
-from ..abstract_base import GenericRedoxAbstractModel
+from ..abstract_base import GenericEventTypeAbstractModel
 from . import types as generic
 
 
-class _PatientAdmin(GenericRedoxAbstractModel):
+class _PatientAdmin(GenericEventTypeAbstractModel):
     _redox_module = patientadmin
 
 
 class Arrival(_PatientAdmin):
-
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(...)
     Visit: generic.Visit = Field(None)
 
 
 class Cancel(_PatientAdmin):
-
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(...)
     Visit: generic.Visit = Field(None)
 
 
 class CensusQuery(_PatientAdmin):
-
     Departments: List[str] = Field(None)
     Facilities: List[str] = Field(None)
     Meta: generic.Meta = Field(...)
@@ -37,66 +34,56 @@ class CensusQuery(_PatientAdmin):
 
 
 class CensusQueryResponse(_PatientAdmin):
-
     Meta: generic.Meta = Field(...)
     Patients: List[generic.Patient] = Field(None)
 
 
 class Discharge(_PatientAdmin):
-
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(...)
     Visit: generic.Visit = Field(None)
 
 
 class NewPatient(_PatientAdmin):
-
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(...)
 
 
 class PatientMerge(_PatientAdmin):
-
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(...)
 
 
 class PatientUpdate(_PatientAdmin):
-
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(...)
 
 
 class PreAdmit(_PatientAdmin):
-
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(...)
     Visit: generic.Visit = Field(None)
 
 
 class Registration(_PatientAdmin):
-
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(...)
     Visit: generic.Visit = Field(None)
 
 
 class Transfer(_PatientAdmin):
-
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(...)
     Visit: generic.Visit = Field(None)
 
 
 class VisitMerge(_PatientAdmin):
-
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(...)
     Visit: generic.Visit = Field(...)
 
 
 class VisitQuery(_PatientAdmin):
-
     Departments: List[str] = Field(None)
     Facilities: List[str] = Field(None)
     Meta: generic.Meta = Field(...)
@@ -108,13 +95,11 @@ class VisitQuery(_PatientAdmin):
 
 
 class VisitQueryResponse(_PatientAdmin):
-
     Meta: generic.Meta = Field(...)
     Patients: List[generic.Patient] = Field(None)
 
 
 class VisitUpdate(_PatientAdmin):
-
     Meta: generic.Meta = Field(...)
     Patient: generic.Patient = Field(...)
     Visit: generic.Visit = Field(None)

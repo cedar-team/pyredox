@@ -10,13 +10,11 @@ from ..field_types import Number
 
 
 class PatientQuery(EventTypeAbstractModel):
-
     Meta: "PatientQueryMeta" = Field(...)
     Patient: "PatientQueryPatient" = Field(None)
 
 
 class PatientQueryMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["PatientQueryMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -30,42 +28,35 @@ class PatientQueryMeta(RedoxAbstractModel):
 
 
 class PatientQueryMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class PatientQueryMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class PatientQueryMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class PatientQueryMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class PatientQueryMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class PatientQueryPatient(RedoxAbstractModel):
-
     Demographics: "PatientQueryPatientDemographics" = Field(None)
     Identifiers: List["PatientQueryPatientIdentifier"] = Field(None)
     Notes: List[str] = Field(None)
 
 
 class PatientQueryPatientDemographics(RedoxAbstractModel):
-
     Address: "PatientQueryPatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
@@ -86,7 +77,6 @@ class PatientQueryPatientDemographics(RedoxAbstractModel):
 
 
 class PatientQueryPatientDemographicsAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -96,14 +86,12 @@ class PatientQueryPatientDemographicsAddress(RedoxAbstractModel):
 
 
 class PatientQueryPatientDemographicsPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class PatientQueryPatientIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 

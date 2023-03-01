@@ -2,7 +2,7 @@
   "Meta": {
     "DataModel": "Medications",
     "EventType": "Administration",
-    "EventDateTime": "2022-08-03T18:06:43.597Z",
+    "EventDateTime": "2023-02-27T22:09:03.585Z",
     "Test": true,
     "Source": {
       "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
@@ -69,22 +69,31 @@
     "Notes": []
   },
   "Visit": {
-    "VisitDateTime": "2022-08-03T18:06:44.432Z",
+    "VisitDateTime": "2023-02-27T22:09:04.446Z",
     "VisitNumber": "1234",
-    "Location": {},
+    "Location": {
+      "FacilityIdentifiers": [],
+      "DepartmentIdentifiers": []
+    },
     "AttendingProvider": {
       "Credentials": [],
       "Address": {},
       "EmailAddresses": [],
       "PhoneNumber": {},
-      "Location": {}
+      "Location": {
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
+      }
     },
     "ReferringProvider": {
       "Credentials": [],
       "Address": {},
       "EmailAddresses": [],
       "PhoneNumber": {},
-      "Location": {}
+      "Location": {
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
+      }
     }
   },
   "Administrations": [
@@ -92,7 +101,7 @@
       "Status": "Complete",
       "Medication": {
         "Order": {
-          "ID": "fd4cc716-8542-4431-8a0c-f62f37699aa6"
+          "ID": "d18e949c-2dc6-43fc-b168-b76ccb5abd6c"
         },
         "Dose": {
           "Quantity": 4,
@@ -116,7 +125,7 @@
         },
         "Indications": []
       },
-      "StartDate": "2022-08-03T18:06:43.593Z",
+      "StartDate": "2023-02-27T22:09:03.582Z",
       "AdministeringProvider": {
         "NPI": "4356789876",
         "ID": "4356789876",
@@ -138,7 +147,10 @@
         "PhoneNumber": {
           "Office": "+16085551234"
         },
-        "Location": {}
+        "Location": {
+          "FacilityIdentifiers": [],
+          "DepartmentIdentifiers": []
+        }
       },
       "OrderedBy": {
         "ID": "4356789876",
@@ -160,14 +172,20 @@
         "PhoneNumber": {
           "Office": "+16085551234"
         },
-        "Location": {}
+        "Location": {
+          "FacilityIdentifiers": [],
+          "DepartmentIdentifiers": []
+        }
       },
       "VerifiedBy": {
         "Credentials": [],
         "Address": {},
         "EmailAddresses": [],
         "PhoneNumber": {},
-        "Location": {}
+        "Location": {
+          "FacilityIdentifiers": [],
+          "DepartmentIdentifiers": []
+        }
       }
     }
   ]

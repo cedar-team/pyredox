@@ -10,13 +10,11 @@ from ..field_types import Number
 
 
 class Update(EventTypeAbstractModel):
-
     Items: List["UpdateItem"] = Field(...)
     Meta: "UpdateMeta" = Field(...)
 
 
 class UpdateItem(RedoxAbstractModel):
-
     ContainsLatex: Union[bool, None] = Field(None)
     Description: Union[str, None] = Field(None)
     Identifiers: List["UpdateItemIdentifier"] = Field(...)
@@ -33,13 +31,11 @@ class UpdateItem(RedoxAbstractModel):
 
 
 class UpdateItemIdentifier(RedoxAbstractModel):
-
     ID: str = Field(...)
     IDType: str = Field(...)
 
 
 class UpdateItemLocation(RedoxAbstractModel):
-
     Bin: Union[str, None] = Field(None)
     Department: Union[str, None] = Field(None)
     Facility: Union[str, None] = Field(None)
@@ -47,21 +43,18 @@ class UpdateItemLocation(RedoxAbstractModel):
 
 
 class UpdateItemProcedure(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Modifier: Union[str, None] = Field(None)
 
 
 class UpdateItemVendor(RedoxAbstractModel):
-
     CatalogNumber: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class UpdateMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["UpdateMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -75,30 +68,25 @@ class UpdateMeta(RedoxAbstractModel):
 
 
 class UpdateMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class UpdateMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class UpdateMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class UpdateMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class UpdateMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 

@@ -10,13 +10,11 @@ from ..field_types import Number
 
 
 class Deactivate(EventTypeAbstractModel):
-
     Meta: "DeactivateMeta" = Field(...)
     Providers: List["DeactivateProvider"] = Field(...)
 
 
 class DeactivateMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["DeactivateMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -30,35 +28,29 @@ class DeactivateMeta(RedoxAbstractModel):
 
 
 class DeactivateMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class DeactivateMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class DeactivateMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class DeactivateMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class DeactivateMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class DeactivateProvider(RedoxAbstractModel):
-
     Demographics: "DeactivateProviderDemographics" = Field(None)
     Identifiers: List["DeactivateProviderIdentifier"] = Field(...)
     Qualifications: List["DeactivateProviderQualification"] = Field(None)
@@ -66,7 +58,6 @@ class DeactivateProvider(RedoxAbstractModel):
 
 
 class DeactivateProviderDemographics(RedoxAbstractModel):
-
     Addresses: List["DeactivateProviderDemographicsAddress"] = Field(None)
     Credentials: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
@@ -80,7 +71,6 @@ class DeactivateProviderDemographics(RedoxAbstractModel):
 
 
 class DeactivateProviderDemographicsAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -91,20 +81,17 @@ class DeactivateProviderDemographicsAddress(RedoxAbstractModel):
 
 
 class DeactivateProviderDemographicsPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class DeactivateProviderIdentifier(RedoxAbstractModel):
-
     ID: str = Field(...)
     IDType: Union[str, None] = Field(None)
 
 
 class DeactivateProviderQualification(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
@@ -114,13 +101,11 @@ class DeactivateProviderQualification(RedoxAbstractModel):
 
 
 class DeactivateProviderQualificationIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class DeactivateProviderRole(RedoxAbstractModel):
-
     Availability: List["DeactivateProviderRoleAvailability"] = Field(None)
     Identifiers: List["DeactivateProviderRoleIdentifier"] = Field(None)
     Locations: List["DeactivateProviderRoleLocation"] = Field(None)
@@ -130,20 +115,17 @@ class DeactivateProviderRole(RedoxAbstractModel):
 
 
 class DeactivateProviderRoleAvailability(RedoxAbstractModel):
-
     AvailableEndTime: Union[str, None] = Field(None)
     AvailableStartTime: Union[str, None] = Field(None)
     Days: List[str] = Field(None)
 
 
 class DeactivateProviderRoleIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class DeactivateProviderRoleLocation(RedoxAbstractModel):
-
     Address: "DeactivateProviderRoleLocationAddress" = Field(None)
     Description: Union[str, None] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -154,7 +136,6 @@ class DeactivateProviderRoleLocation(RedoxAbstractModel):
 
 
 class DeactivateProviderRoleLocationAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -164,18 +145,15 @@ class DeactivateProviderRoleLocationAddress(RedoxAbstractModel):
 
 
 class DeactivateProviderRoleLocationIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class DeactivateProviderRoleLocationPhoneNumber(RedoxAbstractModel):
-
     Office: Union[str, None] = Field(None)
 
 
 class DeactivateProviderRoleOrganization(RedoxAbstractModel):
-
     Address: "DeactivateProviderRoleOrganizationAddress" = Field(None)
     Identifiers: List["DeactivateProviderRoleOrganizationIdentifier"] = Field(None)
     IsActive: Union[str, None] = Field(None)
@@ -184,7 +162,6 @@ class DeactivateProviderRoleOrganization(RedoxAbstractModel):
 
 
 class DeactivateProviderRoleOrganizationAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -194,13 +171,11 @@ class DeactivateProviderRoleOrganizationAddress(RedoxAbstractModel):
 
 
 class DeactivateProviderRoleOrganizationIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class DeactivateProviderRoleService(RedoxAbstractModel):
-
     Description: Union[str, None] = Field(None)
     Identifiers: List["DeactivateProviderRoleServiceIdentifier"] = Field(None)
     PhoneNumber: "DeactivateProviderRoleServicePhoneNumber" = Field(None)
@@ -208,18 +183,15 @@ class DeactivateProviderRoleService(RedoxAbstractModel):
 
 
 class DeactivateProviderRoleServiceIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class DeactivateProviderRoleServicePhoneNumber(RedoxAbstractModel):
-
     Office: Union[str, None] = Field(None)
 
 
 class DeactivateProviderRoleSpecialty(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)

@@ -75,7 +75,6 @@ def redox_object_factory(
 def from_redox_to_generic(
     redox_instance: EventTypeAbstractModel,
 ) -> Optional[GenericEventTypeAbstractModel]:
-
     if not isinstance(redox_instance, EventTypeAbstractModel):
         raise TypeError(
             "The from_redox_to_generic function is only intended to convert Event Type "

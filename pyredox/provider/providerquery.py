@@ -10,13 +10,11 @@ from ..field_types import Number
 
 
 class ProviderQuery(EventTypeAbstractModel):
-
     Meta: "ProviderQueryMeta" = Field(...)
     Provider: "ProviderQueryProvider" = Field(None)
 
 
 class ProviderQueryMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["ProviderQueryMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -30,41 +28,34 @@ class ProviderQueryMeta(RedoxAbstractModel):
 
 
 class ProviderQueryMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class ProviderQueryMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class ProviderQueryMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class ProviderQueryMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class ProviderQueryMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class ProviderQueryProvider(RedoxAbstractModel):
-
     Demographics: "ProviderQueryProviderDemographics" = Field(None)
     Identifiers: List["ProviderQueryProviderIdentifier"] = Field(None)
 
 
 class ProviderQueryProviderDemographics(RedoxAbstractModel):
-
     Address: "ProviderQueryProviderDemographicsAddress" = Field(None)
     FirstName: Union[str, None] = Field(None)
     LastName: Union[str, None] = Field(None)
@@ -72,14 +63,12 @@ class ProviderQueryProviderDemographics(RedoxAbstractModel):
 
 
 class ProviderQueryProviderDemographicsAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     State: Union[str, None] = Field(None)
     ZIP: Union[str, None] = Field(None)
 
 
 class ProviderQueryProviderIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 

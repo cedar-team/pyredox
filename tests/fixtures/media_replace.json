@@ -2,7 +2,7 @@
   "Meta": {
     "DataModel": "Media",
     "EventType": "Replace",
-    "EventDateTime": "2022-08-03T18:06:43.597Z",
+    "EventDateTime": "2023-02-27T22:09:03.585Z",
     "Test": true,
     "Source": {
       "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
@@ -70,7 +70,10 @@
   },
   "Visit": {
     "VisitNumber": "1234",
-    "Location": {}
+    "Location": {
+      "FacilityIdentifiers": [],
+      "DepartmentIdentifiers": []
+    }
   },
   "Media": {
     "FileType": "PDF",
@@ -103,7 +106,10 @@
       "PhoneNumber": {
         "Office": "+16085551234"
       },
-      "Location": {}
+      "Location": {
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
+      }
     },
     "Authenticated": "False",
     "Authenticator": {
@@ -111,7 +117,10 @@
       "Address": {},
       "EmailAddresses": [],
       "PhoneNumber": {},
-      "Location": {}
+      "Location": {
+        "FacilityIdentifiers": [],
+        "DepartmentIdentifiers": []
+      }
     },
     "Availability": "Unavailable",
     "Notifications": [
@@ -136,7 +145,10 @@
         "PhoneNumber": {
           "Office": "+16085559999"
         },
-        "Location": {}
+        "Location": {
+          "FacilityIdentifiers": [],
+          "DepartmentIdentifiers": []
+        }
       },
       {
         "ID": "8263749385",
@@ -158,7 +170,10 @@
         "PhoneNumber": {
           "Office": "+13145557777"
         },
-        "Location": {}
+        "Location": {
+          "FacilityIdentifiers": [],
+          "DepartmentIdentifiers": []
+        }
       }
     ]
   },

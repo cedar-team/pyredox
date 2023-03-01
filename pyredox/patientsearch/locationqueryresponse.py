@@ -10,13 +10,11 @@ from ..field_types import Number
 
 
 class LocationQueryResponse(EventTypeAbstractModel):
-
     Meta: "LocationQueryResponseMeta" = Field(...)
     Patients: List["LocationQueryResponsePatient"] = Field(...)
 
 
 class LocationQueryResponseMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["LocationQueryResponseMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -30,47 +28,39 @@ class LocationQueryResponseMeta(RedoxAbstractModel):
 
 
 class LocationQueryResponseMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class LocationQueryResponseMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class LocationQueryResponseMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class LocationQueryResponseMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class LocationQueryResponseMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class LocationQueryResponsePatient(RedoxAbstractModel):
-
     Identifiers: List["LocationQueryResponsePatientIdentifier"] = Field(...)
     Organization: "LocationQueryResponsePatientOrganization" = Field(None)
 
 
 class LocationQueryResponsePatientIdentifier(RedoxAbstractModel):
-
     ID: str = Field(...)
     IDType: str = Field(...)
 
 
 class LocationQueryResponsePatientOrganization(RedoxAbstractModel):
-
     Address: "LocationQueryResponsePatientOrganizationAddress" = Field(None)
     Aliases: List[str] = Field(None)
     Contacts: List["LocationQueryResponsePatientOrganizationContact"] = Field(None)
@@ -81,7 +71,6 @@ class LocationQueryResponsePatientOrganization(RedoxAbstractModel):
 
 
 class LocationQueryResponsePatientOrganizationAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -91,7 +80,6 @@ class LocationQueryResponsePatientOrganizationAddress(RedoxAbstractModel):
 
 
 class LocationQueryResponsePatientOrganizationContact(RedoxAbstractModel):
-
     EmailAddresses: List[str] = Field(None)
     Name: Union[str, None] = Field(None)
     PhoneNumber: "LocationQueryResponsePatientOrganizationContactPhoneNumber" = Field(
@@ -101,14 +89,12 @@ class LocationQueryResponsePatientOrganizationContact(RedoxAbstractModel):
 
 
 class LocationQueryResponsePatientOrganizationContactPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Work: Union[str, None] = Field(None)
 
 
 class LocationQueryResponsePatientOrganizationIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 

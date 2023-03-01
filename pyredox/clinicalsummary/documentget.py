@@ -10,18 +10,15 @@ from ..field_types import Number
 
 
 class DocumentGet(EventTypeAbstractModel):
-
     Document: "DocumentGetDocument" = Field(...)
     Meta: "DocumentGetMeta" = Field(...)
 
 
 class DocumentGetDocument(RedoxAbstractModel):
-
     ID: str = Field(...)
 
 
 class DocumentGetMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["DocumentGetMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -35,30 +32,25 @@ class DocumentGetMeta(RedoxAbstractModel):
 
 
 class DocumentGetMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class DocumentGetMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class DocumentGetMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class DocumentGetMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class DocumentGetMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 

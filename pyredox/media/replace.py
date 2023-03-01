@@ -10,7 +10,6 @@ from ..field_types import Number
 
 
 class Replace(EventTypeAbstractModel):
-
     Media: "ReplaceMedia" = Field(...)
     Meta: "ReplaceMeta" = Field(...)
     Orders: List["ReplaceOrder"] = Field(None)
@@ -19,7 +18,6 @@ class Replace(EventTypeAbstractModel):
 
 
 class ReplaceMedia(RedoxAbstractModel):
-
     Authenticated: Union[str, None] = Field(None)
     Authenticator: "ReplaceMediaAuthenticator" = Field(None)
     Availability: str = Field(...)
@@ -39,7 +37,6 @@ class ReplaceMedia(RedoxAbstractModel):
 
 
 class ReplaceMediaAuthenticator(RedoxAbstractModel):
-
     Address: "ReplaceMediaAuthenticatorAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -52,7 +49,6 @@ class ReplaceMediaAuthenticator(RedoxAbstractModel):
 
 
 class ReplaceMediaAuthenticatorAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -62,20 +58,33 @@ class ReplaceMediaAuthenticatorAddress(RedoxAbstractModel):
 
 
 class ReplaceMediaAuthenticatorLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "ReplaceMediaAuthenticatorLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "ReplaceMediaAuthenticatorLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class ReplaceMediaAuthenticatorPhoneNumber(RedoxAbstractModel):
+class ReplaceMediaAuthenticatorLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class ReplaceMediaAuthenticatorLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class ReplaceMediaAuthenticatorPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class ReplaceMediaNotification(RedoxAbstractModel):
-
     Address: "ReplaceMediaNotificationAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -88,7 +97,6 @@ class ReplaceMediaNotification(RedoxAbstractModel):
 
 
 class ReplaceMediaNotificationAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -98,20 +106,33 @@ class ReplaceMediaNotificationAddress(RedoxAbstractModel):
 
 
 class ReplaceMediaNotificationLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "ReplaceMediaNotificationLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "ReplaceMediaNotificationLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class ReplaceMediaNotificationPhoneNumber(RedoxAbstractModel):
+class ReplaceMediaNotificationLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class ReplaceMediaNotificationLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class ReplaceMediaNotificationPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class ReplaceMediaProvider(RedoxAbstractModel):
-
     Address: "ReplaceMediaProviderAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -124,7 +145,6 @@ class ReplaceMediaProvider(RedoxAbstractModel):
 
 
 class ReplaceMediaProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -134,20 +154,33 @@ class ReplaceMediaProviderAddress(RedoxAbstractModel):
 
 
 class ReplaceMediaProviderLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "ReplaceMediaProviderLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List["ReplaceMediaProviderLocationFacilityIdentifier"] = Field(
+        None
+    )
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class ReplaceMediaProviderPhoneNumber(RedoxAbstractModel):
+class ReplaceMediaProviderLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class ReplaceMediaProviderLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class ReplaceMediaProviderPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class ReplaceMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["ReplaceMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -161,48 +194,40 @@ class ReplaceMeta(RedoxAbstractModel):
 
 
 class ReplaceMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class ReplaceMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class ReplaceMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class ReplaceMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class ReplaceMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class ReplaceOrder(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class ReplacePatient(RedoxAbstractModel):
-
     Demographics: "ReplacePatientDemographics" = Field(None)
     Identifiers: List["ReplacePatientIdentifier"] = Field(...)
     Notes: List[str] = Field(None)
 
 
 class ReplacePatientDemographics(RedoxAbstractModel):
-
     Address: "ReplacePatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
@@ -223,7 +248,6 @@ class ReplacePatientDemographics(RedoxAbstractModel):
 
 
 class ReplacePatientDemographicsAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -233,40 +257,54 @@ class ReplacePatientDemographicsAddress(RedoxAbstractModel):
 
 
 class ReplacePatientDemographicsPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class ReplacePatientIdentifier(RedoxAbstractModel):
-
     ID: str = Field(...)
     IDType: str = Field(...)
 
 
 class ReplaceVisit(RedoxAbstractModel):
-
     AccountNumber: Union[str, None] = Field(None)
     Location: "ReplaceVisitLocation" = Field(None)
     VisitNumber: Union[str, None] = Field(None)
 
 
 class ReplaceVisitLocation(RedoxAbstractModel):
-
     Bed: Union[str, None] = Field(None)
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List["ReplaceVisitLocationDepartmentIdentifier"] = Field(
+        None
+    )
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List["ReplaceVisitLocationFacilityIdentifier"] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
+
+
+class ReplaceVisitLocationDepartmentIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class ReplaceVisitLocationFacilityIdentifier(RedoxAbstractModel):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
 
 Replace.update_forward_refs()
 ReplaceMedia.update_forward_refs()
 ReplaceMediaAuthenticator.update_forward_refs()
+ReplaceMediaAuthenticatorLocation.update_forward_refs()
 ReplaceMediaNotification.update_forward_refs()
+ReplaceMediaNotificationLocation.update_forward_refs()
 ReplaceMediaProvider.update_forward_refs()
+ReplaceMediaProviderLocation.update_forward_refs()
 ReplaceMeta.update_forward_refs()
 ReplacePatient.update_forward_refs()
 ReplacePatientDemographics.update_forward_refs()
 ReplaceVisit.update_forward_refs()
+ReplaceVisitLocation.update_forward_refs()

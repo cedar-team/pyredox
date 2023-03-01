@@ -10,13 +10,11 @@ from ..field_types import Number
 
 
 class Response(EventTypeAbstractModel):
-
     Advisories: List["ResponseAdvisory"] = Field(...)
     Meta: "ResponseMeta" = Field(...)
 
 
 class ResponseAdvisory(RedoxAbstractModel):
-
     AdditionalInfo: List["ResponseAdvisoryAdditionalInfo"] = Field(None)
     AdditionalUnsignedOrders: List["ResponseAdvisoryAdditionalUnsignedOrder"] = Field(
         None
@@ -32,20 +30,17 @@ class ResponseAdvisory(RedoxAbstractModel):
 
 
 class ResponseAdvisoryAdditionalInfo(RedoxAbstractModel):
-
     DecisionSupport: "ResponseAdvisoryAdditionalInfoDecisionSupport" = Field(None)
     Link: Union[str, None] = Field(None)
 
 
 class ResponseAdvisoryAdditionalInfoDecisionSupport(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
 
 
 class ResponseAdvisoryAdditionalUnsignedOrder(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
     Questions: List["ResponseAdvisoryAdditionalUnsignedOrderQuestion"] = Field(None)
@@ -53,7 +48,6 @@ class ResponseAdvisoryAdditionalUnsignedOrder(RedoxAbstractModel):
 
 
 class ResponseAdvisoryAdditionalUnsignedOrderQuestion(RedoxAbstractModel):
-
     Answers: List["ResponseAdvisoryAdditionalUnsignedOrderQuestionAnswer"] = Field(None)
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
@@ -61,7 +55,6 @@ class ResponseAdvisoryAdditionalUnsignedOrderQuestion(RedoxAbstractModel):
 
 
 class ResponseAdvisoryAdditionalUnsignedOrderQuestionAnswer(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Comment: Union[str, None] = Field(None)
@@ -69,27 +62,23 @@ class ResponseAdvisoryAdditionalUnsignedOrderQuestionAnswer(RedoxAbstractModel):
 
 
 class ResponseAdvisoryError(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
 
 
 class ResponseAdvisoryNote(RedoxAbstractModel):
-
     Display: Union[str, None] = Field(None)
     Text: Union[str, None] = Field(None)
 
 
 class ResponseAdvisoryRemovableUnsignedOrder(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
     Title: Union[str, None] = Field(None)
 
 
 class ResponseMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["ResponseMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -103,30 +92,25 @@ class ResponseMeta(RedoxAbstractModel):
 
 
 class ResponseMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class ResponseMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class ResponseMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class ResponseMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class ResponseMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 

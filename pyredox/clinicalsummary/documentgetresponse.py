@@ -10,7 +10,6 @@ from ..field_types import Number
 
 
 class DocumentGetResponse(EventTypeAbstractModel):
-
     Data: str = Field(...)
     Document: "DocumentGetResponseDocument" = Field(...)
     FileType: str = Field(...)
@@ -18,12 +17,10 @@ class DocumentGetResponse(EventTypeAbstractModel):
 
 
 class DocumentGetResponseDocument(RedoxAbstractModel):
-
     ID: str = Field(...)
 
 
 class DocumentGetResponseMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["DocumentGetResponseMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -37,30 +34,25 @@ class DocumentGetResponseMeta(RedoxAbstractModel):
 
 
 class DocumentGetResponseMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class DocumentGetResponseMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class DocumentGetResponseMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class DocumentGetResponseMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class DocumentGetResponseMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 

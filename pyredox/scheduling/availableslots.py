@@ -10,7 +10,6 @@ from ..field_types import Number
 
 
 class AvailableSlots(EventTypeAbstractModel):
-
     EndDateTime: Union[str, None] = Field(None)
     Meta: "AvailableSlotsMeta" = Field(...)
     Patient: "AvailableSlotsPatient" = Field(None)
@@ -19,7 +18,6 @@ class AvailableSlots(EventTypeAbstractModel):
 
 
 class AvailableSlotsMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["AvailableSlotsMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -33,35 +31,29 @@ class AvailableSlotsMeta(RedoxAbstractModel):
 
 
 class AvailableSlotsMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class AvailableSlotsMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class AvailableSlotsMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class AvailableSlotsMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class AvailableSlotsMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class AvailableSlotsPatient(RedoxAbstractModel):
-
     Demographics: "AvailableSlotsPatientDemographics" = Field(None)
     Diagnoses: List["AvailableSlotsPatientDiagnosis"] = Field(None)
     Identifiers: List["AvailableSlotsPatientIdentifier"] = Field(None)
@@ -69,7 +61,6 @@ class AvailableSlotsPatient(RedoxAbstractModel):
 
 
 class AvailableSlotsPatientDemographics(RedoxAbstractModel):
-
     Address: "AvailableSlotsPatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
@@ -90,7 +81,6 @@ class AvailableSlotsPatientDemographics(RedoxAbstractModel):
 
 
 class AvailableSlotsPatientDemographicsAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -100,14 +90,12 @@ class AvailableSlotsPatientDemographicsAddress(RedoxAbstractModel):
 
 
 class AvailableSlotsPatientDemographicsPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class AvailableSlotsPatientDiagnosis(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     DocumentedDateTime: Union[str, None] = Field(None)
@@ -116,13 +104,11 @@ class AvailableSlotsPatientDiagnosis(RedoxAbstractModel):
 
 
 class AvailableSlotsPatientIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class AvailableSlotsVisit(RedoxAbstractModel):
-
     AttendingProviders: List["AvailableSlotsVisitAttendingProvider"] = Field(None)
     Locations: List["AvailableSlotsVisitLocation"] = Field(None)
     Reasons: List[str] = Field(None)
@@ -131,7 +117,6 @@ class AvailableSlotsVisit(RedoxAbstractModel):
 
 
 class AvailableSlotsVisitAttendingProvider(RedoxAbstractModel):
-
     Address: "AvailableSlotsVisitAttendingProviderAddress" = Field(None)
     Credentials: List[str] = Field(None)
     EmailAddresses: List[str] = Field(None)
@@ -144,7 +129,6 @@ class AvailableSlotsVisitAttendingProvider(RedoxAbstractModel):
 
 
 class AvailableSlotsVisitAttendingProviderAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -154,20 +138,37 @@ class AvailableSlotsVisitAttendingProviderAddress(RedoxAbstractModel):
 
 
 class AvailableSlotsVisitAttendingProviderLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
+    DepartmentIdentifiers: List[
+        "AvailableSlotsVisitAttendingProviderLocationDepartmentIdentifier"
+    ] = Field(None)
     Facility: Union[str, None] = Field(None)
+    FacilityIdentifiers: List[
+        "AvailableSlotsVisitAttendingProviderLocationFacilityIdentifier"
+    ] = Field(None)
     Room: Union[str, None] = Field(None)
     Type: Union[str, None] = Field(None)
 
 
-class AvailableSlotsVisitAttendingProviderPhoneNumber(RedoxAbstractModel):
+class AvailableSlotsVisitAttendingProviderLocationDepartmentIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
 
+
+class AvailableSlotsVisitAttendingProviderLocationFacilityIdentifier(
+    RedoxAbstractModel
+):
+    ID: Union[str, None] = Field(None)
+    IDType: Union[str, None] = Field(None)
+
+
+class AvailableSlotsVisitAttendingProviderPhoneNumber(RedoxAbstractModel):
     Office: Union[str, None] = Field(None)
 
 
 class AvailableSlotsVisitLocation(RedoxAbstractModel):
-
     Department: Union[str, None] = Field(None)
     Facility: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
@@ -177,14 +178,12 @@ class AvailableSlotsVisitLocation(RedoxAbstractModel):
 
 
 class AvailableSlotsVisitLocationSpecialtyDepartment(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
 
 
 class AvailableSlotsVisitVisitPreference(RedoxAbstractModel):
-
     Day: List[str] = Field(None)
     Duration: Union[str, None] = Field(None)
     DurationUnit: Union[str, None] = Field(None)
@@ -192,7 +191,6 @@ class AvailableSlotsVisitVisitPreference(RedoxAbstractModel):
 
 
 class AvailableSlotsVisitVisitType(RedoxAbstractModel):
-
     Code: Union[str, None] = Field(None)
     Codeset: Union[str, None] = Field(None)
     Description: Union[str, None] = Field(None)
@@ -204,4 +202,5 @@ AvailableSlotsPatient.update_forward_refs()
 AvailableSlotsPatientDemographics.update_forward_refs()
 AvailableSlotsVisit.update_forward_refs()
 AvailableSlotsVisitAttendingProvider.update_forward_refs()
+AvailableSlotsVisitAttendingProviderLocation.update_forward_refs()
 AvailableSlotsVisitLocation.update_forward_refs()

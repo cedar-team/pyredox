@@ -10,14 +10,12 @@ from ..field_types import Number
 
 
 class VisitMerge(EventTypeAbstractModel):
-
     Meta: "VisitMergeMeta" = Field(...)
     Patient: "VisitMergePatient" = Field(...)
     Visit: "VisitMergeVisit" = Field(...)
 
 
 class VisitMergeMeta(RedoxAbstractModel):
-
     DataModel: str = Field(...)
     Destinations: List["VisitMergeMetaDestination"] = Field(None)
     EventDateTime: Union[str, None] = Field(None)
@@ -31,35 +29,29 @@ class VisitMergeMeta(RedoxAbstractModel):
 
 
 class VisitMergeMetaDestination(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class VisitMergeMetaLog(RedoxAbstractModel):
-
     AttemptID: Union[str, None] = Field(None)
     ID: Union[str, None] = Field(None)
 
 
 class VisitMergeMetaMessage(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class VisitMergeMetaSource(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     Name: Union[str, None] = Field(None)
 
 
 class VisitMergeMetaTransmission(RedoxAbstractModel):
-
     ID: Union[Number, None] = Field(None)
 
 
 class VisitMergePatient(RedoxAbstractModel):
-
     Demographics: "VisitMergePatientDemographics" = Field(None)
     Identifiers: List["VisitMergePatientIdentifier"] = Field(...)
     Notes: List[str] = Field(None)
@@ -67,7 +59,6 @@ class VisitMergePatient(RedoxAbstractModel):
 
 
 class VisitMergePatientDemographics(RedoxAbstractModel):
-
     Address: "VisitMergePatientDemographicsAddress" = Field(None)
     Citizenship: List[str] = Field(None)
     DOB: Union[str, None] = Field(None)
@@ -88,7 +79,6 @@ class VisitMergePatientDemographics(RedoxAbstractModel):
 
 
 class VisitMergePatientDemographicsAddress(RedoxAbstractModel):
-
     City: Union[str, None] = Field(None)
     Country: Union[str, None] = Field(None)
     County: Union[str, None] = Field(None)
@@ -98,26 +88,22 @@ class VisitMergePatientDemographicsAddress(RedoxAbstractModel):
 
 
 class VisitMergePatientDemographicsPhoneNumber(RedoxAbstractModel):
-
     Home: Union[str, None] = Field(None)
     Mobile: Union[str, None] = Field(None)
     Office: Union[str, None] = Field(None)
 
 
 class VisitMergePatientIdentifier(RedoxAbstractModel):
-
     ID: str = Field(...)
     IDType: str = Field(...)
 
 
 class VisitMergePatientPreviousIdentifier(RedoxAbstractModel):
-
     ID: Union[str, None] = Field(None)
     IDType: Union[str, None] = Field(None)
 
 
 class VisitMergeVisit(RedoxAbstractModel):
-
     VisitNumber: str = Field(...)
 
 
