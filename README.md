@@ -2,7 +2,7 @@
 
 [![PyPI Info](https://img.shields.io/pypi/v/pyredox.svg)](https://pypi.python.org/pypi/pyredox)
 [![Python Version](https://img.shields.io/pypi/pyversions/pyredox)](https://pypi.python.org/pypi/pyredox)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/cedar-team/pyredox/test-and-coverage)](https://github.com/cedar-team/pyredox/actions)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/cedar-team/pyredox/test_and_coverage.yml?branch=main)](https://github.com/cedar-team/pyredox/actions)
 [![Coverage Info](https://coveralls.io/repos/github/cedar-team/pyredox/badge.svg?branch=main)](https://coveralls.io/github/cedar-team/pyredox?branch=main)
 [![Black Code Style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/pyredox)](https://pypi.python.org/pypi/pyredox)
