@@ -78,7 +78,7 @@ class RedoxAbstractModel(BaseModel, abc.ABC, extra=Extra.forbid):
     def cast_from(
         cls, *others: Union["RedoxAbstractModel", Mapping]
     ) -> "RedoxAbstractModel":
-        """Create a new pyredox object from the passed object(s).
+        """Create a new redox_parser object from the passed object(s).
 
         Intended for use when you need to assign the same values to multiple
         objects while avoiding any type-checking errors. For example, on a
@@ -169,7 +169,7 @@ class GenericEventTypeAbstractModel(RedoxAbstractModel):
     Meta: _Meta = Field(...)
 
     def to_redox(self) -> RedoxAbstractModel:
-        """Figure out the correct pyredox model, instantiate, and return."""
+        """Figure out the correct redox_parser model, instantiate, and return."""
 
         class_name = type(self).__name__
 

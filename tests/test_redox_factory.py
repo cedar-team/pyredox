@@ -7,11 +7,11 @@ import pytest
 from pydantic import ValidationError
 from pydantic.typing import NoneType
 
-from pyredox.abstract_base import EventTypeAbstractModel
-from pyredox.claim import Submission
-from pyredox.factory import redox_object_factory
-from pyredox.generic import Claim as GenericClaim, types
-from pyredox.patientadmin import PatientUpdate
+from redox_parser.abstract_base import EventTypeAbstractModel
+from redox_parser.claim import Submission
+from redox_parser.factory import redox_object_factory
+from redox_parser.generic import Claim as GenericClaim, types
+from redox_parser.patientadmin import PatientUpdate
 
 str_patient_update = """
 {

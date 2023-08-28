@@ -33,7 +33,7 @@ def get_class_type(redox_dict: dict) -> Type[EventTypeAbstractModel]:
     data_model, event_type = get_model_and_event(redox_dict)
 
     with contextlib.suppress(ModuleNotFoundError):
-        model_module = import_module(f"pyredox.{data_model.lower()}")
+        model_module = import_module(f"redox_parser.{data_model.lower()}")
     if not model_module:
         raise AttributeError(f"Couldn't find Redox model module for {data_model}")
 
@@ -83,7 +83,7 @@ def from_redox_to_generic(
         )
 
     redox_dict = redox_instance.dict()
-    # We don't have to do as much validation as the pyredox factory because we're
+    # We don't have to do as much validation as the redox_parser factory because we're
     # working with a validated Redox obj
     data_model = redox_dict["Meta"]["DataModel"]  # e.g., PatientAdmin, Scheduling, etc
     event_type = redox_dict["Meta"]["EventType"]  # e.g., NewPatient, Reschedule, etc
