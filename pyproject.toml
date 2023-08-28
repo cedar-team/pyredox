@@ -1,9 +1,9 @@
 [tool.poetry]
-name = "pyredox"
+name = "redox_parser"
 version = "1.0.4"
 description = ""
 authors = ["Mike Mabey <mike.mabey@cedar.com>"]
-homepage = "https://github.com/cedar-team/pyredox"
+homepage = "https://github.com/cedar-team/redox_parser"
 license = "MIT"
 readme = "README.md"
 classifiers = [
@@ -58,5 +58,5 @@ legacy_tox_ini = """
         retry2
     allowlist_externals = coverage
     commands =
-        coverage run --source pyredox -m pytest -vv
+        coverage run --source redox_parser -m pytest -vv
 """

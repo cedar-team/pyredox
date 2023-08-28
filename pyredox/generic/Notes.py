@@ -5,7 +5,7 @@ from typing import List, Union
 
 from pydantic import Field
 
-from pyredox import notes
+from redox_parser import notes
 from ..abstract_base import GenericEventTypeAbstractModel
 from . import types as generic
 

@@ -1,18 +1,18 @@
-# Pyredox - A Pydantic-Based Library for Redox Data
+# redox_parser - A Pydantic-Based Library for Redox Data
 
-[![PyPI Info](https://img.shields.io/pypi/v/pyredox.svg)](https://pypi.python.org/pypi/pyredox)
-[![Python Version](https://img.shields.io/pypi/pyversions/pyredox)](https://pypi.python.org/pypi/pyredox)
-[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/cedar-team/pyredox/test_and_coverage.yml?branch=main)](https://github.com/cedar-team/pyredox/actions)
-[![Coverage Info](https://coveralls.io/repos/github/cedar-team/pyredox/badge.svg?branch=main)](https://coveralls.io/github/cedar-team/pyredox?branch=main)
+[![PyPI Info](https://img.shields.io/pypi/v/redox_parser.svg)](https://pypi.python.org/pypi/redox_parser)
+[![Python Version](https://img.shields.io/pypi/pyversions/redox_parser)](https://pypi.python.org/pypi/redox_parser)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/cedar-team/redox_parser/test_and_coverage.yml?branch=main)](https://github.com/cedar-team/redox_parser/actions)
+[![Coverage Info](https://coveralls.io/repos/github/cedar-team/redox_parser/badge.svg?branch=main)](https://coveralls.io/github/cedar-team/redox_parser?branch=main)
 [![Black Code Style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/pyredox)](https://pypi.python.org/pypi/pyredox)
-[![PyPI - License](https://img.shields.io/pypi/l/pyredox?color=blue)](https://pypi.python.org/pypi/pyredox)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/redox_parser)](https://pypi.python.org/pypi/redox_parser)
+[![PyPI - License](https://img.shields.io/pypi/l/redox_parser?color=blue)](https://pypi.python.org/pypi/redox_parser)
 
-Pyredox is library for producing, ingesting, and validating data from [Redox], a "data platform designed to connect
+redox_parser is library for producing, ingesting, and validating data from [Redox], a "data platform designed to connect
 providers, payers and products."
 
-Pyredox is a set of [Pydantic] models that conforms to the [Redox data model] specification for the purpose of making it
-easy to convert Redox-formatted JSON to Python objects and vice versa. Because pyredox inherits the functionality of
+redox_parser is a set of [Pydantic] models that conforms to the [Redox data model] specification for the purpose of making it
+easy to convert Redox-formatted JSON to Python objects and vice versa. Because redox_parser inherits the functionality of
 Pydantic, it validates that the JSON data conforms to the spec automatically upon object creation.
 
 For example, if you tried to create a [`NewPatient`
@@ -20,7 +20,7 @@ model](https://developer.redoxengine.com/data-models/PatientAdmin.html#NewPatien
 an error like this:
 
 ```
->>> from pyredox.patientadmin.newpatient import NewPatient
+>>> from redox_parser.patientadmin.newpatient import NewPatient
 >>> NewPatient(Meta={})
 
 ValidationError: 3 validation errors for NewPatient
@@ -40,12 +40,12 @@ Patient
 
 ## Usage
 
-There are two primary methods to create a `pyredox` object:
+There are two primary methods to create a `redox_parser` object:
 
 1. [JSON Dict Expansion](#json-dict-expansion):
     - Benefits:
         - Simple to use if you already have a JSON string or dictionary (or list of dictionaries) and want to get the
-          `pyredox` object that corresponds to that payload.
+          `redox_parser` object that corresponds to that payload.
         - Options for if you already know the Redox type of the JSON payload and options for if you don't.
     - Shortcomings:
         - Writing out or creating a full JSON payload can be quite verbose if you're crafting it yourself (vs processing
@@ -63,7 +63,7 @@ section down below.
 
 ### JSON Dict Expansion
 
-The simplest way to create a `pyredox` model from a JSON payload is to pass an unpacked `dict` as the parameter when
+The simplest way to create a `redox_parser` model from a JSON payload is to pass an unpacked `dict` as the parameter when
 initializing the object, like this:
 
 ```python
@@ -91,13 +91,13 @@ If you have a payload and don't know which object type it is, you can use the fa
 string or the loaded JSON dict/list:
 
 ```python
-from pyredox.factory import redox_object_factory
+from redox_parser.factory import redox_object_factory
 
 redox_object1 = redox_object_factory(payload_str)  # str input
 redox_object2 = redox_object_factory(data)  # dict input
 ```
 
-To create a JSON payload to send to Redox from an existing `pyredox` object, just call the `json()` method of the
+To create a JSON payload to send to Redox from an existing `redox_parser` object, just call the `json()` method of the
 object:
 
 ```python
@@ -119,7 +119,7 @@ term for all Redox objects *not* residing in the `generic` folder) all have thei
 match the schema. This means that there are classes that have the exact same fields that exist in the same Python file
 and fall under the same Event Type.
 
-For example, in `pyredox/provider/new.py`, the `NewProviderRoleLocationAddress` and `NewProviderRoleOrganizationAddress`
+For example, in `redox_parser/provider/new.py`, the `NewProviderRoleLocationAddress` and `NewProviderRoleOrganizationAddress`
 classes have the exact same definition because they're both Addresses. However, because one represents the address of
 the location for a provider's role and the other represents the address of the organization for the provider's role,
 Redox treats them differently. In contrast, most Event Types' `Meta` properties have similar but different fields,
@@ -134,8 +134,8 @@ creating a new provider like this:
 
 ```python
 # THIS IS THE HARDER WAY TO DO THINGS!
-from pyredox.provider import New
-from pyredox.provider.new import (
+from redox_parser.provider import New
+from redox_parser.provider.new import (
     NewMeta,
     NewProvider,
     NewProviderIdentifier,
@@ -194,33 +194,33 @@ The following is more composable and somewhat simpler:
 
 ```python
 # Simpler way to create a new Provider
-from pyredox.generic import types as pyredox_types
-from pyredox.generic.Provider import New as NewProvider
+from redox_parser.generic import types as redox_parser_types
+from redox_parser.generic.Provider import New as NewProvider
 
 # Because office_address is a generic Address type, we can reuse it for both
 # the Organization and the Location for this Provider.
-office_address = pyredox_types.Address(
+office_address = redox_parser_types.Address(
     StreetAddress="123 Cherry St",
     City="Green Bay",
     State="Wisconsin",
     ZIP="54321",
     Country="USA",
 )
-clinic_address = pyredox_types.Address(
+clinic_address = redox_parser_types.Address(
     StreetAddress="567 Splenda Way",
     City="Green Bay",
     State="Wisconsin",
     ZIP="54321",
     Country="USA",
 )
-provider_org = pyredox_types.Organization(Address=office_address)
-provider_loc1 = pyredox_types.Location(Address=office_address)
-provider_loc2 = pyredox_types.Location(Address=clinic_address)
-provider = pyredox_types.Provider(
-    Identifiers=[pyredox_types.Identifier(ID="FakeProviderID")],
+provider_org = redox_parser_types.Organization(Address=office_address)
+provider_loc1 = redox_parser_types.Location(Address=office_address)
+provider_loc2 = redox_parser_types.Location(Address=clinic_address)
+provider = redox_parser_types.Provider(
+    Identifiers=[redox_parser_types.Identifier(ID="FakeProviderID")],
     IsActive=True,
     Roles=[
-        pyredox_types.Role(
+        redox_parser_types.Role(
             Organization=provider_org,
             Locations=[provider_loc1, provider_loc2],
         )
@@ -228,7 +228,7 @@ provider = pyredox_types.Provider(
 )
 
 new_provider_msg = NewProvider(
-    Meta=pyredox_types.Meta(DataModel="Provider", EventType="New", Test=True),
+    Meta=redox_parser_types.Meta(DataModel="Provider", EventType="New", Test=True),
     Providers=[provider],
 ).to_redox()  # This converts the object to a "proper Redox" model
 ```
@@ -238,7 +238,7 @@ automatically convert the data to the "proper Redox" form first, so that last st
 
 ```python
 new_provider_json = NewProvider(
-    Meta=pyredox_types.Meta(DataModel="Provider", EventType="New", Test=True),
+    Meta=redox_parser_types.Meta(DataModel="Provider", EventType="New", Test=True),
     Providers=[provider],
 ).json()  # This converts the object to a "proper Redox" model, then gets the JSON string
 ```
@@ -249,7 +249,7 @@ library's default behavior is to silently drop those fields with no current plan
 
 There's also a possibility that the "proper Redox" object you're building specifies a data type for a field that differs
 from other models that use that data type, which is a result of how the schema is specified. For example, the
-[generic `Demographics` class has the following field definition]([https://github.com/cedar-team/pyredox/blob/341407063f27d3b82000bcb86362ec00ce48dec2/pyredox/generic/types.py#L644]):
+[generic `Demographics` class has the following field definition]([https://github.com/cedar-team/redox_parser/blob/341407063f27d3b82000bcb86362ec00ce48dec2/redox_parser/generic/types.py#L644]):
 
 ```python
 EmailAddresses: Union[List["EmailAddress"], List[str]]
@@ -263,7 +263,7 @@ from pydantic import ValidationError
 
 try:
     new_provider_json = NewProvider(
-        Meta=pyredox_types.Meta(DataModel="Provider", EventType="New", Test=True),
+        Meta=redox_parser_types.Meta(DataModel="Provider", EventType="New", Test=True),
         Providers=[provider],
     ).json()  # This converts the object to a "proper Redox" model
 except ValidationError:
@@ -273,20 +273,20 @@ except ValidationError:
 
 ### Serialize to JSON or `dict`
 
-All `pyredox` objects have methods that allow for easy serialization:
+All `redox_parser` objects have methods that allow for easy serialization:
 - For the `dict` version of an object, call the `dict()` method.
 - For the JSON `str` version of an object, call the `json()` method.
 
-To customize how `pyredox` exports the data from your model, you can use any of the [parameters available from the
+To customize how `redox_parser` exports the data from your model, you can use any of the [parameters available from the
 underlying Pydantic models](https://pydantic-docs.helpmanual.io/usage/exporting_models/). Note that when calling the
 `json()` method, you can also include keyword arguments to be passed to the `json.dumps()`.
 
-When serializing generic types, be aware that `pyredox` will convert the object to the corresponding "proper Redox"
+When serializing generic types, be aware that `redox_parser` will convert the object to the corresponding "proper Redox"
 before returning the serialized data. See above for more information.
 
 ### Casting between types
 
-Every `pyredox` object has a `cast_from()` method that is intended for use when you need to assign the same values to
+Every `redox_parser` object has a `cast_from()` method that is intended for use when you need to assign the same values to
 multiple objects while avoiding any type-checking errors. For example, on a generic `Visit` object, there are multiple
 provider fields that only differ in which role that provider filled for the visit. If the same provider filled multiple
 roles, it is redundant to specify the same provider information in multiple object instances.
