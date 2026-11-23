@@ -23,7 +23,7 @@ python = ">=3.7,<4.0"
 pydantic = "~1.9.0"
 
 [tool.poetry.dev-dependencies]
-Brotli = "^1.0.9"
+Brotli = {version = "^1.2.1", python = ">=3.8"}
 beautifulsoup4 = "^4.11.1"
 coveralls = "^3.3.1"
 pre-commit = [
